@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_363ff6411a68018ee8f58e8fb54b1a77 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_363ff6411a68018ee8f58e8fb54b1a77" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_363ff6411a68018ee8f58e8fb54b1a77 = L.map(
+                "map_363ff6411a68018ee8f58e8fb54b1a77",
+                {
+                    center: [39.73048961538462, -104.96975692923075],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a1f3f7b4d1d36a2b6520112c96ee64f8 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var heat_map_c997b9e599465affea64130bdd930335 = L.heatLayer(
+                [[39.70357, -105.0104, 0.625], [39.71522, -104.99621, 0.4615384615384615], [39.71839, -105.03239, 1.0], [39.6611, -105.06554, 0.5333333333333333], [39.70504, -104.95048, 0.375], [39.77671, -105.03938, 0.44], [39.73365, -104.9802, 0.3043478260869565], [39.78762, -105.01205, 0.8333333333333333], [39.73458, -104.96643, 0.5], [39.7194, -104.94928, 0.55], [39.74536, -104.96657, 0.3333333333333333], [39.76741, -104.95014, 0.2857142857142857], [39.76719, -104.9662, 0.5], [39.66304, -105.02165, 0.5999999999999999], [39.73285, -104.95031, 0.4705882352941176], [39.74068, -104.89446, 0.4545454545454545], [39.75913, -104.98336, 0.3636363636363636], [39.64155, -105.04798, 0.6470588235294118], [39.78055, -104.98683, 0.4], [39.67379, -104.91469, 0.4], [39.73291, -104.93156, 0.55], [39.66097, -104.8908, 0.4571428571428571], [39.64074, -104.89694, 0.5], [39.67531, -105.04107, 0.75], [39.76326, -105.01231, 0.631578947368421], [39.71869, -104.92434, 0.875], [39.75217, -105.01922, 0.2], [39.73254, -105.00485, 0.2999999999999999], [39.68951, -105.03913, 0.8181818181818182], [39.62747, -105.07892, 0.6842105263157894], [39.78602, -104.83727, 0.4838709677419355], [39.73286, -104.91295, 0.3333333333333333], [39.75652, -104.92201, 0.3333333333333333], [39.77445, -104.92331, 0.1666666666666666], [39.68141, -104.9931, 0.75], [39.68661, -104.98106, 0.4615384615384615], [39.78761, -105.04399, 0.1666666666666666], [39.67312, -104.98052, 0.25], [39.68999, -105.01119, 0.6999999999999998], [39.75163, -105.03982, 0.3499999999999999], [39.7456, -104.92206, 0.631578947368421], [39.64029, -104.91668, 0.4285714285714285], [39.77645, -105.01189, 0.40625], [39.66447, -104.93255, 0.6842105263157894], [39.71717, -105.01522, 0.6666666666666666], [39.68679, -104.92416, 0.4444444444444444], [39.70124, -104.96627, 0.4666666666666666], [39.70258, -104.9799, 0.5333333333333333], [39.70149, -104.91518, 0.3636363636363636], [39.66064, -104.94955, 0.6666666666666666], [39.74004, -105.03859, 0.56], [39.76395, -105.03924, 0.3333333333333333], [39.70402, -105.03921, 0.4545454545454545], [39.75636, -104.96656, 0.4], [39.70331, -104.88583, 0.5], [39.7184466, -104.9773107, 1.0], [39.7300652, -104.9984212, 1.0], [39.7592936, -104.9937538, 0.0], [39.7392358, -104.990251, 0.75], [39.7392358, -104.990251, 1.0], [39.7392358, -104.990251, 1.0], [39.7392324, -104.9874129, 0.5], [39.7336946, -104.982297, 0.5999999999999999], [39.7392358, -104.990251, 0.4285714285714285], [39.7824095, -104.8804893, 0.275], [39.7824095, -104.8804893, 0.56], [39.7392358, -104.990251, 0.5], [39.7392358, -104.990251, 0.4], [39.7196594, -104.957856, 1.0], [39.740088, -104.96909, 0.375], [39.7403376, -105.0469221, 0.3333333333333333], [39.7909108, -104.8904173, 0.6666666666666666], [39.6893366, -104.9500499, 0.375], [39.7577469, -104.9794943, 0.5714285714285714], [39.7256237, -104.9658472, 0.8333333333333333], [39.7451998, -104.9921849, 0.2666666666666666], [39.7583765, -104.9217031, 0.75], [39.7698274, -104.9041377, 0.3466666666666666], [39.7392358, -104.990251, 0.5357142857142857], [39.7392358, -104.990251, 0.625], [39.7608751, -104.8717317, 1.0], [39.7161481, -105.0586639, 0.5], [39.7336946, -104.982297, 0.0], [39.7392358, -104.990251, 0.0], [39.7392358, -104.990251, 0.3636363636363636], [39.7854582, -104.8571368, 0.4673913043478261], [39.7693376, -105.0299822, 0.3611111111111111], [39.6531038, -104.8987661, 0.4794520547945205], [39.7392358, -104.990251, 0.6282051282051281], [39.7837575, -104.7945972, 0.4375], [39.7832359, -104.7579278, 0.4705882352941176], [39.7608333, -105.0180556, 0.0], [39.6758185, -104.9604243, 0.3333333333333333], [39.7392358, -104.990251, 0.0], [39.7320488, -104.9861214, 0.6666666666666666], [39.7392358, -104.990251, 0.7142857142857143], [39.7197837, -104.8910078, 0.4615384615384615], [39.7392358, -104.990251, 1.0], [39.7392358, -104.990251, 1.0], [39.7854582, -104.8571368, 0.3421052631578947], [39.7693376, -105.0299822, 0.5], [39.6531038, -104.8987661, 0.4464285714285714], [39.7855996, -104.9912739, 0.3939393939393939], [39.7392358, -104.990251, 0.5], [39.7644926, -104.9659559, 0.5555555555555555], [39.7693376, -105.0299822, 0.4253731343283582], [39.6875735, -104.9804379, 0.0], [39.7745645, -104.9223102, 0.45], [39.7320363, -104.9810371, 0.5], [39.6875523, -104.9803741, 0.4615384615384615], [39.76554000000001, -105.0205793, 0.25], [39.7392358, -104.990251, 0.5], [39.7392358, -104.990251, 0.5], [39.7512018, -105.0345899, 0.3499999999999999], [39.66461, -104.9876645, 0.0], [39.7824095, -104.8804893, 0.4406779661016949], [39.6785031, -104.9875969, 0.509090909090909], [39.7824095, -104.8804893, 0.0], [39.6531038, -104.8987661, 0.5538461538461538], [39.6531038, -104.8987661, 0.5151515151515151], [39.7392358, -104.990251, 1.0], [39.7392358, -104.990251, 0.6266666666666667], [39.7392358, -104.990251, 0.0], [39.7392358, -104.990251, 0.6666666666666666], [39.7420787, -104.9773482, 0.0], [39.7931456, -105.0439213, 1.0], [39.7392358, -104.990251, 1.0], [39.7392358, -104.990251, 0.5454545454545454], [39.7392358, -104.990251, 1.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var feature_group_f8040f9e9f956ce616151cfcdbf6316a = L.featureGroup(
+                {}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var circle_marker_8b2c3d3c64a07185188b8d8062354c08 = L.circleMarker(
+                [39.70357, -105.0104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8b2c3d3c64a07185188b8d8062354c08.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Athmar Park<br>Off Market in Two Weeks: 0.625<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d637629e5e23a2221fb5fb3aa62ebed = L.circleMarker(
+                [39.74582, -105.00827],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_2d637629e5e23a2221fb5fb3aa62ebed.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Auraria<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5fc75e503b0ca5c7ae8d97895bf3e6bc = L.circleMarker(
+                [39.71522, -104.99621],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5fc75e503b0ca5c7ae8d97895bf3e6bc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Baker<br>Off Market in Two Weeks: 0.4615384615384615<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30fae5814abab4a90608e5286f93c0aa = L.circleMarker(
+                [39.71839, -105.03239],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_30fae5814abab4a90608e5286f93c0aa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Barnum<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c605424e236cd4bf7d9e301e0ab8848b = L.circleMarker(
+                [39.6611, -105.06554],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_c605424e236cd4bf7d9e301e0ab8848b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bear Valley<br>Off Market in Two Weeks: 0.5333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3187d492019db2c97b79846bcaf1784 = L.circleMarker(
+                [39.70504, -104.95048],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_c3187d492019db2c97b79846bcaf1784.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belcaro<br>Off Market in Two Weeks: 0.375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_15c9275731e2bf4b68607d8aa19b6167 = L.circleMarker(
+                [39.77671, -105.03938],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_15c9275731e2bf4b68607d8aa19b6167.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Berkeley<br>Off Market in Two Weeks: 0.44<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f1633ad1a676d8f4015e1439901f83a = L.circleMarker(
+                [39.73365, -104.9802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_1f1633ad1a676d8f4015e1439901f83a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capitol Hill<br>Off Market in Two Weeks: 0.3043478260869565<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bc58cd754a2da9d639e6d4867f01b56 = L.circleMarker(
+                [39.78762, -105.01205],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5bc58cd754a2da9d639e6d4867f01b56.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chaffee Park<br>Off Market in Two Weeks: 0.8333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9fc2f6a84263a97c0fcbd07a76fa4f46 = L.circleMarker(
+                [39.73458, -104.96643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_9fc2f6a84263a97c0fcbd07a76fa4f46.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheesman Park<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c585a89960388721b42ef663e31c6a78 = L.circleMarker(
+                [39.7194, -104.94928],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_c585a89960388721b42ef663e31c6a78.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek<br>Off Market in Two Weeks: 0.55<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba76030be33fb0cbcd745b0f99a62745 = L.circleMarker(
+                [39.74536, -104.96657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_ba76030be33fb0cbcd745b0f99a62745.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - City Park West<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8a59da3ef54e8aab0ab51a80a947574 = L.circleMarker(
+                [39.76741, -104.95014],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f8a59da3ef54e8aab0ab51a80a947574.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Clayton<br>Off Market in Two Weeks: 0.2857142857142857<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3464b667902fad33d24ffc4527d6617d = L.circleMarker(
+                [39.76719, -104.9662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_3464b667902fad33d24ffc4527d6617d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cole<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_957e255b188aff46a9720bca46e85705 = L.circleMarker(
+                [39.66304, -105.02165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_957e255b188aff46a9720bca46e85705.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - College View<br>Off Market in Two Weeks: 0.5999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d45c483dc7380dd7f3d8bf854867ad6d = L.circleMarker(
+                [39.73285, -104.95031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_d45c483dc7380dd7f3d8bf854867ad6d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Congress Park<br>Off Market in Two Weeks: 0.4705882352941176<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57db5f6f06357567e42849dffe8aa985 = L.circleMarker(
+                [39.74068, -104.89446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_57db5f6f06357567e42849dffe8aa985.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Colfax<br>Off Market in Two Weeks: 0.4545454545454545<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_97bda9e46cc1d0550ca9867efce99c5b = L.circleMarker(
+                [39.75913, -104.98336],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_97bda9e46cc1d0550ca9867efce99c5b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Five Points<br>Off Market in Two Weeks: 0.3636363636363636<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1c1a25363ccec22017356e0392e72b01 = L.circleMarker(
+                [39.64155, -105.04798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_1c1a25363ccec22017356e0392e72b01.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Fort Logan<br>Off Market in Two Weeks: 0.6470588235294118<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_60e3a08ddf9c810f4e88d1c1f043eb2b = L.circleMarker(
+                [39.78055, -104.98683],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_60e3a08ddf9c810f4e88d1c1f043eb2b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Globeville<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_27eb87fca992aba4ade6ae576e3f9430 = L.circleMarker(
+                [39.67379, -104.91469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_27eb87fca992aba4ade6ae576e3f9430.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Goldsmith<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7a8a81d9cf6ca02f5a9c064e52f2473 = L.circleMarker(
+                [39.73291, -104.93156],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_e7a8a81d9cf6ca02f5a9c064e52f2473.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hale<br>Off Market in Two Weeks: 0.55<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ce354615bd9926bb4a1ecc2b8f4ec8a0 = L.circleMarker(
+                [39.66097, -104.8908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_ce354615bd9926bb4a1ecc2b8f4ec8a0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden<br>Off Market in Two Weeks: 0.4571428571428571<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9ec5f6f1f7386248978dfc67de5a82a7 = L.circleMarker(
+                [39.64074, -104.89694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_9ec5f6f1f7386248978dfc67de5a82a7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden South<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d79c234085e02df8be135b9baf421f8b = L.circleMarker(
+                [39.67531, -105.04107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_d79c234085e02df8be135b9baf421f8b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Harvey Park<br>Off Market in Two Weeks: 0.75<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_59c2658119fe270abc5a4ccbab24eb4e = L.circleMarker(
+                [39.76326, -105.01231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_59c2658119fe270abc5a4ccbab24eb4e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland<br>Off Market in Two Weeks: 0.631578947368421<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29de364f8d3253e5588038684bc703ed = L.circleMarker(
+                [39.71869, -104.92434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_29de364f8d3253e5588038684bc703ed.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hilltop<br>Off Market in Two Weeks: 0.875<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eedcf29ae98ab06becb8be9e9d099ad9 = L.circleMarker(
+                [39.75217, -105.01922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_eedcf29ae98ab06becb8be9e9d099ad9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Jefferson Park<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df635c995f1eb21d13a5f2f1c149b824 = L.circleMarker(
+                [39.73254, -105.00485],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_df635c995f1eb21d13a5f2f1c149b824.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln Park<br>Off Market in Two Weeks: 0.2999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a5cb5d93654df5391c702151c3de273 = L.circleMarker(
+                [39.68951, -105.03913],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8a5cb5d93654df5391c702151c3de273.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Mar Lee<br>Off Market in Two Weeks: 0.8181818181818182<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3f6a544a14d239016fc6cce21852d54 = L.circleMarker(
+                [39.62747, -105.07892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_c3f6a544a14d239016fc6cce21852d54.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Marston<br>Off Market in Two Weeks: 0.6842105263157894<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_be07eeddf64def20cc7af03968964441 = L.circleMarker(
+                [39.78602, -104.83727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_be07eeddf64def20cc7af03968964441.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montbello<br>Off Market in Two Weeks: 0.4838709677419355<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_35c2c6e3a34ed388b1ea50dfb444a94c = L.circleMarker(
+                [39.73286, -104.91295],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_35c2c6e3a34ed388b1ea50dfb444a94c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montclair<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_178929ddfcb4c9b795aabdf2a8101aff = L.circleMarker(
+                [39.75652, -104.92201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_178929ddfcb4c9b795aabdf2a8101aff.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Park Hill<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6c912e522ca11396c79c8ce3235c617 = L.circleMarker(
+                [39.77445, -104.92331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f6c912e522ca11396c79c8ce3235c617.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northeast Park Hill<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2b7194e70f6e8a437b0158490f2c93b0 = L.circleMarker(
+                [39.68141, -104.9931],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_2b7194e70f6e8a437b0158490f2c93b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Overland<br>Off Market in Two Weeks: 0.75<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3f5e2d6ef647f566db736b6c8af5a7ae = L.circleMarker(
+                [39.68661, -104.98106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_3f5e2d6ef647f566db736b6c8af5a7ae.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platt Park<br>Off Market in Two Weeks: 0.4615384615384615<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e994cb48a75b75bbc7225f0c0170815f = L.circleMarker(
+                [39.78761, -105.04399],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_e994cb48a75b75bbc7225f0c0170815f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Regis<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91264a3bceeb80dbb8a0d8ca6f4d1127 = L.circleMarker(
+                [39.67312, -104.98052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_91264a3bceeb80dbb8a0d8ca6f4d1127.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Rosedale<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_feb9ea201481b7e9284f2ce1b38e6a8c = L.circleMarker(
+                [39.68999, -105.01119],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_feb9ea201481b7e9284f2ce1b38e6a8c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ruby Hill<br>Off Market in Two Weeks: 0.6999999999999998<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_43c1ab8d0f4cb2e334f2d4ab3fb1e1c0 = L.circleMarker(
+                [39.75163, -105.03982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_43c1ab8d0f4cb2e334f2d4ab3fb1e1c0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan Lake<br>Off Market in Two Weeks: 0.3499999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_82de075371bc975248cb5cc7bf9c2735 = L.circleMarker(
+                [39.7456, -104.92206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_82de075371bc975248cb5cc7bf9c2735.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Park Hill<br>Off Market in Two Weeks: 0.631578947368421<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4692f0857452951bc971b0d935daec5d = L.circleMarker(
+                [39.64029, -104.91668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_4692f0857452951bc971b0d935daec5d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southmoor Park<br>Off Market in Two Weeks: 0.4285714285714285<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_026c3ea5df4b547d314ff546db209faf = L.circleMarker(
+                [39.77645, -105.01189],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_026c3ea5df4b547d314ff546db209faf.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sunnyside<br>Off Market in Two Weeks: 0.40625<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c3052324d1b7082b7ad63bc27d5149a = L.circleMarker(
+                [39.66447, -104.93255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5c3052324d1b7082b7ad63bc27d5149a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - University Hills<br>Off Market in Two Weeks: 0.6842105263157894<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e054f3ef140185ffee13090fd05d6b95 = L.circleMarker(
+                [39.71717, -105.01522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_e054f3ef140185ffee13090fd05d6b95.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Valverde<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29c36088c99e1366298141f1ebb07ba4 = L.circleMarker(
+                [39.68679, -104.92416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_29c36088c99e1366298141f1ebb07ba4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Virginia Village<br>Off Market in Two Weeks: 0.4444444444444444<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d4ad7e1ed694db344322a6ff034714c = L.circleMarker(
+                [39.70124, -104.96627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5d4ad7e1ed694db344322a6ff034714c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park<br>Off Market in Two Weeks: 0.4666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f4dea69bf76947fb6c02c04fc9871c63 = L.circleMarker(
+                [39.70258, -104.9799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f4dea69bf76947fb6c02c04fc9871c63.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park West<br>Off Market in Two Weeks: 0.5333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_24931cc20911c479d071e92c25634138 = L.circleMarker(
+                [39.70149, -104.91518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_24931cc20911c479d071e92c25634138.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Virginia Vale<br>Off Market in Two Weeks: 0.3636363636363636<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4baa9099614faaa04740a2c0301f5763 = L.circleMarker(
+                [39.66064, -104.94955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_4baa9099614faaa04740a2c0301f5763.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Wellshire<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f4185ca5a3009820f67ab5ae5592d7c5 = L.circleMarker(
+                [39.74004, -105.03859],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f4185ca5a3009820f67ab5ae5592d7c5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Colfax<br>Off Market in Two Weeks: 0.56<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b812b1741edb509ede5c97383d2b6277 = L.circleMarker(
+                [39.76395, -105.03924],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b812b1741edb509ede5c97383d2b6277.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Highland<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e5c697caabdee43b47e8bfd70b6966d = L.circleMarker(
+                [39.70402, -105.03921],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8e5c697caabdee43b47e8bfd70b6966d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Westwood<br>Off Market in Two Weeks: 0.4545454545454545<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7dc0da07edf9c17c02b2854148ea5e8 = L.circleMarker(
+                [39.75636, -104.96656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b7dc0da07edf9c17c02b2854148ea5e8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Whittier<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbe254f6c10af6464e10dd0d26c34354 = L.circleMarker(
+                [39.70331, -104.88583],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_dbe254f6c10af6464e10dd0d26c34354.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Windsor<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47a76912d1d6b84dd589634bd3547c81 = L.circleMarker(
+                [39.7184466, -104.9773107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_47a76912d1d6b84dd589634bd3547c81.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Arlington Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0779deba4265dac5a2eeb3a3e234e731 = L.circleMarker(
+                [39.7300652, -104.9984212],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_0779deba4265dac5a2eeb3a3e234e731.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Art District on Santa Fe<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_65a49532d19059e106502ec7911b3e12 = L.circleMarker(
+                [39.7592936, -104.9937538],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_65a49532d19059e106502ec7911b3e12.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ballpark Collective<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ef9d8579e640f98b871d4242db2e801 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_3ef9d8579e640f98b871d4242db2e801.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue<br>Off Market in Two Weeks: 0.75<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33fb89f56966365364c38e70d0702100 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_33fb89f56966365364c38e70d0702100.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b50fce83df651ebc254d9c49d942cac8 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b50fce83df651ebc254d9c49d942cac8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belmont Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_69f908c994c4c6847f4cbba08c29431a = L.circleMarker(
+                [39.7392324, -104.9874129],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_69f908c994c4c6847f4cbba08c29431a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Broadway<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d4a410d0b81c225b942f43964be7732 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_6d4a410d0b81c225b942f43964be7732.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Burlington Capitol Hill<br>Off Market in Two Weeks: 0.5999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6fb4e9c9516cce607d9723b04130829c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_6fb4e9c9516cce607d9723b04130829c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capital Avenue<br>Off Market in Two Weeks: 0.4285714285714285<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2977c86980b15b9aae9250495d7eeb6 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_e2977c86980b15b9aae9250495d7eeb6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Denver<br>Off Market in Two Weeks: 0.275<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1c0c9e6b8a287eda7726862ce0ccec0d = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_1c0c9e6b8a287eda7726862ce0ccec0d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Park<br>Off Market in Two Weeks: 0.56<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3170112db37dc37ec5dfdf8b6666446 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_d3170112db37dc37ec5dfdf8b6666446.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chamberlins University Terrace East<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5cb1a912d1bbf17292654320cfb5f034 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5cb1a912d1bbf17292654320cfb5f034.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheltenham Heights<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_abb645e67f2885091a7ba76858a0c846 = L.circleMarker(
+                [39.7196594, -104.957856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_abb645e67f2885091a7ba76858a0c846.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek North<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a0dcfe2f73d97806649cff6b84926989 = L.circleMarker(
+                [39.740088, -104.96909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_a0dcfe2f73d97806649cff6b84926989.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Avenue Park<br>Off Market in Two Weeks: 0.375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9d94bc595cc422042f1218df19cc9cd = L.circleMarker(
+                [39.7403376, -105.0469221],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f9d94bc595cc422042f1218df19cc9cd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Terrace<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c3375ed824af5c61514a69a0628f1ad = L.circleMarker(
+                [39.7909108, -104.8904173],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_7c3375ed824af5c61514a69a0628f1ad.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Conservatory Green at Stapleton<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fa6a1d7a3c1e793b7d04046138edb1be = L.circleMarker(
+                [39.6893366, -104.9500499],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_fa6a1d7a3c1e793b7d04046138edb1be.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cory-Merrill<br>Off Market in Two Weeks: 0.375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8fde14350e93de901d781cdc9442123d = L.circleMarker(
+                [39.7577469, -104.9794943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8fde14350e93de901d781cdc9442123d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Curtis Park<br>Off Market in Two Weeks: 0.5714285714285714<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b00a242c914165fda1aaf6848cd5b65 = L.circleMarker(
+                [39.7256237, -104.9658472],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8b00a242c914165fda1aaf6848cd5b65.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Denver Country Club<br>Off Market in Two Weeks: 0.8333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1334c54bc9657010a81d63a83c1f0ee4 = L.circleMarker(
+                [39.7451998, -104.9921849],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_1334c54bc9657010a81d63a83c1f0ee4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Downtown Denver<br>Off Market in Two Weeks: 0.2666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_780932fc091982e5ed50b274d7718645 = L.circleMarker(
+                [39.7583765, -104.9217031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_780932fc091982e5ed50b274d7718645.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East 29th Avenue<br>Off Market in Two Weeks: 0.75<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d8938fac82bbf1c08a813e256d419fb9 = L.circleMarker(
+                [39.7698274, -104.9041377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_d8938fac82bbf1c08a813e256d419fb9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Central Denver<br>Off Market in Two Weeks: 0.3466666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_adcf7a8e940a053b87951e2af7815de5 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_adcf7a8e940a053b87951e2af7815de5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Denver<br>Off Market in Two Weeks: 0.5357142857142857<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94470ff0ba18365ff13d9bc1fbbb1c7c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_94470ff0ba18365ff13d9bc1fbbb1c7c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Seventh Avenue Historic District<br>Off Market in Two Weeks: 0.625<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f07a5a1e2c61958a3f568da9f623a6b = L.circleMarker(
+                [39.7608751, -104.8717317],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5f07a5a1e2c61958a3f568da9f623a6b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastbridge<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c303f28ebb38d95ab5390394f850ba28 = L.circleMarker(
+                [39.7161481, -105.0586639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_c303f28ebb38d95ab5390394f850ba28.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastgate<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5fb43545370d6a19d88446570f3a68f = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_e5fb43545370d6a19d88446570f3a68f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Emerys Capitol Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9ef190f9544f619dbbc428f71100a770 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_9ef190f9544f619dbbc428f71100a770.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evans Park Estates<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca2528d0649bb3972780dd5e0e715f14 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_ca2528d0649bb3972780dd5e0e715f14.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evanston<br>Off Market in Two Weeks: 0.3636363636363636<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_440dd08ae6bba65a97245d9db34a16f2 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_440dd08ae6bba65a97245d9db34a16f2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northeast Denver<br>Off Market in Two Weeks: 0.4673913043478261<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_77dba289d5e1981d8962a08db1e15646 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_77dba289d5e1981d8962a08db1e15646.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northwest Denver<br>Off Market in Two Weeks: 0.3611111111111111<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f5490f8e528fb40c2d214e433454f343 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f5490f8e528fb40c2d214e433454f343.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southeast Denver<br>Off Market in Two Weeks: 0.4794520547945205<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_98e4f036f3c592f2185c53a4c468df80 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_98e4f036f3c592f2185c53a4c468df80.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southwest Denver<br>Off Market in Two Weeks: 0.6282051282051281<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad0125f71bf0cebd5eca11e16a2593e5 = L.circleMarker(
+                [39.7837575, -104.7945972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_ad0125f71bf0cebd5eca11e16a2593e5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Gateway<br>Off Market in Two Weeks: 0.4375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94df650b595e7a8d04234b38dc0d5fb6 = L.circleMarker(
+                [39.7832359, -104.7579278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_94df650b595e7a8d04234b38dc0d5fb6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Green Valley Ranch<br>Off Market in Two Weeks: 0.4705882352941176<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e0daa4df34b54150339501f5946e7def = L.circleMarker(
+                [39.7608333, -105.0180556],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_e0daa4df34b54150339501f5946e7def.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb6ca9a3c05afadb69019a091b38874c = L.circleMarker(
+                [39.6758185, -104.9604243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_eb6ca9a3c05afadb69019a091b38874c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Iliffs University<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eedc999309d577ccefac0f197a9c6857 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_eedc999309d577ccefac0f197a9c6857.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Kettles<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_325ad894ee0d0caab487763cd64b5ff8 = L.circleMarker(
+                [39.7320488, -104.9861214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_325ad894ee0d0caab487763cd64b5ff8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df8d49051a9f050c4ee723a20937b85f = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_df8d49051a9f050c4ee723a20937b85f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - LoHi<br>Off Market in Two Weeks: 0.7142857142857143<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0be18e45c5977bfdfed29d1698940236 = L.circleMarker(
+                [39.7197837, -104.8910078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_0be18e45c5977bfdfed29d1698940236.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lowry<br>Off Market in Two Weeks: 0.4615384615384615<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8570a4ba3107db337843c14bc3ca56bc = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8570a4ba3107db337843c14bc3ca56bc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lynwood<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9165e786a58a4b8b4873fd9ab1ff492c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_9165e786a58a4b8b4873fd9ab1ff492c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Miller Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de6b16e9e6b1bc86cf3682a3570a895c = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_de6b16e9e6b1bc86cf3682a3570a895c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northeast Denver<br>Off Market in Two Weeks: 0.3421052631578947<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b9b341dab06290de9ed9372df9813e15 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b9b341dab06290de9ed9372df9813e15.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northwest Denver<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_71e9e1550ce76e488ea825f804d50dd4 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_71e9e1550ce76e488ea825f804d50dd4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Southeast Denver<br>Off Market in Two Weeks: 0.4464285714285714<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d372f1af8387a1b26f8c8c4ef0b823e8 = L.circleMarker(
+                [39.7855996, -104.9912739],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_d372f1af8387a1b26f8c8c4ef0b823e8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Central Denver<br>Off Market in Two Weeks: 0.3939393939393939<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a9d71a38201b4cde8be8ef3ffbc6e1a7 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_a9d71a38201b4cde8be8ef3ffbc6e1a7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North City Park<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c23e05d8635524150a0be0de34afa9c1 = L.circleMarker(
+                [39.7644926, -104.9659559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_c23e05d8635524150a0be0de34afa9c1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Denver<br>Off Market in Two Weeks: 0.5555555555555555<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9583d6b327ccda5ecc394ca35787d475 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_9583d6b327ccda5ecc394ca35787d475.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northwest Denver<br>Off Market in Two Weeks: 0.4253731343283582<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f7d9d4f23dc8ddedc70d9e462c814f36 = L.circleMarker(
+                [39.6875735, -104.9804379],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f7d9d4f23dc8ddedc70d9e462c814f36.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Old South Pearl<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_71e4db5f3f9533947cf17b686bbcfb36 = L.circleMarker(
+                [39.7745645, -104.9223102],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_71e4db5f3f9533947cf17b686bbcfb36.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Park Hill<br>Off Market in Two Weeks: 0.45<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83124b58e5decc21db60a0ba0a6ffc66 = L.circleMarker(
+                [39.7320363, -104.9810371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_83124b58e5decc21db60a0ba0a6ffc66.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Pennsylvania Street Historic District<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f428b21148d7c54650784e828d7d8772 = L.circleMarker(
+                [39.6875523, -104.9803741],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_f428b21148d7c54650784e828d7d8772.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platte Park<br>Off Market in Two Weeks: 0.4615384615384615<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a968634c28d38486f45270881cfe79f4 = L.circleMarker(
+                [39.76554000000001, -105.0205793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_a968634c28d38486f45270881cfe79f4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Potter Highlands<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29418b48f5f98b38fad6ad4dda47f43b = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_29418b48f5f98b38fad6ad4dda47f43b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Shackelton Place<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_118acfdacbed6110434e539e1b7782eb = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_118acfdacbed6110434e539e1b7782eb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sherman-Grant Historic District<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b108b0d25cc1b226c176afb01faf2aa3 = L.circleMarker(
+                [39.7512018, -105.0345899],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b108b0d25cc1b226c176afb01faf2aa3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan's Lake<br>Off Market in Two Weeks: 0.3499999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_79e91e626bea8182fe57a83aa902a700 = L.circleMarker(
+                [39.66461, -104.9876645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_79e91e626bea8182fe57a83aa902a700.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Broadway<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17ddc5fa1087f9108e8868b6eb4a3c57 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_17ddc5fa1087f9108e8868b6eb4a3c57.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Central Denver<br>Off Market in Two Weeks: 0.4406779661016949<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_15e04cd8f53451d25ad51b52d9bbdfe4 = L.circleMarker(
+                [39.6785031, -104.9875969],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_15e04cd8f53451d25ad51b52d9bbdfe4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Denver<br>Off Market in Two Weeks: 0.509090909090909<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1381bbce4907469a3d9503f7e8ad63a5 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_1381bbce4907469a3d9503f7e8ad63a5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South End at Stapleton<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94444448282c6bccb6c6f6d4e107b175 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_94444448282c6bccb6c6f6d4e107b175.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Central Denver<br>Off Market in Two Weeks: 0.5538461538461538<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3e5bfabd92d08c76d36a0ee26d985bb = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b3e5bfabd92d08c76d36a0ee26d985bb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Denver<br>Off Market in Two Weeks: 0.5151515151515151<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8dc25a3cd5b4bd55986173420da80eb4 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_8dc25a3cd5b4bd55986173420da80eb4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southlawn Gardens<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9834740aef98fede013ba07939f7e1f3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_9834740aef98fede013ba07939f7e1f3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southwest Denver<br>Off Market in Two Weeks: 0.6266666666666667<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b2b525441e8d90e8f12a1858ea264f5d = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_b2b525441e8d90e8f12a1858ea264f5d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - St. James Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83ba08b662d16bc7c418906c6546550c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_83ba08b662d16bc7c418906c6546550c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sumners<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_486ab950652c4b2ad6ed78d5cce1de27 = L.circleMarker(
+                [39.7420787, -104.9773482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_486ab950652c4b2ad6ed78d5cce1de27.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Swallow Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5e57943bb8641339a436bf84e04f5292 = L.circleMarker(
+                [39.7931456, -105.0439213],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_5e57943bb8641339a436bf84e04f5292.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Tennyson Street Cultural District<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14a36dcf79fc1c5daa87a393e98f8921 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_14a36dcf79fc1c5daa87a393e98f8921.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Town of Highland<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_03bd48be51c7b219b0538c0a9d35fdd1 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_03bd48be51c7b219b0538c0a9d35fdd1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Denver<br>Off Market in Two Weeks: 0.5454545454545454<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_56c67ce3e1315d92dd60bfe3fc2f168c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f8040f9e9f956ce616151cfcdbf6316a);
+        
+    
+            circle_marker_56c67ce3e1315d92dd60bfe3fc2f168c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Witter-Cofield<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_5a8557a9286b5668abcd07636766b2cc = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var tile_layer_6ea962c435f42c5a4142583a22830a7d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var tile_layer_a4bfd376d506d43ff7916fa813353a61 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var tile_layer_d5115d15ea6f41df7a6af18863de85aa = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var tile_layer_ca692748bd750faa08cd846452a94a93 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var tile_layer_58372a058db25d4ffcc847fe870074a5 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+        
+    
+            var layer_control_f9f47a05ad3a1fe4e4ec695ae72fb332 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_a4bfd376d506d43ff7916fa813353a61,
+                    "stamenwatercolor" : tile_layer_5a8557a9286b5668abcd07636766b2cc,
+                    "openstreetmap" : tile_layer_6ea962c435f42c5a4142583a22830a7d,
+                    "stamentoner" : tile_layer_d5115d15ea6f41df7a6af18863de85aa,
+                    "cartodbpositron" : tile_layer_ca692748bd750faa08cd846452a94a93,
+                    "cartodbdark_matter" : tile_layer_58372a058db25d4ffcc847fe870074a5,
+                },
+                overlays :  {
+                    "Denver - off_market_in_two_weeks" : heat_map_c997b9e599465affea64130bdd930335,
+                    "Off Market in Two Weeks Centers" : feature_group_f8040f9e9f956ce616151cfcdbf6316a,
+                },
+            };
+            L.control.layers(
+                layer_control_f9f47a05ad3a1fe4e4ec695ae72fb332.base_layers,
+                layer_control_f9f47a05ad3a1fe4e4ec695ae72fb332.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_363ff6411a68018ee8f58e8fb54b1a77);
+            tile_layer_5a8557a9286b5668abcd07636766b2cc.remove();
+            tile_layer_6ea962c435f42c5a4142583a22830a7d.remove();
+            tile_layer_a4bfd376d506d43ff7916fa813353a61.remove();
+            tile_layer_d5115d15ea6f41df7a6af18863de85aa.remove();
+            tile_layer_ca692748bd750faa08cd846452a94a93.remove();
+            tile_layer_58372a058db25d4ffcc847fe870074a5.remove();
+        
+</script>
+</html>

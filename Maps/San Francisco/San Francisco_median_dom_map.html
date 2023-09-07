@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2a4f583aa9c37788392f373ffbe0fee9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2a4f583aa9c37788392f373ffbe0fee9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2a4f583aa9c37788392f373ffbe0fee9 = L.map(
+                "map_2a4f583aa9c37788392f373ffbe0fee9",
+                {
+                    center: [37.7615559496063, -122.4341716952756],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d62988f4dcfadc224d9c5cdad1ecb04e = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var heat_map_015028594fb10a30e496ee534ae53884 = L.heatLayer(
+                [[37.77634, -122.43469, 30.0], [37.78096, -122.44323, 69.5], [37.76252, -122.4491, 10.0], [37.73099, -122.4676, 7.0], [37.73311, -122.38988, 14.0], [37.74111, -122.41469, 17.0], [37.72016, -122.39266, 18.0], [37.76789, -122.44158, 27.5], [37.76184, -122.43378, 15.0], [37.78454, -122.42422, 99.5], [37.71962, -122.44309, 17.0], [37.75002, -122.38324, 14.0], [37.79449, -122.40657, 96.0], [37.77861, -122.41908, 60.0], [37.75629, -122.44871, 54.0], [37.76669, -122.45049, 28.0], [37.76441, -122.43857, 12.0], [37.79733, -122.44259, 28.5], [37.71138, -122.43622, 18.0], [37.74399, -122.44031, 47.5], [37.7549, -122.42673, 27.0], [37.76797, -122.43234, 17.0], [37.75824, -122.43912, 40.5], [37.72128, -122.43081, 21.0], [37.73943, -122.42955, 32.5], [37.79262, -122.39733, 53.0], [37.80783, -122.41326, 24.0], [37.74793, -122.46372, 28.0], [37.75489, -122.45979, 35.0], [37.73845, -122.4396, 17.0], [37.75202, -122.47094, 17.0], [37.76988, -122.44829, 73.0], [37.77646, -122.42693, 31.5], [37.73713, -122.42075, 17.0], [37.72539, -122.37207, 129.0], [37.72069, -122.46141, 17.0], [37.72511, -122.46803, 13.0], [37.77938, -122.4685, 17.0], [37.76263, -122.46793, 23.5], [37.78613, -122.43002, 94.0], [37.74565, -122.45798, 14.5], [37.78551, -122.47962, 5.0], [37.72058, -122.49343, 19.0], [37.71095, -122.39955, 39.0], [37.77812, -122.45288, 61.0], [37.77299, -122.43078, 32.0], [37.78828, -122.416, 79.0], [37.78574, -122.43992, 49.0], [37.73277, -122.48004, 11.0], [37.7503, -122.4504, 52.0], [37.77114, -122.42592, 62.0], [37.7389, -122.44905, 28.0], [37.77113, -122.39146, 59.0], [37.76382, -122.42574, 24.5], [37.72806, -122.43515, 21.0], [37.73306, -122.46165, 32.0], [37.79312, -122.41394, 72.0], [37.74778, -122.43125, 31.0], [37.8009, -122.40855, 18.0], [37.80143, -122.40019, 46.0], [37.7159, -122.45559, 27.0], [37.71137, -122.45392, 23.0], [37.7771, -122.49233, 22.5], [37.75378, -122.49547, 16.0], [37.79232, -122.4342, 43.5], [37.77392, -122.44547, 15.5], [37.71962, -122.47942, 30.5], [37.74051, -122.48737, 27.0], [37.76097, -122.45631, 29.5], [37.74622, -122.40742, 24.0], [37.79419, -122.42141, 49.5], [37.72599, -122.4073, 36.0], [37.75783, -122.39954, 22.5], [37.78873, -122.45234, 49.0], [37.79742, -122.46643, 74.0], [37.78701, -122.46425, 30.5], [37.78733, -122.39115, 51.5], [37.8004, -122.41759, 35.0], [37.7868, -122.48885, 19.0], [37.73743, -122.45687, 20.5], [37.7692, -122.40338, 147.5], [37.73383, -122.39833, 27.0], [37.78167, -122.38929, 55.0], [37.77845, -122.40608, 60.0], [37.73627, -122.46606, 14.0], [37.73352, -122.4257, 53.0], [37.71097, -122.42009, 25.0], [37.73002, -122.4465, 33.5], [37.77798, -122.50793, 26.5], [37.80233, -122.40547, 50.5], [37.78409, -122.41482, 59.0], [37.79863, -122.43074, 53.5], [37.72693, -122.41809, 13.0], [37.75135, -122.44304, 37.0], [37.71346, -122.40848, 14.0], [37.73977, -122.47066, 13.0], [37.78006, -122.43494, 42.5], [37.73275, -122.45655, 90.0], [37.72746, -122.45637, 14.5], [37.81095, -122.36588, 20.0], [37.7770771, -122.4365807, 39.5], [37.8048637, -122.42566, 25.0], [37.7646865, -122.4512005, 36.0], [37.7635614, -122.4173724, 29.0], [37.7782864, -122.4653775, 20.0], [37.7127107, -122.3815252, 47.0], [37.7850246, -122.4005003, 42.0], [37.7690189, -122.4019298, 63.0], [37.7936658, -122.3964729, 712.0], [37.76955100000001, -122.433214, 22.0], [37.7861923, -122.4400385, 77.0], [37.7749295, -122.4194155, 51.5], [37.7296178, -122.4935865, 11.0], [37.783278, -122.4566316, 18.0], [37.8043849, -122.4370011, 28.5], [37.7749295, -122.4194155, 24.5], [37.7635614, -122.4173724, 38.0], [37.7282679, -122.4640937, 19.0], [37.7929158, -122.4046905, 50.0], [37.7897312, -122.401906, 30.0], [37.7815501, -122.3940353, 85.0], [37.7749295, -122.4194155, 27.0], [37.7749295, -122.4194155, 21.0], [37.7749295, -122.4194155, 26.0], [37.7395735, -122.470007, 10.0], [37.7850246, -122.4005003, 70.0], [37.7850045, -122.4004816, 94.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var feature_group_2da59ea1062a98b1a09c19a84d8f1a0a = L.featureGroup(
+                {}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var circle_marker_19b035bef3249c2d21033e8288b1e5d8 = L.circleMarker(
+                [37.77634, -122.43469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_19b035bef3249c2d21033e8288b1e5d8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square<br>Median Days on Market: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7cf5bd2db933007c2b152647d68925e = L.circleMarker(
+                [37.78096, -122.44323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_b7cf5bd2db933007c2b152647d68925e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Anza Vista<br>Median Days on Market: 69.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ed3048ad90a2ee5a7147799f649cd1a = L.circleMarker(
+                [37.76252, -122.4491],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_0ed3048ad90a2ee5a7147799f649cd1a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_372836d00fdb983c0ce370a335a90e16 = L.circleMarker(
+                [37.73099, -122.4676],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_372836d00fdb983c0ce370a335a90e16.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Terrace<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5ee30758b6503c6fc3644a0f8efd39aa = L.circleMarker(
+                [37.73311, -122.38988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_5ee30758b6503c6fc3644a0f8efd39aa.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bayview<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3414bb90591cb2e97eb30a7bbf14ce0b = L.circleMarker(
+                [37.74111, -122.41469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_3414bb90591cb2e97eb30a7bbf14ce0b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bernal Heights<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9a83918ab63e3e8af0704391011c773 = L.circleMarker(
+                [37.72016, -122.39266],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_f9a83918ab63e3e8af0704391011c773.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bret Harte<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_989a14142ceee4967675e77ee98af9df = L.circleMarker(
+                [37.76789, -122.44158],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_989a14142ceee4967675e77ee98af9df.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Buena Vista<br>Median Days on Market: 27.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9216adad3e86237adcc1792313be6e99 = L.circleMarker(
+                [37.76184, -122.43378],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_9216adad3e86237adcc1792313be6e99.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Castro<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_644df36ef21d4adb8f6b82b9c10d6735 = L.circleMarker(
+                [37.78454, -122.42422],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_644df36ef21d4adb8f6b82b9c10d6735.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cathedral Hill<br>Median Days on Market: 99.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14257769824749929291e308369e2e12 = L.circleMarker(
+                [37.71962, -122.44309],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_14257769824749929291e308369e2e12.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cayuga<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8dc7527102d4bb739faef1190e5841df = L.circleMarker(
+                [37.75002, -122.38324],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_8dc7527102d4bb739faef1190e5841df.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central Waterfront<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_acd32e3d8f39e854a3118537330ad690 = L.circleMarker(
+                [37.79449, -122.40657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_acd32e3d8f39e854a3118537330ad690.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Chinatown<br>Median Days on Market: 96.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e0ae6671f0da0be6a949d8da98441b06 = L.circleMarker(
+                [37.77861, -122.41908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e0ae6671f0da0be6a949d8da98441b06.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Civic Center<br>Median Days on Market: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9d074f251b9b9756b735c45d618e5bb3 = L.circleMarker(
+                [37.75629, -122.44871],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_9d074f251b9b9756b735c45d618e5bb3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Clarendon Heights<br>Median Days on Market: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c69f2d63c29a4cfbb6a52a22abd20dcf = L.circleMarker(
+                [37.76669, -122.45049],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c69f2d63c29a4cfbb6a52a22abd20dcf.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cole Valley<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_68c9b37536c8fdd824dd26f5ce0b3a7f = L.circleMarker(
+                [37.76441, -122.43857],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_68c9b37536c8fdd824dd26f5ce0b3a7f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Corona Heights<br>Median Days on Market: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aaefc9bcd8b28e52fa3c46118d8712ad = L.circleMarker(
+                [37.79733, -122.44259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_aaefc9bcd8b28e52fa3c46118d8712ad.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cow Hollow<br>Median Days on Market: 28.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_448b27245d83f254cfc48dc817be97f5 = L.circleMarker(
+                [37.71138, -122.43622],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_448b27245d83f254cfc48dc817be97f5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Crocker Amazon<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2b6cdb77b15774e209890c3d1804d4e = L.circleMarker(
+                [37.74399, -122.44031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_a2b6cdb77b15774e209890c3d1804d4e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Diamond Heights<br>Median Days on Market: 47.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_88c490f8ff3a8aadf250500460d54f28 = L.circleMarker(
+                [37.7549, -122.42673],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_88c490f8ff3a8aadf250500460d54f28.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Dolores Heights<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad8e736ff35ca8bfaa377515bb5f8ac8 = L.circleMarker(
+                [37.76797, -122.43234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ad8e736ff35ca8bfaa377515bb5f8ac8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Triangle<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f29a2ff23707225dece144e91819601 = L.circleMarker(
+                [37.75824, -122.43912],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_6f29a2ff23707225dece144e91819601.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Eureka Valley<br>Median Days on Market: 40.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2e223147f6ed2a7fc2782464b5f91bb2 = L.circleMarker(
+                [37.72128, -122.43081],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_2e223147f6ed2a7fc2782464b5f91bb2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Excelsior<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c27b8e71eb34d4b1f5f575612e081be5 = L.circleMarker(
+                [37.73943, -122.42955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c27b8e71eb34d4b1f5f575612e081be5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fairmount<br>Median Days on Market: 32.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eea433d72c91d96d0276f8dcf4c78a45 = L.circleMarker(
+                [37.79262, -122.39733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_eea433d72c91d96d0276f8dcf4c78a45.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Financial District<br>Median Days on Market: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec4883e8e88d06608c39973e3a20669e = L.circleMarker(
+                [37.80783, -122.41326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ec4883e8e88d06608c39973e3a20669e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fishermans Wharf<br>Median Days on Market: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70e1bd6b015ef0a6d3eb5035cfdd71b7 = L.circleMarker(
+                [37.74793, -122.46372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_70e1bd6b015ef0a6d3eb5035cfdd71b7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Hill<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_983a12b6aa4f8149141383eae35f2aa8 = L.circleMarker(
+                [37.75489, -122.45979],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_983a12b6aa4f8149141383eae35f2aa8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Knolls<br>Median Days on Market: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c47204f3223ac60b2108c99fa4548d1 = L.circleMarker(
+                [37.73845, -122.4396],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_0c47204f3223ac60b2108c99fa4548d1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Glen Park<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f65c1500c155a9fe964a27eaf1f32c7 = L.circleMarker(
+                [37.75202, -122.47094],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_5f65c1500c155a9fe964a27eaf1f32c7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Golden Gate Heights<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5cebccd21bda6ba8308a20215478c24c = L.circleMarker(
+                [37.76988, -122.44829],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_5cebccd21bda6ba8308a20215478c24c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Haight Ashbury<br>Median Days on Market: 73.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_68c3d12fe390ea5bcd10390974ea778d = L.circleMarker(
+                [37.77646, -122.42693],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_68c3d12fe390ea5bcd10390974ea778d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hayes Valley<br>Median Days on Market: 31.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90d2d4d8ea82e54f4b6413e9d8b4eb2a = L.circleMarker(
+                [37.73713, -122.42075],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_90d2d4d8ea82e54f4b6413e9d8b4eb2a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Holly Park<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_58455374a004a1bd89124ce31740751e = L.circleMarker(
+                [37.72539, -122.37207],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_58455374a004a1bd89124ce31740751e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hunters Point<br>Median Days on Market: 129.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d081013f5a4cab9073631800d2e72fc = L.circleMarker(
+                [37.72069, -122.46141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_3d081013f5a4cab9073631800d2e72fc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dc61e05d5ea40f97b97e13d0ec2a2971 = L.circleMarker(
+                [37.72511, -122.46803],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_dc61e05d5ea40f97b97e13d0ec2a2971.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside Terraces<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14f3ebad0e84b393710854f1c09e9721 = L.circleMarker(
+                [37.77938, -122.4685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_14f3ebad0e84b393710854f1c09e9721.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Richmond<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7719cb219a7ed9211dc1501de60fb84 = L.circleMarker(
+                [37.76263, -122.46793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_b7719cb219a7ed9211dc1501de60fb84.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Sunset<br>Median Days on Market: 23.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_095ae50f86f28bd2facbeff34ad260e5 = L.circleMarker(
+                [37.78613, -122.43002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_095ae50f86f28bd2facbeff34ad260e5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Japantown<br>Median Days on Market: 94.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_806cd0b392bb1ed96b4762d6dfe146c8 = L.circleMarker(
+                [37.74565, -122.45798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_806cd0b392bb1ed96b4762d6dfe146c8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laguna Honda<br>Median Days on Market: 14.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d56ee805431b1cf62a28aec6f10967d = L.circleMarker(
+                [37.78551, -122.47962],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_3d56ee805431b1cf62a28aec6f10967d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lake Street<br>Median Days on Market: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0a11b19d3d39fa4888aa0c583d3f598 = L.circleMarker(
+                [37.72058, -122.49343],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_f0a11b19d3d39fa4888aa0c583d3f598.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bcef73e4251df750f383b06240778481 = L.circleMarker(
+                [37.71095, -122.39955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_bcef73e4251df750f383b06240778481.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Little Hollywood<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cdf6a8197758df584585dcdf56d935e8 = L.circleMarker(
+                [37.77812, -122.45288],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_cdf6a8197758df584585dcdf56d935e8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lone Mountain<br>Median Days on Market: 61.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7b15c9bc4023f1641ab0af7ac85bed67 = L.circleMarker(
+                [37.77299, -122.43078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_7b15c9bc4023f1641ab0af7ac85bed67.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Haight<br>Median Days on Market: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_959cb08d3d07bd6d2fca69dffdecbce2 = L.circleMarker(
+                [37.78828, -122.416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_959cb08d3d07bd6d2fca69dffdecbce2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Nob Hill<br>Median Days on Market: 79.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc8ece38a62b933a29104ece40d504e0 = L.circleMarker(
+                [37.78574, -122.43992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_fc8ece38a62b933a29104ece40d504e0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Pacific Heights<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_77b89bd0b6ed8c0970ae67cd7a07318d = L.circleMarker(
+                [37.73277, -122.48004],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_77b89bd0b6ed8c0970ae67cd7a07318d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Merced Manor<br>Median Days on Market: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_224a5de80c402b485d61c5a25e02e7ce = L.circleMarker(
+                [37.7503, -122.4504],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_224a5de80c402b485d61c5a25e02e7ce.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Midtown Terrace<br>Median Days on Market: 52.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2c5e4d870bc19889fad2b7c79db6559 = L.circleMarker(
+                [37.77114, -122.42592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_f2c5e4d870bc19889fad2b7c79db6559.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mint Hill<br>Median Days on Market: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7be8e3ffe0e9a5ca788dba41f2a502dd = L.circleMarker(
+                [37.7389, -122.44905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_7be8e3ffe0e9a5ca788dba41f2a502dd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Miraloma Park<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9cfa7d428dba2d2138cd861c8e4689ca = L.circleMarker(
+                [37.77113, -122.39146],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_9cfa7d428dba2d2138cd861c8e4689ca.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Bay<br>Median Days on Market: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_96b51b296584cd0d2f8a42f8a861d005 = L.circleMarker(
+                [37.76382, -122.42574],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_96b51b296584cd0d2f8a42f8a861d005.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Dolores<br>Median Days on Market: 24.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_75b139940ac6c4e2bb0e7467f843e262 = L.circleMarker(
+                [37.72806, -122.43515],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_75b139940ac6c4e2bb0e7467f843e262.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Terrace<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3f22aa43f96f0ea6b6ec7fc2ef1aa88 = L.circleMarker(
+                [37.73306, -122.46165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c3f22aa43f96f0ea6b6ec7fc2ef1aa88.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Monterey Heights<br>Median Days on Market: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_84a4c1cb9ab3946d2ec39b4901a07166 = L.circleMarker(
+                [37.79312, -122.41394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_84a4c1cb9ab3946d2ec39b4901a07166.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Nob Hill<br>Median Days on Market: 72.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c6584f5243d8620f9a666fde5edbd214 = L.circleMarker(
+                [37.74778, -122.43125],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c6584f5243d8620f9a666fde5edbd214.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Noe Valley<br>Median Days on Market: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ddf21497e5cca7949df9d1d12e0ea226 = L.circleMarker(
+                [37.8009, -122.40855],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ddf21497e5cca7949df9d1d12e0ea226.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - North Beach<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a49d283d50ef814106cb0155ea37f9d = L.circleMarker(
+                [37.80143, -122.40019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_8a49d283d50ef814106cb0155ea37f9d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northern Waterfront<br>Median Days on Market: 46.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df99c0850e90e2c3c34bcdeb05fa764b = L.circleMarker(
+                [37.7159, -122.45559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_df99c0850e90e2c3c34bcdeb05fa764b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Oceanview<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6187c578c90a89bfc277468a52523591 = L.circleMarker(
+                [37.71137, -122.45392],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_6187c578c90a89bfc277468a52523591.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Mission<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6245b3f0c000490432b216ea9f0b6516 = L.circleMarker(
+                [37.7771, -122.49233],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_6245b3f0c000490432b216ea9f0b6516.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Richmond<br>Median Days on Market: 22.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b4ffacfa44d105194ada6437f8e7ff9 = L.circleMarker(
+                [37.75378, -122.49547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_0b4ffacfa44d105194ada6437f8e7ff9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Sunset<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c859beee40ddd00a7c283378c2943f66 = L.circleMarker(
+                [37.79232, -122.4342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c859beee40ddd00a7c283378c2943f66.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Pacific Heights<br>Median Days on Market: 43.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca330cdbf79d8916a7a8daffe19ca719 = L.circleMarker(
+                [37.77392, -122.44547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ca330cdbf79d8916a7a8daffe19ca719.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Panhandle<br>Median Days on Market: 15.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e280ff71c44f5175e0136c2596294f7f = L.circleMarker(
+                [37.71962, -122.47942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e280ff71c44f5175e0136c2596294f7f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkmerced<br>Median Days on Market: 30.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e42fbd7012244b30ed63dd9dfc19b55d = L.circleMarker(
+                [37.74051, -122.48737],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e42fbd7012244b30ed63dd9dfc19b55d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkside<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d63716e92bce24ee2f911fc48dc6646 = L.circleMarker(
+                [37.76097, -122.45631],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_1d63716e92bce24ee2f911fc48dc6646.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parnassus Heights<br>Median Days on Market: 29.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c398e39c1f7e8bbafb6fc09b2f1a51a8 = L.circleMarker(
+                [37.74622, -122.40742],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c398e39c1f7e8bbafb6fc09b2f1a51a8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Peralta Heights<br>Median Days on Market: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_16098a043ed8727cf6ffa2d15beefc88 = L.circleMarker(
+                [37.79419, -122.42141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_16098a043ed8727cf6ffa2d15beefc88.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Polk Gulch<br>Median Days on Market: 49.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_31416ac0d5b0b15bf27bde30b56fc44f = L.circleMarker(
+                [37.72599, -122.4073],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_31416ac0d5b0b15bf27bde30b56fc44f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Portola<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fbc043f010eaaa7129d226585972cab5 = L.circleMarker(
+                [37.75783, -122.39954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_fbc043f010eaaa7129d226585972cab5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Potrero Hill<br>Median Days on Market: 22.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6395ee231621e618ba474c514d1c1f83 = L.circleMarker(
+                [37.78873, -122.45234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_6395ee231621e618ba474c514d1c1f83.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Heights<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c427ea9ab2ec86851e7675663aefae7 = L.circleMarker(
+                [37.79742, -122.46643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_3c427ea9ab2ec86851e7675663aefae7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio National Park<br>Median Days on Market: 74.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3df731c0aac3733b10fc03e516181c65 = L.circleMarker(
+                [37.78701, -122.46425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_3df731c0aac3733b10fc03e516181c65.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Terrace<br>Median Days on Market: 30.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de487700d2b2e5580655da6d4988a9e0 = L.circleMarker(
+                [37.78733, -122.39115],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_de487700d2b2e5580655da6d4988a9e0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Rincon Hill<br>Median Days on Market: 51.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c4f10060bd4234b5c997a4d60602032 = L.circleMarker(
+                [37.8004, -122.41759],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_3c4f10060bd4234b5c997a4d60602032.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Russian Hill<br>Median Days on Market: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac9963aa48942663b0ac3f6814e837b7 = L.circleMarker(
+                [37.7868, -122.48885],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ac9963aa48942663b0ac3f6814e837b7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Seacliff<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_95cf709558e63a2bdef1b3c65e44936d = L.circleMarker(
+                [37.73743, -122.45687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_95cf709558e63a2bdef1b3c65e44936d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sherwood Forest<br>Median Days on Market: 20.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55611195d2f0999164a8db49140187d9 = L.circleMarker(
+                [37.7692, -122.40338],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_55611195d2f0999164a8db49140187d9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Showplace Square<br>Median Days on Market: 147.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4383f19f8ad82f9441aaeaee9c69b76 = L.circleMarker(
+                [37.73383, -122.39833],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_d4383f19f8ad82f9441aaeaee9c69b76.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Silver Terrace<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9daf32fba6a1049b0ccbd95e86cb286 = L.circleMarker(
+                [37.78167, -122.38929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e9daf32fba6a1049b0ccbd95e86cb286.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Beach<br>Median Days on Market: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bf13fdeb38d409d06ad71e4b79e1cab3 = L.circleMarker(
+                [37.77845, -122.40608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_bf13fdeb38d409d06ad71e4b79e1cab3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South of Market<br>Median Days on Market: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55041b5d61639710be073468e902122c = L.circleMarker(
+                [37.73627, -122.46606],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_55041b5d61639710be073468e902122c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Francis Wood<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec3e2c42bdfb4a86be53fc50657a98c7 = L.circleMarker(
+                [37.73352, -122.4257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ec3e2c42bdfb4a86be53fc50657a98c7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Marys Park<br>Median Days on Market: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac19f8b242396bb57f880f691197b963 = L.circleMarker(
+                [37.71097, -122.42009],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_ac19f8b242396bb57f880f691197b963.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnydale<br>Median Days on Market: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b83f416507a368dc77f3b9491e175ebb = L.circleMarker(
+                [37.73002, -122.4465],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_b83f416507a368dc77f3b9491e175ebb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnyside<br>Median Days on Market: 33.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_50da079e202b341585b9c63b0d43e804 = L.circleMarker(
+                [37.77798, -122.50793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_50da079e202b341585b9c63b0d43e804.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sutro Heights<br>Median Days on Market: 26.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2bafad271d3b54d57f66460a8a8c36ff = L.circleMarker(
+                [37.80233, -122.40547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_2bafad271d3b54d57f66460a8a8c36ff.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Telegraph Hill<br>Median Days on Market: 50.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1fa6f6133f77e187ed2cd27c88bf47ef = L.circleMarker(
+                [37.78409, -122.41482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_1fa6f6133f77e187ed2cd27c88bf47ef.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Tenderloin<br>Median Days on Market: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e6f3b35ff85705b9fb5aa9b38ade5a8d = L.circleMarker(
+                [37.79863, -122.43074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e6f3b35ff85705b9fb5aa9b38ade5a8d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Union Street<br>Median Days on Market: 53.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_144c186d467f570d85bca0ae0728a159 = L.circleMarker(
+                [37.72693, -122.41809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_144c186d467f570d85bca0ae0728a159.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - University Mound<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a63515a17583a001dcdb0a602b01862d = L.circleMarker(
+                [37.75135, -122.44304],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_a63515a17583a001dcdb0a602b01862d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Upper Market<br>Median Days on Market: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4351c8191af059cc3bd784ae4b09b5e8 = L.circleMarker(
+                [37.71346, -122.40848],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_4351c8191af059cc3bd784ae4b09b5e8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Visitacion Valley<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1dd4954faf4f76a3100c4d36a69c3e25 = L.circleMarker(
+                [37.73977, -122.47066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_1dd4954faf4f76a3100c4d36a69c3e25.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_13090e1c8743e45fbb17d24614fd0213 = L.circleMarker(
+                [37.78006, -122.43494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_13090e1c8743e45fbb17d24614fd0213.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western Addition<br>Median Days on Market: 42.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e1c533897bb3c994ae6211515c787c2c = L.circleMarker(
+                [37.73275, -122.45655],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e1c533897bb3c994ae6211515c787c2c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Highlands<br>Median Days on Market: 90.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_815028c645733361d6f2f21c65d0eebd = L.circleMarker(
+                [37.72746, -122.45637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_815028c645733361d6f2f21c65d0eebd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Park<br>Median Days on Market: 14.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b6176a9bf46b4dcc35da8e2ab8ffb464 = L.circleMarker(
+                [37.81095, -122.36588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_b6176a9bf46b4dcc35da8e2ab8ffb464.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena Island<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6fc7ae82ad68b8816f7ad7be2777c2b0 = L.circleMarker(
+                [37.7770771, -122.4365807],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_6fc7ae82ad68b8816f7ad7be2777c2b0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square Historic District<br>Median Days on Market: 39.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d67745d529514d2db4eee4f38326122 = L.circleMarker(
+                [37.8048637, -122.42566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_2d67745d529514d2db4eee4f38326122.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Aquatic Park-Fort Mason<br>Median Days on Market: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5129d79d2b4c3333bb079a93be5a795e = L.circleMarker(
+                [37.7646865, -122.4512005],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_5129d79d2b4c3333bb079a93be5a795e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights / Parnassus<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14e0dcf7d0168b8772a3ee90914d7f09 = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_14e0dcf7d0168b8772a3ee90914d7f09.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Baja Noe / Mission Deluxe<br>Median Days on Market: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f2f4a9b42b4d556d393ab9348e11fd1 = L.circleMarker(
+                [37.7782864, -122.4653775],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_8f2f4a9b42b4d556d393ab9348e11fd1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Hollow<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c73260e7d51ba4564c031a384b477aba = L.circleMarker(
+                [37.7127107, -122.3815252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_c73260e7d51ba4564c031a384b477aba.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Candlestick Point State Recreation Area<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_42b31fe8a3c9cc6f15b227f4b290a0ed = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_42b31fe8a3c9cc6f15b227f4b290a0ed.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central South of Market<br>Median Days on Market: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7f6b2ae24bae9b49c6b3af31f49dacb7 = L.circleMarker(
+                [37.7690189, -122.4019298],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_7f6b2ae24bae9b49c6b3af31f49dacb7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Design District<br>Median Days on Market: 63.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eff54849571b1839db459bb4ead2a5ad = L.circleMarker(
+                [37.7936658, -122.3964729],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_eff54849571b1839db459bb4ead2a5ad.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Downtown San Francisco-Union Square<br>Median Days on Market: 712.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dd730aa750e56afb9202d0eb4b14c41f = L.circleMarker(
+                [37.76955100000001, -122.433214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_dd730aa750e56afb9202d0eb4b14c41f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Park<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2b497bbf3194c90f4418eee7194edf6 = L.circleMarker(
+                [37.7861923, -122.4400385],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_a2b497bbf3194c90f4418eee7194edf6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fillmore District<br>Median Days on Market: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8dfa353d149611da9419a35e803e2bb = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_f8dfa353d149611da9419a35e803e2bb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Intermission<br>Median Days on Market: 51.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_425ae7d46d460f839fbbf6b0ccac1fb0 = L.circleMarker(
+                [37.7296178, -122.4935865],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_425ae7d46d460f839fbbf6b0ccac1fb0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore Acres<br>Median Days on Market: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b36eefff464b66ee64edd70810991fb2 = L.circleMarker(
+                [37.783278, -122.4566316],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_b36eefff464b66ee64edd70810991fb2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laurel Heights-Jordan Park<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aeebfd8cc133f33360e07ad1de39cf51 = L.circleMarker(
+                [37.8043849, -122.4370011],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_aeebfd8cc133f33360e07ad1de39cf51.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina District<br>Median Days on Market: 28.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f7f02123f951092d702f5a931304599 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_5f7f02123f951092d702f5a931304599.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina Gardens<br>Median Days on Market: 24.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30f597f031f05f7bdc4adef5a8794e3b = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_30f597f031f05f7bdc4adef5a8794e3b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission District<br>Median Days on Market: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55fac684f07781d3dd4db48ab8ab6632 = L.circleMarker(
+                [37.7282679, -122.4640937],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_55fac684f07781d3dd4db48ab8ab6632.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mount Davidson Manor<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_142b180c11f77a83312e511faa1a17eb = L.circleMarker(
+                [37.7929158, -122.4046905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_142b180c11f77a83312e511faa1a17eb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northeast San Francisco<br>Median Days on Market: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_173b4cd9c7bf28aecf8c399a3bb7976d = L.circleMarker(
+                [37.7897312, -122.401906],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_173b4cd9c7bf28aecf8c399a3bb7976d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northwest San Francisco<br>Median Days on Market: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_754ecd05ce40468dc1b1e7c6db0866da = L.circleMarker(
+                [37.7815501, -122.3940353],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_754ecd05ce40468dc1b1e7c6db0866da.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Park<br>Median Days on Market: 85.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7a0a566102e6c7130e763abfc76469b = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_d7a0a566102e6c7130e763abfc76469b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southeast San Francisco<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e4861b74de517a15957689a29071ea92 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_e4861b74de517a15957689a29071ea92.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southwest San Francisco<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_079df51c94485b1a0beff996ec8b15f8 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_079df51c94485b1a0beff996ec8b15f8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Transmission<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07ab32ce3c2b6de15cf7e5e1a3cf4150 = L.circleMarker(
+                [37.7395735, -122.470007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_07ab32ce3c2b6de15cf7e5e1a3cf4150.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal Park<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_078378a33e5e64163c18d376010e7d68 = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_078378a33e5e64163c18d376010e7d68.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western South of Market<br>Median Days on Market: 70.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_faa6279803c7749304aa085ae4671d3f = L.circleMarker(
+                [37.7850045, -122.4004816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2da59ea1062a98b1a09c19a84d8f1a0a);
+        
+    
+            circle_marker_faa6279803c7749304aa085ae4671d3f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena<br>Median Days on Market: 94.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_40e5aa691094680d1c547b759d391954 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var tile_layer_b3750b7073eff54c707b80bc1d256d22 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var tile_layer_a2b3008d85200a587b2639276bc258da = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var tile_layer_d3917e11d9d1ec19c32b23e0980f5d5e = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var tile_layer_0780cd48e744ca555943dca666f38a10 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var tile_layer_3072eefaf278d943873af2cc05c59c28 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+        
+    
+            var layer_control_9037ad6d16667ce0269eb6501ff9b387 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_a2b3008d85200a587b2639276bc258da,
+                    "stamenwatercolor" : tile_layer_40e5aa691094680d1c547b759d391954,
+                    "openstreetmap" : tile_layer_b3750b7073eff54c707b80bc1d256d22,
+                    "stamentoner" : tile_layer_d3917e11d9d1ec19c32b23e0980f5d5e,
+                    "cartodbpositron" : tile_layer_0780cd48e744ca555943dca666f38a10,
+                    "cartodbdark_matter" : tile_layer_3072eefaf278d943873af2cc05c59c28,
+                },
+                overlays :  {
+                    "San Francisco - median_dom" : heat_map_015028594fb10a30e496ee534ae53884,
+                    "Median Days on Market Centers" : feature_group_2da59ea1062a98b1a09c19a84d8f1a0a,
+                },
+            };
+            L.control.layers(
+                layer_control_9037ad6d16667ce0269eb6501ff9b387.base_layers,
+                layer_control_9037ad6d16667ce0269eb6501ff9b387.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_2a4f583aa9c37788392f373ffbe0fee9);
+            tile_layer_40e5aa691094680d1c547b759d391954.remove();
+            tile_layer_b3750b7073eff54c707b80bc1d256d22.remove();
+            tile_layer_a2b3008d85200a587b2639276bc258da.remove();
+            tile_layer_d3917e11d9d1ec19c32b23e0980f5d5e.remove();
+            tile_layer_0780cd48e744ca555943dca666f38a10.remove();
+            tile_layer_3072eefaf278d943873af2cc05c59c28.remove();
+        
+</script>
+</html>

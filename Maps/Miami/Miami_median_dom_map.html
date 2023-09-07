@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8b400aa55f2a59edf2f08a00d5de6ff6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8b400aa55f2a59edf2f08a00d5de6ff6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8b400aa55f2a59edf2f08a00d5de6ff6 = L.map(
+                "map_8b400aa55f2a59edf2f08a00d5de6ff6",
+                {
+                    center: [25.796790844604317, -80.23145239640287],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_085ca8eb64b4b61603b7a4b382a865b9 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var heat_map_96414f8a44e9877212a862f8535e3eec = L.heatLayer(
+                [[25.84839, -80.19495, 88.0], [25.81454, -80.22394, 46.0], [25.77199, -80.24727, 57.0], [25.7759, -80.18639, 70.0], [25.83967, -80.1809, 107.5], [25.84205, -80.18652, 124.0], [25.73378, -80.242, 48.0], [25.73337, -80.24954, 63.0], [25.76258, -80.19064, 95.0], [25.76715, -80.18475, 100.0], [25.7655, -80.19351, 93.0], [25.81315, -80.19171, 96.5], [25.81645, -80.19762, 64.0], [25.81659, -80.20289, 105.0], [25.77254, -80.23093, 73.5], [25.79048, -80.21478, 107.0], [25.75362, -80.25068, 39.0], [25.78298, -80.20406, 75.0], [25.74162, -80.22428, 134.0], [25.83039, -80.20123, 40.0], [25.73762, -80.22326, 125.0], [25.77039, -80.28443, 42.0], [25.82008, -80.22644, 49.0], [25.73051, -80.23625, 62.0], [25.7856, -80.21077, 127.0], [25.83018, -80.21566, 39.0], [25.76102, -80.25099, 29.0], [25.76952, -80.21861, 66.5], [25.78268, -80.27284, 33.0], [25.83503, -80.18228, 73.5], [25.83558, -80.22118, 49.0], [25.7755, -80.20532, 158.5], [25.8476, -80.19255, 89.0], [25.84425, -80.19907, 104.5], [25.85149, -80.19498, 95.0], [25.81264, -80.18783, 106.0], [25.80476, -80.23186, 37.0], [25.82645, -80.18307, 70.5], [25.78949, -80.24758, 54.0], [25.7378, -80.234, 47.5], [25.7862, -80.23165, 20.5], [25.79189, -80.19768, 22.0], [25.83742, -80.2107, 43.5], [25.85167, -80.19086, 95.0], [25.77667, -80.21879, 80.0], [25.82651, -80.21557, 60.0], [25.83281, -80.18627, 257.0], [25.76133, -80.24281, 45.0], [25.75393, -80.24255, 68.0], [25.77067, -80.19535, 124.0], [25.80558, -80.21481, 60.0], [25.75954, -80.22227, 73.0], [25.85174, -80.17847, 115.0], [25.74654, -80.23089, 61.0], [25.7821, -80.24816, 27.0], [25.718, -80.2559, 67.0], [25.7185, -80.24751, 474.0], [25.78159, -80.22701, 30.5], [25.78207, -80.21007, 80.0], [25.76515, -80.19789, 77.0], [25.78607, -80.26007, 60.0], [25.72769, -80.2516, 77.0], [25.7616798, -80.1917902, 139.0], [25.8003154, -80.22655449999999, 39.0], [25.7616798, -80.1917902, 17.0], [25.8188645, -80.1884953, 169.0], [25.7616798, -80.1917902, 107.0], [25.7616798, -80.1917902, 9.5], [25.7601793, -80.1958755, 105.0], [25.7616798, -80.1917902, 149.0], [25.7616798, -80.1917902, 89.0], [25.8131533, -80.19171419999999, 160.0], [28.0783497, -82.5698192, 217.0], [25.7506988, -80.2302218, 58.0], [25.7616798, -80.1917902, 66.0], [25.7712513, -80.1918728, 99.0], [25.7595441, -80.22227099999999, 71.0], [25.7616798, -80.1917902, 62.5], [25.7837044, -80.23228209999999, 7.0], [25.7742525, -80.1903736, 14.0], [25.7679293, -80.2565256, 20.0], [25.7616798, -80.1917902, 50.0], [25.7902153, -80.25379459999999, 54.0], [25.7873369, -80.2570447, 241.0], [25.7616798, -80.1917902, 90.5], [25.7616798, -80.1917902, 54.0], [25.7616798, -80.1917902, 62.0], [25.7616798, -80.1917902, 81.0], [25.8326937, -80.19620859999999, 70.0], [25.7776438, -80.2377078, 67.0], [25.7616798, -80.1917902, 111.0], [25.7601793, -80.1958755, 63.0], [25.7616798, -80.1917902, 68.0], [25.7616798, -80.1917902, 97.0], [25.8014685, -80.1990903, 108.0], [25.81494, -80.3016684, 34.0], [25.8353224, -80.18380379999999, 92.0], [25.7616798, -80.1917902, 77.0], [25.7743658, -80.1928475, 44.0], [25.7616798, -80.1917902, 53.0], [25.8068701, -80.1954844, 84.0], [25.7616798, -80.1917902, 134.0], [25.7616798, -80.1917902, 74.0], [25.8229832, -80.2153998, 48.5], [25.7616798, -80.1917902, 62.0], [25.7595441, -80.22227099999999, 45.0], [25.7369455, -80.2304625, 62.5], [25.7616798, -80.1917902, 75.0], [25.7839802, -80.2014543, 77.5], [25.8068939, -80.1862582, 205.5], [25.782503, -80.19062, 126.0], [25.7616798, -80.1917902, 72.0], [25.7905949, -80.1754446, 75.0], [25.7704036, -80.20730569999999, 14.0], [25.7724662, -80.2146727, 47.0], [25.787113, -80.2313082, 87.0], [25.7616798, -80.1917902, 71.0], [25.7595441, -80.22227099999999, 58.0], [25.748899, -80.23609019999999, 71.0], [25.7616798, -80.1917902, 47.0], [25.7398226, -80.24199399999999, 95.0], [25.7599774, -80.19702099999999, 14.0], [25.720274, -80.2532061, 70.5], [25.7587114, -80.398387, 331.0], [25.7646861, -80.2552715, 83.0], [25.7587114, -80.398387, 33.0], [25.7616798, -80.1917902, 15.0], [25.7904532, -80.20249299999999, 77.5], [25.7616798, -80.1917902, 26.0], [25.830499, -80.18037079999999, 107.0], [25.7616798, -80.1917902, 99.0], [25.7616798, -80.1917902, 120.5], [25.7616798, -80.1917902, 28.0], [25.7720352, -80.250733, 51.5], [25.7616798, -80.1917902, 16.0], [25.7560648, -80.29567109999999, 44.0], [25.7740153, -80.1938844, 121.0], [25.8042441, -80.1989186, 84.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var feature_group_8e6f234659e62e6303e12db1fa30953f = L.featureGroup(
+                {}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var circle_marker_f1db09d781775e6f2d639a5d54e88e41 = L.circleMarker(
+                [25.84839, -80.19495],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f1db09d781775e6f2d639a5d54e88e41.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - 79th Street<br>Median Days on Market: 88.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f2f7ec07db8b3dfad14223d6568746d = L.circleMarker(
+                [25.81454, -80.22394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2f2f7ec07db8b3dfad14223d6568746d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah<br>Median Days on Market: 46.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39f0fd1a3fc4262dd69b55b253aeeaf1 = L.circleMarker(
+                [25.79661, -80.22252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_39f0fd1a3fc4262dd69b55b253aeeaf1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Industrial District<br>Median Days on Market: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7bdaceadf1552787ee69f7beb5066481 = L.circleMarker(
+                [25.77199, -80.24727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_7bdaceadf1552787ee69f7beb5066481.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburndale<br>Median Days on Market: 57.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38d1ad23171a34bae36e414151f94fed = L.circleMarker(
+                [25.7759, -80.18639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_38d1ad23171a34bae36e414151f94fed.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayfront<br>Median Days on Market: 70.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec32db45b2f63944bb17ed27c9e56ace = L.circleMarker(
+                [25.83967, -80.1809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ec32db45b2f63944bb17ed27c9e56ace.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayside<br>Median Days on Market: 107.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea5ce706d1d2af568c84c633780489b7 = L.circleMarker(
+                [25.84205, -80.18652],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ea5ce706d1d2af568c84c633780489b7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Belle Meade West<br>Median Days on Market: 124.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e69050884e9e2bd7ce3c4107aa7d5b8 = L.circleMarker(
+                [25.73378, -80.242],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_8e69050884e9e2bd7ce3c4107aa7d5b8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove East<br>Median Days on Market: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0133f127e28e7eae259b60da7a24b67 = L.circleMarker(
+                [25.73337, -80.24954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f0133f127e28e7eae259b60da7a24b67.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove West<br>Median Days on Market: 63.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7f34ee06ab981989f2c1ee77bbef7cbf = L.circleMarker(
+                [25.76258, -80.19064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_7f34ee06ab981989f2c1ee77bbef7cbf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Business District<br>Median Days on Market: 95.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0df2b679e607175c01ef637f1d3b8fcc = L.circleMarker(
+                [25.76715, -80.18475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_0df2b679e607175c01ef637f1d3b8fcc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Key<br>Median Days on Market: 100.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d720d6698249d00dd8828c5576cb3b9 = L.circleMarker(
+                [25.7655, -80.19351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2d720d6698249d00dd8828c5576cb3b9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Village<br>Median Days on Market: 93.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4460bb8022c16c9aaf6ae28417d7c9a9 = L.circleMarker(
+                [25.81315, -80.19171],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_4460bb8022c16c9aaf6ae28417d7c9a9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista<br>Median Days on Market: 96.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c335121034035cec1dab156891172242 = L.circleMarker(
+                [25.81645, -80.19762],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c335121034035cec1dab156891172242.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista Heights<br>Median Days on Market: 64.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2b915a3313db8dd14fc640df44751ea5 = L.circleMarker(
+                [25.81659, -80.20289],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2b915a3313db8dd14fc640df44751ea5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista West<br>Median Days on Market: 105.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0f03ac6a7489203e5f30c5e499105f0c = L.circleMarker(
+                [25.77254, -80.23093],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_0f03ac6a7489203e5f30c5e499105f0c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Grove<br>Median Days on Market: 73.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b714d82049b0e3693d67031dac3679de = L.circleMarker(
+                [25.79048, -80.21478],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_b714d82049b0e3693d67031dac3679de.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Civic Center<br>Median Days on Market: 107.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_02d40767e71ee90287134f66159c8475 = L.circleMarker(
+                [25.75362, -80.25068],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_02d40767e71ee90287134f66159c8475.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Gate<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_81d54b32d54b95b1bbf1e1bc7128b085 = L.circleMarker(
+                [25.78298, -80.20406],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_81d54b32d54b95b1bbf1e1bc7128b085.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Culmer<br>Median Days on Market: 75.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_12ec4fa852b2f052d9fe70a68434eb8c = L.circleMarker(
+                [25.74162, -80.22428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_12ec4fa852b2f052d9fe70a68434eb8c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Grove<br>Median Days on Market: 134.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e90b64b8ce85a052fedb5c564ce595b = L.circleMarker(
+                [25.83039, -80.20123],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_8e90b64b8ce85a052fedb5c564ce595b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Edison<br>Median Days on Market: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3a6d186964f1f3538daff8aedd66dda = L.circleMarker(
+                [25.73762, -80.22326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a3a6d186964f1f3538daff8aedd66dda.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fair Isle<br>Median Days on Market: 125.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_66fdb3234cb77ff97b3524e61fae0236 = L.circleMarker(
+                [25.77039, -80.28443],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_66fdb3234cb77ff97b3524e61fae0236.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagami<br>Median Days on Market: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d6ad848a1d491238c432edbaf80ea10 = L.circleMarker(
+                [25.82008, -80.22644],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_6d6ad848a1d491238c432edbaf80ea10.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flora Park<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc21e8c29488e523c4413a6c718b6e9c = L.circleMarker(
+                [25.73051, -80.23625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_fc21e8c29488e523c4413a6c718b6e9c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grove Center<br>Median Days on Market: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87bc2c799b029f5179aa1edeb0b56ff2 = L.circleMarker(
+                [25.7856, -80.21077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_87bc2c799b029f5179aa1edeb0b56ff2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Highland Park<br>Median Days on Market: 127.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfe142c4cde3b6dd493190b71e8f846a = L.circleMarker(
+                [25.83018, -80.21566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_cfe142c4cde3b6dd493190b71e8f846a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - King Heights<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70aeb0db82c4e5fde3a19c7452bea55c = L.circleMarker(
+                [25.76102, -80.25099],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_70aeb0db82c4e5fde3a19c7452bea55c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - La Pastorita<br>Median Days on Market: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eaf822753e4101fd9f4c75842640ae06 = L.circleMarker(
+                [25.76952, -80.21861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_eaf822753e4101fd9f4c75842640ae06.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Latin Quarter<br>Median Days on Market: 66.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2cdb2a19047b9a9e288f8df4deb12f9 = L.circleMarker(
+                [25.78268, -80.27284],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a2cdb2a19047b9a9e288f8df4deb12f9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Le Jeune Gardens<br>Median Days on Market: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_97825aca0fb3a914b7170421ca043615 = L.circleMarker(
+                [25.83503, -80.18228],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_97825aca0fb3a914b7170421ca043615.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Legion Park<br>Median Days on Market: 73.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_75bfb2fe4b6959067df9629fb696e038 = L.circleMarker(
+                [25.83558, -80.22118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_75bfb2fe4b6959067df9629fb696e038.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Liberty Square<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3540266acc9eb495c0d31fb600de8b69 = L.circleMarker(
+                [25.7755, -80.20532],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_3540266acc9eb495c0d31fb600de8b69.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Managua<br>Median Days on Market: 158.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18bd5ee1ab36f6e2b8f647285d1f863a = L.circleMarker(
+                [25.8476, -80.19255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_18bd5ee1ab36f6e2b8f647285d1f863a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River<br>Median Days on Market: 89.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39349e876eafe928d45707d61bca2972 = L.circleMarker(
+                [25.84425, -80.19907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_39349e876eafe928d45707d61bca2972.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Central<br>Median Days on Market: 104.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fcbf486492dc172f9738208bd141f890 = L.circleMarker(
+                [25.85149, -80.19498],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_fcbf486492dc172f9738208bd141f890.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Gardens<br>Median Days on Market: 95.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff7fb928ac2df621e2aa6a87148573f7 = L.circleMarker(
+                [25.81264, -80.18783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ff7fb928ac2df621e2aa6a87148573f7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Magnolia Park<br>Median Days on Market: 106.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17e9a25877d4fdaef9ad685bf13b5ecb = L.circleMarker(
+                [25.80476, -80.23186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_17e9a25877d4fdaef9ad685bf13b5ecb.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose<br>Median Days on Market: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c01da497de08b7fd2025841ff2a5e6d = L.circleMarker(
+                [25.82645, -80.18307],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_8c01da497de08b7fd2025841ff2a5e6d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Morningside<br>Median Days on Market: 70.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9da5034535153284d14b1333d3886c4e = L.circleMarker(
+                [25.78949, -80.24758],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9da5034535153284d14b1333d3886c4e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grapeland Heights<br>Median Days on Market: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8fdbcc0ec1877d6275456add9ba6ea72 = L.circleMarker(
+                [25.7378, -80.234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_8fdbcc0ec1877d6275456add9ba6ea72.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grove<br>Median Days on Market: 47.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3ecd937956ad4192b7007db425a6a9f = L.circleMarker(
+                [25.7862, -80.23165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a3ecd937956ad4192b7007db425a6a9f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Sewell Park<br>Median Days on Market: 20.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a30521602eab314ee85611dbccd908f = L.circleMarker(
+                [25.79189, -80.19768],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9a30521602eab314ee85611dbccd908f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Overtown<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ce91ad2469f6a471895957f2bb2275cf = L.circleMarker(
+                [25.83742, -80.2107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ce91ad2469f6a471895957f2bb2275cf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northwestern Estates<br>Median Days on Market: 43.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_774e48430565027f147d73f1d53e5944 = L.circleMarker(
+                [25.85167, -80.19086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_774e48430565027f147d73f1d53e5944.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Oakland Grove<br>Median Days on Market: 95.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ecf43fb3e23e452f0b863e9ec575e8fa = L.circleMarker(
+                [25.77667, -80.21879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ecf43fb3e23e452f0b863e9ec575e8fa.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orange Bowl<br>Median Days on Market: 80.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3b0a7f6eb400469f80d41136e60724e = L.circleMarker(
+                [25.82651, -80.21557],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c3b0a7f6eb400469f80d41136e60724e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orchard Villa<br>Median Days on Market: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_62c2cc84f91423390349b2fd622d8d2a = L.circleMarker(
+                [25.83281, -80.18627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_62c2cc84f91423390349b2fd622d8d2a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Palm Grove<br>Median Days on Market: 257.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2c8630dcb8489d7ac54e982226bd2c1 = L.circleMarker(
+                [25.76133, -80.24281],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f2c8630dcb8489d7ac54e982226bd2c1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale North<br>Median Days on Market: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2ad2cef290b542a24d768ab394ce596f = L.circleMarker(
+                [25.75393, -80.24255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2ad2cef290b542a24d768ab394ce596f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale South<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4694b03587c7a5d6e7cb32df577dc462 = L.circleMarker(
+                [25.77067, -80.19535],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_4694b03587c7a5d6e7cb32df577dc462.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverfront<br>Median Days on Market: 124.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e501c17fba0f86db3de4b7743d7b6a2c = L.circleMarker(
+                [25.80558, -80.21481],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_e501c17fba0f86db3de4b7743d7b6a2c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Santa Clara<br>Median Days on Market: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7af662ef5f0b2b9ff29f2fc2e926cd46 = L.circleMarker(
+                [25.75954, -80.22227],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_7af662ef5f0b2b9ff29f2fc2e926cd46.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah<br>Median Days on Market: 73.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_63a141ea146b3777208983f6e78e373f = L.circleMarker(
+                [25.85174, -80.17847],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_63a141ea146b3777208983f6e78e373f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shorecrest<br>Median Days on Market: 115.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14773e97597982e42b5511a3c5e74ab3 = L.circleMarker(
+                [25.74654, -80.23089],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_14773e97597982e42b5511a3c5e74ab3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff<br>Median Days on Market: 61.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9ef58d909a506746757c46c26349af33 = L.circleMarker(
+                [25.7821, -80.24816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9ef58d909a506746757c46c26349af33.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grapeland Heights<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_839bca1a9f8dd47595d86098cee6a349 = L.circleMarker(
+                [25.718, -80.2559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_839bca1a9f8dd47595d86098cee6a349.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove<br>Median Days on Market: 67.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de9bc8e5f4e2c203acd54dd5a402738c = L.circleMarker(
+                [25.7185, -80.24751],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_de9bc8e5f4e2c203acd54dd5a402738c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove Bayside<br>Median Days on Market: 474.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_76db7eb100fb571cb026ab9f19a3c465 = L.circleMarker(
+                [25.78159, -80.22701],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_76db7eb100fb571cb026ab9f19a3c465.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Sewell Park<br>Median Days on Market: 30.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2b3574226a76d105391606d6b52f836 = L.circleMarker(
+                [25.78207, -80.21007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a2b3574226a76d105391606d6b52f836.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Spring Garden<br>Median Days on Market: 80.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_300d3f771d30302dc74f5cc6ad0cd93f = L.circleMarker(
+                [25.76515, -80.19789],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_300d3f771d30302dc74f5cc6ad0cd93f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Brickell<br>Median Days on Market: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bae6f4bd6de5746279684b476dd996b7 = L.circleMarker(
+                [25.78607, -80.26007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_bae6f4bd6de5746279684b476dd996b7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grapeland Heights<br>Median Days on Market: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_15e5d0ee0dfc019cc76cfb4f5907e585 = L.circleMarker(
+                [25.72769, -80.2516],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_15e5d0ee0dfc019cc76cfb4f5907e585.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grove<br>Median Days on Market: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c19a3d4d9386b4bdf7516db3e6e7055e = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c19a3d4d9386b4bdf7516db3e6e7055e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Alhambra Groves<br>Median Days on Market: 139.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90330ba75c122b352523a25e10ee02f1 = L.circleMarker(
+                [25.8003154, -80.22655449999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_90330ba75c122b352523a25e10ee02f1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Sunny Gardens<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9ce464a82da34034080106b5f36aac79 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9ce464a82da34034080106b5f36aac79.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburn Heights<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc7841a3303b91088930c9153ce6bc09 = L.circleMarker(
+                [25.8188645, -80.1884953],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_fc7841a3303b91088930c9153ce6bc09.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bay Point<br>Median Days on Market: 169.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5fa708aec0e100d9832ecb7171c34cd = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_b5fa708aec0e100d9832ecb7171c34cd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Blanton Park<br>Median Days on Market: 107.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_85998ca607097a813cae2854c520171d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_85998ca607097a813cae2854c520171d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bowman Heights<br>Median Days on Market: 9.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd661fadfd51194c78203aad7ba13c6d = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_fd661fadfd51194c78203aad7ba13c6d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Estates<br>Median Days on Market: 105.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2870edd3af67ebe7c09015eb85b73c1a = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2870edd3af67ebe7c09015eb85b73c1a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor<br>Median Days on Market: 149.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fef8161f6789f55cd7bbcb1397aa4757 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_fef8161f6789f55cd7bbcb1397aa4757.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor Plaza<br>Median Days on Market: 89.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_239836e21f72d48a318d629ef3a2d44d = L.circleMarker(
+                [25.8131533, -80.19171419999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_239836e21f72d48a318d629ef3a2d44d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista East<br>Median Days on Market: 160.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b19f7b26fafb51ca815175fe803e39d8 = L.circleMarker(
+                [28.0783497, -82.5698192],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_b19f7b26fafb51ca815175fe803e39d8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Park<br>Median Days on Market: 217.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_268f867cacc4f0b8d78d3ad857955a5d = L.circleMarker(
+                [25.7506988, -80.2302218],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_268f867cacc4f0b8d78d3ad857955a5d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Way<br>Median Days on Market: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec606e70e28fa2eba6bb2cc90a26edc4 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ec606e70e28fa2eba6bb2cc90a26edc4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Creole District<br>Median Days on Market: 66.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9bb0d021294f750bbbf354639f59f82a = L.circleMarker(
+                [25.7712513, -80.1918728],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9bb0d021294f750bbbf354639f59f82a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Downtown Miami<br>Median Days on Market: 99.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c71d6518acf109687834bbc59fc9e191 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c71d6518acf109687834bbc59fc9e191.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Shenandoah<br>Median Days on Market: 71.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9199a6a7d55e4907dd38a95f21bbf085 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9199a6a7d55e4907dd38a95f21bbf085.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - El Camino Park<br>Median Days on Market: 62.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2d458cbc4f34df35cfbaff5fb44b2e8 = L.circleMarker(
+                [25.7837044, -80.23228209999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_e2d458cbc4f34df35cfbaff5fb44b2e8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fern Isle Gardens<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0738f1ebc37f16eaeb7eace312784fd5 = L.circleMarker(
+                [25.7742525, -80.1903736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_0738f1ebc37f16eaeb7eace312784fd5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Heights<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b4b7d5c916fae7a1dfa0f0c84d20ae7 = L.circleMarker(
+                [25.7679293, -80.2565256],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_1b4b7d5c916fae7a1dfa0f0c84d20ae7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Lawn<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6777fc79a8edb28a077c62ce626ec266 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_6777fc79a8edb28a077c62ce626ec266.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Golden Pines<br>Median Days on Market: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c5155cdc0eec1aedf88e72b4a6a11edc = L.circleMarker(
+                [25.7902153, -80.25379459999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c5155cdc0eec1aedf88e72b4a6a11edc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Heights<br>Median Days on Market: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_65c9fa4d545d16dcd7942fc9639453d3 = L.circleMarker(
+                [25.7873369, -80.2570447],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_65c9fa4d545d16dcd7942fc9639453d3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Park<br>Median Days on Market: 241.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2017e42c001e3ca103a1af8b21941ab2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2017e42c001e3ca103a1af8b21941ab2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Haynsworth<br>Median Days on Market: 90.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2555f172f86ce884456808b1c4b4d7bc = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2555f172f86ce884456808b1c4b4d7bc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - High View<br>Median Days on Market: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e98335f175ff0637e2904218ae50379f = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_e98335f175ff0637e2904218ae50379f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Hills Trail Grove<br>Median Days on Market: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b48a0d8991844bf3a81b9ca4661983a0 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_b48a0d8991844bf3a81b9ca4661983a0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Holleman Park<br>Median Days on Market: 81.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f56d5adb0b9b42d0b4c15bdad1830739 = L.circleMarker(
+                [25.8326937, -80.19620859999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f56d5adb0b9b42d0b4c15bdad1830739.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Haiti<br>Median Days on Market: 70.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_beaef2928e1ba88a627b2b35773ef636 = L.circleMarker(
+                [25.7776438, -80.2377078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_beaef2928e1ba88a627b2b35773ef636.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Havana<br>Median Days on Market: 67.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3db007033ed3ee9954f0c89d57b012e2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_3db007033ed3ee9954f0c89d57b012e2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little San Juan<br>Median Days on Market: 111.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c117b7279e402afa8f0a510dd7063f43 = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c117b7279e402afa8f0a510dd7063f43.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lower Brickell<br>Median Days on Market: 63.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3164e0b03086a65e501b5c38b2d7935 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_b3164e0b03086a65e501b5c38b2d7935.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lyndale<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc70516d03b33787988358e047388cfa = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_fc70516d03b33787988358e047388cfa.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Mc Allister Terrace<br>Median Days on Market: 97.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57d6b2bfdf133d9d4a2d1d0845752380 = L.circleMarker(
+                [25.8014685, -80.1990903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_57d6b2bfdf133d9d4a2d1d0845752380.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Media Art Entertainment District<br>Median Days on Market: 108.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_41e7cc6d0b6d56769b72cf983084fb3b = L.circleMarker(
+                [25.81494, -80.3016684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_41e7cc6d0b6d56769b72cf983084fb3b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose Heights<br>Median Days on Market: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_54b1af265c9108c3cd94809195d29ff0 = L.circleMarker(
+                [25.8353224, -80.18380379999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_54b1af265c9108c3cd94809195d29ff0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - MiMo District<br>Median Days on Market: 92.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91d7f49d1f8924e5ed25a4f349e95198 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_91d7f49d1f8924e5ed25a4f349e95198.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Central Business District<br>Median Days on Market: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5e3a26f0cb5886a563bf77f5300b7865 = L.circleMarker(
+                [25.7743658, -80.1928475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_5e3a26f0cb5886a563bf77f5300b7865.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Jewelry District<br>Median Days on Market: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b46dbc70d625c0aa66dcaf3cdd5d851 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_8b46dbc70d625c0aa66dcaf3cdd5d851.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Urban Acres<br>Median Days on Market: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bc616c974679dc33b5d0b1434afbf59b = L.circleMarker(
+                [25.8068701, -80.1954844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_bc616c974679dc33b5d0b1434afbf59b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Midtown Miami<br>Median Days on Market: 84.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c0cb71400f0a79d67fec80195ae5171d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c0cb71400f0a79d67fec80195ae5171d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millerdale<br>Median Days on Market: 134.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3332afa095605028a1050daebda3a6f1 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_3332afa095605028a1050daebda3a6f1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millionaire's Row<br>Median Days on Market: 74.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c830592b46ca7824d9de2fa1572c2a6 = L.circleMarker(
+                [25.8229832, -80.2153998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_0c830592b46ca7824d9de2fa1572c2a6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Model City<br>Median Days on Market: 48.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61fd69c4a65875a3f0eddb77f58d649a = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_61fd69c4a65875a3f0eddb77f58d649a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Naranja Nook<br>Median Days on Market: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f39b7e6cf0b28d90714aa05a0ab13045 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f39b7e6cf0b28d90714aa05a0ab13045.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - New Shenandoah<br>Median Days on Market: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e6cdc4c3834a31680f9ef36edcb425d = L.circleMarker(
+                [25.7369455, -80.2304625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_7e6cdc4c3834a31680f9ef36edcb425d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Coconut Grove<br>Median Days on Market: 62.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f7849ff9cdcda42ddb3f90703f49bfa7 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f7849ff9cdcda42ddb3f90703f49bfa7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Omni-Pac<br>Median Days on Market: 75.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9f627c0d25fce3d5f7d694bcf15f848 = L.circleMarker(
+                [25.7839802, -80.2014543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_e9f627c0d25fce3d5f7d694bcf15f848.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Overtown<br>Median Days on Market: 77.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_876e299d4845c4b27af59bffa66cbc04 = L.circleMarker(
+                [25.8068939, -80.1862582],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_876e299d4845c4b27af59bffa66cbc04.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Paraiso Bay<br>Median Days on Market: 205.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c2b154a8e9238af608d4926f5a5213b5 = L.circleMarker(
+                [25.782503, -80.19062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c2b154a8e9238af608d4926f5a5213b5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Park West<br>Median Days on Market: 126.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_46809e9a8fe5a315b98780b8397b88f9 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_46809e9a8fe5a315b98780b8397b88f9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale<br>Median Days on Market: 72.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a389c2347eb251387000f1ff4c10e6f7 = L.circleMarker(
+                [25.7905949, -80.1754446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a389c2347eb251387000f1ff4c10e6f7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Plaza Venetia<br>Median Days on Market: 75.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_936de905d7eaeb3c84c9ce170bddea3c = L.circleMarker(
+                [25.7704036, -80.20730569999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_936de905d7eaeb3c84c9ce170bddea3c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - River Park<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a47ce2af6af799cb5d5e7576c679d356 = L.circleMarker(
+                [25.7724662, -80.2146727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a47ce2af6af799cb5d5e7576c679d356.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverside<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94672255e37c22514b4001a0bf4c00e7 = L.circleMarker(
+                [25.787113, -80.2313082],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_94672255e37c22514b4001a0bf4c00e7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverview<br>Median Days on Market: 87.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_98bde7985f2b735762d88f04295ca390 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_98bde7985f2b735762d88f04295ca390.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shady Oaks<br>Median Days on Market: 71.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ed05a6cb5aed92132dde498f568978a = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_4ed05a6cb5aed92132dde498f568978a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah Manor<br>Median Days on Market: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1331d18ae7bc2a640d13efb9e14da19c = L.circleMarker(
+                [25.748899, -80.23609019999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_1331d18ae7bc2a640d13efb9e14da19c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff Estates<br>Median Days on Market: 71.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1465b1ca3b21fbd9bf7d425dd5748962 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_1465b1ca3b21fbd9bf7d425dd5748962.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Crest<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3b8e1a6d92e975f672fe7926d1b5da2 = L.circleMarker(
+                [25.7398226, -80.24199399999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_c3b8e1a6d92e975f672fe7926d1b5da2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Bay Estates<br>Median Days on Market: 95.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a7a8459c78a26785c606b0db818bbf0 = L.circleMarker(
+                [25.7599774, -80.19702099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_5a7a8459c78a26785c606b0db818bbf0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Vedado<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53950fb89951ca8e4d72917b00713127 = L.circleMarker(
+                [25.720274, -80.2532061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_53950fb89951ca8e4d72917b00713127.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Southwest Coconut Grove<br>Median Days on Market: 70.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d67640661f67f5a0318b0ce177a6025 = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2d67640661f67f5a0318b0ce177a6025.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Groves<br>Median Days on Market: 331.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33896c8f8e3392c7a6562582577aaf69 = L.circleMarker(
+                [25.7646861, -80.2552715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_33896c8f8e3392c7a6562582577aaf69.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Highlands<br>Median Days on Market: 83.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9e130cbb93f9243e7e7040d71f6ed6d6 = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_9e130cbb93f9243e7e7040d71f6ed6d6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Pines<br>Median Days on Market: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f431ed27ccf379f613c1ab971055895d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f431ed27ccf379f613c1ab971055895d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - The Pines<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2501b1593a8b1c128eefcd3a7c1246f9 = L.circleMarker(
+                [25.7904532, -80.20249299999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2501b1593a8b1c128eefcd3a7c1246f9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Town Park Village<br>Median Days on Market: 77.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac0e631895a98f27a90771e427a7c973 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_ac0e631895a98f27a90771e427a7c973.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Trail Granada<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a06b94bfb213123f804c03b0eb825686 = L.circleMarker(
+                [25.830499, -80.18037079999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_a06b94bfb213123f804c03b0eb825686.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Upper Eastside<br>Median Days on Market: 107.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e207cf77e31fc05fe97df2264c56c77 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_7e207cf77e31fc05fe97df2264c56c77.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Washburns<br>Median Days on Market: 99.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bd94a6c4e54450e938a1ca2501d1d54 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_5bd94a6c4e54450e938a1ca2501d1d54.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace<br>Median Days on Market: 120.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dd0069cd5d26e433e8a78fde53120bf0 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_dd0069cd5d26e433e8a78fde53120bf0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace North<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_835c48a14034eb5b83f4f8f409a405f7 = L.circleMarker(
+                [25.7720352, -80.250733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_835c48a14034eb5b83f4f8f409a405f7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Flagler<br>Median Days on Market: 51.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b76cb4d29a6840e73bcdd52016a5d184 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_b76cb4d29a6840e73bcdd52016a5d184.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Lawn<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2ad11420c916a46cd9b3c676f1cd80d = L.circleMarker(
+                [25.7560648, -80.29567109999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_f2ad11420c916a46cd9b3c676f1cd80d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Miami<br>Median Days on Market: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d1b1c8b16f12667e25ec9b79ea55fdd = L.circleMarker(
+                [25.7740153, -80.1938844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_2d1b1c8b16f12667e25ec9b79ea55fdd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Woodside<br>Median Days on Market: 121.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_745290593be4fedc9f5c5bdff7d99066 = L.circleMarker(
+                [25.8042441, -80.1989186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_8e6f234659e62e6303e12db1fa30953f);
+        
+    
+            circle_marker_745290593be4fedc9f5c5bdff7d99066.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Wynwood-Edgewater<br>Median Days on Market: 84.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_65000d5a1a32bfc01acd1385cf6a46ed = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var tile_layer_e7e2eed7ab86992a6fa77fc8aa9a776e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var tile_layer_e0095857eee0f732bea40763cac90856 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var tile_layer_6e5e30884d17af44ff9e74a4ea8037bf = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var tile_layer_48c04d65a7e4b95fdaa69da83c2991a6 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var tile_layer_0d3c24a990b65ea43d192d202cf4255f = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+        
+    
+            var layer_control_6ebd70ed8ddcdc8a1295400fd444b5af = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_e0095857eee0f732bea40763cac90856,
+                    "stamenwatercolor" : tile_layer_65000d5a1a32bfc01acd1385cf6a46ed,
+                    "openstreetmap" : tile_layer_e7e2eed7ab86992a6fa77fc8aa9a776e,
+                    "stamentoner" : tile_layer_6e5e30884d17af44ff9e74a4ea8037bf,
+                    "cartodbpositron" : tile_layer_48c04d65a7e4b95fdaa69da83c2991a6,
+                    "cartodbdark_matter" : tile_layer_0d3c24a990b65ea43d192d202cf4255f,
+                },
+                overlays :  {
+                    "Miami - median_dom" : heat_map_96414f8a44e9877212a862f8535e3eec,
+                    "Median Days on Market Centers" : feature_group_8e6f234659e62e6303e12db1fa30953f,
+                },
+            };
+            L.control.layers(
+                layer_control_6ebd70ed8ddcdc8a1295400fd444b5af.base_layers,
+                layer_control_6ebd70ed8ddcdc8a1295400fd444b5af.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_8b400aa55f2a59edf2f08a00d5de6ff6);
+            tile_layer_65000d5a1a32bfc01acd1385cf6a46ed.remove();
+            tile_layer_e7e2eed7ab86992a6fa77fc8aa9a776e.remove();
+            tile_layer_e0095857eee0f732bea40763cac90856.remove();
+            tile_layer_6e5e30884d17af44ff9e74a4ea8037bf.remove();
+            tile_layer_48c04d65a7e4b95fdaa69da83c2991a6.remove();
+            tile_layer_0d3c24a990b65ea43d192d202cf4255f.remove();
+        
+</script>
+</html>

@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_62bd71c571f6949a281ec45c3db3c02e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_62bd71c571f6949a281ec45c3db3c02e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_62bd71c571f6949a281ec45c3db3c02e = L.map(
+                "map_62bd71c571f6949a281ec45c3db3c02e",
+                {
+                    center: [25.796790844604317, -80.23145239640287],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5d778d3fe9b9df6f9c667850f07b137a = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var heat_map_0d172e1261218ec986009cd12c7bf7df = L.heatLayer(
+                [[25.84839, -80.19495, 1.0], [25.81454, -80.22394, 50.0], [25.79661, -80.22252, 0.0], [25.77199, -80.24727, 26.0], [25.7759, -80.18639, 22.0], [25.83967, -80.1809, 14.0], [25.84205, -80.18652, 11.0], [25.73378, -80.242, 14.0], [25.73337, -80.24954, 7.0], [25.76258, -80.19064, 146.0], [25.76715, -80.18475, 45.0], [25.7655, -80.19351, 166.0], [25.81315, -80.19171, 52.0], [25.81645, -80.19762, 14.0], [25.81659, -80.20289, 21.0], [25.77254, -80.23093, 12.0], [25.79048, -80.21478, 7.0], [25.75362, -80.25068, 4.0], [25.78298, -80.20406, 0.0], [25.74162, -80.22428, 8.0], [25.83039, -80.20123, 16.0], [25.73762, -80.22326, 22.0], [25.77039, -80.28443, 68.0], [25.82008, -80.22644, 13.0], [25.73051, -80.23625, 27.0], [25.7856, -80.21077, 1.0], [25.83018, -80.21566, 6.0], [25.76102, -80.25099, 1.0], [25.76952, -80.21861, 4.0], [25.78268, -80.27284, 31.0], [25.83503, -80.18228, 4.0], [25.83558, -80.22118, 7.0], [25.7755, -80.20532, 1.0], [25.8476, -80.19255, 14.0], [25.84425, -80.19907, 11.0], [25.85149, -80.19498, 1.0], [25.81264, -80.18783, 1.0], [25.80476, -80.23186, 13.0], [25.82645, -80.18307, 6.0], [25.78949, -80.24758, 9.0], [25.7378, -80.234, 5.0], [25.7862, -80.23165, 16.0], [25.79189, -80.19768, 1.0], [25.83742, -80.2107, 9.0], [25.85167, -80.19086, 0.0], [25.77667, -80.21879, 1.0], [25.82651, -80.21557, 12.0], [25.83281, -80.18627, 12.0], [25.76133, -80.24281, 5.0], [25.75393, -80.24255, 11.0], [25.77067, -80.19535, 15.0], [25.80558, -80.21481, 25.0], [25.75954, -80.22227, 53.0], [25.85174, -80.17847, 13.0], [25.74654, -80.23089, 16.0], [25.7821, -80.24816, 6.0], [25.718, -80.2559, 14.0], [25.7185, -80.24751, 1.0], [25.78159, -80.22701, 3.0], [25.78207, -80.21007, 3.0], [25.76515, -80.19789, 24.0], [25.78607, -80.26007, 1.0], [25.72769, -80.2516, 4.0], [25.7616798, -80.1917902, 2.0], [25.8003154, -80.22655449999999, 4.0], [25.7616798, -80.1917902, 1.0], [25.8188645, -80.1884953, 11.0], [25.7616798, -80.1917902, 0.0], [25.7616798, -80.1917902, 1.0], [25.7601793, -80.1958755, 9.0], [25.7616798, -80.1917902, 2.0], [25.7616798, -80.1917902, 11.0], [25.8131533, -80.19171419999999, 4.0], [28.0783497, -82.5698192, 0.0], [25.7506988, -80.2302218, 242.0], [25.7616798, -80.1917902, 4.0], [25.7712513, -80.1918728, 567.0], [25.7595441, -80.22227099999999, 9.0], [25.7616798, -80.1917902, 1.0], [25.7837044, -80.23228209999999, 1.0], [25.7742525, -80.1903736, 1.0], [25.7679293, -80.2565256, 3.0], [25.7616798, -80.1917902, 60.0], [25.7902153, -80.25379459999999, 9.0], [25.7873369, -80.2570447, 1.0], [25.7616798, -80.1917902, 3.0], [25.7616798, -80.1917902, 1.0], [25.7616798, -80.1917902, 1.0], [25.7616798, -80.1917902, 3.0], [25.8326937, -80.19620859999999, 34.0], [25.7776438, -80.2377078, 11.0], [25.7616798, -80.1917902, 13.0], [25.7601793, -80.1958755, 9.0], [25.7616798, -80.1917902, 3.0], [25.7616798, -80.1917902, 1.0], [25.8014685, -80.1990903, 15.0], [25.81494, -80.3016684, 7.0], [25.8353224, -80.18380379999999, 52.0], [25.7616798, -80.1917902, 85.0], [25.7743658, -80.1928475, 2.0], [25.7616798, -80.1917902, 19.0], [25.8068701, -80.1954844, 252.0], [25.7616798, -80.1917902, 1.0], [25.7616798, -80.1917902, 50.0], [25.8229832, -80.2153998, 86.0], [25.7616798, -80.1917902, 1.0], [25.7595441, -80.22227099999999, 1.0], [25.7369455, -80.2304625, 106.0], [25.7616798, -80.1917902, 26.0], [25.7839802, -80.2014543, 8.0], [25.8068939, -80.1862582, 30.0], [25.782503, -80.19062, 63.0], [25.7616798, -80.1917902, 1.0], [25.7905949, -80.1754446, 18.0], [25.7704036, -80.20730569999999, 0.0], [25.7724662, -80.2146727, 37.0], [25.787113, -80.2313082, 8.0], [25.7616798, -80.1917902, 1.0], [25.7595441, -80.22227099999999, 0.0], [25.748899, -80.23609019999999, 9.0], [25.7616798, -80.1917902, 1.0], [25.7398226, -80.24199399999999, 9.0], [25.7599774, -80.19702099999999, 2.0], [25.720274, -80.2532061, 26.0], [25.7587114, -80.398387, 1.0], [25.7646861, -80.2552715, 1.0], [25.7587114, -80.398387, 1.0], [25.7616798, -80.1917902, 8.0], [25.7904532, -80.20249299999999, 3.0], [25.7616798, -80.1917902, 2.0], [25.830499, -80.18037079999999, 82.0], [25.7616798, -80.1917902, 1.0], [25.7616798, -80.1917902, 1.0], [25.7616798, -80.1917902, 1.0], [25.7720352, -80.250733, 41.0], [25.7616798, -80.1917902, 2.0], [25.7560648, -80.29567109999999, 289.0], [25.7740153, -80.1938844, 1.0], [25.8042441, -80.1989186, 252.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var feature_group_32ad9915c9f7aaebd6e5ccca2ff64395 = L.featureGroup(
+                {}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var circle_marker_70ecc6d05f204d34e278c6bfa98ad340 = L.circleMarker(
+                [25.84839, -80.19495],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_70ecc6d05f204d34e278c6bfa98ad340.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - 79th Street<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_37453e31779ad933f3618bd5288d8254 = L.circleMarker(
+                [25.81454, -80.22394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_37453e31779ad933f3618bd5288d8254.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah<br>New Listings: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7fabd60f14fee9e1ee6c256560405a2f = L.circleMarker(
+                [25.79661, -80.22252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_7fabd60f14fee9e1ee6c256560405a2f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Industrial District<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b6edc915ae7685f3545f53040ccdb5b = L.circleMarker(
+                [25.77199, -80.24727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_1b6edc915ae7685f3545f53040ccdb5b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburndale<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2234c4b7be507a8d3ceae1c54ce48c5b = L.circleMarker(
+                [25.7759, -80.18639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_2234c4b7be507a8d3ceae1c54ce48c5b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayfront<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_071971afec9efccf9645a80154adaa2a = L.circleMarker(
+                [25.83967, -80.1809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_071971afec9efccf9645a80154adaa2a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayside<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba614477685c4da7b19843644b8d6c4c = L.circleMarker(
+                [25.84205, -80.18652],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_ba614477685c4da7b19843644b8d6c4c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Belle Meade West<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_46d45ffe256a536197fa94f28dd9575d = L.circleMarker(
+                [25.73378, -80.242],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_46d45ffe256a536197fa94f28dd9575d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove East<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a29a51617784746075f2a3826bd26b6 = L.circleMarker(
+                [25.73337, -80.24954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_7a29a51617784746075f2a3826bd26b6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove West<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f80673f395613a37cb374907f0a9c3d8 = L.circleMarker(
+                [25.76258, -80.19064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f80673f395613a37cb374907f0a9c3d8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Business District<br>New Listings: 146.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_035a975b10b502c88dbb0eb80b1422d7 = L.circleMarker(
+                [25.76715, -80.18475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_035a975b10b502c88dbb0eb80b1422d7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Key<br>New Listings: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f4fc00179dfd8c69d9cea4ca40885f3d = L.circleMarker(
+                [25.7655, -80.19351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f4fc00179dfd8c69d9cea4ca40885f3d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Village<br>New Listings: 166.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ab4bfa1ad1b69b5d83af9f13362af991 = L.circleMarker(
+                [25.81315, -80.19171],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_ab4bfa1ad1b69b5d83af9f13362af991.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista<br>New Listings: 52.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f23542c33fb0308df41bcd48faf39cf2 = L.circleMarker(
+                [25.81645, -80.19762],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f23542c33fb0308df41bcd48faf39cf2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista Heights<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_976b1cc116e31d4ac024308c1102d623 = L.circleMarker(
+                [25.81659, -80.20289],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_976b1cc116e31d4ac024308c1102d623.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista West<br>New Listings: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6a41bc2504a6f3b540540b2033d43d1f = L.circleMarker(
+                [25.77254, -80.23093],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6a41bc2504a6f3b540540b2033d43d1f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Grove<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bbb068a05a674cfb9575fabfae0713b2 = L.circleMarker(
+                [25.79048, -80.21478],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_bbb068a05a674cfb9575fabfae0713b2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Civic Center<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3f6420321876c7c1e4c98224036de5e1 = L.circleMarker(
+                [25.75362, -80.25068],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_3f6420321876c7c1e4c98224036de5e1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Gate<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e10d51af60e4fbee43d2e92d8f2fbd6f = L.circleMarker(
+                [25.78298, -80.20406],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_e10d51af60e4fbee43d2e92d8f2fbd6f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Culmer<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cd0f0f5931cdca8faf6828da3b737c45 = L.circleMarker(
+                [25.74162, -80.22428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_cd0f0f5931cdca8faf6828da3b737c45.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Grove<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0af823beb3ca51f3bd1e27a994d9075 = L.circleMarker(
+                [25.83039, -80.20123],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f0af823beb3ca51f3bd1e27a994d9075.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Edison<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e8f0d142d55376e8ef4df44c6db95352 = L.circleMarker(
+                [25.73762, -80.22326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_e8f0d142d55376e8ef4df44c6db95352.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fair Isle<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_257a7a50d4980c2b5fed7bc3750d3fd4 = L.circleMarker(
+                [25.77039, -80.28443],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_257a7a50d4980c2b5fed7bc3750d3fd4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagami<br>New Listings: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2d22d5862aa5edfdc7e0268b5c9f913 = L.circleMarker(
+                [25.82008, -80.22644],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_a2d22d5862aa5edfdc7e0268b5c9f913.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flora Park<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_290c01948f768cb187d273fe9b98d5ac = L.circleMarker(
+                [25.73051, -80.23625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_290c01948f768cb187d273fe9b98d5ac.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grove Center<br>New Listings: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6c79cf27004032a088c4c4739c28434 = L.circleMarker(
+                [25.7856, -80.21077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f6c79cf27004032a088c4c4739c28434.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Highland Park<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dc337309dc54dedd5b738cc1332f31d2 = L.circleMarker(
+                [25.83018, -80.21566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_dc337309dc54dedd5b738cc1332f31d2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - King Heights<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_00e755ef5d37c69aa083b4e15326efe9 = L.circleMarker(
+                [25.76102, -80.25099],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_00e755ef5d37c69aa083b4e15326efe9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - La Pastorita<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5be04a0859901ab72a09603548ffd1b = L.circleMarker(
+                [25.76952, -80.21861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b5be04a0859901ab72a09603548ffd1b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Latin Quarter<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0155a9e8a55c2457940c63ea2449fad5 = L.circleMarker(
+                [25.78268, -80.27284],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_0155a9e8a55c2457940c63ea2449fad5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Le Jeune Gardens<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6a518a93367349d282346c867a83e385 = L.circleMarker(
+                [25.83503, -80.18228],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6a518a93367349d282346c867a83e385.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Legion Park<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10b4ad6fce73261953cdd5fc708f59df = L.circleMarker(
+                [25.83558, -80.22118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_10b4ad6fce73261953cdd5fc708f59df.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Liberty Square<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e044f1149c88cc0de0d73517e2710d9 = L.circleMarker(
+                [25.7755, -80.20532],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_8e044f1149c88cc0de0d73517e2710d9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Managua<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30d90ff0ce48c93116112c108ce3920f = L.circleMarker(
+                [25.8476, -80.19255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_30d90ff0ce48c93116112c108ce3920f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_936a2f04de7539d49abb06f63f04e3d7 = L.circleMarker(
+                [25.84425, -80.19907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_936a2f04de7539d49abb06f63f04e3d7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Central<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91ed371daf698a0270847364a6e74018 = L.circleMarker(
+                [25.85149, -80.19498],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_91ed371daf698a0270847364a6e74018.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Gardens<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1cf6346922a31253d5a23efc1273316 = L.circleMarker(
+                [25.81264, -80.18783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_d1cf6346922a31253d5a23efc1273316.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Magnolia Park<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bf5a94c214b517e192118681348cd80b = L.circleMarker(
+                [25.80476, -80.23186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_bf5a94c214b517e192118681348cd80b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bc1d271621e0ba77b8f69d2ed5af4bbc = L.circleMarker(
+                [25.82645, -80.18307],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_bc1d271621e0ba77b8f69d2ed5af4bbc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Morningside<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_133071649af757db774a37119f4e9ea3 = L.circleMarker(
+                [25.78949, -80.24758],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_133071649af757db774a37119f4e9ea3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grapeland Heights<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aa32f3a59a167a72b19b5c2d31e2c5fd = L.circleMarker(
+                [25.7378, -80.234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_aa32f3a59a167a72b19b5c2d31e2c5fd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grove<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb03dbc4569a63a5e06f02c71b7355a2 = L.circleMarker(
+                [25.7862, -80.23165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_cb03dbc4569a63a5e06f02c71b7355a2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Sewell Park<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e6fef4fc33cd790c631890135445fae9 = L.circleMarker(
+                [25.79189, -80.19768],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_e6fef4fc33cd790c631890135445fae9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Overtown<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cd2c4a724926bbe1a0d32163187daec5 = L.circleMarker(
+                [25.83742, -80.2107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_cd2c4a724926bbe1a0d32163187daec5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northwestern Estates<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e845048cb1126f35068e48cfa491d31 = L.circleMarker(
+                [25.85167, -80.19086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6e845048cb1126f35068e48cfa491d31.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Oakland Grove<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b806b4910d93ca65fb80bc0c447806e7 = L.circleMarker(
+                [25.77667, -80.21879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b806b4910d93ca65fb80bc0c447806e7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orange Bowl<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4e3506f98bbd8dfe13d240fa5dc6195e = L.circleMarker(
+                [25.82651, -80.21557],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_4e3506f98bbd8dfe13d240fa5dc6195e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orchard Villa<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1100cff95c7929a4fe4ad351772c090d = L.circleMarker(
+                [25.83281, -80.18627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_1100cff95c7929a4fe4ad351772c090d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Palm Grove<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb4e00019d08fb2661c8ad5ee742158b = L.circleMarker(
+                [25.76133, -80.24281],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_fb4e00019d08fb2661c8ad5ee742158b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale North<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c121ddac8f5260691d7412e6d48e251b = L.circleMarker(
+                [25.75393, -80.24255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_c121ddac8f5260691d7412e6d48e251b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale South<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d4d7a170e83f6479df2faf5d43327be = L.circleMarker(
+                [25.77067, -80.19535],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_3d4d7a170e83f6479df2faf5d43327be.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverfront<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_235c259d73de74bd2d4501d23acb3d88 = L.circleMarker(
+                [25.80558, -80.21481],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_235c259d73de74bd2d4501d23acb3d88.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Santa Clara<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_22be067cba6d01537b1f3af45c19f24f = L.circleMarker(
+                [25.75954, -80.22227],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_22be067cba6d01537b1f3af45c19f24f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah<br>New Listings: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c97001509bf98901c84989bf2c80f7e7 = L.circleMarker(
+                [25.85174, -80.17847],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_c97001509bf98901c84989bf2c80f7e7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shorecrest<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b093da50a1ccc123f99e25510d687dac = L.circleMarker(
+                [25.74654, -80.23089],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b093da50a1ccc123f99e25510d687dac.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_926cdefef8c0e4a56420cb92c1574170 = L.circleMarker(
+                [25.7821, -80.24816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_926cdefef8c0e4a56420cb92c1574170.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grapeland Heights<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb5290a6b71d554031c10a6b512960f4 = L.circleMarker(
+                [25.718, -80.2559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_eb5290a6b71d554031c10a6b512960f4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b48850bdf8c9d135de417d62655d490c = L.circleMarker(
+                [25.7185, -80.24751],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b48850bdf8c9d135de417d62655d490c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove Bayside<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_724c87830193c88e04db7551ca8c10ac = L.circleMarker(
+                [25.78159, -80.22701],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_724c87830193c88e04db7551ca8c10ac.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Sewell Park<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f460a845c3127a94d0ba4d9572445414 = L.circleMarker(
+                [25.78207, -80.21007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f460a845c3127a94d0ba4d9572445414.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Spring Garden<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_40b4e9737e0acee437519c300c6cc975 = L.circleMarker(
+                [25.76515, -80.19789],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_40b4e9737e0acee437519c300c6cc975.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Brickell<br>New Listings: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6916c85e9452dcf68987cab53a388807 = L.circleMarker(
+                [25.78607, -80.26007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6916c85e9452dcf68987cab53a388807.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grapeland Heights<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c2f28ef4fe378a93433f6d1b097ae8fd = L.circleMarker(
+                [25.72769, -80.2516],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_c2f28ef4fe378a93433f6d1b097ae8fd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grove<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c1d4c9982e65be442e61962b010d05d2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_c1d4c9982e65be442e61962b010d05d2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Alhambra Groves<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1dd21f61b4309ab4e956b0890a9821f1 = L.circleMarker(
+                [25.8003154, -80.22655449999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_1dd21f61b4309ab4e956b0890a9821f1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Sunny Gardens<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_82b4205e24545f7fc459d7272a7c3556 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_82b4205e24545f7fc459d7272a7c3556.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburn Heights<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b06b86822592bbfb6033a87456d38da6 = L.circleMarker(
+                [25.8188645, -80.1884953],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b06b86822592bbfb6033a87456d38da6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bay Point<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2fbbd17149f7ab98d0cad01307076f91 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_2fbbd17149f7ab98d0cad01307076f91.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Blanton Park<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b9c790fd8cd6cbeb441a69528e0bfb46 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b9c790fd8cd6cbeb441a69528e0bfb46.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bowman Heights<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_28ca50ba8b8e3c8f6b6b72a9887861fa = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_28ca50ba8b8e3c8f6b6b72a9887861fa.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Estates<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f17ea69dcc9c897b98de88be562cb365 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f17ea69dcc9c897b98de88be562cb365.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_523da66410dbe57577ac4e918a5dfdc4 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_523da66410dbe57577ac4e918a5dfdc4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor Plaza<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_85263b523b73458ac594e23fa9b53e3d = L.circleMarker(
+                [25.8131533, -80.19171419999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_85263b523b73458ac594e23fa9b53e3d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista East<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_290d1d536a90c1e1cbd242224ab11b8e = L.circleMarker(
+                [28.0783497, -82.5698192],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_290d1d536a90c1e1cbd242224ab11b8e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Park<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6a59be636bf2de58b77f6c66ae4f9ba7 = L.circleMarker(
+                [25.7506988, -80.2302218],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6a59be636bf2de58b77f6c66ae4f9ba7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Way<br>New Listings: 242.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bdf38972a3efbddb897edee724aa3911 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_bdf38972a3efbddb897edee724aa3911.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Creole District<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_af8c8d5caf1d5d5eca34df18fc7e808f = L.circleMarker(
+                [25.7712513, -80.1918728],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_af8c8d5caf1d5d5eca34df18fc7e808f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Downtown Miami<br>New Listings: 567.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d56c3996cba469fbc6ae1b1ce980a89 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_1d56c3996cba469fbc6ae1b1ce980a89.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Shenandoah<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d563a254826ebf9d6551eabeeaae9800 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_d563a254826ebf9d6551eabeeaae9800.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - El Camino Park<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3d53899bcfe17562bcb5f765896be63 = L.circleMarker(
+                [25.7837044, -80.23228209999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_f3d53899bcfe17562bcb5f765896be63.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fern Isle Gardens<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_15a4ae6cdde0f1c5aa3ed4a92d9b7588 = L.circleMarker(
+                [25.7742525, -80.1903736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_15a4ae6cdde0f1c5aa3ed4a92d9b7588.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Heights<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_518e8345e980c61b780f83152439b0f3 = L.circleMarker(
+                [25.7679293, -80.2565256],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_518e8345e980c61b780f83152439b0f3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Lawn<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec955d8249f202f32d29d4e725b641dd = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_ec955d8249f202f32d29d4e725b641dd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Golden Pines<br>New Listings: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_74e21d6662726862df2d4449f6d9ba20 = L.circleMarker(
+                [25.7902153, -80.25379459999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_74e21d6662726862df2d4449f6d9ba20.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Heights<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7401645b6d4890bf7674bd121385717 = L.circleMarker(
+                [25.7873369, -80.2570447],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_d7401645b6d4890bf7674bd121385717.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Park<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1371f1a841e7e5fd9969072ebd65bc69 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_1371f1a841e7e5fd9969072ebd65bc69.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Haynsworth<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e8be08fdbccbaf3161b4e7b0ea042ccd = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_e8be08fdbccbaf3161b4e7b0ea042ccd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - High View<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e1f2d4ebfc7ffea4e15d38139d71207e = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_e1f2d4ebfc7ffea4e15d38139d71207e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Hills Trail Grove<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3a8274a26f892c110154df36978012c = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_a3a8274a26f892c110154df36978012c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Holleman Park<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6bb0494f66347df103be5a0b03d0a509 = L.circleMarker(
+                [25.8326937, -80.19620859999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6bb0494f66347df103be5a0b03d0a509.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Haiti<br>New Listings: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_999ed4b7cb2f30372cbb9b23a23e60c8 = L.circleMarker(
+                [25.7776438, -80.2377078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_999ed4b7cb2f30372cbb9b23a23e60c8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Havana<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2644d6db0580e18610af980d3d26625f = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_2644d6db0580e18610af980d3d26625f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little San Juan<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_54b8021e8354d984fe7bc4d1b87c996f = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_54b8021e8354d984fe7bc4d1b87c996f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lower Brickell<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6c90a80d3a0a1cdf8d4cd3ee1b2cb829 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_6c90a80d3a0a1cdf8d4cd3ee1b2cb829.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lyndale<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a95f41fe854c9c03e36771da4c5294bb = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_a95f41fe854c9c03e36771da4c5294bb.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Mc Allister Terrace<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2331fbb0689fce43610e7eb589f6696a = L.circleMarker(
+                [25.8014685, -80.1990903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_2331fbb0689fce43610e7eb589f6696a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Media Art Entertainment District<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_429ebe4cbb0e724fa4f2861b626b7e73 = L.circleMarker(
+                [25.81494, -80.3016684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_429ebe4cbb0e724fa4f2861b626b7e73.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose Heights<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c637ae1b6cd2b2106a80a9383dcc809a = L.circleMarker(
+                [25.8353224, -80.18380379999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_c637ae1b6cd2b2106a80a9383dcc809a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - MiMo District<br>New Listings: 52.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72137bf8aa6c3e39bc64765666203c86 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_72137bf8aa6c3e39bc64765666203c86.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Central Business District<br>New Listings: 85.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8bf8b74d97ecac199848982491529e72 = L.circleMarker(
+                [25.7743658, -80.1928475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_8bf8b74d97ecac199848982491529e72.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Jewelry District<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a89130f6c9574dfd4a77aa95589736b8 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_a89130f6c9574dfd4a77aa95589736b8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Urban Acres<br>New Listings: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_16cd313e03d9617debb21138728969a0 = L.circleMarker(
+                [25.8068701, -80.1954844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_16cd313e03d9617debb21138728969a0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Midtown Miami<br>New Listings: 252.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff6c8698728aa65e830090fb674a58f2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_ff6c8698728aa65e830090fb674a58f2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millerdale<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_485fad12c5fc2fd22ef8904680c84cc7 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_485fad12c5fc2fd22ef8904680c84cc7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millionaire's Row<br>New Listings: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea93b449a63b02ba7f027d6e650cf69d = L.circleMarker(
+                [25.8229832, -80.2153998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_ea93b449a63b02ba7f027d6e650cf69d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Model City<br>New Listings: 86.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70a2ac2975c071c65d75e8d2127cb8e9 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_70a2ac2975c071c65d75e8d2127cb8e9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Naranja Nook<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b0800c3dab877e3192483a03867bed87 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b0800c3dab877e3192483a03867bed87.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - New Shenandoah<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3829a3738fe584f085e8a54a1ad17d2a = L.circleMarker(
+                [25.7369455, -80.2304625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_3829a3738fe584f085e8a54a1ad17d2a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Coconut Grove<br>New Listings: 106.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5424687b588cfa7b0b05453e93f41e85 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_5424687b588cfa7b0b05453e93f41e85.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Omni-Pac<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14b1f5b55a053fcc1edc395ce1ec2261 = L.circleMarker(
+                [25.7839802, -80.2014543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_14b1f5b55a053fcc1edc395ce1ec2261.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Overtown<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bca43d00164412bb1091f37a3bfe025 = L.circleMarker(
+                [25.8068939, -80.1862582],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_3bca43d00164412bb1091f37a3bfe025.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Paraiso Bay<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67c3e56eb4de8f95def03d92d7e00f28 = L.circleMarker(
+                [25.782503, -80.19062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_67c3e56eb4de8f95def03d92d7e00f28.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Park West<br>New Listings: 63.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9c3c889182040b8bc128a684898b256 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_e9c3c889182040b8bc128a684898b256.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8325136e9819c05f28cac955f4a9eea7 = L.circleMarker(
+                [25.7905949, -80.1754446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_8325136e9819c05f28cac955f4a9eea7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Plaza Venetia<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3dbb9965c91b52a11d54c3c54be26d41 = L.circleMarker(
+                [25.7704036, -80.20730569999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_3dbb9965c91b52a11d54c3c54be26d41.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - River Park<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ea93f20000b3c3258f82bdd481ec9bc = L.circleMarker(
+                [25.7724662, -80.2146727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_1ea93f20000b3c3258f82bdd481ec9bc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverside<br>New Listings: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_36c51d10c128ff76a8e450c148351b14 = L.circleMarker(
+                [25.787113, -80.2313082],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_36c51d10c128ff76a8e450c148351b14.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverview<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_afd99819f472112486c737adc0e58563 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_afd99819f472112486c737adc0e58563.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shady Oaks<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5b0fbda11959a18c48d3aa902d5e5415 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_5b0fbda11959a18c48d3aa902d5e5415.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah Manor<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f80fe053a35cfc8af1c29ccb2215b0e = L.circleMarker(
+                [25.748899, -80.23609019999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_5f80fe053a35cfc8af1c29ccb2215b0e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff Estates<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9d55f410b97277a9be953fc1298820ea = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_9d55f410b97277a9be953fc1298820ea.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Crest<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b361ed546bb03634a6b40147b2549a30 = L.circleMarker(
+                [25.7398226, -80.24199399999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b361ed546bb03634a6b40147b2549a30.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Bay Estates<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_51039067291b0dc9b114af3285eebbd7 = L.circleMarker(
+                [25.7599774, -80.19702099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_51039067291b0dc9b114af3285eebbd7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Vedado<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93b4655a89228ee80993464bff0aa4ca = L.circleMarker(
+                [25.720274, -80.2532061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_93b4655a89228ee80993464bff0aa4ca.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Southwest Coconut Grove<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0755ae49f78496be88952e2bb5d5490d = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_0755ae49f78496be88952e2bb5d5490d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Groves<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_190fb827d36ead65b176d9f8ca962975 = L.circleMarker(
+                [25.7646861, -80.2552715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_190fb827d36ead65b176d9f8ca962975.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Highlands<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c23d10b014c7142972af49e5a813d4f = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_8c23d10b014c7142972af49e5a813d4f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Pines<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_28a9134d42cecae1c1c98cd87260abc9 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_28a9134d42cecae1c1c98cd87260abc9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - The Pines<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a776cbda90194a9c84f2cc6963a9d47e = L.circleMarker(
+                [25.7904532, -80.20249299999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_a776cbda90194a9c84f2cc6963a9d47e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Town Park Village<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7cba00909468005a448a64efbd59064 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_d7cba00909468005a448a64efbd59064.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Trail Granada<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3047e8302b7f348ffb65332cdfc154b8 = L.circleMarker(
+                [25.830499, -80.18037079999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_3047e8302b7f348ffb65332cdfc154b8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Upper Eastside<br>New Listings: 82.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_65335279ee1d21de365e81284bc539e6 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_65335279ee1d21de365e81284bc539e6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Washburns<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b888d3e5b787760f9982a98939874ed2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_b888d3e5b787760f9982a98939874ed2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_890fad477f9965146e6ada52250124f6 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_890fad477f9965146e6ada52250124f6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace North<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_beca04f8fc511e940bf79d6a39fadf3a = L.circleMarker(
+                [25.7720352, -80.250733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_beca04f8fc511e940bf79d6a39fadf3a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Flagler<br>New Listings: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7c253c52832991453ffc33d3e5d798c = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_d7c253c52832991453ffc33d3e5d798c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Lawn<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_be08159207fd6c98695d015c6d6fcb27 = L.circleMarker(
+                [25.7560648, -80.29567109999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_be08159207fd6c98695d015c6d6fcb27.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Miami<br>New Listings: 289.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_231a0c7b8d4328cb659d78927d70bca8 = L.circleMarker(
+                [25.7740153, -80.1938844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_231a0c7b8d4328cb659d78927d70bca8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Woodside<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7b868e4492912a58009a6d9a539d47b3 = L.circleMarker(
+                [25.8042441, -80.1989186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_32ad9915c9f7aaebd6e5ccca2ff64395);
+        
+    
+            circle_marker_7b868e4492912a58009a6d9a539d47b3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Wynwood-Edgewater<br>New Listings: 252.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_eb9fb63ba4319bda2e6cf0acc1eb8111 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var tile_layer_7f348601b8927c01af1f3cf27758d108 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var tile_layer_2b53d8ee1109cd54af19136ec7f0c43a = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var tile_layer_5e5997267f067c5691c762a742944e48 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var tile_layer_aced76e509cd2418a9a89b0671c589a6 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var tile_layer_da50c3534b5dc2f0b37e369100d98a80 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+        
+    
+            var layer_control_d283e017b6458ca022547bdae9d8154e = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_2b53d8ee1109cd54af19136ec7f0c43a,
+                    "stamenwatercolor" : tile_layer_eb9fb63ba4319bda2e6cf0acc1eb8111,
+                    "openstreetmap" : tile_layer_7f348601b8927c01af1f3cf27758d108,
+                    "stamentoner" : tile_layer_5e5997267f067c5691c762a742944e48,
+                    "cartodbpositron" : tile_layer_aced76e509cd2418a9a89b0671c589a6,
+                    "cartodbdark_matter" : tile_layer_da50c3534b5dc2f0b37e369100d98a80,
+                },
+                overlays :  {
+                    "Miami - new_listings" : heat_map_0d172e1261218ec986009cd12c7bf7df,
+                    "New Listings Centers" : feature_group_32ad9915c9f7aaebd6e5ccca2ff64395,
+                },
+            };
+            L.control.layers(
+                layer_control_d283e017b6458ca022547bdae9d8154e.base_layers,
+                layer_control_d283e017b6458ca022547bdae9d8154e.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_62bd71c571f6949a281ec45c3db3c02e);
+            tile_layer_eb9fb63ba4319bda2e6cf0acc1eb8111.remove();
+            tile_layer_7f348601b8927c01af1f3cf27758d108.remove();
+            tile_layer_2b53d8ee1109cd54af19136ec7f0c43a.remove();
+            tile_layer_5e5997267f067c5691c762a742944e48.remove();
+            tile_layer_aced76e509cd2418a9a89b0671c589a6.remove();
+            tile_layer_da50c3534b5dc2f0b37e369100d98a80.remove();
+        
+</script>
+</html>

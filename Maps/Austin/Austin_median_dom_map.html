@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1acda76572d368aeb67962a35b64485c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1acda76572d368aeb67962a35b64485c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1acda76572d368aeb67962a35b64485c = L.map(
+                "map_1acda76572d368aeb67962a35b64485c",
+                {
+                    center: [30.293640803781646, -97.7465385200173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4ce4947fcdd6ec482b953b3dc18a93ab = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var heat_map_62df1dfe33a803207c620fa053ee5ea8 = L.heatLayer(
+                [[30.2649178, -97.7464235, 123.5], [30.3393252, -97.746952, 34.5], [30.4611355, -97.8299965, 36.0], [30.4237172, -97.7375963, 51.0], [30.267153, -97.7430608, 46.0], [30.4689145, -97.799452, 36.0], [30.2533686, -97.7835429, 68.0], [30.280638, -97.7224315, 53.5], [30.1725823, -97.768618, 55.0], [30.2515465, -97.7543062, 59.0], [30.2515465, -97.7543062, 13.0], [30.330898, -97.7316065, 57.0], [30.3364313, -97.7264415, 52.5], [30.1902458, -97.8454709, 34.5], [30.30244979999999, -97.7538935, 68.0], [30.3251308, -97.7506508, 33.0], [30.3134263, -97.7666194, 87.0], [30.2938151, -97.7329, 41.0], [30.27162349999999, -97.7248647, 43.0], [30.2954625, -97.7551352, 77.0], [30.1979137, -97.8245578, 43.0], [30.2917457, -97.7136007, 23.0], [30.2790657, -97.7131577, 63.0], [30.2802042, -97.7591251, 62.0], [30.2680667, -97.7428151, 22.0], [30.38827179999999, -97.6588801, 43.0], [30.32699239999999, -97.6877987, 30.0], [30.348322, -97.727536, 74.5], [30.3534821, -97.7233389, 75.0], [30.3280279, -97.8055259, 58.0], [30.2329651, -97.7613825, 83.0], [30.2091069, -97.6472349, 100.0], [30.18505, -97.8020854, 46.0], [30.2729209, -97.74438630000002, 72.5], [30.2658909, -97.7350274, 194.0], [30.2654547, -97.7090635, 49.0], [30.2585193, -97.7286604, 49.0], [30.20856089999999, -97.7661188, 42.5], [30.2825656, -97.6766639, 54.0], [30.240054, -97.8303149, 48.0], [30.2275044, -97.7277824, 76.0], [30.2818771, -97.6669884, 253.5], [30.4038127, -97.8536211, 39.0], [30.1939634, -97.7446677, 27.0], [30.2355462, -97.7685704, 88.5], [30.2088183, -97.8047019, 44.0], [30.3499918, -97.7009416, 93.0], [30.2560413, -97.7016981, 50.5], [30.2660111, -97.7021915, 50.5], [30.389061, -97.6941558, 38.0], [30.2367289, -97.7488105, 35.0], [30.2964691, -97.7232153, 47.0], [30.30110269999999, -97.741329, 37.5], [30.3435785, -97.6888656, 43.0], [30.3339959, -97.7169771, 41.0], [30.3235367, -97.760685, 47.0], [30.2573267, -97.7172302, 68.0], [30.30816969999999, -97.7274412, 56.5], [30.2256434, -97.7853145, 36.0], [30.2558365, -97.6849958, 36.5], [30.4065779, -97.7478949, 40.0], [30.2820349, -97.7477816, 26.0], [30.4357579, -97.6894508, 74.0], [30.3007579, -97.7878318, 151.0], [30.4207209, -97.6914416, 53.0], [30.267153, -97.7430608, 33.0], [30.2837453, -97.6961546, 45.0], [30.2760264, -97.66791, 69.0], [30.3739474, -97.8517552, 55.0], [30.2050512, -97.849035, 35.0], [30.26889559999999, -97.7518561, 50.0], [30.2124078, -97.7369381, 49.0], [30.4456938, -97.7363508, 42.0], [30.2295806, -97.6970651, 57.5], [30.2986834, -97.700371, 42.0], [30.3923316, -97.708224, 42.5], [30.3911419, -97.7218332, 93.0], [30.3911535, -97.7218322, 93.0], [30.370122, -97.6884248, 27.0], [30.3176931, -97.7211877, 49.0], [30.3646906, -97.7351113, 72.0], [30.2976841, -97.7375963, 51.5], [30.3903487, -97.7487151, 45.0], [30.3903487, -97.7487151, 42.0], [30.353213, -97.7674773, 42.5], [30.3591778, -97.7655987, 48.0], [30.2339613, -97.8648067, 43.0], [30.273648, -97.6976539, 59.0], [30.2877953, -97.7673314, 114.5], [30.2954625, -97.7551352, 68.0], [30.3000111, -97.6738023, 48.0], [30.2952051, -97.7552517, 104.0], [30.23471079999999, -97.7118003, 68.0], [30.4504785, -97.785287, 47.0], [30.3688641, -97.7046722, 53.0], [30.3914446, -97.7022988, 36.0], [30.4179412, -97.8984558, 62.0], [30.2359434, -97.7284907, 75.5], [30.267153, -97.7430608, 49.0], [30.267346, -97.7234586, 106.0], [30.3143949, -97.7457444, 64.5], [30.2706266, -97.7104428, 66.5], [30.4212008, -97.6832998, 22.5], [30.2660292, -97.7518561, 84.0], [30.20632253321186, -97.90891762243965, 48.0], [30.1935594, -97.842056, 44.0], [30.2049701, -97.7748074, 59.0], [30.2372278, -97.7837533, 84.0], [30.267153, -97.7430608, 78.0], [30.2195294, -97.7839041, 60.0], [30.2055702, -97.7166372, 44.0], [30.2009698, -97.8333958, 55.0], [30.1624125, -97.7946527, 44.0], [30.267153, -97.7430608, 41.0], [30.4359772, -97.8000975, 68.0], [30.1568662, -97.7430283, 36.0], [30.2264094, -97.7552517, 112.0], [30.3328019, -97.7009416, 109.0], [30.3260919, -97.6922889, 87.5], [30.1970686, -97.7771702, 96.0], [30.4078412, -97.6670191, 47.0], [30.2523971, -97.8338263, 29.5], [30.317206, -97.6738023, 41.0], [30.317206, -97.6738023, 39.0], [30.1858848, -97.7705653, 38.0], [30.2086396, -97.8728403, 29.0], [30.2954625, -97.7551352, 77.0], [30.21315749999999, -97.7743522, 35.0], [30.2385146, -97.8884881, 43.0], [30.29147, -97.7457444, 36.0], [30.2881825, -97.7769875, 73.5], [30.2230485, -97.7986926, 41.5], [30.292674, -97.553824, 43.0], [30.2963458, -97.7136976, 113.0], [30.3627291, -97.6792293, 32.0], [30.3105177, -97.6900846, 38.5], [30.2936434, -97.7650044, 68.0], [30.357046, -97.751177, 96.5], [30.2062976, -97.840195, 26.5], [30.3610582, -97.7232992, 85.0], [30.25426879999999, -97.7669536, 75.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var feature_group_0c8bb7fc54275cfef0abdf83313b8b44 = L.featureGroup(
+                {}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var circle_marker_e087978cc04cea1769134af28a3a770d = L.circleMarker(
+                [30.2649178, -97.7464235],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_e087978cc04cea1769134af28a3a770d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - 2nd Street District<br>Median Days on Market: 123.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a7336e11faf2397dd0c2eac477b737e = L.circleMarker(
+                [30.3393252, -97.746952],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8a7336e11faf2397dd0c2eac477b737e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Allandale<br>Median Days on Market: 34.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2010c385bcf174a4c32d7e3639d4bb35 = L.circleMarker(
+                [30.4611355, -97.8299965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_2010c385bcf174a4c32d7e3639d4bb35.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Anderson Mill West<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8d0ebefaf39dbe6277b1c373d8347125 = L.circleMarker(
+                [30.4237172, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8d0ebefaf39dbe6277b1c373d8347125.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Angus Valley<br>Median Days on Market: 51.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e71a4be57f059eed06377ed0352f0873 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_e71a4be57f059eed06377ed0352f0873.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Arts District<br>Median Days on Market: 46.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c43041401022e3c8741300a28dd3589 = L.circleMarker(
+                [30.4689145, -97.799452],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_5c43041401022e3c8741300a28dd3589.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Avery Ranch-Lakeline<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7acbb032df2c2dcb1677aa27dbc363a2 = L.circleMarker(
+                [30.2533686, -97.7835429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_7acbb032df2c2dcb1677aa27dbc363a2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Barton Hills<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ccd1be92cacb117b4a57c2fc668b598b = L.circleMarker(
+                [30.280638, -97.7224315],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_ccd1be92cacb117b4a57c2fc668b598b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Blackland<br>Median Days on Market: 53.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_24e2497be911757a65b3cacbf948a1ee = L.circleMarker(
+                [30.1725823, -97.768618],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_24e2497be911757a65b3cacbf948a1ee.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bluff Springs<br>Median Days on Market: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57376ebe6dc3069009bbb46b88c76995 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_57376ebe6dc3069009bbb46b88c76995.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin Creek<br>Median Days on Market: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4fb4dcc443f64668be29f819eaaf8b97 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_4fb4dcc443f64668be29f819eaaf8b97.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin South<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_42a73bc53b3d2f958a2bdf947604394d = L.circleMarker(
+                [30.330898, -97.7316065],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_42a73bc53b3d2f958a2bdf947604394d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood<br>Median Days on Market: 57.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cea15db10b4debcde43d58753383809b = L.circleMarker(
+                [30.3364313, -97.7264415],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_cea15db10b4debcde43d58753383809b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood-Highland<br>Median Days on Market: 52.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_064d333312c0e4f7d437dc6fbe49c9d8 = L.circleMarker(
+                [30.1902458, -97.8454709],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_064d333312c0e4f7d437dc6fbe49c9d8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brodie Lane<br>Median Days on Market: 34.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6cc6533ae36e8483f1a27441e7d102fc = L.circleMarker(
+                [30.30244979999999, -97.7538935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_6cc6533ae36e8483f1a27441e7d102fc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bryker Woods<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7069870f509fa3252b3475ba0d2268bf = L.circleMarker(
+                [30.3251308, -97.7506508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_7069870f509fa3252b3475ba0d2268bf.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bull Creek<br>Median Days on Market: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_774b291018e5dd21910375e1cacc70b7 = L.circleMarker(
+                [30.3134263, -97.7666194],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_774b291018e5dd21910375e1cacc70b7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Camp Mabry<br>Median Days on Market: 87.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de16851b3259bcf3125bbc871f81df1b = L.circleMarker(
+                [30.2938151, -97.7329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_de16851b3259bcf3125bbc871f81df1b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central Austin<br>Median Days on Market: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_958acd5885ce8ab7a1d97c327656e577 = L.circleMarker(
+                [30.27162349999999, -97.7248647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_958acd5885ce8ab7a1d97c327656e577.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central East Austin<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_913b7c7f903b11cd78f692a7d1ee1542 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_913b7c7f903b11cd78f692a7d1ee1542.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central West Austin<br>Median Days on Market: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_557c81b5c95d12d3db506f1aee2b43ab = L.circleMarker(
+                [30.1979137, -97.8245578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_557c81b5c95d12d3db506f1aee2b43ab.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherry Creek<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2e8f6bf609c62c16b9a4d9c2e859d19e = L.circleMarker(
+                [30.2917457, -97.7136007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_2e8f6bf609c62c16b9a4d9c2e859d19e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherrywood<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a018f2a0506e3ec963a7403ed2dd1752 = L.circleMarker(
+                [30.2790657, -97.7131577],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a018f2a0506e3ec963a7403ed2dd1752.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Chestnut<br>Median Days on Market: 63.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_656395a027df9dc897c1825b524cb8be = L.circleMarker(
+                [30.2802042, -97.7591251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_656395a027df9dc897c1825b524cb8be.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Clarksville<br>Median Days on Market: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6fd7faae7bc8708355f0a2694d50a612 = L.circleMarker(
+                [30.2680667, -97.7428151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_6fd7faae7bc8708355f0a2694d50a612.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Congress Avenue District<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_270501f7d3534c1f39c3cfafd8451683 = L.circleMarker(
+                [30.38827179999999, -97.6588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_270501f7d3534c1f39c3cfafd8451683.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Copperfield<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_520d5c903281b81772ba396325c2f147 = L.circleMarker(
+                [30.32699239999999, -97.6877987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_520d5c903281b81772ba396325c2f147.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Coronado Hills<br>Median Days on Market: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_457e6ba2961f9dc7737575df301a415f = L.circleMarker(
+                [30.348322, -97.727536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_457e6ba2961f9dc7737575df301a415f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview<br>Median Days on Market: 74.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f899d69bcda99f36570cba9b25b837b2 = L.circleMarker(
+                [30.3534821, -97.7233389],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f899d69bcda99f36570cba9b25b837b2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview-Wooten<br>Median Days on Market: 75.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a025df63a7c585716613de052a99d5b = L.circleMarker(
+                [30.3280279, -97.8055259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_9a025df63a7c585716613de052a99d5b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Davenport Ranch<br>Median Days on Market: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1268a75f22c3971a38a27aa1059f546d = L.circleMarker(
+                [30.2329651, -97.7613825],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_1268a75f22c3971a38a27aa1059f546d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dawson<br>Median Days on Market: 83.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_003fdc13b15312cbafd4c02795d65db6 = L.circleMarker(
+                [30.2091069, -97.6472349],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_003fdc13b15312cbafd4c02795d65db6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Del Valle<br>Median Days on Market: 100.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eebdf3e5ba1664cf4755f51cc350306f = L.circleMarker(
+                [30.18505, -97.8020854],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_eebdf3e5ba1664cf4755f51cc350306f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dittmar-Slaughter<br>Median Days on Market: 46.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9de5ee2cf2317b470be910738455a341 = L.circleMarker(
+                [30.2729209, -97.74438630000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_9de5ee2cf2317b470be910738455a341.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Downtown Austin<br>Median Days on Market: 72.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a899b1fecffea4c6ddde6d2ff01b3d90 = L.circleMarker(
+                [30.2658909, -97.7350274],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a899b1fecffea4c6ddde6d2ff01b3d90.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East 6th Street District<br>Median Days on Market: 194.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ec327439f8901810e4bdf9342abcd86 = L.circleMarker(
+                [30.2654547, -97.7090635],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_4ec327439f8901810e4bdf9342abcd86.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Austin<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7034e4431542ada1bc1c132af41c7bf = L.circleMarker(
+                [30.2585193, -97.7286604],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_d7034e4431542ada1bc1c132af41c7bf.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Cesar Chavez<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1aceb7d6997726f1d60f83c169ccc93e = L.circleMarker(
+                [30.20856089999999, -97.7661188],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_1aceb7d6997726f1d60f83c169ccc93e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Congress<br>Median Days on Market: 42.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_21a5a64332ecc70fa6a4070b5f5b2740 = L.circleMarker(
+                [30.2825656, -97.6766639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_21a5a64332ecc70fa6a4070b5f5b2740.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East MLK<br>Median Days on Market: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4590ba01e5caf71f4a91441930c40613 = L.circleMarker(
+                [30.240054, -97.8303149],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_4590ba01e5caf71f4a91441930c40613.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Oak Hill<br>Median Days on Market: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3f23dcd52ce399c892b56072316e152 = L.circleMarker(
+                [30.2275044, -97.7277824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f3f23dcd52ce399c892b56072316e152.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Riverside-Oltorf<br>Median Days on Market: 76.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d52725a2805da2ffbdc089c9f44387a = L.circleMarker(
+                [30.2818771, -97.6669884],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_2d52725a2805da2ffbdc089c9f44387a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ed Bluestein<br>Median Days on Market: 253.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b4f35d213c4738035a92f7b426b643d7 = L.circleMarker(
+                [30.4038127, -97.8536211],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_b4f35d213c4738035a92f7b426b643d7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Four Points<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3cef730aee27da051e439173e4ff3f6b = L.circleMarker(
+                [30.1939634, -97.7446677],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_3cef730aee27da051e439173e4ff3f6b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Franklin Park<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72fa33c49fcded6e4b2471079645bf28 = L.circleMarker(
+                [30.2355462, -97.7685704],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_72fa33c49fcded6e4b2471079645bf28.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Galindo<br>Median Days on Market: 88.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_343c30136b750f30b7b0a1c8ce27dc6b = L.circleMarker(
+                [30.2088183, -97.8047019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_343c30136b750f30b7b0a1c8ce27dc6b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Garrison Park<br>Median Days on Market: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3e82eaeb683f11edaaa3c8fea688a19 = L.circleMarker(
+                [30.3499918, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_d3e82eaeb683f11edaaa3c8fea688a19.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Georgian Acres<br>Median Days on Market: 93.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5795eb6d2b16fece7cd05a8cbc9c93c = L.circleMarker(
+                [30.2560413, -97.7016981],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a5795eb6d2b16fece7cd05a8cbc9c93c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle<br>Median Days on Market: 50.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b721934c8906c3f00b83b7614d92fcdb = L.circleMarker(
+                [30.2660111, -97.7021915],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_b721934c8906c3f00b83b7614d92fcdb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle-Johnston Terrace<br>Median Days on Market: 50.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_66645f0690ab57a2288d0c0ae25f81fd = L.circleMarker(
+                [30.389061, -97.6941558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_66645f0690ab57a2288d0c0ae25f81fd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Gracy Woods<br>Median Days on Market: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_645576591d6e4261dabb89635425f74a = L.circleMarker(
+                [30.2367289, -97.7488105],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_645576591d6e4261dabb89635425f74a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Greater South River City<br>Median Days on Market: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e0024c2fa71922e416ce6c77eda8e3d3 = L.circleMarker(
+                [30.2964691, -97.7232153],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_e0024c2fa71922e416ce6c77eda8e3d3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hancock<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a387d613d66c8b0dd3d9ac14f1ccf939 = L.circleMarker(
+                [30.30110269999999, -97.741329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a387d613d66c8b0dd3d9ac14f1ccf939.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage<br>Median Days on Market: 37.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c2eec6d575414950be04767def86769 = L.circleMarker(
+                [30.3435785, -97.6888656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8c2eec6d575414950be04767def86769.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage Hills-Windsor Hills<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_629db95e2f3678eeae6ccd2abcab6049 = L.circleMarker(
+                [30.3339959, -97.7169771],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_629db95e2f3678eeae6ccd2abcab6049.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland<br>Median Days on Market: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a803cb2fb8e5073c108b4b5810581994 = L.circleMarker(
+                [30.3235367, -97.760685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a803cb2fb8e5073c108b4b5810581994.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland Park West<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e47fdfcc10fb019f30413069f58a8f8f = L.circleMarker(
+                [30.2573267, -97.7172302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_e47fdfcc10fb019f30413069f58a8f8f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Holly<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8d8dd6861be4b8b435c359690a7406bb = L.circleMarker(
+                [30.30816969999999, -97.7274412],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8d8dd6861be4b8b435c359690a7406bb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hyde Park<br>Median Days on Market: 56.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bc268060bc43fcc0074834c8ed3072e = L.circleMarker(
+                [30.2256434, -97.7853145],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_5bc268060bc43fcc0074834c8ed3072e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jester<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e94f04f588b527e89f5d49af6c0d53d = L.circleMarker(
+                [30.2558365, -97.6849958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_6e94f04f588b527e89f5d49af6c0d53d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Johnston Terrace<br>Median Days on Market: 36.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f276c3676ded7bda77d0c771281f9979 = L.circleMarker(
+                [30.4065779, -97.7478949],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f276c3676ded7bda77d0c771281f9979.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jollyville<br>Median Days on Market: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_74d021cc982cbcb8881dd5715daa10f4 = L.circleMarker(
+                [30.2820349, -97.7477816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_74d021cc982cbcb8881dd5715daa10f4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Judges Hill<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dccfd3c3b457208771ee26fa3d34a159 = L.circleMarker(
+                [30.4357579, -97.6894508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_dccfd3c3b457208771ee26fa3d34a159.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Kings Village<br>Median Days on Market: 74.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_035ded2fa84ee68f89174d56423f3a76 = L.circleMarker(
+                [30.3007579, -97.7878318],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_035ded2fa84ee68f89174d56423f3a76.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lakeshore<br>Median Days on Market: 151.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea872870ae981242c6e50a9e2c0c83f2 = L.circleMarker(
+                [30.4207209, -97.6914416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_ea872870ae981242c6e50a9e2c0c83f2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lamplight Village<br>Median Days on Market: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89818fc4ecf73ef40ed4e4c1de7f86ee = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_89818fc4ecf73ef40ed4e4c1de7f86ee.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Laurel Oaks<br>Median Days on Market: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9089b79097e2f9b3fe35bdcbd34c0c7a = L.circleMarker(
+                [30.2837453, -97.6961546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_9089b79097e2f9b3fe35bdcbd34c0c7a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK<br>Median Days on Market: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91e3454dfb720ddde973a0b4a211e076 = L.circleMarker(
+                [30.2760264, -97.66791],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_91e3454dfb720ddde973a0b4a211e076.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK-183<br>Median Days on Market: 69.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f4cfbbbf3e7404565d17899e321182e = L.circleMarker(
+                [30.3739474, -97.8517552],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8f4cfbbbf3e7404565d17899e321182e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mansfield-River Place<br>Median Days on Market: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_032ae80e6d9442365089ca3c07286aac = L.circleMarker(
+                [30.2050512, -97.849035],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_032ae80e6d9442365089ca3c07286aac.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Maple Run<br>Median Days on Market: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_795e7b368f2d126e94431e441e765327 = L.circleMarker(
+                [30.26889559999999, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_795e7b368f2d126e94431e441e765327.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Market District<br>Median Days on Market: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e3086ca69464b213e5e4433cfcc158a4 = L.circleMarker(
+                [30.2124078, -97.7369381],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_e3086ca69464b213e5e4433cfcc158a4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McKinney<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_20c7c044c8d12eaf89f3b2efb460b7c9 = L.circleMarker(
+                [30.4456938, -97.7363508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_20c7c044c8d12eaf89f3b2efb460b7c9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McNeil<br>Median Days on Market: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0924ce4b7610bd6a891b4792518cb61b = L.circleMarker(
+                [30.2295806, -97.6970651],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_0924ce4b7610bd6a891b4792518cb61b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Montopolis<br>Median Days on Market: 57.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d08b2c1bd3678e9b4c3fe18899ae1161 = L.circleMarker(
+                [30.2986834, -97.700371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_d08b2c1bd3678e9b4c3fe18899ae1161.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mueller<br>Median Days on Market: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d3be32e88d8f66dc5878a45ec5d1b1d = L.circleMarker(
+                [30.3923316, -97.708224],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_2d3be32e88d8f66dc5878a45ec5d1b1d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Austin<br>Median Days on Market: 42.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8aaf6dfeafd4a31d77abbc459e2031eb = L.circleMarker(
+                [30.3911419, -97.7218332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8aaf6dfeafd4a31d77abbc459e2031eb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet<br>Median Days on Market: 93.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f78e9e574ad2030b7aad732d232eb50e = L.circleMarker(
+                [30.3911535, -97.7218322],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f78e9e574ad2030b7aad732d232eb50e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet-Gateway<br>Median Days on Market: 93.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8cfc6622a5cfc9e10947ed7abd0c6278 = L.circleMarker(
+                [30.370122, -97.6884248],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8cfc6622a5cfc9e10947ed7abd0c6278.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Lamar<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7cf6c33dc49880c9728201adeb9cbc05 = L.circleMarker(
+                [30.3176931, -97.7211877],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_7cf6c33dc49880c9728201adeb9cbc05.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Loop<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fa4fb5324919eaba8855c9405d94b81a = L.circleMarker(
+                [30.3646906, -97.7351113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_fa4fb5324919eaba8855c9405d94b81a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Shoal Creek<br>Median Days on Market: 72.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5b2de7db66e7cd3dc0e7866e2d88efc6 = L.circleMarker(
+                [30.2976841, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_5b2de7db66e7cd3dc0e7866e2d88efc6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North University<br>Median Days on Market: 51.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_966cc25fbbb991e9eabb6996a6d5d302 = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_966cc25fbbb991e9eabb6996a6d5d302.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northeast Austin<br>Median Days on Market: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c1989bc965ec01eb01e30232986d9a3a = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_c1989bc965ec01eb01e30232986d9a3a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Austin<br>Median Days on Market: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f30adb8cfd4d6d66be3c82aae9362925 = L.circleMarker(
+                [30.353213, -97.7674773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f30adb8cfd4d6d66be3c82aae9362925.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills<br>Median Days on Market: 42.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2968fd73a3ab8e05f9e769ebd5b5257 = L.circleMarker(
+                [30.3591778, -97.7655987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_d2968fd73a3ab8e05f9e769ebd5b5257.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills-Far West<br>Median Days on Market: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_690e802f0fdbae65e1be7df6ea70bf9e = L.circleMarker(
+                [30.2339613, -97.8648067],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_690e802f0fdbae65e1be7df6ea70bf9e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Hill<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_79baa88b0da1ceb31f836c44cd84552a = L.circleMarker(
+                [30.273648, -97.6976539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_79baa88b0da1ceb31f836c44cd84552a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Springs<br>Median Days on Market: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a8eae17f1dd4e1a4837ef5b6b91bdd3 = L.circleMarker(
+                [30.2877953, -97.7673314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_5a8eae17f1dd4e1a4837ef5b6b91bdd3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old Enfield<br>Median Days on Market: 114.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec4bf23921d066f29dbd91ed701bf47a = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_ec4bf23921d066f29dbd91ed701bf47a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old West Austin<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6ca43c759526a336f438f9064d7d3c6c = L.circleMarker(
+                [30.3000111, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_6ca43c759526a336f438f9064d7d3c6c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pecan Springs Springdale<br>Median Days on Market: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_80cbb12e4ef26b523c14d60eb0fe2a4e = L.circleMarker(
+                [30.2952051, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_80cbb12e4ef26b523c14d60eb0fe2a4e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pemberton Heights<br>Median Days on Market: 104.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49b0794c63f7f3f0d4292f4b5847b3c2 = L.circleMarker(
+                [30.23471079999999, -97.7118003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_49b0794c63f7f3f0d4292f4b5847b3c2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pleasant Valley<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_12083a77a7986939160dba7795cfc2a7 = L.circleMarker(
+                [30.4504785, -97.785287],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_12083a77a7986939160dba7795cfc2a7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pond Springs<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6caf0593bf5bc572eddb095bc27aba4 = L.circleMarker(
+                [30.3688641, -97.7046722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f6caf0593bf5bc572eddb095bc27aba4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Creek<br>Median Days on Market: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a36d9a9b98d5e5a363013e1f8d07e58a = L.circleMarker(
+                [30.3914446, -97.7022988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a36d9a9b98d5e5a363013e1f8d07e58a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Hollow<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c51e2c174283f6a6f6b47420b24f69c1 = L.circleMarker(
+                [30.4179412, -97.8984558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_c51e2c174283f6a6f6b47420b24f69c1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ridgetop<br>Median Days on Market: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_571dade5d53985a3442fb4b0349f8f41 = L.circleMarker(
+                [30.2359434, -97.7284907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_571dade5d53985a3442fb4b0349f8f41.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Riverside<br>Median Days on Market: 75.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c63290bc30e15c703015a089497c702 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_9c63290bc30e15c703015a089497c702.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers Hill<br>Median Days on Market: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d91a29bd037c40b91eebf88e7f2c0b8 = L.circleMarker(
+                [30.267346, -97.7234586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_3d91a29bd037c40b91eebf88e7f2c0b8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers-Washington-Holy Cross<br>Median Days on Market: 106.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38f1750378dee4fc80c2ad7cb44f08ae = L.circleMarker(
+                [30.3143949, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_38f1750378dee4fc80c2ad7cb44f08ae.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosedale<br>Median Days on Market: 64.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb6a90ceaa2daad89c0ac1778fd42bd3 = L.circleMarker(
+                [30.2706266, -97.7104428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_bb6a90ceaa2daad89c0ac1778fd42bd3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosewood<br>Median Days on Market: 66.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_26e92b5e05c0c662c64ecf99f8550399 = L.circleMarker(
+                [30.4212008, -97.6832998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_26e92b5e05c0c662c64ecf99f8550399.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Scofield Farms<br>Median Days on Market: 22.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfed415a8955594cbcc5ab2a05c0c770 = L.circleMarker(
+                [30.2660292, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_cfed415a8955594cbcc5ab2a05c0c770.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Seaholm District<br>Median Days on Market: 84.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb5d11d991d0514ecfb603afb3bd867d = L.circleMarker(
+                [30.20632253321186, -97.90891762243965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_eb5d11d991d0514ecfb603afb3bd867d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Slaughter Creek<br>Median Days on Market: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d6d3a4867dfbdf99b818cce4fa9d7ecf = L.circleMarker(
+                [30.1935594, -97.842056],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_d6d3a4867dfbdf99b818cce4fa9d7ecf.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Brodie<br>Median Days on Market: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d000b7d6a4fd71809eb288d8e3922d4 = L.circleMarker(
+                [30.2049701, -97.7748074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_6d000b7d6a4fd71809eb288d8e3922d4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Congress<br>Median Days on Market: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_885309150d4616d4d356ea368260d9b0 = L.circleMarker(
+                [30.2372278, -97.7837533],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_885309150d4616d4d356ea368260d9b0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lamar<br>Median Days on Market: 84.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbd8ee710f3332e2988a7407a01d88d2 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_dbd8ee710f3332e2988a7407a01d88d2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lawn<br>Median Days on Market: 78.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_148ff0c2c6976677b7f7e4019dc5d204 = L.circleMarker(
+                [30.2195294, -97.7839041],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_148ff0c2c6976677b7f7e4019dc5d204.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Manchaca<br>Median Days on Market: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad33e9d55afbe2c6a41d07525944adc4 = L.circleMarker(
+                [30.2055702, -97.7166372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_ad33e9d55afbe2c6a41d07525944adc4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southeast Austin<br>Median Days on Market: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_20eadf3802a60649b423ec17c26ecb56 = L.circleMarker(
+                [30.2009698, -97.8333958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_20eadf3802a60649b423ec17c26ecb56.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southhampton Hills<br>Median Days on Market: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2b18c6b105b0d0d4b887ab5190e24879 = L.circleMarker(
+                [30.1624125, -97.7946527],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_2b18c6b105b0d0d4b887ab5190e24879.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southpark Meadows<br>Median Days on Market: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c2910f71e5696c30e4f3787dc3870b89 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_c2910f71e5696c30e4f3787dc3870b89.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southwest Austin<br>Median Days on Market: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ca5916e75b6db3cfafa711ac87c9d6f = L.circleMarker(
+                [30.4359772, -97.8000975],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_0ca5916e75b6db3cfafa711ac87c9d6f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Spicewood<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3056d68cb5c51aa84a8246f2a9c286a = L.circleMarker(
+                [30.1568662, -97.7430283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_c3056d68cb5c51aa84a8246f2a9c286a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Springfield at Thaxton Road<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_84151ca94dc86b7e93dd48730b24da63 = L.circleMarker(
+                [30.2264094, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_84151ca94dc86b7e93dd48730b24da63.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Edwards<br>Median Days on Market: 112.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_865b7641b576ec632b10b49866176698 = L.circleMarker(
+                [30.3328019, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_865b7641b576ec632b10b49866176698.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns<br>Median Days on Market: 109.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d93f4f9d7882ee09a355f7ee7a513dc = L.circleMarker(
+                [30.3260919, -97.6922889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_5d93f4f9d7882ee09a355f7ee7a513dc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns-Coronado Hills<br>Median Days on Market: 87.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_60cbf9f0bd60732427a1c64d401a3aa1 = L.circleMarker(
+                [30.1970686, -97.7771702],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_60cbf9f0bd60732427a1c64d401a3aa1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Sweetbriar<br>Median Days on Market: 96.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5470b1032c74a5c34bf3efcfa2e28dc4 = L.circleMarker(
+                [30.4078412, -97.6670191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_5470b1032c74a5c34bf3efcfa2e28dc4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Tech Ridge<br>Median Days on Market: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d5be67defe8cc841a366c31014ee2a7f = L.circleMarker(
+                [30.2523971, -97.8338263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_d5be67defe8cc841a366c31014ee2a7f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Travis Country<br>Median Days on Market: 29.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db0c47796572aeee346486dd8c970b2e = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_db0c47796572aeee346486dd8c970b2e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills<br>Median Days on Market: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f1c75f725c08d269ae97fcf9181579f7 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f1c75f725c08d269ae97fcf9181579f7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills & Windsor Park<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f590e99440bd39dd70564b16e9c8637c = L.circleMarker(
+                [30.1858848, -97.7705653],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f590e99440bd39dd70564b16e9c8637c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Upper Boggy Creek<br>Median Days on Market: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3448f4ab318ce2ec94e31d07598bb4b = L.circleMarker(
+                [30.2086396, -97.8728403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_f3448f4ab318ce2ec94e31d07598bb4b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Village at Western Oaks<br>Median Days on Market: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a99fd976e95f259a68a700df92b94fb = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_7a99fd976e95f259a68a700df92b94fb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Austin<br>Median Days on Market: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_634e10774295e2cac17e3cd3de63bcae = L.circleMarker(
+                [30.21315749999999, -97.7743522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_634e10774295e2cac17e3cd3de63bcae.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Congress<br>Median Days on Market: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c4ac8111ff0bb4e0bd362786d869bbc0 = L.circleMarker(
+                [30.2385146, -97.8884881],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_c4ac8111ff0bb4e0bd362786d869bbc0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Oak Hill<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_481ca146cc7d33f29bdd0805c9344a1b = L.circleMarker(
+                [30.29147, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_481ca146cc7d33f29bdd0805c9344a1b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West University<br>Median Days on Market: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bfb7c14bdebd1c9e0e68306a9c76fd0d = L.circleMarker(
+                [30.2881825, -97.7769875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_bfb7c14bdebd1c9e0e68306a9c76fd0d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westfield<br>Median Days on Market: 73.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8430da1579c22be2b4326392e85bf783 = L.circleMarker(
+                [30.2230485, -97.7986926],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8430da1579c22be2b4326392e85bf783.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westgate<br>Median Days on Market: 41.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e747df81704fa0d942e327558db5464 = L.circleMarker(
+                [30.292674, -97.553824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_7e747df81704fa0d942e327558db5464.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Whisper Valley<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_50906a67186904502e66496520952bee = L.circleMarker(
+                [30.2963458, -97.7136976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_50906a67186904502e66496520952bee.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wilshire Wood<br>Median Days on Market: 113.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17465ae7bfb4211dceeab87d418dd0c6 = L.circleMarker(
+                [30.3627291, -97.6792293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_17465ae7bfb4211dceeab87d418dd0c6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Hills<br>Median Days on Market: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3906c48ee6400cd1900bf3478e7efbd3 = L.circleMarker(
+                [30.3105177, -97.6900846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_3906c48ee6400cd1900bf3478e7efbd3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Park<br>Median Days on Market: 38.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df964e9cb671cd252c089d8f36f75e48 = L.circleMarker(
+                [30.2936434, -97.7650044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_df964e9cb671cd252c089d8f36f75e48.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Road<br>Median Days on Market: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8cdf644b44e502ba62a9073f9a895fcb = L.circleMarker(
+                [30.357046, -97.751177],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_8cdf644b44e502ba62a9073f9a895fcb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wood Creek<br>Median Days on Market: 96.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_06bf4ef6a9e4b5b0121a5dfc0871301e = L.circleMarker(
+                [30.2062976, -97.840195],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_06bf4ef6a9e4b5b0121a5dfc0871301e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Woodstone Village<br>Median Days on Market: 26.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a8c6e1e26f443f582cbe2611fc68934a = L.circleMarker(
+                [30.3610582, -97.7232992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_a8c6e1e26f443f582cbe2611fc68934a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wooten<br>Median Days on Market: 85.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb38a95f7ef8c7532c84d46880ff5bef = L.circleMarker(
+                [30.25426879999999, -97.7669536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_0c8bb7fc54275cfef0abdf83313b8b44);
+        
+    
+            circle_marker_cb38a95f7ef8c7532c84d46880ff5bef.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Zilker<br>Median Days on Market: 75.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_603df8ce33e003a6b6bc93461b564ce6 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var tile_layer_2dc54f4daf108fc6b2844d328eb4200b = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var tile_layer_af4376a943bc73a3c7ef86aa5f8f0782 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var tile_layer_dec3f76c8d2e2f6d91cac7e22ec35e34 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var tile_layer_1da68552413c69335a6b206729c031ab = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var tile_layer_aa787f5ea80a3a67870a4f8c626c1636 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+        
+    
+            var layer_control_8d9765d7a43e4bae0bf27e226bab2cab = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_af4376a943bc73a3c7ef86aa5f8f0782,
+                    "stamenwatercolor" : tile_layer_603df8ce33e003a6b6bc93461b564ce6,
+                    "openstreetmap" : tile_layer_2dc54f4daf108fc6b2844d328eb4200b,
+                    "stamentoner" : tile_layer_dec3f76c8d2e2f6d91cac7e22ec35e34,
+                    "cartodbpositron" : tile_layer_1da68552413c69335a6b206729c031ab,
+                    "cartodbdark_matter" : tile_layer_aa787f5ea80a3a67870a4f8c626c1636,
+                },
+                overlays :  {
+                    "Austin - median_dom" : heat_map_62df1dfe33a803207c620fa053ee5ea8,
+                    "Median Days on Market Centers" : feature_group_0c8bb7fc54275cfef0abdf83313b8b44,
+                },
+            };
+            L.control.layers(
+                layer_control_8d9765d7a43e4bae0bf27e226bab2cab.base_layers,
+                layer_control_8d9765d7a43e4bae0bf27e226bab2cab.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_1acda76572d368aeb67962a35b64485c);
+            tile_layer_603df8ce33e003a6b6bc93461b564ce6.remove();
+            tile_layer_2dc54f4daf108fc6b2844d328eb4200b.remove();
+            tile_layer_af4376a943bc73a3c7ef86aa5f8f0782.remove();
+            tile_layer_dec3f76c8d2e2f6d91cac7e22ec35e34.remove();
+            tile_layer_1da68552413c69335a6b206729c031ab.remove();
+            tile_layer_aa787f5ea80a3a67870a4f8c626c1636.remove();
+        
+</script>
+</html>

@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7cc145ebf14adba45d5c17e645e58199 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7cc145ebf14adba45d5c17e645e58199" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7cc145ebf14adba45d5c17e645e58199 = L.map(
+                "map_7cc145ebf14adba45d5c17e645e58199",
+                {
+                    center: [25.796790844604317, -80.23145239640287],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cc6f0807cbf23bf8db60b32fdffcbce0 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var heat_map_649e3de6854ebae5b26a1c9c7ee45da2 = L.heatLayer(
+                [[25.81454, -80.22394, 0.3125], [25.77199, -80.24727, 0.0], [25.7759, -80.18639, 0.0], [25.83967, -80.1809, 0.0], [25.84205, -80.18652, 0.0], [25.73378, -80.242, 0.25], [25.73337, -80.24954, 0.0], [25.76258, -80.19064, 0.1785714285714285], [25.76715, -80.18475, 0.0], [25.7655, -80.19351, 0.3076923076923077], [25.81315, -80.19171, 0.3333333333333333], [25.81645, -80.19762, 0.25], [25.81659, -80.20289, 0.5999999999999999], [25.77254, -80.23093, 0.5], [25.79048, -80.21478, 1.0], [25.75362, -80.25068, 0.0], [25.74162, -80.22428, 0.0], [25.83039, -80.20123, 0.0], [25.73762, -80.22326, 0.5], [25.77039, -80.28443, 0.2941176470588235], [25.82008, -80.22644, 0.2], [25.73051, -80.23625, 0.3333333333333333], [25.83018, -80.21566, 0.0], [25.76102, -80.25099, 0.0], [25.76952, -80.21861, 0.0], [25.78268, -80.27284, 0.4285714285714285], [25.83503, -80.18228, 0.0], [25.83558, -80.22118, 0.4], [25.7755, -80.20532, 0.0], [25.8476, -80.19255, 0.0], [25.84425, -80.19907, 0.0], [25.80476, -80.23186, 0.2857142857142857], [25.82645, -80.18307, 1.0], [25.78949, -80.24758, 0.0], [25.7378, -80.234, 0.0], [25.7862, -80.23165, 0.0], [25.83742, -80.2107, 0.0], [25.77667, -80.21879, 0.0], [25.82651, -80.21557, 0.5999999999999999], [25.83281, -80.18627, 0.0], [25.76133, -80.24281, 0.5], [25.75393, -80.24255, 0.5], [25.77067, -80.19535, 0.5], [25.80558, -80.21481, 0.25], [25.75954, -80.22227, 0.3571428571428571], [25.85174, -80.17847, 0.0], [25.74654, -80.23089, 0.2], [25.7821, -80.24816, 0.0], [25.718, -80.2559, 0.0], [25.7185, -80.24751, 0.5], [25.78159, -80.22701, 1.0], [25.78207, -80.21007, 0.0], [25.76515, -80.19789, 1.0], [25.78607, -80.26007, 1.0], [25.72769, -80.2516, 1.0], [25.7616798, -80.1917902, 0.0], [25.8003154, -80.22655449999999, 0.0], [25.8188645, -80.1884953, 0.0], [25.7616798, -80.1917902, 1.0], [25.7601793, -80.1958755, 0.0], [25.7616798, -80.1917902, 0.0], [25.7616798, -80.1917902, 0.0], [25.8131533, -80.19171419999999, 0.0], [25.7506988, -80.2302218, 0.3620689655172413], [25.7616798, -80.1917902, 0.0], [25.7712513, -80.1918728, 0.26], [25.7595441, -80.22227099999999, 0.6666666666666666], [25.7616798, -80.1917902, 0.0], [25.7837044, -80.23228209999999, 0.0], [25.7742525, -80.1903736, 1.0], [25.7616798, -80.1917902, 0.4], [25.7902153, -80.25379459999999, 0.0], [25.7873369, -80.2570447, 1.0], [25.7616798, -80.1917902, 0.0], [25.7616798, -80.1917902, 0.5], [25.8326937, -80.19620859999999, 0.0], [25.7776438, -80.2377078, 0.0], [25.7616798, -80.1917902, 0.0], [25.7601793, -80.1958755, 1.0], [25.7616798, -80.1917902, 0.0], [25.7616798, -80.1917902, 0.0], [25.8014685, -80.1990903, 0.0], [25.81494, -80.3016684, 0.3333333333333333], [25.8353224, -80.18380379999999, 0.0], [25.7616798, -80.1917902, 0.2142857142857142], [25.7743658, -80.1928475, 0.0], [25.7616798, -80.1917902, 0.1666666666666666], [25.8068701, -80.1954844, 0.0816326530612244], [25.7616798, -80.1917902, 0.0], [25.7616798, -80.1917902, 0.25], [25.8229832, -80.2153998, 0.4827586206896551], [25.7595441, -80.22227099999999, 0.0], [25.7369455, -80.2304625, 0.25], [25.7616798, -80.1917902, 0.375], [25.7839802, -80.2014543, 0.0], [25.8068939, -80.1862582, 0.0], [25.782503, -80.19062, 0.2727272727272727], [25.7616798, -80.1917902, 0.0], [25.7905949, -80.1754446, 0.4285714285714285], [25.7724662, -80.2146727, 0.1], [25.787113, -80.2313082, 0.0], [25.7616798, -80.1917902, 0.0], [25.748899, -80.23609019999999, 0.25], [25.7616798, -80.1917902, 0.0], [25.7398226, -80.24199399999999, 0.0], [25.7599774, -80.19702099999999, 0.0], [25.720274, -80.2532061, 0.25], [25.7646861, -80.2552715, 0.0], [25.7587114, -80.398387, 0.0], [25.7616798, -80.1917902, 0.6666666666666666], [25.7904532, -80.20249299999999, 0.0], [25.830499, -80.18037079999999, 0.0], [25.7616798, -80.1917902, 0.0], [25.7616798, -80.1917902, 1.0], [25.7616798, -80.1917902, 0.0], [25.7720352, -80.250733, 0.1538461538461538], [25.7616798, -80.1917902, 0.0], [25.7560648, -80.29567109999999, 0.2345679012345678], [25.7740153, -80.1938844, 0.0], [25.8042441, -80.1989186, 0.0816326530612244]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var feature_group_2eca0e3b035ccbba393acd14c462ab98 = L.featureGroup(
+                {}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var circle_marker_f06456901595d7956a4847bcdb3a5fd8 = L.circleMarker(
+                [25.84839, -80.19495],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_f06456901595d7956a4847bcdb3a5fd8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - 79th Street<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9e45961e7dc5eb52a2a50871539cb9a5 = L.circleMarker(
+                [25.81454, -80.22394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_9e45961e7dc5eb52a2a50871539cb9a5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah<br>Off Market in Two Weeks: 0.3125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b2ab207daf1f41106d27d552fe1fd9f5 = L.circleMarker(
+                [25.79661, -80.22252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b2ab207daf1f41106d27d552fe1fd9f5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Industrial District<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ab2197f9afd85dedf08e34c69d07ced = L.circleMarker(
+                [25.77199, -80.24727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_4ab2197f9afd85dedf08e34c69d07ced.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburndale<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_194048aaf516a5dc055a0170dccb940b = L.circleMarker(
+                [25.7759, -80.18639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_194048aaf516a5dc055a0170dccb940b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayfront<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f6eb04655506138b9ed4aeb55df052d = L.circleMarker(
+                [25.83967, -80.1809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8f6eb04655506138b9ed4aeb55df052d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayside<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ce3e457b248fc26c06d1b4e52daa8be7 = L.circleMarker(
+                [25.84205, -80.18652],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ce3e457b248fc26c06d1b4e52daa8be7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Belle Meade West<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f7ac821e1a51087e899817a7cb6ef7cb = L.circleMarker(
+                [25.73378, -80.242],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_f7ac821e1a51087e899817a7cb6ef7cb.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove East<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_20619f57e5ff7ecee85c07ca0d803f9a = L.circleMarker(
+                [25.73337, -80.24954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_20619f57e5ff7ecee85c07ca0d803f9a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove West<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c813acf8d0a4a5dfc9fc4efac18e9cf = L.circleMarker(
+                [25.76258, -80.19064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8c813acf8d0a4a5dfc9fc4efac18e9cf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Business District<br>Off Market in Two Weeks: 0.1785714285714285<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_27679b6a1a7d99ca4773f76f8a71c601 = L.circleMarker(
+                [25.76715, -80.18475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_27679b6a1a7d99ca4773f76f8a71c601.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Key<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d71b5c93572bffe0e07519840c23a465 = L.circleMarker(
+                [25.7655, -80.19351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d71b5c93572bffe0e07519840c23a465.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Village<br>Off Market in Two Weeks: 0.3076923076923077<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4bcca6a5144353dd328e6777160f1cf8 = L.circleMarker(
+                [25.81315, -80.19171],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_4bcca6a5144353dd328e6777160f1cf8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_442007b087ad181a4d69861d2dc5f0d0 = L.circleMarker(
+                [25.81645, -80.19762],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_442007b087ad181a4d69861d2dc5f0d0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista Heights<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3e47bad08edb6230e22f27d42a26d4f4 = L.circleMarker(
+                [25.81659, -80.20289],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_3e47bad08edb6230e22f27d42a26d4f4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista West<br>Off Market in Two Weeks: 0.5999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4d1ca061a8d3e76dbaa68dbe7412cd64 = L.circleMarker(
+                [25.77254, -80.23093],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_4d1ca061a8d3e76dbaa68dbe7412cd64.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Grove<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c39c9d1f97b9c023d3a7e31d2245c37 = L.circleMarker(
+                [25.79048, -80.21478],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_2c39c9d1f97b9c023d3a7e31d2245c37.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Civic Center<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9fab83ee53a88429a4e621b8d3c6788 = L.circleMarker(
+                [25.75362, -80.25068],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_e9fab83ee53a88429a4e621b8d3c6788.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Gate<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d5c06e7001f673bba300f2f5cadd7ff = L.circleMarker(
+                [25.78298, -80.20406],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_1d5c06e7001f673bba300f2f5cadd7ff.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Culmer<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8408fc4976b90937d33a0cb701b8f3ef = L.circleMarker(
+                [25.74162, -80.22428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8408fc4976b90937d33a0cb701b8f3ef.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Grove<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25bcd47205b1bc1ec466dc28d005527e = L.circleMarker(
+                [25.83039, -80.20123],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_25bcd47205b1bc1ec466dc28d005527e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Edison<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1cc22cf0c1be632af2ac865436884c3c = L.circleMarker(
+                [25.73762, -80.22326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_1cc22cf0c1be632af2ac865436884c3c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fair Isle<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ed6b6e83533245c91a7f601576422114 = L.circleMarker(
+                [25.77039, -80.28443],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ed6b6e83533245c91a7f601576422114.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagami<br>Off Market in Two Weeks: 0.2941176470588235<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c198302822591ea51b37377e58943616 = L.circleMarker(
+                [25.82008, -80.22644],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_c198302822591ea51b37377e58943616.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flora Park<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9be16674e57a2aa164c52d2f7b350010 = L.circleMarker(
+                [25.73051, -80.23625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_9be16674e57a2aa164c52d2f7b350010.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grove Center<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_592c065fa471b32dc96def22ffeeee81 = L.circleMarker(
+                [25.7856, -80.21077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_592c065fa471b32dc96def22ffeeee81.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Highland Park<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_279316fb86e59b197d7a7684e22f050e = L.circleMarker(
+                [25.83018, -80.21566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_279316fb86e59b197d7a7684e22f050e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - King Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_95bad434539ebac60cfbbc7c57b8ef56 = L.circleMarker(
+                [25.76102, -80.25099],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_95bad434539ebac60cfbbc7c57b8ef56.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - La Pastorita<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f464392d9d0f290a0799d964838b011 = L.circleMarker(
+                [25.76952, -80.21861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_1f464392d9d0f290a0799d964838b011.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Latin Quarter<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c75dcc80bf394d2f1b2fcc23b379baf = L.circleMarker(
+                [25.78268, -80.27284],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_7c75dcc80bf394d2f1b2fcc23b379baf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Le Jeune Gardens<br>Off Market in Two Weeks: 0.4285714285714285<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_45c169fb59ea97ded5bd05f52ecca1b7 = L.circleMarker(
+                [25.83503, -80.18228],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_45c169fb59ea97ded5bd05f52ecca1b7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Legion Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_089e6177a3844f0591fe78ed19944d8e = L.circleMarker(
+                [25.83558, -80.22118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_089e6177a3844f0591fe78ed19944d8e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Liberty Square<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f01c85549603c4ef0a5fbfc9cc8af7d3 = L.circleMarker(
+                [25.7755, -80.20532],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_f01c85549603c4ef0a5fbfc9cc8af7d3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Managua<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e37fcc3145c8f839bdd9aeb2b89da7e9 = L.circleMarker(
+                [25.8476, -80.19255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_e37fcc3145c8f839bdd9aeb2b89da7e9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db773ead7e3321b7669fb2a0cd7736c4 = L.circleMarker(
+                [25.84425, -80.19907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_db773ead7e3321b7669fb2a0cd7736c4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Central<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e2f9c95d0aa187046563a17e5b74f5d = L.circleMarker(
+                [25.85149, -80.19498],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_7e2f9c95d0aa187046563a17e5b74f5d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Gardens<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c2cc9e8b9438c1f3e95df12bdbf272c = L.circleMarker(
+                [25.81264, -80.18783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_2c2cc9e8b9438c1f3e95df12bdbf272c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Magnolia Park<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a764abc701a449e636e8859c65d141ad = L.circleMarker(
+                [25.80476, -80.23186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_a764abc701a449e636e8859c65d141ad.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose<br>Off Market in Two Weeks: 0.2857142857142857<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_42ece85950524ad718a1efd365400aa4 = L.circleMarker(
+                [25.82645, -80.18307],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_42ece85950524ad718a1efd365400aa4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Morningside<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34cd890d573569eb427175c31c2597e8 = L.circleMarker(
+                [25.78949, -80.24758],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_34cd890d573569eb427175c31c2597e8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grapeland Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0773dbe1047a30e2d63549149b48a268 = L.circleMarker(
+                [25.7378, -80.234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_0773dbe1047a30e2d63549149b48a268.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grove<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33a1dacc40bc1412e1cdc9c854ab43ac = L.circleMarker(
+                [25.7862, -80.23165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_33a1dacc40bc1412e1cdc9c854ab43ac.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Sewell Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c022acab11ca04fbe8bc1195bb071705 = L.circleMarker(
+                [25.79189, -80.19768],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_c022acab11ca04fbe8bc1195bb071705.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Overtown<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_43c54f40b7a792a3921bbacc36fdfc96 = L.circleMarker(
+                [25.83742, -80.2107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_43c54f40b7a792a3921bbacc36fdfc96.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northwestern Estates<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ef0727ed3e3d7518cb0d3bef0b59e789 = L.circleMarker(
+                [25.85167, -80.19086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ef0727ed3e3d7518cb0d3bef0b59e789.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Oakland Grove<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a3fe72e1f1fee801c087cfe5ea74511 = L.circleMarker(
+                [25.77667, -80.21879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_0a3fe72e1f1fee801c087cfe5ea74511.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orange Bowl<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c561dd84f3453dc5323f03286f84b671 = L.circleMarker(
+                [25.82651, -80.21557],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_c561dd84f3453dc5323f03286f84b671.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orchard Villa<br>Off Market in Two Weeks: 0.5999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3cff0811993e80ccc898acdc34eaf96 = L.circleMarker(
+                [25.83281, -80.18627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b3cff0811993e80ccc898acdc34eaf96.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Palm Grove<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_74bafa9d382cf0ca611ac58b171b7fe0 = L.circleMarker(
+                [25.76133, -80.24281],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_74bafa9d382cf0ca611ac58b171b7fe0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale North<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9fa1f6796f818e53e99e506603b2b82a = L.circleMarker(
+                [25.75393, -80.24255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_9fa1f6796f818e53e99e506603b2b82a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale South<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca303ed634894d9576260a1ff1c77a0d = L.circleMarker(
+                [25.77067, -80.19535],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ca303ed634894d9576260a1ff1c77a0d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverfront<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5e7a600a660aab9115f5b2ee62fe6446 = L.circleMarker(
+                [25.80558, -80.21481],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_5e7a600a660aab9115f5b2ee62fe6446.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Santa Clara<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_01df0b7fdf84d359c5422a634e675fdb = L.circleMarker(
+                [25.75954, -80.22227],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_01df0b7fdf84d359c5422a634e675fdb.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah<br>Off Market in Two Weeks: 0.3571428571428571<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_821eda69bd2abb05014ea2ceba07a6f7 = L.circleMarker(
+                [25.85174, -80.17847],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_821eda69bd2abb05014ea2ceba07a6f7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shorecrest<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4a2456965fadd22f6807dbf5c2d6f41e = L.circleMarker(
+                [25.74654, -80.23089],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_4a2456965fadd22f6807dbf5c2d6f41e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_73fd880ec82df82c5ba4b87a2de44502 = L.circleMarker(
+                [25.7821, -80.24816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_73fd880ec82df82c5ba4b87a2de44502.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grapeland Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0594081acba65e07488b42258e737819 = L.circleMarker(
+                [25.718, -80.2559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_0594081acba65e07488b42258e737819.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d3069caebe0dffbecd0b929dd52034d = L.circleMarker(
+                [25.7185, -80.24751],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_1d3069caebe0dffbecd0b929dd52034d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove Bayside<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1e354093f9d4a7fefcfd716e84ac31e = L.circleMarker(
+                [25.78159, -80.22701],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d1e354093f9d4a7fefcfd716e84ac31e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Sewell Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ebb25d000f0a24f3c04c669f19f00263 = L.circleMarker(
+                [25.78207, -80.21007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ebb25d000f0a24f3c04c669f19f00263.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Spring Garden<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e19efae66726277a7c91442b36fb5366 = L.circleMarker(
+                [25.76515, -80.19789],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_e19efae66726277a7c91442b36fb5366.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Brickell<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3b41e90138d02c66967ee5cbbffc59b = L.circleMarker(
+                [25.78607, -80.26007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_a3b41e90138d02c66967ee5cbbffc59b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grapeland Heights<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_665cd0b37b9b155dc6415d331e50afde = L.circleMarker(
+                [25.72769, -80.2516],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_665cd0b37b9b155dc6415d331e50afde.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grove<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dd756b4013a0d12b31acadba9d946495 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_dd756b4013a0d12b31acadba9d946495.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Alhambra Groves<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf500be7da93d73e40ae61d287604d3d = L.circleMarker(
+                [25.8003154, -80.22655449999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_cf500be7da93d73e40ae61d287604d3d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Sunny Gardens<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_43704644f007da99909bdbc3efd79186 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_43704644f007da99909bdbc3efd79186.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburn Heights<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b92b7206f0dd592b112f9398ffa4db5 = L.circleMarker(
+                [25.8188645, -80.1884953],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_0b92b7206f0dd592b112f9398ffa4db5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bay Point<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2c4cc27a786ba92ae37cf107e4599a6 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_a2c4cc27a786ba92ae37cf107e4599a6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Blanton Park<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91c80c88783c7d778716bd5bd3ab4b68 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_91c80c88783c7d778716bd5bd3ab4b68.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bowman Heights<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c50c00231eb918c57758e162518cc635 = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_c50c00231eb918c57758e162518cc635.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Estates<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff530dc98cfe9f73d35bebb7aaacfc15 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ff530dc98cfe9f73d35bebb7aaacfc15.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_695ae74b35969a43617c474564767449 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_695ae74b35969a43617c474564767449.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor Plaza<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e20e149b791828651ca5e3688082266d = L.circleMarker(
+                [25.8131533, -80.19171419999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_e20e149b791828651ca5e3688082266d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista East<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_da44b38ecaca9dbbab2f105f86fde20b = L.circleMarker(
+                [28.0783497, -82.5698192],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_da44b38ecaca9dbbab2f105f86fde20b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Park<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c9577034d65b8ce5b84898b9a199bbb = L.circleMarker(
+                [25.7506988, -80.2302218],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_2c9577034d65b8ce5b84898b9a199bbb.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Way<br>Off Market in Two Weeks: 0.3620689655172413<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb9b05e055cd14fa4228b767f6886564 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_eb9b05e055cd14fa4228b767f6886564.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Creole District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_85c87e58fe65d669da705744b32d3138 = L.circleMarker(
+                [25.7712513, -80.1918728],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_85c87e58fe65d669da705744b32d3138.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Downtown Miami<br>Off Market in Two Weeks: 0.26<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe607904ae869cf3ae94982671844771 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_fe607904ae869cf3ae94982671844771.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Shenandoah<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_461a5216bfd0ffb5e86cb6b0b83e6a7a = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_461a5216bfd0ffb5e86cb6b0b83e6a7a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - El Camino Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a06a434ad5c60fb8e0c0d3fc1a8de12 = L.circleMarker(
+                [25.7837044, -80.23228209999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_5a06a434ad5c60fb8e0c0d3fc1a8de12.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fern Isle Gardens<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b410d79cda54e0db17806ffe512bb443 = L.circleMarker(
+                [25.7742525, -80.1903736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b410d79cda54e0db17806ffe512bb443.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Heights<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6edf9d21d0b4c9ad45efc5247e4536bf = L.circleMarker(
+                [25.7679293, -80.2565256],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_6edf9d21d0b4c9ad45efc5247e4536bf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Lawn<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87947762ad56fa7ad7f77f9e06fa6500 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_87947762ad56fa7ad7f77f9e06fa6500.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Golden Pines<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_050125b48c55f050cc2b40b2ac4a4612 = L.circleMarker(
+                [25.7902153, -80.25379459999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_050125b48c55f050cc2b40b2ac4a4612.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2faad7769c946ca2b6b247d6fe78733 = L.circleMarker(
+                [25.7873369, -80.2570447],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_a2faad7769c946ca2b6b247d6fe78733.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fea4504fb435de3668d5874caa9b50b9 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_fea4504fb435de3668d5874caa9b50b9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Haynsworth<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff55ee3f507ffe434d3d980e817c7ef8 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ff55ee3f507ffe434d3d980e817c7ef8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - High View<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8fae8aa0e51e2fa9cd75aea095e09626 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8fae8aa0e51e2fa9cd75aea095e09626.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Hills Trail Grove<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cd3ecb9e618be5e87dfb6f00d2fbb871 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_cd3ecb9e618be5e87dfb6f00d2fbb871.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Holleman Park<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_32186f9ea4f78b6983be4ea2b1e58699 = L.circleMarker(
+                [25.8326937, -80.19620859999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_32186f9ea4f78b6983be4ea2b1e58699.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Haiti<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d887c776de46f9e83f6f814e99105f4 = L.circleMarker(
+                [25.7776438, -80.2377078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_6d887c776de46f9e83f6f814e99105f4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Havana<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_60e415a4f69f7d30cb84161f860070a3 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_60e415a4f69f7d30cb84161f860070a3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little San Juan<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb8398eb259987cdf3f4ca633c922ccc = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_fb8398eb259987cdf3f4ca633c922ccc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lower Brickell<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d480689e062360f521b68d9b2517f5fb = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d480689e062360f521b68d9b2517f5fb.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lyndale<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f62c168c4d16dc932f3d0bbe02bf08a1 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_f62c168c4d16dc932f3d0bbe02bf08a1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Mc Allister Terrace<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b229cdf87aad64b7baf09a00484039ec = L.circleMarker(
+                [25.8014685, -80.1990903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b229cdf87aad64b7baf09a00484039ec.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Media Art Entertainment District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08bd8707de02cdfa775c611c879a9d10 = L.circleMarker(
+                [25.81494, -80.3016684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_08bd8707de02cdfa775c611c879a9d10.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose Heights<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fa4ec9136c67fd95ddc3a06afe929b68 = L.circleMarker(
+                [25.8353224, -80.18380379999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_fa4ec9136c67fd95ddc3a06afe929b68.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - MiMo District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c49d1d101800607b1678b9f2dbf748d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8c49d1d101800607b1678b9f2dbf748d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Central Business District<br>Off Market in Two Weeks: 0.2142857142857142<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7145368728ec36ca5822f7467dc902e5 = L.circleMarker(
+                [25.7743658, -80.1928475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_7145368728ec36ca5822f7467dc902e5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Jewelry District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08dfe446cc3a55e1a8ed860099f535dd = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_08dfe446cc3a55e1a8ed860099f535dd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Urban Acres<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a55421bbb56c19f4f4d42d7cfad1e73a = L.circleMarker(
+                [25.8068701, -80.1954844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_a55421bbb56c19f4f4d42d7cfad1e73a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Midtown Miami<br>Off Market in Two Weeks: 0.0816326530612244<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fad5b7590e090bcb33c79ad026a33ae3 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_fad5b7590e090bcb33c79ad026a33ae3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millerdale<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0421e9bc0d3de7e3a9b3ddb3325a192 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d0421e9bc0d3de7e3a9b3ddb3325a192.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millionaire's Row<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dd434d344b584db9542f927f5c72f177 = L.circleMarker(
+                [25.8229832, -80.2153998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_dd434d344b584db9542f927f5c72f177.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Model City<br>Off Market in Two Weeks: 0.4827586206896551<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87900bc0b7e8c2b90b5bc5adce154e53 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_87900bc0b7e8c2b90b5bc5adce154e53.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Naranja Nook<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b05a270cfe7996134c94bef5b8cde49f = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b05a270cfe7996134c94bef5b8cde49f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - New Shenandoah<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67f668b361b53fcadce560dd5f6583fe = L.circleMarker(
+                [25.7369455, -80.2304625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_67f668b361b53fcadce560dd5f6583fe.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Coconut Grove<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3af174eba37e63c38a6a929365a759a = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_a3af174eba37e63c38a6a929365a759a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Omni-Pac<br>Off Market in Two Weeks: 0.375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3117814099dd7db2519fd603e86b8b1 = L.circleMarker(
+                [25.7839802, -80.2014543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d3117814099dd7db2519fd603e86b8b1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Overtown<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e2af7d08850ba3e24f962b0e6c76f36 = L.circleMarker(
+                [25.8068939, -80.1862582],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_0e2af7d08850ba3e24f962b0e6c76f36.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Paraiso Bay<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4a41a9e0ab4e0d7608044248a7902740 = L.circleMarker(
+                [25.782503, -80.19062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_4a41a9e0ab4e0d7608044248a7902740.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Park West<br>Off Market in Two Weeks: 0.2727272727272727<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d473464a72aa455093d15cf31e93d1ab = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d473464a72aa455093d15cf31e93d1ab.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6dbefcdf8aef641b39cb94bbc052c078 = L.circleMarker(
+                [25.7905949, -80.1754446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_6dbefcdf8aef641b39cb94bbc052c078.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Plaza Venetia<br>Off Market in Two Weeks: 0.4285714285714285<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5fa545a376dbd8770c9624a1cdf5033 = L.circleMarker(
+                [25.7704036, -80.20730569999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b5fa545a376dbd8770c9624a1cdf5033.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - River Park<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c75f282b93ff0511575add4b7e82d6b = L.circleMarker(
+                [25.7724662, -80.2146727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_9c75f282b93ff0511575add4b7e82d6b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverside<br>Off Market in Two Weeks: 0.1<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_718129d7583c83efae532946bb75b681 = L.circleMarker(
+                [25.787113, -80.2313082],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_718129d7583c83efae532946bb75b681.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverview<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2683cab21ba1c14bcbf1716d12b5dc8 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_d2683cab21ba1c14bcbf1716d12b5dc8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shady Oaks<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52280727e2bf42603bb1ea0f652d4b00 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_52280727e2bf42603bb1ea0f652d4b00.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah Manor<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8c810b0ac44c9eca476ba7c2a23f24d = L.circleMarker(
+                [25.748899, -80.23609019999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_f8c810b0ac44c9eca476ba7c2a23f24d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff Estates<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_37f30d2299cbef9f9576165160ac8ce0 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_37f30d2299cbef9f9576165160ac8ce0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Crest<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_497b87bc04681c8c0019c08a3e753232 = L.circleMarker(
+                [25.7398226, -80.24199399999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_497b87bc04681c8c0019c08a3e753232.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Bay Estates<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea10fcf7cdd8170743bb5adea709533f = L.circleMarker(
+                [25.7599774, -80.19702099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ea10fcf7cdd8170743bb5adea709533f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Vedado<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_43e2660794d92b7031f80d74e8706a9d = L.circleMarker(
+                [25.720274, -80.2532061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_43e2660794d92b7031f80d74e8706a9d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Southwest Coconut Grove<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b42ba84c75c1314b9c9e304a2362b211 = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_b42ba84c75c1314b9c9e304a2362b211.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Groves<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbfa9190d6168df6f40e2696822f0a04 = L.circleMarker(
+                [25.7646861, -80.2552715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_dbfa9190d6168df6f40e2696822f0a04.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Highlands<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_abb48ba38adba24d50a0477e144bcc60 = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_abb48ba38adba24d50a0477e144bcc60.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Pines<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_11a830d7ff7fdab58b85542be1dc4a20 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_11a830d7ff7fdab58b85542be1dc4a20.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - The Pines<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8640db2519f05722033866cff054668e = L.circleMarker(
+                [25.7904532, -80.20249299999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8640db2519f05722033866cff054668e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Town Park Village<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8999233c360e27b1e3dc20f5e2927222 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8999233c360e27b1e3dc20f5e2927222.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Trail Granada<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ebeacb9393276e5595c597a2a08d5bab = L.circleMarker(
+                [25.830499, -80.18037079999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_ebeacb9393276e5595c597a2a08d5bab.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Upper Eastside<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53a4000660361df524c1bd652916dc95 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_53a4000660361df524c1bd652916dc95.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Washburns<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8af08118999ed44d4a68ef0abf290e41 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8af08118999ed44d4a68ef0abf290e41.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67766e234cc57eeaa95efb33e3b4692a = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_67766e234cc57eeaa95efb33e3b4692a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace North<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_067f31f61a2f179dbb6226e80a51bdb7 = L.circleMarker(
+                [25.7720352, -80.250733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_067f31f61a2f179dbb6226e80a51bdb7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Flagler<br>Off Market in Two Weeks: 0.1538461538461538<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_caa8b3f4ecd898c4248360b492c2cc5e = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_caa8b3f4ecd898c4248360b492c2cc5e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Lawn<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_efb5b16920d3255425c73964c73c6a23 = L.circleMarker(
+                [25.7560648, -80.29567109999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_efb5b16920d3255425c73964c73c6a23.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Miami<br>Off Market in Two Weeks: 0.2345679012345678<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a6599b27f1987d1f09fa0d2d4d57024 = L.circleMarker(
+                [25.7740153, -80.1938844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_8a6599b27f1987d1f09fa0d2d4d57024.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Woodside<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f8af88e6c5154743242dd636f5e610e = L.circleMarker(
+                [25.8042441, -80.1989186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_2eca0e3b035ccbba393acd14c462ab98);
+        
+    
+            circle_marker_5f8af88e6c5154743242dd636f5e610e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Wynwood-Edgewater<br>Off Market in Two Weeks: 0.0816326530612244<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_7eb47f1c2679fd1a6bd5fe019e5f35e0 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var tile_layer_a7aa3c1e70d57275d1a1747b4b4a6129 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var tile_layer_62ef429ebf38572f4117589b36a495ac = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var tile_layer_b1eaa42188cda900d5fac46b9b14f587 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var tile_layer_b9012a46ff0aba8ac5b5e874ec3e2bbc = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var tile_layer_9f3381c02f9d4dea9afa5328a368d92b = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+        
+    
+            var layer_control_10b0ee8b8be03d66fbc83a13d7b914cf = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_62ef429ebf38572f4117589b36a495ac,
+                    "stamenwatercolor" : tile_layer_7eb47f1c2679fd1a6bd5fe019e5f35e0,
+                    "openstreetmap" : tile_layer_a7aa3c1e70d57275d1a1747b4b4a6129,
+                    "stamentoner" : tile_layer_b1eaa42188cda900d5fac46b9b14f587,
+                    "cartodbpositron" : tile_layer_b9012a46ff0aba8ac5b5e874ec3e2bbc,
+                    "cartodbdark_matter" : tile_layer_9f3381c02f9d4dea9afa5328a368d92b,
+                },
+                overlays :  {
+                    "Miami - off_market_in_two_weeks" : heat_map_649e3de6854ebae5b26a1c9c7ee45da2,
+                    "Off Market in Two Weeks Centers" : feature_group_2eca0e3b035ccbba393acd14c462ab98,
+                },
+            };
+            L.control.layers(
+                layer_control_10b0ee8b8be03d66fbc83a13d7b914cf.base_layers,
+                layer_control_10b0ee8b8be03d66fbc83a13d7b914cf.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_7cc145ebf14adba45d5c17e645e58199);
+            tile_layer_7eb47f1c2679fd1a6bd5fe019e5f35e0.remove();
+            tile_layer_a7aa3c1e70d57275d1a1747b4b4a6129.remove();
+            tile_layer_62ef429ebf38572f4117589b36a495ac.remove();
+            tile_layer_b1eaa42188cda900d5fac46b9b14f587.remove();
+            tile_layer_b9012a46ff0aba8ac5b5e874ec3e2bbc.remove();
+            tile_layer_9f3381c02f9d4dea9afa5328a368d92b.remove();
+        
+</script>
+</html>

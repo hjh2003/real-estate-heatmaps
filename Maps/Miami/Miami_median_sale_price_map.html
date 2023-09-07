@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fa6761aa14b5ab8219f94bf98928695e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fa6761aa14b5ab8219f94bf98928695e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fa6761aa14b5ab8219f94bf98928695e = L.map(
+                "map_fa6761aa14b5ab8219f94bf98928695e",
+                {
+                    center: [25.796790844604317, -80.23145239640287],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e88e0c5b8d9fbc47b8275802223c2b24 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var heat_map_c9cd76db5c6472d152e404ec152594f8 = L.heatLayer(
+                [[25.84839, -80.19495, 1240000.0], [25.81454, -80.22394, 397500.0], [25.79661, -80.22252, 600000.0], [25.77199, -80.24727, 505000.0], [25.7759, -80.18639, 495000.0], [25.83967, -80.1809, 869950.0], [25.84205, -80.18652, 1040000.0], [25.73378, -80.242, 810000.0], [25.73337, -80.24954, 1300000.0], [25.76258, -80.19064, 637500.0], [25.76715, -80.18475, 811000.0], [25.7655, -80.19351, 650000.0], [25.81315, -80.19171, 795000.0], [25.81645, -80.19762, 790000.0], [25.81659, -80.20289, 650000.0], [25.77254, -80.23093, 525000.0], [25.79048, -80.21478, 1225000.0], [25.75362, -80.25068, 742500.0], [25.78298, -80.20406, 253000.0], [25.74162, -80.22428, 3285000.0], [25.83039, -80.20123, 545000.0], [25.73762, -80.22326, 1475000.0], [25.77039, -80.28443, 500000.0], [25.82008, -80.22644, 430000.0], [25.73051, -80.23625, 1649000.0], [25.7856, -80.21077, 330000.0], [25.83018, -80.21566, 280000.0], [25.76102, -80.25099, 376750.0], [25.76952, -80.21861, 319000.0], [25.78268, -80.27284, 230000.0], [25.83503, -80.18228, 413500.0], [25.83558, -80.22118, 290000.0], [25.7755, -80.20532, 315000.0], [25.8476, -80.19255, 385000.0], [25.84425, -80.19907, 362500.0], [25.85149, -80.19498, 720000.0], [25.81264, -80.18783, 1300000.0], [25.80476, -80.23186, 407500.0], [25.82645, -80.18307, 1075000.0], [25.78949, -80.24758, 510000.0], [25.7378, -80.234, 1588000.0], [25.7862, -80.23165, 362500.0], [25.79189, -80.19768, 670000.0], [25.83742, -80.2107, 415000.0], [25.85167, -80.19086, 420000.0], [25.77667, -80.21879, 615000.0], [25.82651, -80.21557, 430000.0], [25.83281, -80.18627, 1152500.0], [25.76133, -80.24281, 620000.0], [25.75393, -80.24255, 940000.0], [25.77067, -80.19535, 555000.0], [25.80558, -80.21481, 481200.0], [25.75954, -80.22227, 796000.0], [25.85174, -80.17847, 870000.0], [25.74654, -80.23089, 800000.0], [25.7821, -80.24816, 550000.0], [25.718, -80.2559, 3750000.0], [25.7185, -80.24751, 14000000.0], [25.78159, -80.22701, 547500.0], [25.78207, -80.21007, 590000.0], [25.76515, -80.19789, 435000.0], [25.78607, -80.26007, 775000.0], [25.72769, -80.2516, 931800.0], [25.7616798, -80.1917902, 300000.0], [25.8003154, -80.22655449999999, 590000.0], [25.7616798, -80.1917902, 1126000.0], [25.8188645, -80.1884953, 727500.0], [25.7616798, -80.1917902, 1225000.0], [25.7616798, -80.1917902, 558000.0], [25.7601793, -80.1958755, 1260000.0], [25.7616798, -80.1917902, 331700.0], [25.7616798, -80.1917902, 685000.0], [25.8131533, -80.19171419999999, 1430000.0], [28.0783497, -82.5698192, 480000.0], [25.7506988, -80.2302218, 730000.0], [25.7616798, -80.1917902, 530000.0], [25.7712513, -80.1918728, 625000.0], [25.7595441, -80.22227099999999, 775000.0], [25.7616798, -80.1917902, 715000.0], [25.7837044, -80.23228209999999, 130000.0], [25.7742525, -80.1903736, 845000.0], [25.7679293, -80.2565256, 465000.0], [25.7616798, -80.1917902, 625083.0], [25.7902153, -80.25379459999999, 510000.0], [25.7873369, -80.2570447, 700000.0], [25.7616798, -80.1917902, 1410000.0], [25.7616798, -80.1917902, 650000.0], [25.7616798, -80.1917902, 435750.0], [25.7616798, -80.1917902, 1699000.0], [25.8326937, -80.19620859999999, 477000.0], [25.7776438, -80.2377078, 525000.0], [25.7616798, -80.1917902, 1300000.0], [25.7601793, -80.1958755, 625000.0], [25.7616798, -80.1917902, 940000.0], [25.7616798, -80.1917902, 445000.0], [25.8014685, -80.1990903, 465000.0], [25.81494, -80.3016684, 525000.0], [25.8353224, -80.18380379999999, 914900.0], [25.7616798, -80.1917902, 533750.0], [25.7743658, -80.1928475, 360000.0], [25.7616798, -80.1917902, 395000.0], [25.8068701, -80.1954844, 611250.0], [25.7616798, -80.1917902, 1250000.0], [25.7616798, -80.1917902, 650000.0], [25.8229832, -80.2153998, 415000.0], [25.7616798, -80.1917902, 450000.0], [25.7595441, -80.22227099999999, 881000.0], [25.7369455, -80.2304625, 1562500.0], [25.7616798, -80.1917902, 415000.0], [25.7839802, -80.2014543, 495000.0], [25.8068939, -80.1862582, 855000.0], [25.782503, -80.19062, 752500.0], [25.7616798, -80.1917902, 595000.0], [25.7905949, -80.1754446, 380000.0], [25.7704036, -80.20730569999999, 1290000.0], [25.7724662, -80.2146727, 312500.0], [25.787113, -80.2313082, 585000.0], [25.7616798, -80.1917902, 195000.0], [25.7595441, -80.22227099999999, 660000.0], [25.748899, -80.23609019999999, 674000.0], [25.7616798, -80.1917902, 1345000.0], [25.7398226, -80.24199399999999, 698000.0], [25.7599774, -80.19702099999999, 815000.0], [25.720274, -80.2532061, 2360500.0], [25.7587114, -80.398387, 719500.0], [25.7646861, -80.2552715, 545000.0], [25.7587114, -80.398387, 236750.0], [25.7616798, -80.1917902, 575000.0], [25.7904532, -80.20249299999999, 316500.0], [25.7616798, -80.1917902, 620000.0], [25.830499, -80.18037079999999, 870000.0], [25.7616798, -80.1917902, 880000.0], [25.7616798, -80.1917902, 297500.0], [25.7616798, -80.1917902, 845000.0], [25.7720352, -80.250733, 505000.0], [25.7616798, -80.1917902, 500000.0], [25.7560648, -80.29567109999999, 445000.0], [25.7740153, -80.1938844, 390000.0], [25.8042441, -80.1989186, 611250.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var feature_group_afa362281992f4958641d44014792416 = L.featureGroup(
+                {}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var circle_marker_1664ab4e41089062bfb669134735a52d = L.circleMarker(
+                [25.84839, -80.19495],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1664ab4e41089062bfb669134735a52d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - 79th Street<br>Median Sale Price: 1240000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4b682f18d0af9f607070cfe2dd8a7104 = L.circleMarker(
+                [25.81454, -80.22394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_4b682f18d0af9f607070cfe2dd8a7104.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah<br>Median Sale Price: 397500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_274b8078b1c6257401833184996235ff = L.circleMarker(
+                [25.79661, -80.22252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_274b8078b1c6257401833184996235ff.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Industrial District<br>Median Sale Price: 600000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_11f977771bd89b9a72ab31c6fac450c3 = L.circleMarker(
+                [25.77199, -80.24727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_11f977771bd89b9a72ab31c6fac450c3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburndale<br>Median Sale Price: 505000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bf9a5c65fd4471a3c4028c2d237056fa = L.circleMarker(
+                [25.7759, -80.18639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_bf9a5c65fd4471a3c4028c2d237056fa.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayfront<br>Median Sale Price: 495000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ca4c097d3659f1932abde126826898b = L.circleMarker(
+                [25.83967, -80.1809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_4ca4c097d3659f1932abde126826898b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bayside<br>Median Sale Price: 869950.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f6db49b37bb2acb24e374b8f7bc5ad0 = L.circleMarker(
+                [25.84205, -80.18652],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_6f6db49b37bb2acb24e374b8f7bc5ad0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Belle Meade West<br>Median Sale Price: 1040000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc85930f2535e1183ad104e9b150b4b6 = L.circleMarker(
+                [25.73378, -80.242],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_fc85930f2535e1183ad104e9b150b4b6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove East<br>Median Sale Price: 810000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9ecde2107c3c67e2a0dedc5c79d71c8 = L.circleMarker(
+                [25.73337, -80.24954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_f9ecde2107c3c67e2a0dedc5c79d71c8.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bird Grove West<br>Median Sale Price: 1300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1fd2462b93554a5a9f676ab27c082e9c = L.circleMarker(
+                [25.76258, -80.19064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1fd2462b93554a5a9f676ab27c082e9c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Business District<br>Median Sale Price: 637500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c91b755fd2b7e7921624828249fc2b86 = L.circleMarker(
+                [25.76715, -80.18475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c91b755fd2b7e7921624828249fc2b86.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Key<br>Median Sale Price: 811000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_36445ef4d1cda95a56b031854c6e5565 = L.circleMarker(
+                [25.7655, -80.19351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_36445ef4d1cda95a56b031854c6e5565.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Village<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_54feeea946a3502cea35cd9ca241b4ed = L.circleMarker(
+                [25.81315, -80.19171],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_54feeea946a3502cea35cd9ca241b4ed.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista<br>Median Sale Price: 795000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0746f0b7488fee684cd207fbd3ba7393 = L.circleMarker(
+                [25.81645, -80.19762],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0746f0b7488fee684cd207fbd3ba7393.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista Heights<br>Median Sale Price: 790000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c6e411b3a49f099d42f2d8321e95c330 = L.circleMarker(
+                [25.81659, -80.20289],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c6e411b3a49f099d42f2d8321e95c330.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista West<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e8f40b26ca6c676a18b2d3660847527 = L.circleMarker(
+                [25.77254, -80.23093],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1e8f40b26ca6c676a18b2d3660847527.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Grove<br>Median Sale Price: 525000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b9e659d65d09381a814ef27a3dc1777 = L.circleMarker(
+                [25.79048, -80.21478],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1b9e659d65d09381a814ef27a3dc1777.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Civic Center<br>Median Sale Price: 1225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d6e9a0982b94accf0687226ad849bf42 = L.circleMarker(
+                [25.75362, -80.25068],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_d6e9a0982b94accf0687226ad849bf42.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Gate<br>Median Sale Price: 742500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bafb546a2d6bf9059277204e7ed52d89 = L.circleMarker(
+                [25.78298, -80.20406],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_bafb546a2d6bf9059277204e7ed52d89.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Culmer<br>Median Sale Price: 253000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ff573c115d02f7720c87379ac13c63f = L.circleMarker(
+                [25.74162, -80.22428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1ff573c115d02f7720c87379ac13c63f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Grove<br>Median Sale Price: 3285000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9dbbdbcdba69efaedd2dadbd3a793c4b = L.circleMarker(
+                [25.83039, -80.20123],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_9dbbdbcdba69efaedd2dadbd3a793c4b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Edison<br>Median Sale Price: 545000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_810693e264bd747f4d89f2cefe184c7c = L.circleMarker(
+                [25.73762, -80.22326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_810693e264bd747f4d89f2cefe184c7c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fair Isle<br>Median Sale Price: 1475000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72681607e493020a689023876af7ff86 = L.circleMarker(
+                [25.77039, -80.28443],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_72681607e493020a689023876af7ff86.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagami<br>Median Sale Price: 500000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3b77b750dbb9504e1ab997f27ea33551 = L.circleMarker(
+                [25.82008, -80.22644],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3b77b750dbb9504e1ab997f27ea33551.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flora Park<br>Median Sale Price: 430000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd45b3abcb8c86c806327e2777ff8580 = L.circleMarker(
+                [25.73051, -80.23625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_fd45b3abcb8c86c806327e2777ff8580.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grove Center<br>Median Sale Price: 1649000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_22d6b66fe6341783eacf3c46c97ee202 = L.circleMarker(
+                [25.7856, -80.21077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_22d6b66fe6341783eacf3c46c97ee202.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Highland Park<br>Median Sale Price: 330000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1075f342546154d5e62e3067a0c6f59a = L.circleMarker(
+                [25.83018, -80.21566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1075f342546154d5e62e3067a0c6f59a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - King Heights<br>Median Sale Price: 280000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7d4ea34f6c3ad22613b7ff69914d81cd = L.circleMarker(
+                [25.76102, -80.25099],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_7d4ea34f6c3ad22613b7ff69914d81cd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - La Pastorita<br>Median Sale Price: 376750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f8751014ee1f22b64998abb06b7ba03 = L.circleMarker(
+                [25.76952, -80.21861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_5f8751014ee1f22b64998abb06b7ba03.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Latin Quarter<br>Median Sale Price: 319000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_95c2f595d2c2781632c65bed06e0077c = L.circleMarker(
+                [25.78268, -80.27284],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_95c2f595d2c2781632c65bed06e0077c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Le Jeune Gardens<br>Median Sale Price: 230000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8d94a260ae73977e794a37fad1f9000f = L.circleMarker(
+                [25.83503, -80.18228],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_8d94a260ae73977e794a37fad1f9000f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Legion Park<br>Median Sale Price: 413500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca1436d92112aa3fadb38202f5c05f11 = L.circleMarker(
+                [25.83558, -80.22118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_ca1436d92112aa3fadb38202f5c05f11.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Liberty Square<br>Median Sale Price: 290000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4eff6d8a573fbfa383f306118a601e07 = L.circleMarker(
+                [25.7755, -80.20532],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_4eff6d8a573fbfa383f306118a601e07.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Managua<br>Median Sale Price: 315000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2db12f551bada6177b35129cb54782f4 = L.circleMarker(
+                [25.8476, -80.19255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_2db12f551bada6177b35129cb54782f4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River<br>Median Sale Price: 385000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c846f63f85d9dfeead4997c5b3a0958f = L.circleMarker(
+                [25.84425, -80.19907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c846f63f85d9dfeead4997c5b3a0958f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Central<br>Median Sale Price: 362500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9833aba598183a15e7ffff1061a94557 = L.circleMarker(
+                [25.85149, -80.19498],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_9833aba598183a15e7ffff1061a94557.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little River Gardens<br>Median Sale Price: 720000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0acf36b601cb9bf4727251784a9e8f29 = L.circleMarker(
+                [25.81264, -80.18783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0acf36b601cb9bf4727251784a9e8f29.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Magnolia Park<br>Median Sale Price: 1300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5fef05244c519fc17a6891ce61c35489 = L.circleMarker(
+                [25.80476, -80.23186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_5fef05244c519fc17a6891ce61c35489.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose<br>Median Sale Price: 407500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_793d70bf4b03985636cf48009ce234aa = L.circleMarker(
+                [25.82645, -80.18307],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_793d70bf4b03985636cf48009ce234aa.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Morningside<br>Median Sale Price: 1075000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0d11259af69fdcefad47e7c64b6838d3 = L.circleMarker(
+                [25.78949, -80.24758],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0d11259af69fdcefad47e7c64b6838d3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grapeland Heights<br>Median Sale Price: 510000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93cdf947445c3181cae0f5f8a6d0ea07 = L.circleMarker(
+                [25.7378, -80.234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_93cdf947445c3181cae0f5f8a6d0ea07.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Grove<br>Median Sale Price: 1588000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3233e86410a621dbc1e103ef54f14df5 = L.circleMarker(
+                [25.7862, -80.23165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3233e86410a621dbc1e103ef54f14df5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - North Sewell Park<br>Median Sale Price: 362500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2bb755bdfec76a97e5a391fc85cc643a = L.circleMarker(
+                [25.79189, -80.19768],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_2bb755bdfec76a97e5a391fc85cc643a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Overtown<br>Median Sale Price: 670000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5978b6419b76569e223f0d2618930514 = L.circleMarker(
+                [25.83742, -80.2107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_5978b6419b76569e223f0d2618930514.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northwestern Estates<br>Median Sale Price: 415000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbf737a54942d488f7b11946833f67ba = L.circleMarker(
+                [25.85167, -80.19086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_dbf737a54942d488f7b11946833f67ba.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Oakland Grove<br>Median Sale Price: 420000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8bec24e3236d61a2d9ac7bc69c2c807b = L.circleMarker(
+                [25.77667, -80.21879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_8bec24e3236d61a2d9ac7bc69c2c807b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orange Bowl<br>Median Sale Price: 615000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_44d32863ab45a3f8a9f9b4966cd3b62f = L.circleMarker(
+                [25.82651, -80.21557],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_44d32863ab45a3f8a9f9b4966cd3b62f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Orchard Villa<br>Median Sale Price: 430000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_144c093951500980896c3bb223ca46e9 = L.circleMarker(
+                [25.83281, -80.18627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_144c093951500980896c3bb223ca46e9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Palm Grove<br>Median Sale Price: 1152500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f02d8a624f1eec92ce5c3db78b37613e = L.circleMarker(
+                [25.76133, -80.24281],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_f02d8a624f1eec92ce5c3db78b37613e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale North<br>Median Sale Price: 620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_35d8030e571226303132514bc37f8b51 = L.circleMarker(
+                [25.75393, -80.24255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_35d8030e571226303132514bc37f8b51.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale South<br>Median Sale Price: 940000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_639958208dbb37b0d66f092ba7409f40 = L.circleMarker(
+                [25.77067, -80.19535],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_639958208dbb37b0d66f092ba7409f40.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverfront<br>Median Sale Price: 555000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dfd6709f9555952c22f38738e6b2ab84 = L.circleMarker(
+                [25.80558, -80.21481],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_dfd6709f9555952c22f38738e6b2ab84.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Santa Clara<br>Median Sale Price: 481200.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e6551d63972e4c52499e31635af2b611 = L.circleMarker(
+                [25.75954, -80.22227],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_e6551d63972e4c52499e31635af2b611.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah<br>Median Sale Price: 796000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_48bf59857b0a7ed2816a4eb3270d17fc = L.circleMarker(
+                [25.85174, -80.17847],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_48bf59857b0a7ed2816a4eb3270d17fc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shorecrest<br>Median Sale Price: 870000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ef9b30632c13ecebace708bd1f1e042 = L.circleMarker(
+                [25.74654, -80.23089],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3ef9b30632c13ecebace708bd1f1e042.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff<br>Median Sale Price: 800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c344c62920312946c1f4d2e7bd63497c = L.circleMarker(
+                [25.7821, -80.24816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c344c62920312946c1f4d2e7bd63497c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grapeland Heights<br>Median Sale Price: 550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_efc425c1fd30c9f350b08cb7e3f073be = L.circleMarker(
+                [25.718, -80.2559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_efc425c1fd30c9f350b08cb7e3f073be.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove<br>Median Sale Price: 3750000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_19a5832941860dd5793c32572f9d0bc4 = L.circleMarker(
+                [25.7185, -80.24751],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_19a5832941860dd5793c32572f9d0bc4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Grove Bayside<br>Median Sale Price: 14000000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d07a7b8bb0a263ee590d4c89e9566ea = L.circleMarker(
+                [25.78159, -80.22701],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_5d07a7b8bb0a263ee590d4c89e9566ea.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Sewell Park<br>Median Sale Price: 547500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f4f3fc8f989e804abd38755be51a0b0 = L.circleMarker(
+                [25.78207, -80.21007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_8f4f3fc8f989e804abd38755be51a0b0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Spring Garden<br>Median Sale Price: 590000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_71e5365bef598766bc947b60997f2c4e = L.circleMarker(
+                [25.76515, -80.19789],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_71e5365bef598766bc947b60997f2c4e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Brickell<br>Median Sale Price: 435000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1375814b4a20d5a5995be4f5af5ea3b6 = L.circleMarker(
+                [25.78607, -80.26007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1375814b4a20d5a5995be4f5af5ea3b6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grapeland Heights<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b10a5ffdacbc400e5a47dab6079e0ead = L.circleMarker(
+                [25.72769, -80.2516],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_b10a5ffdacbc400e5a47dab6079e0ead.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Grove<br>Median Sale Price: 931800.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57da9cdac87007b52c1468ffd641b525 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_57da9cdac87007b52c1468ffd641b525.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Alhambra Groves<br>Median Sale Price: 300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1c33a22b2a3f209cf89327f4c9f4c80d = L.circleMarker(
+                [25.8003154, -80.22655449999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1c33a22b2a3f209cf89327f4c9f4c80d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Allapattah Sunny Gardens<br>Median Sale Price: 590000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e853f6f5708ed607df4c4955ded4e277 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_e853f6f5708ed607df4c4955ded4e277.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Auburn Heights<br>Median Sale Price: 1126000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f54d7947a9d304fbb8fa13a77f275446 = L.circleMarker(
+                [25.8188645, -80.1884953],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_f54d7947a9d304fbb8fa13a77f275446.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bay Point<br>Median Sale Price: 727500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c9501ba38aafa378fcaa6247ea7cd0df = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c9501ba38aafa378fcaa6247ea7cd0df.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Blanton Park<br>Median Sale Price: 1225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba355db8022049efbd821885fab753af = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_ba355db8022049efbd821885fab753af.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Bowman Heights<br>Median Sale Price: 558000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_78141175804ff6f84ac4981ce99e8af5 = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_78141175804ff6f84ac4981ce99e8af5.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Brickell Estates<br>Median Sale Price: 1260000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4cc8746f798df91f8959bbc8b21d3fbd = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_4cc8746f798df91f8959bbc8b21d3fbd.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor<br>Median Sale Price: 331700.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_54eaa53519ffc89b0a5f8b389c1c6b98 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_54eaa53519ffc89b0a5f8b389c1c6b98.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Broadmoor Plaza<br>Median Sale Price: 685000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e0d9c770d6ea9c18ea93309fcb6942d = L.circleMarker(
+                [25.8131533, -80.19171419999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0e0d9c770d6ea9c18ea93309fcb6942d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Buena Vista East<br>Median Sale Price: 1430000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_094be5ed7833793c7d86e615861ee7de = L.circleMarker(
+                [28.0783497, -82.5698192],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_094be5ed7833793c7d86e615861ee7de.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Citrus Park<br>Median Sale Price: 480000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c48fa95aa23776e3cd9042f61d9a231e = L.circleMarker(
+                [25.7506988, -80.2302218],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c48fa95aa23776e3cd9042f61d9a231e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Coral Way<br>Median Sale Price: 730000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c53007ba2bb953f273a1708e2ea066b2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c53007ba2bb953f273a1708e2ea066b2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Creole District<br>Median Sale Price: 530000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bfaf218e928c1698a96d18b05d1df228 = L.circleMarker(
+                [25.7712513, -80.1918728],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_bfaf218e928c1698a96d18b05d1df228.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Downtown Miami<br>Median Sale Price: 625000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_736ac90f6e4c762da21ed235fc4bdf73 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_736ac90f6e4c762da21ed235fc4bdf73.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - East Shenandoah<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f058885029b6e85d6550960b160fa25d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_f058885029b6e85d6550960b160fa25d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - El Camino Park<br>Median Sale Price: 715000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e6b72d591466606ac61085f1c895c159 = L.circleMarker(
+                [25.7837044, -80.23228209999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_e6b72d591466606ac61085f1c895c159.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Fern Isle Gardens<br>Median Sale Price: 130000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34e44a8c9dca18b18a736ed276c83f10 = L.circleMarker(
+                [25.7742525, -80.1903736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_34e44a8c9dca18b18a736ed276c83f10.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Heights<br>Median Sale Price: 845000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57707bfa38b0b373f5baa79cc1a6c1b2 = L.circleMarker(
+                [25.7679293, -80.2565256],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_57707bfa38b0b373f5baa79cc1a6c1b2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Flagler Lawn<br>Median Sale Price: 465000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4c8621e42c149eb7859445159af3c2f = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_d4c8621e42c149eb7859445159af3c2f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Golden Pines<br>Median Sale Price: 625083.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b06ab3c40d5467916b416ad3ea288cf = L.circleMarker(
+                [25.7902153, -80.25379459999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_8b06ab3c40d5467916b416ad3ea288cf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Heights<br>Median Sale Price: 510000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d30dd33bd485c7cfdf1556ef3f7efc8c = L.circleMarker(
+                [25.7873369, -80.2570447],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_d30dd33bd485c7cfdf1556ef3f7efc8c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Grapeland Park<br>Median Sale Price: 700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_091b5531955d464ae1554c76761c1b21 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_091b5531955d464ae1554c76761c1b21.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Haynsworth<br>Median Sale Price: 1410000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89fd9cf6252eee8391535c68fabb2592 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_89fd9cf6252eee8391535c68fabb2592.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - High View<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47c4a46fbd9ad15016c450652fd1b42f = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_47c4a46fbd9ad15016c450652fd1b42f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Hills Trail Grove<br>Median Sale Price: 435750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c97070641bd252c98bca7b495d8bbdf = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3c97070641bd252c98bca7b495d8bbdf.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Holleman Park<br>Median Sale Price: 1699000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e086cb63b4ea3fb5c10fae3f6357815 = L.circleMarker(
+                [25.8326937, -80.19620859999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0e086cb63b4ea3fb5c10fae3f6357815.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Haiti<br>Median Sale Price: 477000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0349cd770bdc663bc4b15103874551dc = L.circleMarker(
+                [25.7776438, -80.2377078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0349cd770bdc663bc4b15103874551dc.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little Havana<br>Median Sale Price: 525000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5feda38f7c0da926ef0e038e496314ee = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_5feda38f7c0da926ef0e038e496314ee.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Little San Juan<br>Median Sale Price: 1300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4dc6cbc46dcd667f2549bf787e6f01d = L.circleMarker(
+                [25.7601793, -80.1958755],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_d4dc6cbc46dcd667f2549bf787e6f01d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lower Brickell<br>Median Sale Price: 625000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_92be04bdcf147e79074d390123eb4894 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_92be04bdcf147e79074d390123eb4894.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Lyndale<br>Median Sale Price: 940000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ee1000674422b6295889b2c543fa4f44 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_ee1000674422b6295889b2c543fa4f44.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Mc Allister Terrace<br>Median Sale Price: 445000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac06ac92a858b5f70cf872db1a504924 = L.circleMarker(
+                [25.8014685, -80.1990903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_ac06ac92a858b5f70cf872db1a504924.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Media Art Entertainment District<br>Median Sale Price: 465000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90dd1a773fb394bc744e83a176dfb85c = L.circleMarker(
+                [25.81494, -80.3016684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_90dd1a773fb394bc744e83a176dfb85c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Melrose Heights<br>Median Sale Price: 525000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55cca740cff8bf7c065b70b25f8cd259 = L.circleMarker(
+                [25.8353224, -80.18380379999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_55cca740cff8bf7c065b70b25f8cd259.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - MiMo District<br>Median Sale Price: 914900.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_85f08aab7169e4bf5bf5272621419304 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_85f08aab7169e4bf5bf5272621419304.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Central Business District<br>Median Sale Price: 533750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5c921e7e0be41754a6a083bd82897ce = L.circleMarker(
+                [25.7743658, -80.1928475],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_e5c921e7e0be41754a6a083bd82897ce.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Jewelry District<br>Median Sale Price: 360000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f86f452a4b5badfa9ac0a0a508645d4 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_8f86f452a4b5badfa9ac0a0a508645d4.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Miami Urban Acres<br>Median Sale Price: 395000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_da35e9405bc825482502c9d340e204db = L.circleMarker(
+                [25.8068701, -80.1954844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_da35e9405bc825482502c9d340e204db.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Midtown Miami<br>Median Sale Price: 611250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f2cb69994c9769098afcaa1a8d8eb8f = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_6f2cb69994c9769098afcaa1a8d8eb8f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millerdale<br>Median Sale Price: 1250000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c6b8ab61c1553920b7dd261839268336 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_c6b8ab61c1553920b7dd261839268336.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Millionaire's Row<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db688400c8f0c0b1c5b5b422446535ab = L.circleMarker(
+                [25.8229832, -80.2153998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_db688400c8f0c0b1c5b5b422446535ab.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Model City<br>Median Sale Price: 415000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_802f6c030ccfb327c1d1a6bc96b70415 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_802f6c030ccfb327c1d1a6bc96b70415.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Naranja Nook<br>Median Sale Price: 450000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b24b9b6511476851db07c67e276e5f38 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_b24b9b6511476851db07c67e276e5f38.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - New Shenandoah<br>Median Sale Price: 881000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6a5129acec048901f4a4bd708122657d = L.circleMarker(
+                [25.7369455, -80.2304625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_6a5129acec048901f4a4bd708122657d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Northeast Coconut Grove<br>Median Sale Price: 1562500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3a53cb6c3ce44ad34437c5ee04a9c5a1 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3a53cb6c3ce44ad34437c5ee04a9c5a1.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Omni-Pac<br>Median Sale Price: 415000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30b939aa5a5dc9a63dcd1a7520ba09a6 = L.circleMarker(
+                [25.7839802, -80.2014543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_30b939aa5a5dc9a63dcd1a7520ba09a6.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Overtown<br>Median Sale Price: 495000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25782f7548ad585b57dba5b46fdb4862 = L.circleMarker(
+                [25.8068939, -80.1862582],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_25782f7548ad585b57dba5b46fdb4862.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Paraiso Bay<br>Median Sale Price: 855000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9dc8f60efef8f4b872ef0eb8d317ff0e = L.circleMarker(
+                [25.782503, -80.19062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_9dc8f60efef8f4b872ef0eb8d317ff0e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Park West<br>Median Sale Price: 752500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac8f813d24392c7905201e303cf4671f = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_ac8f813d24392c7905201e303cf4671f.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Parkdale<br>Median Sale Price: 595000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_203ffb36ca291ced0af3524e59da024a = L.circleMarker(
+                [25.7905949, -80.1754446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_203ffb36ca291ced0af3524e59da024a.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Plaza Venetia<br>Median Sale Price: 380000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_32cf89d2fdf0b54ff12c4d29a312e46e = L.circleMarker(
+                [25.7704036, -80.20730569999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_32cf89d2fdf0b54ff12c4d29a312e46e.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - River Park<br>Median Sale Price: 1290000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0707040d782fe47dd091d6a7d04978e3 = L.circleMarker(
+                [25.7724662, -80.2146727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_0707040d782fe47dd091d6a7d04978e3.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverside<br>Median Sale Price: 312500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c0194407d8c04e323499c99ccc5f555 = L.circleMarker(
+                [25.787113, -80.2313082],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_2c0194407d8c04e323499c99ccc5f555.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Riverview<br>Median Sale Price: 585000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_026fedce3731291e780b97909a8ca9aa = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_026fedce3731291e780b97909a8ca9aa.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shady Oaks<br>Median Sale Price: 195000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_291e88136fb5c9c507231d1ad21a2754 = L.circleMarker(
+                [25.7595441, -80.22227099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_291e88136fb5c9c507231d1ad21a2754.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Shenandoah Manor<br>Median Sale Price: 660000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_927cefd766f631e80bd5b5b569917778 = L.circleMarker(
+                [25.748899, -80.23609019999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_927cefd766f631e80bd5b5b569917778.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Bluff Estates<br>Median Sale Price: 674000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_02a9353efd7d2968d9e9131ceb809988 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_02a9353efd7d2968d9e9131ceb809988.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Silver Crest<br>Median Sale Price: 1345000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57134ac92a9567d1dbb073d2733cb931 = L.circleMarker(
+                [25.7398226, -80.24199399999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_57134ac92a9567d1dbb073d2733cb931.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Bay Estates<br>Median Sale Price: 698000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2774026eb96e657b67615a2aeeed96b = L.circleMarker(
+                [25.7599774, -80.19702099999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_e2774026eb96e657b67615a2aeeed96b.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - South Vedado<br>Median Sale Price: 815000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_863dd233ea405cbcab14f4c56c16809c = L.circleMarker(
+                [25.720274, -80.2532061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_863dd233ea405cbcab14f4c56c16809c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Southwest Coconut Grove<br>Median Sale Price: 2360500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3567ec5c2531792f306d1a55e861c880 = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3567ec5c2531792f306d1a55e861c880.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Groves<br>Median Sale Price: 719500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_129eeb674f5f3a6a8e0a64b9be59c400 = L.circleMarker(
+                [25.7646861, -80.2552715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_129eeb674f5f3a6a8e0a64b9be59c400.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Highlands<br>Median Sale Price: 545000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6ddefff01abd4a8459637424d5b1a06c = L.circleMarker(
+                [25.7587114, -80.398387],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_6ddefff01abd4a8459637424d5b1a06c.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Tamiami Pines<br>Median Sale Price: 236750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a50f3f1526dac9560f7472ce4d3aede = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_7a50f3f1526dac9560f7472ce4d3aede.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - The Pines<br>Median Sale Price: 575000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_45d577c38405e2da78b5d6d86ed73b25 = L.circleMarker(
+                [25.7904532, -80.20249299999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_45d577c38405e2da78b5d6d86ed73b25.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Town Park Village<br>Median Sale Price: 316500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f74c08ed79bd90fb3730f5d26d8ee18d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_f74c08ed79bd90fb3730f5d26d8ee18d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Trail Granada<br>Median Sale Price: 620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_721f6a555f1d77b0d772f40ae062c4f7 = L.circleMarker(
+                [25.830499, -80.18037079999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_721f6a555f1d77b0d772f40ae062c4f7.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Upper Eastside<br>Median Sale Price: 870000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b2b8e569ebbc41cba8d09e9c84c40a66 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_b2b8e569ebbc41cba8d09e9c84c40a66.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Washburns<br>Median Sale Price: 880000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3414c820d1366204d920d31d1730ddc0 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_3414c820d1366204d920d31d1730ddc0.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace<br>Median Sale Price: 297500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bc985b466ea828ab5965a1b42a797d3d = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_bc985b466ea828ab5965a1b42a797d3d.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Webster Terrace North<br>Median Sale Price: 845000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_76f320f0c8eb8351fdf679b666707ff2 = L.circleMarker(
+                [25.7720352, -80.250733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_76f320f0c8eb8351fdf679b666707ff2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Flagler<br>Median Sale Price: 505000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_feb7aab57c88f9c774d860eb4bb194f2 = L.circleMarker(
+                [25.7616798, -80.1917902],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_feb7aab57c88f9c774d860eb4bb194f2.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Lawn<br>Median Sale Price: 500000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30fcaaf2f418e758ce264b43cacd6119 = L.circleMarker(
+                [25.7560648, -80.29567109999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_30fcaaf2f418e758ce264b43cacd6119.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - West Miami<br>Median Sale Price: 445000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d09bb8cafeb368c29ee61429120d858 = L.circleMarker(
+                [25.7740153, -80.1938844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_1d09bb8cafeb368c29ee61429120d858.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Woodside<br>Median Sale Price: 390000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2092aed24331c0f961bd7baaa97c7fb9 = L.circleMarker(
+                [25.8042441, -80.1989186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_afa362281992f4958641d44014792416);
+        
+    
+            circle_marker_2092aed24331c0f961bd7baaa97c7fb9.bindTooltip(
+                `<div>
+                     City: Miami<br>Region: Miami, FL - Wynwood-Edgewater<br>Median Sale Price: 611250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_1d553a5b7849519ad47046c1177f8aaa = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var tile_layer_c04f8f3c18b17e6e3cc904e851cd4284 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var tile_layer_f377dd951513e9e23815698152c9f57b = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var tile_layer_d541c14a457714640c925156fdc06560 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var tile_layer_489f1c8ddc390b15b381ec1db742841d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var tile_layer_d3d95bb5fe4ddc35affa14c64bb40130 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+        
+    
+            var layer_control_74071f9c3f3d1b96ae50f8d30c8da7c1 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_f377dd951513e9e23815698152c9f57b,
+                    "stamenwatercolor" : tile_layer_1d553a5b7849519ad47046c1177f8aaa,
+                    "openstreetmap" : tile_layer_c04f8f3c18b17e6e3cc904e851cd4284,
+                    "stamentoner" : tile_layer_d541c14a457714640c925156fdc06560,
+                    "cartodbpositron" : tile_layer_489f1c8ddc390b15b381ec1db742841d,
+                    "cartodbdark_matter" : tile_layer_d3d95bb5fe4ddc35affa14c64bb40130,
+                },
+                overlays :  {
+                    "Miami - median_sale_price" : heat_map_c9cd76db5c6472d152e404ec152594f8,
+                    "Median Sale Price Centers" : feature_group_afa362281992f4958641d44014792416,
+                },
+            };
+            L.control.layers(
+                layer_control_74071f9c3f3d1b96ae50f8d30c8da7c1.base_layers,
+                layer_control_74071f9c3f3d1b96ae50f8d30c8da7c1.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_fa6761aa14b5ab8219f94bf98928695e);
+            tile_layer_1d553a5b7849519ad47046c1177f8aaa.remove();
+            tile_layer_c04f8f3c18b17e6e3cc904e851cd4284.remove();
+            tile_layer_f377dd951513e9e23815698152c9f57b.remove();
+            tile_layer_d541c14a457714640c925156fdc06560.remove();
+            tile_layer_489f1c8ddc390b15b381ec1db742841d.remove();
+            tile_layer_d3d95bb5fe4ddc35affa14c64bb40130.remove();
+        
+</script>
+</html>

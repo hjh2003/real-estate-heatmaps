@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9fa648ca04e5a25eab839ad67370ea9f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9fa648ca04e5a25eab839ad67370ea9f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9fa648ca04e5a25eab839ad67370ea9f = L.map(
+                "map_9fa648ca04e5a25eab839ad67370ea9f",
+                {
+                    center: [30.293640803781646, -97.7465385200173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5e890e065c028bcb4504cdb39981b0b0 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var heat_map_835a702e23174701db9323640ba85359 = L.heatLayer(
+                [[30.2649178, -97.7464235, 4.0], [30.3393252, -97.746952, 24.0], [30.4611355, -97.8299965, 12.0], [30.4237172, -97.7375963, 9.0], [30.267153, -97.7430608, 3.0], [30.4689145, -97.799452, 59.0], [30.2533686, -97.7835429, 22.0], [30.280638, -97.7224315, 6.0], [30.1725823, -97.768618, 113.0], [30.2515465, -97.7543062, 30.0], [30.2515465, -97.7543062, 1.0], [30.330898, -97.7316065, 33.0], [30.3364313, -97.7264415, 52.0], [30.1902458, -97.8454709, 42.0], [30.30244979999999, -97.7538935, 5.0], [30.3251308, -97.7506508, 33.0], [30.3134263, -97.7666194, 2.0], [30.2938151, -97.7329, 100.0], [30.27162349999999, -97.7248647, 11.0], [30.2954625, -97.7551352, 35.0], [30.1979137, -97.8245578, 78.0], [30.2917457, -97.7136007, 13.0], [30.2790657, -97.7131577, 16.0], [30.2802042, -97.7591251, 1.0], [30.2680667, -97.7428151, 2.0], [30.38827179999999, -97.6588801, 20.0], [30.32699239999999, -97.6877987, 3.0], [30.348322, -97.727536, 33.0], [30.3534821, -97.7233389, 48.0], [30.3280279, -97.8055259, 8.0], [30.2329651, -97.7613825, 12.0], [30.2091069, -97.6472349, 1.0], [30.18505, -97.8020854, 53.0], [30.2729209, -97.74438630000002, 67.0], [30.2658909, -97.7350274, 1.0], [30.2654547, -97.7090635, 365.0], [30.2585193, -97.7286604, 11.0], [30.20856089999999, -97.7661188, 10.0], [30.2825656, -97.6766639, 105.0], [30.240054, -97.8303149, 29.0], [30.2275044, -97.7277824, 27.0], [30.2818771, -97.6669884, 2.0], [30.4038127, -97.8536211, 16.0], [30.1939634, -97.7446677, 13.0], [30.2355462, -97.7685704, 16.0], [30.2088183, -97.8047019, 32.0], [30.3499918, -97.7009416, 1.0], [30.2560413, -97.7016981, 22.0], [30.2660111, -97.7021915, 24.0], [30.389061, -97.6941558, 67.0], [30.2367289, -97.7488105, 19.0], [30.2964691, -97.7232153, 21.0], [30.30110269999999, -97.741329, 6.0], [30.3435785, -97.6888656, 14.0], [30.3339959, -97.7169771, 19.0], [30.3235367, -97.760685, 15.0], [30.2573267, -97.7172302, 9.0], [30.30816969999999, -97.7274412, 14.0], [30.2256434, -97.7853145, 14.0], [30.2558365, -97.6849958, 2.0], [30.4065779, -97.7478949, 41.0], [30.2820349, -97.7477816, 1.0], [30.4357579, -97.6894508, 1.0], [30.3007579, -97.7878318, 1.0], [30.4207209, -97.6914416, 13.0], [30.267153, -97.7430608, 23.0], [30.2837453, -97.6961546, 25.0], [30.2760264, -97.66791, 39.0], [30.3739474, -97.8517552, 29.0], [30.2050512, -97.849035, 23.0], [30.26889559999999, -97.7518561, 14.0], [30.2124078, -97.7369381, 8.0], [30.4456938, -97.7363508, 69.0], [30.2295806, -97.6970651, 22.0], [30.2986834, -97.700371, 29.0], [30.3923316, -97.708224, 44.0], [30.3911419, -97.7218332, 5.0], [30.3911535, -97.7218322, 5.0], [30.370122, -97.6884248, 9.0], [30.3176931, -97.7211877, 12.0], [30.3646906, -97.7351113, 11.0], [30.2976841, -97.7375963, 23.0], [30.3903487, -97.7487151, 181.0], [30.3903487, -97.7487151, 672.0], [30.353213, -97.7674773, 36.0], [30.3591778, -97.7655987, 19.0], [30.2339613, -97.8648067, 87.0], [30.273648, -97.6976539, 4.0], [30.2877953, -97.7673314, 2.0], [30.2954625, -97.7551352, 7.0], [30.3000111, -97.6738023, 37.0], [30.2952051, -97.7552517, 1.0], [30.23471079999999, -97.7118003, 3.0], [30.4504785, -97.785287, 51.0], [30.3688641, -97.7046722, 21.0], [30.3914446, -97.7022988, 11.0], [30.4179412, -97.8984558, 2.0], [30.2359434, -97.7284907, 12.0], [30.267153, -97.7430608, 40.0], [30.267346, -97.7234586, 1.0], [30.3143949, -97.7457444, 34.0], [30.2706266, -97.7104428, 13.0], [30.4212008, -97.6832998, 11.0], [30.2660292, -97.7518561, 4.0], [30.20632253321186, -97.90891762243965, 59.0], [30.1935594, -97.842056, 49.0], [30.2049701, -97.7748074, 36.0], [30.2372278, -97.7837533, 28.0], [30.267153, -97.7430608, 99.0], [30.2195294, -97.7839041, 26.0], [30.2055702, -97.7166372, 26.0], [30.2009698, -97.8333958, 7.0], [30.1624125, -97.7946527, 8.0], [30.267153, -97.7430608, 386.0], [30.4359772, -97.8000975, 1.0], [30.1568662, -97.7430283, 13.0], [30.2264094, -97.7552517, 2.0], [30.3328019, -97.7009416, 7.0], [30.3260919, -97.6922889, 10.0], [30.1970686, -97.7771702, 9.0], [30.4078412, -97.6670191, 47.0], [30.2523971, -97.8338263, 14.0], [30.317206, -97.6738023, 12.0], [30.317206, -97.6738023, 51.0], [30.1858848, -97.7705653, 24.0], [30.2086396, -97.8728403, 49.0], [30.2954625, -97.7551352, 35.0], [30.21315749999999, -97.7743522, 7.0], [30.2385146, -97.8884881, 58.0], [30.29147, -97.7457444, 56.0], [30.2881825, -97.7769875, 12.0], [30.2230485, -97.7986926, 11.0], [30.292674, -97.553824, 18.0], [30.2963458, -97.7136976, 4.0], [30.3627291, -97.6792293, 9.0], [30.3105177, -97.6900846, 39.0], [30.2936434, -97.7650044, 5.0], [30.357046, -97.751177, 2.0], [30.2062976, -97.840195, 8.0], [30.3610582, -97.7232992, 15.0], [30.25426879999999, -97.7669536, 33.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var feature_group_f420416f4add8101021d745ab86e248a = L.featureGroup(
+                {}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var circle_marker_db80e0c03e13d6908373a10b40b32716 = L.circleMarker(
+                [30.2649178, -97.7464235],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_db80e0c03e13d6908373a10b40b32716.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - 2nd Street District<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ee42a9ba08922aa1d3c36f66e7b885e3 = L.circleMarker(
+                [30.3393252, -97.746952],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_ee42a9ba08922aa1d3c36f66e7b885e3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Allandale<br>Homes Sold: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d1c3cbddd83f7624f86fcbebb8a0481 = L.circleMarker(
+                [30.4611355, -97.8299965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_6d1c3cbddd83f7624f86fcbebb8a0481.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Anderson Mill West<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b0ed03b323457f48caab45be7dea63b2 = L.circleMarker(
+                [30.4237172, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_b0ed03b323457f48caab45be7dea63b2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Angus Valley<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e6ab21fde224669bc22e27e606feae7 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_7e6ab21fde224669bc22e27e606feae7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Arts District<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_168fb603a99bf995d8d11bb4c82d0357 = L.circleMarker(
+                [30.4689145, -97.799452],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_168fb603a99bf995d8d11bb4c82d0357.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Avery Ranch-Lakeline<br>Homes Sold: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61bf750711a7374465a078f06335ca22 = L.circleMarker(
+                [30.2533686, -97.7835429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_61bf750711a7374465a078f06335ca22.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Barton Hills<br>Homes Sold: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_570900d4aa0a70022c0c04a168e93193 = L.circleMarker(
+                [30.280638, -97.7224315],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_570900d4aa0a70022c0c04a168e93193.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Blackland<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_421be6e4a0f19da8cb137cbe5306a801 = L.circleMarker(
+                [30.1725823, -97.768618],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_421be6e4a0f19da8cb137cbe5306a801.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bluff Springs<br>Homes Sold: 113.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f81712bcd28cbfc746072c7204af022 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_8f81712bcd28cbfc746072c7204af022.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin Creek<br>Homes Sold: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d232025cfa53c8c5bc043703053de06 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1d232025cfa53c8c5bc043703053de06.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin South<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b019461eb54223f7e41c69f09a0e5d9 = L.circleMarker(
+                [30.330898, -97.7316065],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1b019461eb54223f7e41c69f09a0e5d9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb5a48d176fb5caf2b72753e779c19ab = L.circleMarker(
+                [30.3364313, -97.7264415],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_bb5a48d176fb5caf2b72753e779c19ab.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood-Highland<br>Homes Sold: 52.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a8f27bb42e563a5f59f139f0fcd1566 = L.circleMarker(
+                [30.1902458, -97.8454709],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_9a8f27bb42e563a5f59f139f0fcd1566.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brodie Lane<br>Homes Sold: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9f3da6af1ace4064614adb9aa4baa15e = L.circleMarker(
+                [30.30244979999999, -97.7538935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_9f3da6af1ace4064614adb9aa4baa15e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bryker Woods<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33d7d14bfb41de6f696033181709e574 = L.circleMarker(
+                [30.3251308, -97.7506508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_33d7d14bfb41de6f696033181709e574.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bull Creek<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7d115cff461a1cc4d989382acb3979d4 = L.circleMarker(
+                [30.3134263, -97.7666194],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_7d115cff461a1cc4d989382acb3979d4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Camp Mabry<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_057d1f5fc901db9cdb9bdee79490edb7 = L.circleMarker(
+                [30.2938151, -97.7329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_057d1f5fc901db9cdb9bdee79490edb7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central Austin<br>Homes Sold: 100.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_27809347678859074777cbc9c51f90f0 = L.circleMarker(
+                [30.27162349999999, -97.7248647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_27809347678859074777cbc9c51f90f0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central East Austin<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_35b13bf962f68108517b1610cfbd2435 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_35b13bf962f68108517b1610cfbd2435.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central West Austin<br>Homes Sold: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e3aaed0a207d8056236b0dbb6024d412 = L.circleMarker(
+                [30.1979137, -97.8245578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_e3aaed0a207d8056236b0dbb6024d412.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherry Creek<br>Homes Sold: 78.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3b903f7ef1ef74d9b3bb8aaca664b5a3 = L.circleMarker(
+                [30.2917457, -97.7136007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_3b903f7ef1ef74d9b3bb8aaca664b5a3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherrywood<br>Homes Sold: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e8b7120426f5e77952af61dc47df6d8d = L.circleMarker(
+                [30.2790657, -97.7131577],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_e8b7120426f5e77952af61dc47df6d8d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Chestnut<br>Homes Sold: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe5d29916eac2a7d2df159dbbdbb619c = L.circleMarker(
+                [30.2802042, -97.7591251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_fe5d29916eac2a7d2df159dbbdbb619c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Clarksville<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1120bcd84a79f97dcec7a393fabf3277 = L.circleMarker(
+                [30.2680667, -97.7428151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1120bcd84a79f97dcec7a393fabf3277.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Congress Avenue District<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4e98fdb29a43bbbaa10b1b301e4119d2 = L.circleMarker(
+                [30.38827179999999, -97.6588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_4e98fdb29a43bbbaa10b1b301e4119d2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Copperfield<br>Homes Sold: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ed054bc8e1257dde6168c32c67d4e5b = L.circleMarker(
+                [30.32699239999999, -97.6877987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1ed054bc8e1257dde6168c32c67d4e5b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Coronado Hills<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_68bb36e284d1ed7237c4c7dc88c39d57 = L.circleMarker(
+                [30.348322, -97.727536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_68bb36e284d1ed7237c4c7dc88c39d57.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_24553dd89e626b8486f18a5590c2de04 = L.circleMarker(
+                [30.3534821, -97.7233389],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_24553dd89e626b8486f18a5590c2de04.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview-Wooten<br>Homes Sold: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ca6eb21fe5dc29de0e77f04d5bec0c3 = L.circleMarker(
+                [30.3280279, -97.8055259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_0ca6eb21fe5dc29de0e77f04d5bec0c3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Davenport Ranch<br>Homes Sold: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_63d3b0e4c8ed9d99cc708087748bac75 = L.circleMarker(
+                [30.2329651, -97.7613825],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_63d3b0e4c8ed9d99cc708087748bac75.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dawson<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_42a906ed7c41cd43ef33c4be53b6d198 = L.circleMarker(
+                [30.2091069, -97.6472349],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_42a906ed7c41cd43ef33c4be53b6d198.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Del Valle<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cec8900b94ef6903e5deb00702098847 = L.circleMarker(
+                [30.18505, -97.8020854],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_cec8900b94ef6903e5deb00702098847.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dittmar-Slaughter<br>Homes Sold: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e54ffb9ee5a03249e50bd6e1b5a2771 = L.circleMarker(
+                [30.2729209, -97.74438630000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_7e54ffb9ee5a03249e50bd6e1b5a2771.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Downtown Austin<br>Homes Sold: 67.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7e0c0de32eb7aa8da10b8ab682db3b3 = L.circleMarker(
+                [30.2658909, -97.7350274],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_e7e0c0de32eb7aa8da10b8ab682db3b3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East 6th Street District<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6792bd988adf0f9843bd7368b0ba3965 = L.circleMarker(
+                [30.2654547, -97.7090635],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_6792bd988adf0f9843bd7368b0ba3965.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Austin<br>Homes Sold: 365.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91525463eb75a6d24a5c97675c4187d0 = L.circleMarker(
+                [30.2585193, -97.7286604],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_91525463eb75a6d24a5c97675c4187d0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Cesar Chavez<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b36a46eccdf6afae82835a37115dbfe = L.circleMarker(
+                [30.20856089999999, -97.7661188],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1b36a46eccdf6afae82835a37115dbfe.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Congress<br>Homes Sold: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18a13cb7dd7a78cfd6b62926cb8a4586 = L.circleMarker(
+                [30.2825656, -97.6766639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_18a13cb7dd7a78cfd6b62926cb8a4586.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East MLK<br>Homes Sold: 105.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f2faa248d0a84155cc643a373d08279 = L.circleMarker(
+                [30.240054, -97.8303149],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_8f2faa248d0a84155cc643a373d08279.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Oak Hill<br>Homes Sold: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c33cff8ee33a2bb9d9ffa7f8fdcebc16 = L.circleMarker(
+                [30.2275044, -97.7277824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_c33cff8ee33a2bb9d9ffa7f8fdcebc16.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Riverside-Oltorf<br>Homes Sold: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c6ebfa51404de1d94db6fbddbe660fa = L.circleMarker(
+                [30.2818771, -97.6669884],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_7c6ebfa51404de1d94db6fbddbe660fa.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ed Bluestein<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70ebe90e329ec19612ccf367d79177e8 = L.circleMarker(
+                [30.4038127, -97.8536211],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_70ebe90e329ec19612ccf367d79177e8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Four Points<br>Homes Sold: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89dc4e50d3cd217abc5088c1ddf49e8f = L.circleMarker(
+                [30.1939634, -97.7446677],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_89dc4e50d3cd217abc5088c1ddf49e8f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Franklin Park<br>Homes Sold: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fdc743dc835d82deb72f8fdb83e0c8ff = L.circleMarker(
+                [30.2355462, -97.7685704],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_fdc743dc835d82deb72f8fdb83e0c8ff.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Galindo<br>Homes Sold: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3950803a73ed5632cc0bc200dbac8d9 = L.circleMarker(
+                [30.2088183, -97.8047019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_d3950803a73ed5632cc0bc200dbac8d9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Garrison Park<br>Homes Sold: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b63149f5deaf6e3d9ff1132c31b5365d = L.circleMarker(
+                [30.3499918, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_b63149f5deaf6e3d9ff1132c31b5365d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Georgian Acres<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2ab997829d1020a7de00ff09171b5a55 = L.circleMarker(
+                [30.2560413, -97.7016981],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_2ab997829d1020a7de00ff09171b5a55.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle<br>Homes Sold: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39bbc947add524f04ebe338fff635703 = L.circleMarker(
+                [30.2660111, -97.7021915],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_39bbc947add524f04ebe338fff635703.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle-Johnston Terrace<br>Homes Sold: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_98219910678cbb605a968bfa506ed3c3 = L.circleMarker(
+                [30.389061, -97.6941558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_98219910678cbb605a968bfa506ed3c3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Gracy Woods<br>Homes Sold: 67.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_44d5cbbe7a51793d6cb541ea028de224 = L.circleMarker(
+                [30.2367289, -97.7488105],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_44d5cbbe7a51793d6cb541ea028de224.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Greater South River City<br>Homes Sold: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aa8b0a4b7dae3fdbbe34da7d646bf372 = L.circleMarker(
+                [30.2964691, -97.7232153],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_aa8b0a4b7dae3fdbbe34da7d646bf372.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hancock<br>Homes Sold: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_79acab4df407483a197a012c4052d6c2 = L.circleMarker(
+                [30.30110269999999, -97.741329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_79acab4df407483a197a012c4052d6c2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_284c13676a85188658db025b1c0708c5 = L.circleMarker(
+                [30.3435785, -97.6888656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_284c13676a85188658db025b1c0708c5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage Hills-Windsor Hills<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_82e409eef138c3790cf8d0b45225babd = L.circleMarker(
+                [30.3339959, -97.7169771],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_82e409eef138c3790cf8d0b45225babd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland<br>Homes Sold: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4026f718ae982e2c1f38eed550860a12 = L.circleMarker(
+                [30.3235367, -97.760685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_4026f718ae982e2c1f38eed550860a12.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland Park West<br>Homes Sold: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf03c697b745b9ee30c3d4fc416ec4b3 = L.circleMarker(
+                [30.2573267, -97.7172302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_cf03c697b745b9ee30c3d4fc416ec4b3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Holly<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b5249dda2f67c83ada9509888ff8f1c = L.circleMarker(
+                [30.30816969999999, -97.7274412],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_0b5249dda2f67c83ada9509888ff8f1c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hyde Park<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6227a08b8148ed998c078222c7d9194a = L.circleMarker(
+                [30.2256434, -97.7853145],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_6227a08b8148ed998c078222c7d9194a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jester<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3bcac5b315ec3c914140068d340ed77 = L.circleMarker(
+                [30.2558365, -97.6849958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_d3bcac5b315ec3c914140068d340ed77.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Johnston Terrace<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c15bc7155bba3689eeb693362843174a = L.circleMarker(
+                [30.4065779, -97.7478949],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_c15bc7155bba3689eeb693362843174a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jollyville<br>Homes Sold: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_31b5ef12347a5540771589bd18c650b5 = L.circleMarker(
+                [30.2820349, -97.7477816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_31b5ef12347a5540771589bd18c650b5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Judges Hill<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_40c6d82164640dbb6e1ff89c5ff6733e = L.circleMarker(
+                [30.4357579, -97.6894508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_40c6d82164640dbb6e1ff89c5ff6733e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Kings Village<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_71fffca55fbb55f0ce300a3cd7661bad = L.circleMarker(
+                [30.3007579, -97.7878318],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_71fffca55fbb55f0ce300a3cd7661bad.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lakeshore<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d72a5b62237027d1a52cdfbeba0a644 = L.circleMarker(
+                [30.4207209, -97.6914416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_5d72a5b62237027d1a52cdfbeba0a644.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lamplight Village<br>Homes Sold: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bddd988cd7d91f390d78d7a94aaafdac = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_bddd988cd7d91f390d78d7a94aaafdac.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Laurel Oaks<br>Homes Sold: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8cdd008342b8c9008d4bc8203b262d1b = L.circleMarker(
+                [30.2837453, -97.6961546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_8cdd008342b8c9008d4bc8203b262d1b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK<br>Homes Sold: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e4da3fe56346b7c7541655691098ca27 = L.circleMarker(
+                [30.2760264, -97.66791],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_e4da3fe56346b7c7541655691098ca27.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK-183<br>Homes Sold: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f53923ccead6cbb9b05d32576383573 = L.circleMarker(
+                [30.3739474, -97.8517552],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_5f53923ccead6cbb9b05d32576383573.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mansfield-River Place<br>Homes Sold: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dee04c8145e3049552c2ec9f8ba98721 = L.circleMarker(
+                [30.2050512, -97.849035],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_dee04c8145e3049552c2ec9f8ba98721.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Maple Run<br>Homes Sold: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f9b5cfa398cfe5f92c052423aa938d3 = L.circleMarker(
+                [30.26889559999999, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1f9b5cfa398cfe5f92c052423aa938d3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Market District<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e070cfac23e1b5466802538464e60bd8 = L.circleMarker(
+                [30.2124078, -97.7369381],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_e070cfac23e1b5466802538464e60bd8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McKinney<br>Homes Sold: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d10acbd63d4265ede5469955ec2b08c7 = L.circleMarker(
+                [30.4456938, -97.7363508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_d10acbd63d4265ede5469955ec2b08c7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McNeil<br>Homes Sold: 69.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f1af31b02fbe8c40db371c4e1667c510 = L.circleMarker(
+                [30.2295806, -97.6970651],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_f1af31b02fbe8c40db371c4e1667c510.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Montopolis<br>Homes Sold: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7810854aafc142aa50ce57879777c061 = L.circleMarker(
+                [30.2986834, -97.700371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_7810854aafc142aa50ce57879777c061.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mueller<br>Homes Sold: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f4dae35acc055e6fef59194e04532ee = L.circleMarker(
+                [30.3923316, -97.708224],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1f4dae35acc055e6fef59194e04532ee.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Austin<br>Homes Sold: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_961294634c9d7962880c4257f482389c = L.circleMarker(
+                [30.3911419, -97.7218332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_961294634c9d7962880c4257f482389c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4eff5c036e5bbd848816f2ffae5471ac = L.circleMarker(
+                [30.3911535, -97.7218322],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_4eff5c036e5bbd848816f2ffae5471ac.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet-Gateway<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3917ef7f3a3d93806612b5833baa6cd3 = L.circleMarker(
+                [30.370122, -97.6884248],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_3917ef7f3a3d93806612b5833baa6cd3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Lamar<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_041f03d36dbc2ebecaf5ee30a1c2edbf = L.circleMarker(
+                [30.3176931, -97.7211877],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_041f03d36dbc2ebecaf5ee30a1c2edbf.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Loop<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ef256f30f09c6d4221441e6153a65c3 = L.circleMarker(
+                [30.3646906, -97.7351113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_4ef256f30f09c6d4221441e6153a65c3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Shoal Creek<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf96c57f91f80921b17d815adcddfd7b = L.circleMarker(
+                [30.2976841, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_cf96c57f91f80921b17d815adcddfd7b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North University<br>Homes Sold: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4936a40e1a036e73a3ef6b1162e2fb78 = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_4936a40e1a036e73a3ef6b1162e2fb78.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northeast Austin<br>Homes Sold: 181.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f14b090147ec46e41915986914c47af6 = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_f14b090147ec46e41915986914c47af6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Austin<br>Homes Sold: 672.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_136008a3defc914e2a459cba36b8fc8c = L.circleMarker(
+                [30.353213, -97.7674773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_136008a3defc914e2a459cba36b8fc8c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills<br>Homes Sold: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f23198153de175bad99ddfcc313cbc9f = L.circleMarker(
+                [30.3591778, -97.7655987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_f23198153de175bad99ddfcc313cbc9f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills-Far West<br>Homes Sold: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9b144702c03b5c457968afdbe50fcf4 = L.circleMarker(
+                [30.2339613, -97.8648067],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_e9b144702c03b5c457968afdbe50fcf4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Hill<br>Homes Sold: 87.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_588e9c4936091ec595dd4309c1b38b79 = L.circleMarker(
+                [30.273648, -97.6976539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_588e9c4936091ec595dd4309c1b38b79.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Springs<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0bb129055dc2279ce3e25d184958e2c = L.circleMarker(
+                [30.2877953, -97.7673314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_d0bb129055dc2279ce3e25d184958e2c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old Enfield<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_77946ae28cafb809ec16d96e61e4a479 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_77946ae28cafb809ec16d96e61e4a479.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old West Austin<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_935e5dbcd598c472c1417105945fcf59 = L.circleMarker(
+                [30.3000111, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_935e5dbcd598c472c1417105945fcf59.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pecan Springs Springdale<br>Homes Sold: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f11c7a31c6ac9b82f7823271c754161 = L.circleMarker(
+                [30.2952051, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1f11c7a31c6ac9b82f7823271c754161.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pemberton Heights<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f55bd26c1e568c0ba001808c8bec794 = L.circleMarker(
+                [30.23471079999999, -97.7118003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_6f55bd26c1e568c0ba001808c8bec794.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pleasant Valley<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e89fc586754e8620c2e5f285723ed38 = L.circleMarker(
+                [30.4504785, -97.785287],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_0e89fc586754e8620c2e5f285723ed38.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pond Springs<br>Homes Sold: 51.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_608c8eec6eb0ccf825c53b5f9c42e345 = L.circleMarker(
+                [30.3688641, -97.7046722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_608c8eec6eb0ccf825c53b5f9c42e345.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Creek<br>Homes Sold: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c45f515fe5ab4d6e6b5311e985393cdb = L.circleMarker(
+                [30.3914446, -97.7022988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_c45f515fe5ab4d6e6b5311e985393cdb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Hollow<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_57857875278f981956299403be95ee03 = L.circleMarker(
+                [30.4179412, -97.8984558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_57857875278f981956299403be95ee03.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ridgetop<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dac519c7c8b49b8abadc40178ef1020f = L.circleMarker(
+                [30.2359434, -97.7284907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_dac519c7c8b49b8abadc40178ef1020f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Riverside<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5d50968b4a297f33d12ff106b417ed0 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_a5d50968b4a297f33d12ff106b417ed0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers Hill<br>Homes Sold: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94e79aa1151485effc1fb33b122a37b7 = L.circleMarker(
+                [30.267346, -97.7234586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_94e79aa1151485effc1fb33b122a37b7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers-Washington-Holy Cross<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbbb9425c040c27cf74cbbcafd0f5637 = L.circleMarker(
+                [30.3143949, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_dbbb9425c040c27cf74cbbcafd0f5637.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosedale<br>Homes Sold: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0941b90fc6f2ecc011d9edcbc6c9331c = L.circleMarker(
+                [30.2706266, -97.7104428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_0941b90fc6f2ecc011d9edcbc6c9331c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosewood<br>Homes Sold: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b34dbf1c2050af2d34d827b27489def = L.circleMarker(
+                [30.4212008, -97.6832998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_0b34dbf1c2050af2d34d827b27489def.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Scofield Farms<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f83bb6dbeb4a30319e9335593a9bd6b0 = L.circleMarker(
+                [30.2660292, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_f83bb6dbeb4a30319e9335593a9bd6b0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Seaholm District<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d08660cdf78c66d72f5074d2d3fe8a24 = L.circleMarker(
+                [30.20632253321186, -97.90891762243965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_d08660cdf78c66d72f5074d2d3fe8a24.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Slaughter Creek<br>Homes Sold: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83b29b6e145e93044d159d1ca6daac19 = L.circleMarker(
+                [30.1935594, -97.842056],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_83b29b6e145e93044d159d1ca6daac19.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Brodie<br>Homes Sold: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca871f842595aa8f5407f06233749467 = L.circleMarker(
+                [30.2049701, -97.7748074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_ca871f842595aa8f5407f06233749467.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Congress<br>Homes Sold: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a4eab355d56b6101bcea6cf33d715518 = L.circleMarker(
+                [30.2372278, -97.7837533],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_a4eab355d56b6101bcea6cf33d715518.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lamar<br>Homes Sold: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9bed4caf363ada78a42736987930d339 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_9bed4caf363ada78a42736987930d339.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lawn<br>Homes Sold: 99.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_182eb5fe91bec466fff2fe69ab45fbf5 = L.circleMarker(
+                [30.2195294, -97.7839041],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_182eb5fe91bec466fff2fe69ab45fbf5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Manchaca<br>Homes Sold: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_534e7af068e76ebec0bb026083f300fc = L.circleMarker(
+                [30.2055702, -97.7166372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_534e7af068e76ebec0bb026083f300fc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southeast Austin<br>Homes Sold: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e78f35c81d778f8e9f3ae77a983ab54 = L.circleMarker(
+                [30.2009698, -97.8333958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_7e78f35c81d778f8e9f3ae77a983ab54.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southhampton Hills<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8371b05c6bb12bed6a7321069b2d4d77 = L.circleMarker(
+                [30.1624125, -97.7946527],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_8371b05c6bb12bed6a7321069b2d4d77.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southpark Meadows<br>Homes Sold: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2de5887dc77639e369ec92562960d3f3 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_2de5887dc77639e369ec92562960d3f3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southwest Austin<br>Homes Sold: 386.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ed8e3d0f7b01fdc2ecff99369f2fa203 = L.circleMarker(
+                [30.4359772, -97.8000975],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_ed8e3d0f7b01fdc2ecff99369f2fa203.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Spicewood<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a6c3d2ff093fd9d9452bd73ec191268 = L.circleMarker(
+                [30.1568662, -97.7430283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_8a6c3d2ff093fd9d9452bd73ec191268.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Springfield at Thaxton Road<br>Homes Sold: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ee37f0f698a5e1f3811c2a1e4f4c28b = L.circleMarker(
+                [30.2264094, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1ee37f0f698a5e1f3811c2a1e4f4c28b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Edwards<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_35c465bd24f310ba5ed94fdfb0fbfe7e = L.circleMarker(
+                [30.3328019, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_35c465bd24f310ba5ed94fdfb0fbfe7e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a4ecefbc65b890f1a53bda040b97c2ae = L.circleMarker(
+                [30.3260919, -97.6922889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_a4ecefbc65b890f1a53bda040b97c2ae.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns-Coronado Hills<br>Homes Sold: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3c7f39ab9b84b33e04233158122729e = L.circleMarker(
+                [30.1970686, -97.7771702],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_a3c7f39ab9b84b33e04233158122729e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Sweetbriar<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec076343a6f09fbb14fbd017e353e610 = L.circleMarker(
+                [30.4078412, -97.6670191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_ec076343a6f09fbb14fbd017e353e610.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Tech Ridge<br>Homes Sold: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8cfb7342914ccbc2f025513254d1e810 = L.circleMarker(
+                [30.2523971, -97.8338263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_8cfb7342914ccbc2f025513254d1e810.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Travis Country<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_914ef41bd3a60ea402064942c06ef840 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_914ef41bd3a60ea402064942c06ef840.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1073ea0818004163d6e2fd2bac450634 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_1073ea0818004163d6e2fd2bac450634.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills & Windsor Park<br>Homes Sold: 51.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5e14a73378f49825029b85045a868489 = L.circleMarker(
+                [30.1858848, -97.7705653],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_5e14a73378f49825029b85045a868489.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Upper Boggy Creek<br>Homes Sold: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_28f1bcf22adc788078482db16dccf48f = L.circleMarker(
+                [30.2086396, -97.8728403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_28f1bcf22adc788078482db16dccf48f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Village at Western Oaks<br>Homes Sold: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb43859183deae0ea6a3dd9a1357ad29 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_cb43859183deae0ea6a3dd9a1357ad29.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Austin<br>Homes Sold: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4e0dc39f4c5559f54ffcd71b520e6830 = L.circleMarker(
+                [30.21315749999999, -97.7743522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_4e0dc39f4c5559f54ffcd71b520e6830.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Congress<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0117017b0450263e30e23358d55daf4 = L.circleMarker(
+                [30.2385146, -97.8884881],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_d0117017b0450263e30e23358d55daf4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Oak Hill<br>Homes Sold: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b07a8e8d953727e3d547d9b6eaa34aed = L.circleMarker(
+                [30.29147, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_b07a8e8d953727e3d547d9b6eaa34aed.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West University<br>Homes Sold: 56.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e825a94e63b8002c790eb09bc228f60 = L.circleMarker(
+                [30.2881825, -97.7769875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_0e825a94e63b8002c790eb09bc228f60.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westfield<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fad04804656795ef8f04658c02f7a5a3 = L.circleMarker(
+                [30.2230485, -97.7986926],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_fad04804656795ef8f04658c02f7a5a3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westgate<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f209921dbd0177464cbc7725644c201 = L.circleMarker(
+                [30.292674, -97.553824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_5f209921dbd0177464cbc7725644c201.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Whisper Valley<br>Homes Sold: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a6cf09103b930965e9984fb0b558c7d7 = L.circleMarker(
+                [30.2963458, -97.7136976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_a6cf09103b930965e9984fb0b558c7d7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wilshire Wood<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3a0e0fa1de2ad0452cd682efd3918b4d = L.circleMarker(
+                [30.3627291, -97.6792293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_3a0e0fa1de2ad0452cd682efd3918b4d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Hills<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67736ce2e352a51c5379f9bbd988913c = L.circleMarker(
+                [30.3105177, -97.6900846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_67736ce2e352a51c5379f9bbd988913c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Park<br>Homes Sold: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_757a96dacaef7c47d5f2a83261aef844 = L.circleMarker(
+                [30.2936434, -97.7650044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_757a96dacaef7c47d5f2a83261aef844.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Road<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_230dc018d538db00088af203ec8adaa5 = L.circleMarker(
+                [30.357046, -97.751177],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_230dc018d538db00088af203ec8adaa5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wood Creek<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d05ef50ad35568367c9b0fb09498fa2 = L.circleMarker(
+                [30.2062976, -97.840195],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_5d05ef50ad35568367c9b0fb09498fa2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Woodstone Village<br>Homes Sold: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de99c97f8087cce0a05bb579755cadc9 = L.circleMarker(
+                [30.3610582, -97.7232992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_de99c97f8087cce0a05bb579755cadc9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wooten<br>Homes Sold: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6c447a5864e5326acc1543c3c5211b96 = L.circleMarker(
+                [30.25426879999999, -97.7669536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f420416f4add8101021d745ab86e248a);
+        
+    
+            circle_marker_6c447a5864e5326acc1543c3c5211b96.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Zilker<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_128bca4db952b5f1200cf1b450a74def = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var tile_layer_00c36fdbe2d931ebcdbb44cdd183118e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var tile_layer_b5b885eaa01c5f568de8dd86bf1feab5 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var tile_layer_b5bcfe36aa3718e4d566a2e94a998e59 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var tile_layer_0069ed279ac677282fb6368d573d60a6 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var tile_layer_0a690951fdd6e5a753df71ae59c04f91 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+        
+    
+            var layer_control_19996bf1ff59dcdfa035bbd4f54c0f12 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_b5b885eaa01c5f568de8dd86bf1feab5,
+                    "stamenwatercolor" : tile_layer_128bca4db952b5f1200cf1b450a74def,
+                    "openstreetmap" : tile_layer_00c36fdbe2d931ebcdbb44cdd183118e,
+                    "stamentoner" : tile_layer_b5bcfe36aa3718e4d566a2e94a998e59,
+                    "cartodbpositron" : tile_layer_0069ed279ac677282fb6368d573d60a6,
+                    "cartodbdark_matter" : tile_layer_0a690951fdd6e5a753df71ae59c04f91,
+                },
+                overlays :  {
+                    "Austin - homes_sold" : heat_map_835a702e23174701db9323640ba85359,
+                    "Homes Sold Centers" : feature_group_f420416f4add8101021d745ab86e248a,
+                },
+            };
+            L.control.layers(
+                layer_control_19996bf1ff59dcdfa035bbd4f54c0f12.base_layers,
+                layer_control_19996bf1ff59dcdfa035bbd4f54c0f12.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_9fa648ca04e5a25eab839ad67370ea9f);
+            tile_layer_128bca4db952b5f1200cf1b450a74def.remove();
+            tile_layer_00c36fdbe2d931ebcdbb44cdd183118e.remove();
+            tile_layer_b5b885eaa01c5f568de8dd86bf1feab5.remove();
+            tile_layer_b5bcfe36aa3718e4d566a2e94a998e59.remove();
+            tile_layer_0069ed279ac677282fb6368d573d60a6.remove();
+            tile_layer_0a690951fdd6e5a753df71ae59c04f91.remove();
+        
+</script>
+</html>

@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_24efde9dcdf0c95348339651f81cf41b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_24efde9dcdf0c95348339651f81cf41b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_24efde9dcdf0c95348339651f81cf41b = L.map(
+                "map_24efde9dcdf0c95348339651f81cf41b",
+                {
+                    center: [42.32480960991736, -71.08296493305785],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1b0686173f44de0e80eda3844dbc987e = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var heat_map_57141bac8cdf2d5a438ab83346bb4cfe = L.heatLayer(
+                [[42.35841, -71.12856, 23.0], [42.34986, -71.08053, 19.0], [42.3491, -71.06903, 20.0], [42.35705, -71.06826, 21.0], [42.34836, -71.15494, 20.0], [42.37905, -71.06367, 19.5], [42.34903, -71.06166, 59.0], [42.29846, -71.06346, 19.0], [42.37268, -71.0157, 21.5], [42.34477, -71.09611, 21.0], [42.34477, -71.09611, 23.0], [42.25504, -71.1263, 25.0], [42.30777, -71.1151, 20.0], [42.35099, -71.05783, 42.0], [42.33174, -71.10261, 27.0], [42.36546, -71.05386, 34.0], [42.28252, -71.12666, 19.0], [42.31852, -71.08664, 27.0], [42.33492, -71.04219, 26.0], [42.34135, -71.07137, 24.0], [42.36455, -71.06543, 74.5], [42.28064, -71.16003, 20.0], [42.2830311, -71.063148, 17.0], [42.2871045, -71.0591684, 16.0], [42.3521337, -71.0780044, 21.0], [42.3494093, -71.0898892, 19.0], [42.329418, -71.1108436, 28.5], [42.2786744, -71.1493077, 16.0], [42.3059584, -71.0720619, 27.0], [42.289274, -71.1626756, 20.0], [42.3749729, -71.063971, 19.0], [42.2750987, -71.07032819999999, 17.0], [42.3742486, -71.037148, 39.0], [42.3742486, -71.037148, 19.0], [42.3771315, -71.04011950000002, 50.0], [42.2904259, -71.1344539, 19.0], [42.3339959, -71.02749039999999, 22.0], [42.3000278, -71.0512625, 28.0], [42.2794561, -71.0727084, 18.0], [42.3130539, -71.03321509999999, 18.0], [42.3442847, -71.0772616, 18.5], [42.3319481, -71.05720529999999, 34.0], [42.3437558, -71.1428971, 19.5], [42.340677, -71.04859309999999, 30.0], [42.35552750000001, -71.0565313, 26.0], [42.3247063, -71.1376104, 58.0], [42.3159763, -71.0750332, 58.5], [42.3806511, -71.0364051, 21.5], [42.3402946, -71.0951539, 20.0], [42.3134039, -71.1017736, 213.0], [42.249313, -71.1166286, 28.0], [42.3532818, -71.1593198, 21.0], [42.3005356, -71.0542339, 28.0], [42.2978096, -71.0661193, 20.0], [42.3559219, -71.05497679999999, 13.0], [42.357513, -71.070331, 13.0], [42.2925811, -71.1121722, 20.0], [42.3261495, -71.0928603, 26.0], [42.3005222, -71.08278779999999, 34.0], [42.2885305, -71.08840359999999, 32.0], [42.2500374, -71.1418809, 26.5], [42.2689791, -71.0940002, 31.0], [42.3883645, -71.00520279999999, 21.5], [42.3368621, -71.0720619, 43.0], [42.3261495, -71.0928603, 26.0], [42.3234206, -71.1047446, 34.0], [42.3132414, -71.1141118, 17.0], [42.3126689, -71.1226633, 16.5], [42.3666974, -71.03382189999999, 22.5], [42.346832, -71.0923139, 18.0], [42.3600825, -71.0588801, 10.0], [42.36557519999999, -71.0097645, 23.0], [42.3389262, -71.1071588, 118.5], [42.3632146, -71.1297735, 17.0], [42.2800344, -71.0589066, 17.0], [42.3317603, -71.0839469, 13.0], [42.2830649, -71.1121722, 19.0], [42.2685953, -71.093474, 37.0], [42.3814894, -71.0690907, 20.0], [42.3376832, -71.1047446, 8.0], [42.3044363, -71.063148, 4.0], [42.2949548, -71.0656522, 20.0], [42.2784217, -71.1371602, 19.0], [42.3130282, -71.1165096, 7.0], [42.3241513, -71.07962719999999, 26.0], [42.3258282, -71.07861609999999, 17.5], [42.2909424, -71.0468053, 15.0], [42.3648007, -71.0537232, 39.5], [42.3600825, -71.0588801, 22.5], [42.3529759, -71.159705, 19.0], [42.3892532, -71.0000022, 21.0], [42.2909424, -71.0468053, 5.0], [42.3471679, -71.0802329, 9.0], [42.2384918, -71.1299976, 33.5], [42.3241223, -71.0809757, 26.0], [42.3152582, -71.0349678, 17.5], [42.309863, -71.0499572, 20.0], [42.309863, -71.0499572, 13.5], [42.3462519, -71.04214429999999, 67.0], [42.3432703, -71.0713191, 27.0], [42.3600825, -71.0588801, 21.5], [42.2705097, -71.0943459, 13.5], [42.3508151, -71.1493418, 18.0], [42.3434687, -71.159705, 22.0], [42.2925456, -71.063148, 20.0], [42.2565289, -71.1240559, 31.5], [42.28809, -71.0769361, 51.0], [42.3336533, -71.0393766, 21.0], [42.3755627, -71.06447349999999, 19.0], [42.3600825, -71.0588801, 21.0], [42.313947, -71.063148, 17.0], [42.270235, -71.1626756, 20.0], [42.3170687, -71.08840359999999, 20.0], [42.3600825, -71.0588801, 68.5], [42.3573021, -71.0508911, 48.0], [42.2800275, -71.0943459, 124.0], [42.2808092, -71.0780044, 25.0], [42.3402946, -71.0951539, 28.5], [42.287104, -71.1480657, 158.0], [42.269799, -71.1181141, 21.0], [42.3600825, -71.0588801, 14.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var feature_group_35bb62c08138f6b59ffd91f98bdcce0f = L.featureGroup(
+                {}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var circle_marker_f75d213ae354991959788c0d4a767cfe = L.circleMarker(
+                [42.35841, -71.12856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_f75d213ae354991959788c0d4a767cfe.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Allston<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a598e4303f2f09c9a82130c165451287 = L.circleMarker(
+                [42.34986, -71.08053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_a598e4303f2f09c9a82130c165451287.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fdd10357c0745c16f2f61e511deebf9b = L.circleMarker(
+                [42.3491, -71.06903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_fdd10357c0745c16f2f61e511deebf9b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bay Village<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f940c8f5aecd7a7538ddc94c7057870 = L.circleMarker(
+                [42.35705, -71.06826],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_2f940c8f5aecd7a7538ddc94c7057870.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Beacon Hill<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9bd359f3f6108fec136026c11026cf14 = L.circleMarker(
+                [42.34836, -71.15494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_9bd359f3f6108fec136026c11026cf14.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Brighton<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_477823a86eb092b6c8e598e345762c1f = L.circleMarker(
+                [42.37905, -71.06367],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_477823a86eb092b6c8e598e345762c1f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Charlestown<br>Median Days on Market: 19.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b04891c2bb209380bd1cf7b25a355dcf = L.circleMarker(
+                [42.34903, -71.06166],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_b04891c2bb209380bd1cf7b25a355dcf.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Chinatown-Leather District<br>Median Days on Market: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39729238fe33cabb74191294e74bccd8 = L.circleMarker(
+                [42.29846, -71.06346],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_39729238fe33cabb74191294e74bccd8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dorchester<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bdcab418fc19ba7886c555ca0aca3781 = L.circleMarker(
+                [42.37268, -71.0157],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_bdcab418fc19ba7886c555ca0aca3781.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - East Boston<br>Median Days on Market: 21.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_54af4a2ec0baf16ed5e820c7ff9be256 = L.circleMarker(
+                [42.34477, -71.09611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_54af4a2ec0baf16ed5e820c7ff9be256.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fenway-Kenmore<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9be3397b36e5ac501b0f31f18f01c241 = L.circleMarker(
+                [42.34477, -71.09611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_9be3397b36e5ac501b0f31f18f01c241.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fenway-Kenmore-Audubon Circle-Longwood<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e44a102c190f2bb47cf4f3cdc648850a = L.circleMarker(
+                [42.25504, -71.1263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_e44a102c190f2bb47cf4f3cdc648850a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Hyde Park<br>Median Days on Market: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c8b9212326d77993f345618cc2c4f3d = L.circleMarker(
+                [42.30777, -71.1151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_7c8b9212326d77993f345618cc2c4f3d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Plain<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a4344f66b86646f2d4ae252cad6ba069 = L.circleMarker(
+                [42.35099, -71.05783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_a4344f66b86646f2d4ae252cad6ba069.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Leather District<br>Median Days on Market: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ae1d77bec7a15ccc885985549cdc817 = L.circleMarker(
+                [42.33174, -71.10261],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_7ae1d77bec7a15ccc885985549cdc817.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mission Hill<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e66affc1a12503a81172e27531bdde4 = L.circleMarker(
+                [42.36546, -71.05386],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_8e66affc1a12503a81172e27531bdde4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North End<br>Median Days on Market: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c3f8ecda312290145b80c491eff101a = L.circleMarker(
+                [42.28252, -71.12666],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_8c3f8ecda312290145b80c491eff101a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Roslindale<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10aaee961df977cb2e6ce49be7e80d5e = L.circleMarker(
+                [42.31852, -71.08664],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_10aaee961df977cb2e6ce49be7e80d5e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Roxbury<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a0dd79318893351e1312d0be8557e10 = L.circleMarker(
+                [42.33492, -71.04219],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_5a0dd79318893351e1312d0be8557e10.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South Boston<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c81c5ce2a175ce7050f05d6c9efb839 = L.circleMarker(
+                [42.34135, -71.07137],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_3c81c5ce2a175ce7050f05d6c9efb839.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South End<br>Median Days on Market: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_21731232bbe8b305cb3d50bbd7ef1d7a = L.circleMarker(
+                [42.36455, -71.06543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_21731232bbe8b305cb3d50bbd7ef1d7a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West End<br>Median Days on Market: 74.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f80bb85db86d162d916c9afb8207a3b6 = L.circleMarker(
+                [42.28064, -71.16003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_f80bb85db86d162d916c9afb8207a3b6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Roxbury<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_583964210993fc5d2b633fd490911eb2 = L.circleMarker(
+                [42.2830311, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_583964210993fc5d2b633fd490911eb2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Ashmont<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_35c9acca07cdc9850b7dde5805960b2d = L.circleMarker(
+                [42.2871045, -71.0591684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_35c9acca07cdc9850b7dde5805960b2d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Ashmont Hill<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b02aa4b3a0f4eff3d6c9cae929a08e5b = L.circleMarker(
+                [42.3521337, -71.0780044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_b02aa4b3a0f4eff3d6c9cae929a08e5b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay East<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8036c2ee7f30ef7a9c2a8a375dd48e57 = L.circleMarker(
+                [42.3494093, -71.0898892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_8036c2ee7f30ef7a9c2a8a375dd48e57.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay West<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87e87288c7c284f24ec84a44c166aaed = L.circleMarker(
+                [42.329418, -71.1108436],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_87e87288c7c284f24ec84a44c166aaed.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back of the Hill / Rth<br>Median Days on Market: 28.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1db0a03494b5137e45d74c4720b281cb = L.circleMarker(
+                [42.2786744, -71.1493077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_1db0a03494b5137e45d74c4720b281cb.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bellevue Hill<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6681b24913425cf185d8fdafab0e39fc = L.circleMarker(
+                [42.3059584, -71.0720619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_6681b24913425cf185d8fdafab0e39fc.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bowdoin North-Mount Bowdoin<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c87d3230ecbe9107a7e0347a0082c66 = L.circleMarker(
+                [42.289274, -71.1626756],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_2c87d3230ecbe9107a7e0347a0082c66.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Brook Farm<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_88ca14e5dfa7135576a99bba60bb6dc7 = L.circleMarker(
+                [42.3749729, -71.063971],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_88ca14e5dfa7135576a99bba60bb6dc7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bunker Hill / Thompson Square<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_464c43c5b8fe0375c1eead6c2deed2ff = L.circleMarker(
+                [42.2750987, -71.07032819999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_464c43c5b8fe0375c1eead6c2deed2ff.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Cedar Grove / East Lower Mills<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_66a6d6774098a9fc8b6c113dfc8f95af = L.circleMarker(
+                [42.3742486, -71.037148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_66a6d6774098a9fc8b6c113dfc8f95af.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central<br>Median Days on Market: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8585e35e8b8632b0e015d3b34f82862f = L.circleMarker(
+                [42.3742486, -71.037148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_8585e35e8b8632b0e015d3b34f82862f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central Maverick Square-Paris Street<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb851f2bb1fccc21b48984aeedef25fc = L.circleMarker(
+                [42.3771315, -71.04011950000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_bb851f2bb1fccc21b48984aeedef25fc.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central Square<br>Median Days on Market: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_73d216d5891c8a7c5346ac43567ac08f = L.circleMarker(
+                [42.2904259, -71.1344539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_73d216d5891c8a7c5346ac43567ac08f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Centre-South<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c5b3b12c00061798f61a71607907304b = L.circleMarker(
+                [42.3339959, -71.02749039999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_c5b3b12c00061798f61a71607907304b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - City Point<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_05033159fbc8a73e00d8716c329f1eab = L.circleMarker(
+                [42.3000278, -71.0512625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_05033159fbc8a73e00d8716c329f1eab.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Clam Point<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5216d56552e5fbbf0a487f5864f5ffa9 = L.circleMarker(
+                [42.2794561, -71.0727084],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_5216d56552e5fbbf0a487f5864f5ffa9.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Codman Square-East Codman Hill<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c060aba6310980b9ac2a729658a0da97 = L.circleMarker(
+                [42.3130539, -71.03321509999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_c060aba6310980b9ac2a729658a0da97.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbia Point<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f820c8703f790c88ee6dc029e5c1ba6e = L.circleMarker(
+                [42.3442847, -71.0772616],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_f820c8703f790c88ee6dc029e5c1ba6e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbus<br>Median Days on Market: 18.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fafdd9d1e953906b38ae686819b0981b = L.circleMarker(
+                [42.3319481, -71.05720529999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_fafdd9d1e953906b38ae686819b0981b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbus Park-Andrew Square<br>Median Days on Market: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3e2a98b5ec9670ae9a6c38207eaa790b = L.circleMarker(
+                [42.3437558, -71.1428971],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_3e2a98b5ec9670ae9a6c38207eaa790b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Commonwealth<br>Median Days on Market: 19.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2a5cef2451ced3abfa894458aa20286d = L.circleMarker(
+                [42.340677, -71.04859309999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_2a5cef2451ced3abfa894458aa20286d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - D Street-West Broadway<br>Median Days on Market: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bdd6f7bc7610c2eb527f93d97dabd2d5 = L.circleMarker(
+                [42.35552750000001, -71.0565313],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_bdd6f7bc7610c2eb527f93d97dabd2d5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Downtown Boston<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b361d10cfb5463473881b3c7bfda3371 = L.circleMarker(
+                [42.3247063, -71.1376104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_b361d10cfb5463473881b3c7bfda3371.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dudley Triangle<br>Median Days on Market: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d5f29df6f95e5bdf75daa2f4afa7a3c8 = L.circleMarker(
+                [42.3159763, -71.0750332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_d5f29df6f95e5bdf75daa2f4afa7a3c8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dudley-Brunswick King<br>Median Days on Market: 58.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6095e0950b1aac83c64065e2a1b3c804 = L.circleMarker(
+                [42.3806511, -71.0364051],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_6095e0950b1aac83c64065e2a1b3c804.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Eagle Hill<br>Median Days on Market: 21.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a51f509f503a953a2c81f2510e7cd799 = L.circleMarker(
+                [42.3402946, -71.0951539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_a51f509f503a953a2c81f2510e7cd799.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - East Fenway<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4f7492a863f7e5052f1c77f14012b623 = L.circleMarker(
+                [42.3134039, -71.1017736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_4f7492a863f7e5052f1c77f14012b623.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Egleston Square<br>Median Days on Market: 213.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b525da18eaac75be162d791a9235379 = L.circleMarker(
+                [42.249313, -71.1166286],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_6b525da18eaac75be162d791a9235379.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fairmount Hills<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e4b7034281170d879f26f10c398c8b19 = L.circleMarker(
+                [42.3532818, -71.1593198],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_e4b7034281170d879f26f10c398c8b19.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Faneuil West<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10229b91003bc16788a0bcb008e8dbf2 = L.circleMarker(
+                [42.3005356, -71.0542339],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_10229b91003bc16788a0bcb008e8dbf2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fields Corner East<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7494cdcd1e8cc6427292d67e5450bd46 = L.circleMarker(
+                [42.2978096, -71.0661193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_7494cdcd1e8cc6427292d67e5450bd46.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fields Corner West<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1156a5db346e28cdee49d788a491c14c = L.circleMarker(
+                [42.3559219, -71.05497679999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_1156a5db346e28cdee49d788a491c14c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Financial District<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a860415927118f1805a932263c7c589 = L.circleMarker(
+                [42.357513, -71.070331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_9a860415927118f1805a932263c7c589.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Flat of the Hill<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6ad72b0c705a45510d823bf7b662fe67 = L.circleMarker(
+                [42.2925811, -71.1121722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_6ad72b0c705a45510d823bf7b662fe67.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Forest Hills-Woodbourne<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a1b46e2c8e1309ca7ba41fbe835233da = L.circleMarker(
+                [42.3261495, -71.0928603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_a1b46e2c8e1309ca7ba41fbe835233da.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fort Hill<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bbd2c5b1efae7bab475f2536f0a7ba38 = L.circleMarker(
+                [42.3005222, -71.08278779999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_bbd2c5b1efae7bab475f2536f0a7ba38.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Franklin Field North<br>Median Days on Market: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_71ea0a5811d9d7e3ec8c172baa797217 = L.circleMarker(
+                [42.2885305, -71.08840359999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_71ea0a5811d9d7e3ec8c172baa797217.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Franklin Field South<br>Median Days on Market: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba4a2c331794aac932a4a159aad4d865 = L.circleMarker(
+                [42.2500374, -71.1418809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_ba4a2c331794aac932a4a159aad4d865.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Georgetown<br>Median Days on Market: 26.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d9e103e37f8adcd66fe8137390f4bb1d = L.circleMarker(
+                [42.2689791, -71.0940002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_d9e103e37f8adcd66fe8137390f4bb1d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Greater Mattapan<br>Median Days on Market: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_087309c13a7d43c7bd9f29496d0610a0 = L.circleMarker(
+                [42.3883645, -71.00520279999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_087309c13a7d43c7bd9f29496d0610a0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Harbor View-Orient Heights<br>Median Days on Market: 21.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_85a8b28c58d8918478af64dafe1a22ce = L.circleMarker(
+                [42.3368621, -71.0720619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_85a8b28c58d8918478af64dafe1a22ce.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Harrison Lenox<br>Median Days on Market: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5888089aae2a06a08ebe0c8bbe632e9 = L.circleMarker(
+                [42.3261495, -71.0928603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_b5888089aae2a06a08ebe0c8bbe632e9.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Highland Park<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3f483f4e168e9feea45011e4703a492 = L.circleMarker(
+                [42.3234206, -71.1047446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_d3f483f4e168e9feea45011e4703a492.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Hyde Square<br>Median Days on Market: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac1dcb4998634f0c356d0ed96efcb6f0 = L.circleMarker(
+                [42.3132414, -71.1141118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_ac1dcb4998634f0c356d0ed96efcb6f0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Central-South Sumner<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_95493d829425f25f642e616c277ab815 = L.circleMarker(
+                [42.3126689, -71.1226633],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_95493d829425f25f642e616c277ab815.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Hills-Pond<br>Median Days on Market: 16.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c9786b310e769fee4a8c6ac4bbad8cdf = L.circleMarker(
+                [42.3666974, -71.03382189999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_c9786b310e769fee4a8c6ac4bbad8cdf.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jeffries Point<br>Median Days on Market: 22.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c9967f71ed61df93aaf7b00a871d638 = L.circleMarker(
+                [42.346832, -71.0923139],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_3c9967f71ed61df93aaf7b00a871d638.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Kenmore<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db4c0c787395d9a0a0bafa7e1f9f8202 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_db4c0c787395d9a0a0bafa7e1f9f8202.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - King Square<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_20720fe0acfe5e899d7461b9b62dea59 = L.circleMarker(
+                [42.36557519999999, -71.0097645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_20720fe0acfe5e899d7461b9b62dea59.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Logan Airport / Jeffries Point<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fdfedd1127ecf81552fb2fbb40771bdc = L.circleMarker(
+                [42.3389262, -71.1071588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_fdfedd1127ecf81552fb2fbb40771bdc.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Longwood / Lma<br>Median Days on Market: 118.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f65f7992e6dd9f8e6bea57b8e5af1ef9 = L.circleMarker(
+                [42.3632146, -71.1297735],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_f65f7992e6dd9f8e6bea57b8e5af1ef9.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Allston<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_726ec601c8690cdbe8c6831f3887e769 = L.circleMarker(
+                [42.2800344, -71.0589066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_726ec601c8690cdbe8c6831f3887e769.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower East Mills-Cedar Grove<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_447df18236a365988696f7c7941b0aab = L.circleMarker(
+                [42.3317603, -71.0839469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_447df18236a365988696f7c7941b0aab.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Roxbury<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_851359a75cae8f1366700a2300716447 = L.circleMarker(
+                [42.2830649, -71.1121722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_851359a75cae8f1366700a2300716447.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Washington-Mount Hope<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7b523d9e74859171e093f8ec25185fef = L.circleMarker(
+                [42.2685953, -71.093474],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_7b523d9e74859171e093f8ec25185fef.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mattapan Square<br>Median Days on Market: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_59bccde3bb50765d887b06837a0b1956 = L.circleMarker(
+                [42.3814894, -71.0690907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_59bccde3bb50765d887b06837a0b1956.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Medford Street-the Neck<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f60149050fb5faa4161454e33661922b = L.circleMarker(
+                [42.3376832, -71.1047446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_f60149050fb5faa4161454e33661922b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Medical Center Area<br>Median Days on Market: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2e4aec30e3eb569831c13b90f445f6c5 = L.circleMarker(
+                [42.3044363, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_2e4aec30e3eb569831c13b90f445f6c5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Meeting House Hill<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5ce5b990db4a12ce8f8c93b38eea8c76 = L.circleMarker(
+                [42.2949548, -71.0656522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_5ce5b990db4a12ce8f8c93b38eea8c76.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Melville-Wellesley Parks<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c4894ccbff7865085f9f7e7143dc7e5 = L.circleMarker(
+                [42.2784217, -71.1371602],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_2c4894ccbff7865085f9f7e7143dc7e5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Metropolitan Hill-Beach Street<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_86aacac49bae2567d5bdfd7a9e10bc04 = L.circleMarker(
+                [42.3130282, -71.1165096],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_86aacac49bae2567d5bdfd7a9e10bc04.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Monument Square Historic District<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6939a202a90a0434665d04ef43f0f954 = L.circleMarker(
+                [42.3241513, -71.07962719999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_6939a202a90a0434665d04ef43f0f954.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Moreland Street Historic District<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52f14f9b2b638c8ae9b1c39bf65a03e8 = L.circleMarker(
+                [42.3258282, -71.07861609999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_52f14f9b2b638c8ae9b1c39bf65a03e8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mount Pleasant Historic District<br>Median Days on Market: 17.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_871c60796aa3a4b1c45152bbbf724969 = L.circleMarker(
+                [42.2909424, -71.0468053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_871c60796aa3a4b1c45152bbbf724969.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Neponset<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5109796432494ba923f01be7b1c7c704 = L.circleMarker(
+                [42.3648007, -71.0537232],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_5109796432494ba923f01be7b1c7c704.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North End / Waterfront<br>Median Days on Market: 39.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07721077cfbff336c1a14a975866b724 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_07721077cfbff336c1a14a975866b724.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North Slope<br>Median Days on Market: 22.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_42ff27bacbe20a8a7dd18a4c8ba492d2 = L.circleMarker(
+                [42.3529759, -71.159705],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_42ff27bacbe20a8a7dd18a4c8ba492d2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Oak Square<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ed2b743e03e940f7b276ac8c2b0e362f = L.circleMarker(
+                [42.3892532, -71.0000022],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_ed2b743e03e940f7b276ac8c2b0e362f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Orient Heights<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ddcecee4c759324d3b43e9694f3d66bd = L.circleMarker(
+                [42.2909424, -71.0468053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_ddcecee4c759324d3b43e9694f3d66bd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Port Norfolk<br>Median Days on Market: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_23e9a4c68b061dc80d152d90988adda8 = L.circleMarker(
+                [42.3471679, -71.0802329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_23e9a4c68b061dc80d152d90988adda8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Prudential-St. Botolph<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_da3b7f8b11dcc9e752a09d0bf2c8126d = L.circleMarker(
+                [42.2384918, -71.1299976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_da3b7f8b11dcc9e752a09d0bf2c8126d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Readville<br>Median Days on Market: 33.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_608bedb0142f3bc9cdb8ea617a665451 = L.circleMarker(
+                [42.3241223, -71.0809757],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_608bedb0142f3bc9cdb8ea617a665451.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Sav-Mor<br>Median Days on Market: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6eea850b101a19fbf161273026e3ca5f = L.circleMarker(
+                [42.3152582, -71.0349678],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_6eea850b101a19fbf161273026e3ca5f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill / Columbia Point<br>Median Days on Market: 17.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_82c3d2f9b13ebc9edd09f3ddb3cf3be4 = L.circleMarker(
+                [42.309863, -71.0499572],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_82c3d2f9b13ebc9edd09f3ddb3cf3be4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill Flats<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_31b93949f098feb17a9cb68338a2665a = L.circleMarker(
+                [42.309863, -71.0499572],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_31b93949f098feb17a9cb68338a2665a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill Historic District<br>Median Days on Market: 13.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d660037c70665e174ffc66ba3ccafd07 = L.circleMarker(
+                [42.3462519, -71.04214429999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_d660037c70665e174ffc66ba3ccafd07.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Seaport District<br>Median Days on Market: 67.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_09464b2e8ce56121a823179be93d60b0 = L.circleMarker(
+                [42.3432703, -71.0713191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_09464b2e8ce56121a823179be93d60b0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Shawmut<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4479b2d54400d1548e0117872ba4a571 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_4479b2d54400d1548e0117872ba4a571.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South Slope<br>Median Days on Market: 21.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5cdeb5f0968719cfe8152792f7a53358 = L.circleMarker(
+                [42.2705097, -71.0943459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_5cdeb5f0968719cfe8152792f7a53358.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Southern Mattapan<br>Median Days on Market: 13.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d58a270f06ea3bf01da92e5fbc27dca6 = L.circleMarker(
+                [42.3508151, -71.1493418],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_d58a270f06ea3bf01da92e5fbc27dca6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Sparhawk Street Historic District<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6371817abd1c5731dc8103844b50910 = L.circleMarker(
+                [42.3434687, -71.159705],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_f6371817abd1c5731dc8103844b50910.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - St. Elizabeth's<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_859746cd7b4bb38e3a39df7d7afe0634 = L.circleMarker(
+                [42.2925456, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_859746cd7b4bb38e3a39df7d7afe0634.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - St. Marks<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9ed78decd741abf39d65b202899ef2f7 = L.circleMarker(
+                [42.2565289, -71.1240559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_9ed78decd741abf39d65b202899ef2f7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Stony Brook-Cleary Square<br>Median Days on Market: 31.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bf858bb891d273842fc884443220cef = L.circleMarker(
+                [42.28809, -71.0769361],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_5bf858bb891d273842fc884443220cef.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Talbot-Norfolk Triangle<br>Median Days on Market: 51.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb3b109e7b8c107fa5e2cb8810f3282d = L.circleMarker(
+                [42.3336533, -71.0393766],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_eb3b109e7b8c107fa5e2cb8810f3282d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Telegraph Hill<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea95478e850ccf0afe6a0613461095ff = L.circleMarker(
+                [42.3755627, -71.06447349999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_ea95478e850ccf0afe6a0613461095ff.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Thompson Square-Bunker Hill<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e942e83f97fb9fbf5a487fd13e66c4e7 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_e942e83f97fb9fbf5a487fd13e66c4e7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Town Hill Landmark Historic District<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a0507d4434704ea274d4950c7ae56df = L.circleMarker(
+                [42.313947, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_7a0507d4434704ea274d4950c7ae56df.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Uphams Corner-Jones Hill<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_170ce3f717d8d1538f199e7bb8fc0702 = L.circleMarker(
+                [42.270235, -71.1626756],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_170ce3f717d8d1538f199e7bb8fc0702.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Upper Washington-Spring Street<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_711628519eb4757786106ccf609d41d0 = L.circleMarker(
+                [42.3170687, -71.08840359999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_711628519eb4757786106ccf609d41d0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Washington Park<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10af135ef9f8b5820027015159d5b287 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_10af135ef9f8b5820027015159d5b287.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Washington Street Theater District<br>Median Days on Market: 68.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b9fd008ab6e815ecd9251a48de4cd0d3 = L.circleMarker(
+                [42.3573021, -71.0508911],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_b9fd008ab6e815ecd9251a48de4cd0d3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Waterfront<br>Median Days on Market: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bede01b1f0ac3ffbf4af8c3eed8b43cd = L.circleMarker(
+                [42.2800275, -71.0943459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_bede01b1f0ac3ffbf4af8c3eed8b43cd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Wellington Hill<br>Median Days on Market: 124.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a6b515ade6f71bce8f7ff5e61fd06b15 = L.circleMarker(
+                [42.2808092, -71.0780044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_a6b515ade6f71bce8f7ff5e61fd06b15.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Codman Hill-West Lower Mills<br>Median Days on Market: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4e3f5c67b072c50050449e2369672ea1 = L.circleMarker(
+                [42.3402946, -71.0951539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_4e3f5c67b072c50050449e2369672ea1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Fenway<br>Median Days on Market: 28.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_815f1bca2b84f4929b634f3dd0ff9bea = L.circleMarker(
+                [42.287104, -71.1480657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_815f1bca2b84f4929b634f3dd0ff9bea.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Roxbury Center<br>Median Days on Market: 158.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_73c5016d140362f77295ad90d0f2c1d5 = L.circleMarker(
+                [42.269799, -71.1181141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_73c5016d140362f77295ad90d0f2c1d5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Street-River Street<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2cdcc12d0203d5eb69a8db773ca881f5 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_35bb62c08138f6b59ffd91f98bdcce0f);
+        
+    
+            circle_marker_2cdcc12d0203d5eb69a8db773ca881f5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Woodbourne Historic District<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_10ba434791ab0b85bb377291f531b026 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var tile_layer_75aef1acf1b1becbd00e69a0befb3bb2 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var tile_layer_d08b158d651308502bed50fb4c898d54 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var tile_layer_698b9aa0c571cc4a40170fdcda3e1eb6 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var tile_layer_a299bd2080da110346010eefee37709b = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var tile_layer_25942b19292da88ecbfe53e253d9404f = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+        
+    
+            var layer_control_2ff799de57b262a498419c34229c4e2e = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_d08b158d651308502bed50fb4c898d54,
+                    "stamenwatercolor" : tile_layer_10ba434791ab0b85bb377291f531b026,
+                    "openstreetmap" : tile_layer_75aef1acf1b1becbd00e69a0befb3bb2,
+                    "stamentoner" : tile_layer_698b9aa0c571cc4a40170fdcda3e1eb6,
+                    "cartodbpositron" : tile_layer_a299bd2080da110346010eefee37709b,
+                    "cartodbdark_matter" : tile_layer_25942b19292da88ecbfe53e253d9404f,
+                },
+                overlays :  {
+                    "Boston - median_dom" : heat_map_57141bac8cdf2d5a438ab83346bb4cfe,
+                    "Median Days on Market Centers" : feature_group_35bb62c08138f6b59ffd91f98bdcce0f,
+                },
+            };
+            L.control.layers(
+                layer_control_2ff799de57b262a498419c34229c4e2e.base_layers,
+                layer_control_2ff799de57b262a498419c34229c4e2e.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_24efde9dcdf0c95348339651f81cf41b);
+            tile_layer_10ba434791ab0b85bb377291f531b026.remove();
+            tile_layer_75aef1acf1b1becbd00e69a0befb3bb2.remove();
+            tile_layer_d08b158d651308502bed50fb4c898d54.remove();
+            tile_layer_698b9aa0c571cc4a40170fdcda3e1eb6.remove();
+            tile_layer_a299bd2080da110346010eefee37709b.remove();
+            tile_layer_25942b19292da88ecbfe53e253d9404f.remove();
+        
+</script>
+</html>

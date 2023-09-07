@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_52c151c5d720ea87009835f38f090d3f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_52c151c5d720ea87009835f38f090d3f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_52c151c5d720ea87009835f38f090d3f = L.map(
+                "map_52c151c5d720ea87009835f38f090d3f",
+                {
+                    center: [37.7615559496063, -122.4341716952756],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5d54545af9852b0e7c6acd7ee0d84823 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var heat_map_026c1df2f26e543259c3ea79c98ac2d1 = L.heatLayer(
+                [[37.77634, -122.43469, 1435000.0], [37.78096, -122.44323, 807000.0], [37.76252, -122.4491, 1830000.0], [37.73099, -122.4676, 2588000.0], [37.73311, -122.38988, 912500.0], [37.74111, -122.41469, 1550000.0], [37.72016, -122.39266, 937000.0], [37.76789, -122.44158, 1625000.0], [37.76184, -122.43378, 2925000.0], [37.78454, -122.42422, 895000.0], [37.71962, -122.44309, 1150000.0], [37.75002, -122.38324, 879000.0], [37.79449, -122.40657, 688000.0], [37.77861, -122.41908, 650000.0], [37.75629, -122.44871, 1700000.0], [37.76669, -122.45049, 1475000.0], [37.76441, -122.43857, 1930000.0], [37.79733, -122.44259, 1740000.0], [37.71138, -122.43622, 1240000.0], [37.74399, -122.44031, 755000.0], [37.7549, -122.42673, 1570000.0], [37.76797, -122.43234, 1325000.0], [37.75824, -122.43912, 1535000.0], [37.72128, -122.43081, 1266000.0], [37.73943, -122.42955, 1640000.0], [37.79262, -122.39733, 1375000.0], [37.80783, -122.41326, 2200000.0], [37.74793, -122.46372, 3150000.0], [37.75489, -122.45979, 1415000.0], [37.73845, -122.4396, 1560000.0], [37.75202, -122.47094, 1550000.0], [37.76988, -122.44829, 1960000.0], [37.77646, -122.42693, 1250000.0], [37.73713, -122.42075, 1820000.0], [37.72539, -122.37207, 729000.0], [37.72069, -122.46141, 1060000.0], [37.72511, -122.46803, 2700000.0], [37.77938, -122.4685, 1850000.0], [37.76263, -122.46793, 1652500.0], [37.78613, -122.43002, 1265000.0], [37.74565, -122.45798, 1949500.0], [37.78551, -122.47962, 2475000.0], [37.72058, -122.49343, 835000.0], [37.71095, -122.39955, 1125000.0], [37.77812, -122.45288, 2000000.0], [37.77299, -122.43078, 1075000.0], [37.78828, -122.416, 715000.0], [37.78574, -122.43992, 1740000.0], [37.73277, -122.48004, 2115000.0], [37.7503, -122.4504, 1575000.0], [37.77114, -122.42592, 1445000.0], [37.7389, -122.44905, 1592500.0], [37.77113, -122.39146, 940000.0], [37.76382, -122.42574, 1197500.0], [37.72806, -122.43515, 1200000.0], [37.73306, -122.46165, 3300000.0], [37.79312, -122.41394, 1210000.0], [37.74778, -122.43125, 1650000.0], [37.8009, -122.40855, 1198000.0], [37.80143, -122.40019, 1410000.0], [37.7159, -122.45559, 1091000.0], [37.71137, -122.45392, 970000.0], [37.7771, -122.49233, 1665000.0], [37.75378, -122.49547, 1455000.0], [37.79232, -122.4342, 1620000.0], [37.77392, -122.44547, 1550000.0], [37.71962, -122.47942, 1470000.0], [37.74051, -122.48737, 1437500.0], [37.76097, -122.45631, 2230000.0], [37.74622, -122.40742, 1497500.0], [37.79419, -122.42141, 899000.0], [37.72599, -122.4073, 1175000.0], [37.75783, -122.39954, 1600000.0], [37.78873, -122.45234, 4225000.0], [37.79742, -122.46643, 9000000.0], [37.78701, -122.46425, 1615000.0], [37.78733, -122.39115, 1100000.0], [37.8004, -122.41759, 1757500.0], [37.7868, -122.48885, 3587500.0], [37.73743, -122.45687, 1975000.0], [37.7692, -122.40338, 485517.0], [37.73383, -122.39833, 1200000.0], [37.78167, -122.38929, 945000.0], [37.77845, -122.40608, 875000.0], [37.73627, -122.46606, 3225000.0], [37.73352, -122.4257, 1517500.0], [37.71097, -122.42009, 1019000.0], [37.73002, -122.4465, 1192500.0], [37.77798, -122.50793, 1324000.0], [37.80233, -122.40547, 817500.0], [37.78409, -122.41482, 499000.0], [37.79863, -122.43074, 2000000.0], [37.72693, -122.41809, 1225000.0], [37.75135, -122.44304, 950000.0], [37.71346, -122.40848, 1100000.0], [37.73977, -122.47066, 2020000.0], [37.78006, -122.43494, 910000.0], [37.73275, -122.45655, 1875000.0], [37.72746, -122.45637, 1800000.0], [37.81095, -122.36588, 2106000.0], [37.7770771, -122.4365807, 1450000.0], [37.8048637, -122.42566, 1465000.0], [37.7646865, -122.4512005, 1742500.0], [37.7635614, -122.4173724, 1300000.0], [37.7782864, -122.4653775, 1391000.0], [37.7127107, -122.3815252, 1028000.0], [37.7850246, -122.4005003, 712000.0], [37.7690189, -122.4019298, 1230000.0], [37.7936658, -122.3964729, 730000.0], [37.76955100000001, -122.433214, 1657000.0], [37.7861923, -122.4400385, 720000.0], [37.7749295, -122.4194155, 775000.0], [37.7296178, -122.4935865, 2137500.0], [37.783278, -122.4566316, 2595000.0], [37.8043849, -122.4370011, 2468750.0], [37.7749295, -122.4194155, 2468750.0], [37.7635614, -122.4173724, 1311500.0], [37.7282679, -122.4640937, 1620000.0], [37.7929158, -122.4046905, 1142000.0], [37.7897312, -122.401906, 1600000.0], [37.7815501, -122.3940353, 1595000.0], [37.7749295, -122.4194155, 1200500.0], [37.7749295, -122.4194155, 1450000.0], [37.7749295, -122.4194155, 1249000.0], [37.7395735, -122.470007, 2300000.0], [37.7850246, -122.4005003, 712000.0], [37.7850045, -122.4004816, 799000.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var feature_group_9bd07c6ff497ac77f06e04f2b891a284 = L.featureGroup(
+                {}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var circle_marker_1cd372af28b65eee050bd88243b997fc = L.circleMarker(
+                [37.77634, -122.43469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_1cd372af28b65eee050bd88243b997fc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square<br>Median Sale Price: 1435000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e593518f2c429a1529ec394850176147 = L.circleMarker(
+                [37.78096, -122.44323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e593518f2c429a1529ec394850176147.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Anza Vista<br>Median Sale Price: 807000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5619de6c7dcd6226ee077f165434bfb5 = L.circleMarker(
+                [37.76252, -122.4491],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_5619de6c7dcd6226ee077f165434bfb5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights<br>Median Sale Price: 1830000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_24a93abbbad0230fc0798dd09848cfad = L.circleMarker(
+                [37.73099, -122.4676],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_24a93abbbad0230fc0798dd09848cfad.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Terrace<br>Median Sale Price: 2588000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_398ddcde0c400cc94544a2bd8b2a3db7 = L.circleMarker(
+                [37.73311, -122.38988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_398ddcde0c400cc94544a2bd8b2a3db7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bayview<br>Median Sale Price: 912500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cd59d12b65d40956ff72ee62bdd2b234 = L.circleMarker(
+                [37.74111, -122.41469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_cd59d12b65d40956ff72ee62bdd2b234.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bernal Heights<br>Median Sale Price: 1550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_56b52a78b354eefbff5089df86036796 = L.circleMarker(
+                [37.72016, -122.39266],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_56b52a78b354eefbff5089df86036796.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bret Harte<br>Median Sale Price: 937000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_118638c2ad901e8671195838b45b0625 = L.circleMarker(
+                [37.76789, -122.44158],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_118638c2ad901e8671195838b45b0625.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Buena Vista<br>Median Sale Price: 1625000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bc205df4e5d7e2a13b39f2df5d045430 = L.circleMarker(
+                [37.76184, -122.43378],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_bc205df4e5d7e2a13b39f2df5d045430.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Castro<br>Median Sale Price: 2925000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_66f78a79e3983dc0d036af37808d5fe8 = L.circleMarker(
+                [37.78454, -122.42422],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_66f78a79e3983dc0d036af37808d5fe8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cathedral Hill<br>Median Sale Price: 895000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5ff8ea9cb85116d162f2d30bf60c54ea = L.circleMarker(
+                [37.71962, -122.44309],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_5ff8ea9cb85116d162f2d30bf60c54ea.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cayuga<br>Median Sale Price: 1150000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6c725ad29d306e82b0fb59560a8f907b = L.circleMarker(
+                [37.75002, -122.38324],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_6c725ad29d306e82b0fb59560a8f907b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central Waterfront<br>Median Sale Price: 879000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_418da68170faeadfd29e5da71a55c54d = L.circleMarker(
+                [37.79449, -122.40657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_418da68170faeadfd29e5da71a55c54d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Chinatown<br>Median Sale Price: 688000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ec83b13a06181e79428133fc59908b50 = L.circleMarker(
+                [37.77861, -122.41908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_ec83b13a06181e79428133fc59908b50.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Civic Center<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bbe0a046d87ecdf72e68a1c1f7bd957a = L.circleMarker(
+                [37.75629, -122.44871],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_bbe0a046d87ecdf72e68a1c1f7bd957a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Clarendon Heights<br>Median Sale Price: 1700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_719287916d0bec98fb94828db51f8920 = L.circleMarker(
+                [37.76669, -122.45049],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_719287916d0bec98fb94828db51f8920.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cole Valley<br>Median Sale Price: 1475000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38d0a876ece4180b05446d98ff2e7f94 = L.circleMarker(
+                [37.76441, -122.43857],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_38d0a876ece4180b05446d98ff2e7f94.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Corona Heights<br>Median Sale Price: 1930000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_309a3fcd0fd443e63aee304ebf12910e = L.circleMarker(
+                [37.79733, -122.44259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_309a3fcd0fd443e63aee304ebf12910e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cow Hollow<br>Median Sale Price: 1740000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1a3dcb4a04c1e0b47997663cdfd598d = L.circleMarker(
+                [37.71138, -122.43622],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d1a3dcb4a04c1e0b47997663cdfd598d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Crocker Amazon<br>Median Sale Price: 1240000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e96c7d6f59058eb1665e703a3f76b3af = L.circleMarker(
+                [37.74399, -122.44031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e96c7d6f59058eb1665e703a3f76b3af.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Diamond Heights<br>Median Sale Price: 755000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_84cb4dd4b1818248bdcf67eaa342895b = L.circleMarker(
+                [37.7549, -122.42673],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_84cb4dd4b1818248bdcf67eaa342895b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Dolores Heights<br>Median Sale Price: 1570000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_13887b6fb68a204394c89f1d5a67b420 = L.circleMarker(
+                [37.76797, -122.43234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_13887b6fb68a204394c89f1d5a67b420.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Triangle<br>Median Sale Price: 1325000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3257b6df121512894fd131771a53a804 = L.circleMarker(
+                [37.75824, -122.43912],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_3257b6df121512894fd131771a53a804.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Eureka Valley<br>Median Sale Price: 1535000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dc0622fa6cdfd4e04dc22c18cfdfa2e8 = L.circleMarker(
+                [37.72128, -122.43081],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_dc0622fa6cdfd4e04dc22c18cfdfa2e8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Excelsior<br>Median Sale Price: 1266000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_80f0f0134cc9b3c3347d9047893983ca = L.circleMarker(
+                [37.73943, -122.42955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_80f0f0134cc9b3c3347d9047893983ca.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fairmount<br>Median Sale Price: 1640000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de4cdf52f366a1465d8e40c62c6bf265 = L.circleMarker(
+                [37.79262, -122.39733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_de4cdf52f366a1465d8e40c62c6bf265.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Financial District<br>Median Sale Price: 1375000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5136858afacc84721aa31a3f6d7bd92b = L.circleMarker(
+                [37.80783, -122.41326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_5136858afacc84721aa31a3f6d7bd92b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fishermans Wharf<br>Median Sale Price: 2200000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ef762a9f63af09a7ee62dcffad1ea93 = L.circleMarker(
+                [37.74793, -122.46372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_7ef762a9f63af09a7ee62dcffad1ea93.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Hill<br>Median Sale Price: 3150000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2864ba06b3025e103c517fae9d30e8be = L.circleMarker(
+                [37.75489, -122.45979],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_2864ba06b3025e103c517fae9d30e8be.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Knolls<br>Median Sale Price: 1415000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e6133dc31fa19185e00888e06679baa7 = L.circleMarker(
+                [37.73845, -122.4396],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e6133dc31fa19185e00888e06679baa7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Glen Park<br>Median Sale Price: 1560000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_44afa2f0ff985599ba9390169169c974 = L.circleMarker(
+                [37.75202, -122.47094],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_44afa2f0ff985599ba9390169169c974.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Golden Gate Heights<br>Median Sale Price: 1550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3dda7aea0a89778a1f82ebf0a6a33ed5 = L.circleMarker(
+                [37.76988, -122.44829],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_3dda7aea0a89778a1f82ebf0a6a33ed5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Haight Ashbury<br>Median Sale Price: 1960000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ef19570319f8cb482deeb8b62da22b7e = L.circleMarker(
+                [37.77646, -122.42693],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_ef19570319f8cb482deeb8b62da22b7e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hayes Valley<br>Median Sale Price: 1250000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d9381ef497608d9ed5faa64abd7b5e59 = L.circleMarker(
+                [37.73713, -122.42075],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d9381ef497608d9ed5faa64abd7b5e59.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Holly Park<br>Median Sale Price: 1820000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_86ca3408fe2914eedf77ea14895bc7f3 = L.circleMarker(
+                [37.72539, -122.37207],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_86ca3408fe2914eedf77ea14895bc7f3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hunters Point<br>Median Sale Price: 729000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_af10830cbe9b741bb6ab6e1449286a5f = L.circleMarker(
+                [37.72069, -122.46141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_af10830cbe9b741bb6ab6e1449286a5f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside<br>Median Sale Price: 1060000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_552e16f467901f4c9aacc8b6b2aae9ef = L.circleMarker(
+                [37.72511, -122.46803],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_552e16f467901f4c9aacc8b6b2aae9ef.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside Terraces<br>Median Sale Price: 2700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb64dc0643c0e12f40403412941f25a7 = L.circleMarker(
+                [37.77938, -122.4685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_bb64dc0643c0e12f40403412941f25a7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Richmond<br>Median Sale Price: 1850000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a91be689d0d071af1eb970545909276 = L.circleMarker(
+                [37.76263, -122.46793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_7a91be689d0d071af1eb970545909276.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Sunset<br>Median Sale Price: 1652500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_01e624040545d4b7ac895abb0ecc2194 = L.circleMarker(
+                [37.78613, -122.43002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_01e624040545d4b7ac895abb0ecc2194.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Japantown<br>Median Sale Price: 1265000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_412f1049fb1d0805b44b4fe430bdc803 = L.circleMarker(
+                [37.74565, -122.45798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_412f1049fb1d0805b44b4fe430bdc803.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laguna Honda<br>Median Sale Price: 1949500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3b04617d4e54bfaf8be24aa4159ac068 = L.circleMarker(
+                [37.78551, -122.47962],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_3b04617d4e54bfaf8be24aa4159ac068.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lake Street<br>Median Sale Price: 2475000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d8cda3fce2226f3e21032ec4b9b7a889 = L.circleMarker(
+                [37.72058, -122.49343],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d8cda3fce2226f3e21032ec4b9b7a889.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore<br>Median Sale Price: 835000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d5c4d7fa7b42890efb847e805c37bd0b = L.circleMarker(
+                [37.71095, -122.39955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d5c4d7fa7b42890efb847e805c37bd0b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Little Hollywood<br>Median Sale Price: 1125000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_543f240fadaa2d7aeab4649d96e5c539 = L.circleMarker(
+                [37.77812, -122.45288],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_543f240fadaa2d7aeab4649d96e5c539.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lone Mountain<br>Median Sale Price: 2000000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b844871f51b7e7b7c3ba89a2995924c = L.circleMarker(
+                [37.77299, -122.43078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_0b844871f51b7e7b7c3ba89a2995924c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Haight<br>Median Sale Price: 1075000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c0bfd8d21e5c87d4323d67b83cc7c1a1 = L.circleMarker(
+                [37.78828, -122.416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_c0bfd8d21e5c87d4323d67b83cc7c1a1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Nob Hill<br>Median Sale Price: 715000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca634dd5fd8d9714add1f14599cc6834 = L.circleMarker(
+                [37.78574, -122.43992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_ca634dd5fd8d9714add1f14599cc6834.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Pacific Heights<br>Median Sale Price: 1740000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aaa088d4fb82599780260e5d6908c489 = L.circleMarker(
+                [37.73277, -122.48004],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_aaa088d4fb82599780260e5d6908c489.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Merced Manor<br>Median Sale Price: 2115000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34be483aff56e4ce305eb45b8f199c03 = L.circleMarker(
+                [37.7503, -122.4504],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_34be483aff56e4ce305eb45b8f199c03.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Midtown Terrace<br>Median Sale Price: 1575000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_689eb05b84d89d78637dd759bcd51a1c = L.circleMarker(
+                [37.77114, -122.42592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_689eb05b84d89d78637dd759bcd51a1c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mint Hill<br>Median Sale Price: 1445000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_790b354c6526ceff97dacaad2ade7d97 = L.circleMarker(
+                [37.7389, -122.44905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_790b354c6526ceff97dacaad2ade7d97.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Miraloma Park<br>Median Sale Price: 1592500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f05f915a243971ea62e65a09135e273 = L.circleMarker(
+                [37.77113, -122.39146],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_2f05f915a243971ea62e65a09135e273.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Bay<br>Median Sale Price: 940000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e32587da145fd212671254a1e38db105 = L.circleMarker(
+                [37.76382, -122.42574],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e32587da145fd212671254a1e38db105.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Dolores<br>Median Sale Price: 1197500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7d27e3f9468c60e4acd02c3e5ecf87a = L.circleMarker(
+                [37.72806, -122.43515],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e7d27e3f9468c60e4acd02c3e5ecf87a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Terrace<br>Median Sale Price: 1200000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_308784bd57ca4415a6fc9f5138057070 = L.circleMarker(
+                [37.73306, -122.46165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_308784bd57ca4415a6fc9f5138057070.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Monterey Heights<br>Median Sale Price: 3300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5cf41df3c6ece047eeecf781e43786d = L.circleMarker(
+                [37.79312, -122.41394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_a5cf41df3c6ece047eeecf781e43786d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Nob Hill<br>Median Sale Price: 1210000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df55394f2bb7d3d257cb87456c4db128 = L.circleMarker(
+                [37.74778, -122.43125],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_df55394f2bb7d3d257cb87456c4db128.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Noe Valley<br>Median Sale Price: 1650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb5e6d67c943f1001d43e5b236220708 = L.circleMarker(
+                [37.8009, -122.40855],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_bb5e6d67c943f1001d43e5b236220708.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - North Beach<br>Median Sale Price: 1198000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3163d6279a005321d0e9082992ac1bb = L.circleMarker(
+                [37.80143, -122.40019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_c3163d6279a005321d0e9082992ac1bb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northern Waterfront<br>Median Sale Price: 1410000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e5a44cd86b51d6bc05348467278abfd = L.circleMarker(
+                [37.7159, -122.45559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_0e5a44cd86b51d6bc05348467278abfd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Oceanview<br>Median Sale Price: 1091000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4055e595b54025d3da6881034e6f10de = L.circleMarker(
+                [37.71137, -122.45392],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_4055e595b54025d3da6881034e6f10de.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Mission<br>Median Sale Price: 970000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e82651ef4ba21c7189449505c6c975e2 = L.circleMarker(
+                [37.7771, -122.49233],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e82651ef4ba21c7189449505c6c975e2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Richmond<br>Median Sale Price: 1665000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9834133727d620c597b5a5bad690792d = L.circleMarker(
+                [37.75378, -122.49547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_9834133727d620c597b5a5bad690792d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Sunset<br>Median Sale Price: 1455000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ccdeff57145e4b83b63eedb791f79a98 = L.circleMarker(
+                [37.79232, -122.4342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_ccdeff57145e4b83b63eedb791f79a98.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Pacific Heights<br>Median Sale Price: 1620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61ed7075770ec9112032a5cd7a5f733f = L.circleMarker(
+                [37.77392, -122.44547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_61ed7075770ec9112032a5cd7a5f733f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Panhandle<br>Median Sale Price: 1550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_da1b92863b807ec47253fdf16753cc62 = L.circleMarker(
+                [37.71962, -122.47942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_da1b92863b807ec47253fdf16753cc62.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkmerced<br>Median Sale Price: 1470000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_be743973be9447a44cd9cf9d30fccb7c = L.circleMarker(
+                [37.74051, -122.48737],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_be743973be9447a44cd9cf9d30fccb7c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkside<br>Median Sale Price: 1437500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8269570f91f725d89e8802dbb33e08ef = L.circleMarker(
+                [37.76097, -122.45631],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_8269570f91f725d89e8802dbb33e08ef.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parnassus Heights<br>Median Sale Price: 2230000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_69d3e5de092c97627e0b995189565fd3 = L.circleMarker(
+                [37.74622, -122.40742],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_69d3e5de092c97627e0b995189565fd3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Peralta Heights<br>Median Sale Price: 1497500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_31b0df78edcfc41cd3f986cdef4436ea = L.circleMarker(
+                [37.79419, -122.42141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_31b0df78edcfc41cd3f986cdef4436ea.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Polk Gulch<br>Median Sale Price: 899000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b8de760d4e45fc3bacd8b0e1498874a2 = L.circleMarker(
+                [37.72599, -122.4073],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_b8de760d4e45fc3bacd8b0e1498874a2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Portola<br>Median Sale Price: 1175000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_951fce6455a7182bdcc24d3a9a569d63 = L.circleMarker(
+                [37.75783, -122.39954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_951fce6455a7182bdcc24d3a9a569d63.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Potrero Hill<br>Median Sale Price: 1600000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aab3083a69ab498f9e058d8fbb93bb55 = L.circleMarker(
+                [37.78873, -122.45234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_aab3083a69ab498f9e058d8fbb93bb55.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Heights<br>Median Sale Price: 4225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_05cd367a368a6685b689bf27c51048e9 = L.circleMarker(
+                [37.79742, -122.46643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_05cd367a368a6685b689bf27c51048e9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio National Park<br>Median Sale Price: 9000000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_efcdf7adddc78fe60a8d5be1c81edc49 = L.circleMarker(
+                [37.78701, -122.46425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_efcdf7adddc78fe60a8d5be1c81edc49.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Terrace<br>Median Sale Price: 1615000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9e4dd0ccebc55094cc179cb479db37b2 = L.circleMarker(
+                [37.78733, -122.39115],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_9e4dd0ccebc55094cc179cb479db37b2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Rincon Hill<br>Median Sale Price: 1100000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ef44e6a3b81447e1055b74c8bde6b080 = L.circleMarker(
+                [37.8004, -122.41759],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_ef44e6a3b81447e1055b74c8bde6b080.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Russian Hill<br>Median Sale Price: 1757500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3caf61d54227adf7ea7cfc59f8a1b9a = L.circleMarker(
+                [37.7868, -122.48885],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d3caf61d54227adf7ea7cfc59f8a1b9a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Seacliff<br>Median Sale Price: 3587500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9cfdd3635cfded88c306bce594d7e149 = L.circleMarker(
+                [37.73743, -122.45687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_9cfdd3635cfded88c306bce594d7e149.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sherwood Forest<br>Median Sale Price: 1975000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2ccff6cc4f9615b09460ea7be5b55c6f = L.circleMarker(
+                [37.7692, -122.40338],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_2ccff6cc4f9615b09460ea7be5b55c6f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Showplace Square<br>Median Sale Price: 485517.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f642ab289a5bb61efa2799aa7c396fe9 = L.circleMarker(
+                [37.73383, -122.39833],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_f642ab289a5bb61efa2799aa7c396fe9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Silver Terrace<br>Median Sale Price: 1200000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a6f7e0326e7f316d6149e63bf89c1d5b = L.circleMarker(
+                [37.78167, -122.38929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_a6f7e0326e7f316d6149e63bf89c1d5b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Beach<br>Median Sale Price: 945000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61a4b2eb04a2cd07231c63e3101314e8 = L.circleMarker(
+                [37.77845, -122.40608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_61a4b2eb04a2cd07231c63e3101314e8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South of Market<br>Median Sale Price: 875000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e52fc780c5ce30875925076503e14efd = L.circleMarker(
+                [37.73627, -122.46606],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e52fc780c5ce30875925076503e14efd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Francis Wood<br>Median Sale Price: 3225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7b03b0c2436fa28867633b914efd08eb = L.circleMarker(
+                [37.73352, -122.4257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_7b03b0c2436fa28867633b914efd08eb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Marys Park<br>Median Sale Price: 1517500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4d45d4ccf53d9b8171161801ac94f089 = L.circleMarker(
+                [37.71097, -122.42009],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_4d45d4ccf53d9b8171161801ac94f089.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnydale<br>Median Sale Price: 1019000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d208c5f9f64b114c170bb7203c1d97b5 = L.circleMarker(
+                [37.73002, -122.4465],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d208c5f9f64b114c170bb7203c1d97b5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnyside<br>Median Sale Price: 1192500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4acc8c0d1530033e147d0bef69077c1e = L.circleMarker(
+                [37.77798, -122.50793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_4acc8c0d1530033e147d0bef69077c1e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sutro Heights<br>Median Sale Price: 1324000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1deb334120a3d0840686e2abb256c427 = L.circleMarker(
+                [37.80233, -122.40547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_1deb334120a3d0840686e2abb256c427.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Telegraph Hill<br>Median Sale Price: 817500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5d1f5b462ec213e0ab3e087ad93cd0a = L.circleMarker(
+                [37.78409, -122.41482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_b5d1f5b462ec213e0ab3e087ad93cd0a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Tenderloin<br>Median Sale Price: 499000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4872803260a6eb5987175ab7fd15b97d = L.circleMarker(
+                [37.79863, -122.43074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_4872803260a6eb5987175ab7fd15b97d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Union Street<br>Median Sale Price: 2000000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0cea5cf825122384c873d938537093ae = L.circleMarker(
+                [37.72693, -122.41809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_0cea5cf825122384c873d938537093ae.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - University Mound<br>Median Sale Price: 1225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bc40a7c4161cceb7ec7a7dc1ffbe67c7 = L.circleMarker(
+                [37.75135, -122.44304],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_bc40a7c4161cceb7ec7a7dc1ffbe67c7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Upper Market<br>Median Sale Price: 950000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2344ebad008c65201d196f2fbb761a14 = L.circleMarker(
+                [37.71346, -122.40848],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_2344ebad008c65201d196f2fbb761a14.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Visitacion Valley<br>Median Sale Price: 1100000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34f2d2f18b48a1e8b311a961925d635c = L.circleMarker(
+                [37.73977, -122.47066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_34f2d2f18b48a1e8b311a961925d635c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal<br>Median Sale Price: 2020000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c67b96d6b88fb6544a711004e7dcf6ef = L.circleMarker(
+                [37.78006, -122.43494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_c67b96d6b88fb6544a711004e7dcf6ef.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western Addition<br>Median Sale Price: 910000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0a525147d29bcae411ffd0814997264 = L.circleMarker(
+                [37.73275, -122.45655],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_d0a525147d29bcae411ffd0814997264.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Highlands<br>Median Sale Price: 1875000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a0c877a8730d454ef8d867c2fbf2da54 = L.circleMarker(
+                [37.72746, -122.45637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_a0c877a8730d454ef8d867c2fbf2da54.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Park<br>Median Sale Price: 1800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_63d37368e208ce8b917df64e39e70b67 = L.circleMarker(
+                [37.81095, -122.36588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_63d37368e208ce8b917df64e39e70b67.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena Island<br>Median Sale Price: 2106000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_828dc8ab2e8cb983df51d1da292cdaff = L.circleMarker(
+                [37.7770771, -122.4365807],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_828dc8ab2e8cb983df51d1da292cdaff.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square Historic District<br>Median Sale Price: 1450000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87cdf93b29c961c2435340d7dbe11157 = L.circleMarker(
+                [37.8048637, -122.42566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_87cdf93b29c961c2435340d7dbe11157.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Aquatic Park-Fort Mason<br>Median Sale Price: 1465000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5336c7520aea52c05bec15e34e0521ff = L.circleMarker(
+                [37.7646865, -122.4512005],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_5336c7520aea52c05bec15e34e0521ff.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights / Parnassus<br>Median Sale Price: 1742500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ab1d285e571ee09763cf3e3f960c04d6 = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_ab1d285e571ee09763cf3e3f960c04d6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Baja Noe / Mission Deluxe<br>Median Sale Price: 1300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf0aa4aa4b437cf01e905d95649783ec = L.circleMarker(
+                [37.7782864, -122.4653775],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_cf0aa4aa4b437cf01e905d95649783ec.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Hollow<br>Median Sale Price: 1391000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c1702d82ac5e4dc5903816ecf34078a9 = L.circleMarker(
+                [37.7127107, -122.3815252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_c1702d82ac5e4dc5903816ecf34078a9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Candlestick Point State Recreation Area<br>Median Sale Price: 1028000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3beaaaf2f2fc1d94d042fda5ebd2ed0e = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_3beaaaf2f2fc1d94d042fda5ebd2ed0e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central South of Market<br>Median Sale Price: 712000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7109e3acf42a3f5cd9ace1aa43ac90b4 = L.circleMarker(
+                [37.7690189, -122.4019298],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_7109e3acf42a3f5cd9ace1aa43ac90b4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Design District<br>Median Sale Price: 1230000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c7dfdf98c575c0596355ee6aab3bfbb0 = L.circleMarker(
+                [37.7936658, -122.3964729],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_c7dfdf98c575c0596355ee6aab3bfbb0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Downtown San Francisco-Union Square<br>Median Sale Price: 730000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_672680cb641e1e9e390ce5601f62dfbe = L.circleMarker(
+                [37.76955100000001, -122.433214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_672680cb641e1e9e390ce5601f62dfbe.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Park<br>Median Sale Price: 1657000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e6deeaf79900898497f040a771b96394 = L.circleMarker(
+                [37.7861923, -122.4400385],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e6deeaf79900898497f040a771b96394.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fillmore District<br>Median Sale Price: 720000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e1fb91fba2a1a203c89ee7375f0ae088 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e1fb91fba2a1a203c89ee7375f0ae088.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Intermission<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df7cd1b9c3e105149995bebb918867dd = L.circleMarker(
+                [37.7296178, -122.4935865],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_df7cd1b9c3e105149995bebb918867dd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore Acres<br>Median Sale Price: 2137500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd16a4f28034c2a5efd468dea4b17ae8 = L.circleMarker(
+                [37.783278, -122.4566316],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_fd16a4f28034c2a5efd468dea4b17ae8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laurel Heights-Jordan Park<br>Median Sale Price: 2595000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_322de42a3960c15b823ccbcc0a89d8d2 = L.circleMarker(
+                [37.8043849, -122.4370011],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_322de42a3960c15b823ccbcc0a89d8d2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina District<br>Median Sale Price: 2468750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd986c5137d1c8bcee64b3b562183144 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_fd986c5137d1c8bcee64b3b562183144.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina Gardens<br>Median Sale Price: 2468750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_da4a98c94b856c7eeb3972062065b512 = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_da4a98c94b856c7eeb3972062065b512.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission District<br>Median Sale Price: 1311500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83c243015c26c7128205c45b6f9f410e = L.circleMarker(
+                [37.7282679, -122.4640937],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_83c243015c26c7128205c45b6f9f410e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mount Davidson Manor<br>Median Sale Price: 1620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_794ca06bcac157cc5ef5cd062b610830 = L.circleMarker(
+                [37.7929158, -122.4046905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_794ca06bcac157cc5ef5cd062b610830.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northeast San Francisco<br>Median Sale Price: 1142000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc867de4268b91b59d9129dee0595ca4 = L.circleMarker(
+                [37.7897312, -122.401906],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_fc867de4268b91b59d9129dee0595ca4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northwest San Francisco<br>Median Sale Price: 1600000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9b7bd4111ad0ee798e758f876a027a8 = L.circleMarker(
+                [37.7815501, -122.3940353],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e9b7bd4111ad0ee798e758f876a027a8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Park<br>Median Sale Price: 1595000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_379fb14c1bbecd0eefcbec61b1e26f0a = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_379fb14c1bbecd0eefcbec61b1e26f0a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southeast San Francisco<br>Median Sale Price: 1200500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb5951c5e08273137d0d4decbcac379c = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_bb5951c5e08273137d0d4decbcac379c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southwest San Francisco<br>Median Sale Price: 1450000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_20029dbe9fb4ad08f92b445d5f393652 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_20029dbe9fb4ad08f92b445d5f393652.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Transmission<br>Median Sale Price: 1249000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4775d22d45737984df1a3d027f41158f = L.circleMarker(
+                [37.7395735, -122.470007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_4775d22d45737984df1a3d027f41158f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal Park<br>Median Sale Price: 2300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2c68e66441068fee4118f4ea6fe5259 = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_e2c68e66441068fee4118f4ea6fe5259.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western South of Market<br>Median Sale Price: 712000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_445f772c7f9092ed57c97bec50cedad4 = L.circleMarker(
+                [37.7850045, -122.4004816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_9bd07c6ff497ac77f06e04f2b891a284);
+        
+    
+            circle_marker_445f772c7f9092ed57c97bec50cedad4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena<br>Median Sale Price: 799000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_da910a99f671081027a5b4bc13e005ea = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var tile_layer_a8d498abdfdfb838c0aa31a59b447b61 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var tile_layer_d27c5bcf7f06a422311478bd84c61474 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var tile_layer_5b6b51ebb87bbcc3f4fcc97cd09a03ab = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var tile_layer_14b3254f82b2ca3fe25afa2d29137c9c = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var tile_layer_d16292bacaa3f9bdd225392eb13a27d4 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+        
+    
+            var layer_control_82864d5d164784063b02e8812deaf8d1 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_d27c5bcf7f06a422311478bd84c61474,
+                    "stamenwatercolor" : tile_layer_da910a99f671081027a5b4bc13e005ea,
+                    "openstreetmap" : tile_layer_a8d498abdfdfb838c0aa31a59b447b61,
+                    "stamentoner" : tile_layer_5b6b51ebb87bbcc3f4fcc97cd09a03ab,
+                    "cartodbpositron" : tile_layer_14b3254f82b2ca3fe25afa2d29137c9c,
+                    "cartodbdark_matter" : tile_layer_d16292bacaa3f9bdd225392eb13a27d4,
+                },
+                overlays :  {
+                    "San Francisco - median_sale_price" : heat_map_026c1df2f26e543259c3ea79c98ac2d1,
+                    "Median Sale Price Centers" : feature_group_9bd07c6ff497ac77f06e04f2b891a284,
+                },
+            };
+            L.control.layers(
+                layer_control_82864d5d164784063b02e8812deaf8d1.base_layers,
+                layer_control_82864d5d164784063b02e8812deaf8d1.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_52c151c5d720ea87009835f38f090d3f);
+            tile_layer_da910a99f671081027a5b4bc13e005ea.remove();
+            tile_layer_a8d498abdfdfb838c0aa31a59b447b61.remove();
+            tile_layer_d27c5bcf7f06a422311478bd84c61474.remove();
+            tile_layer_5b6b51ebb87bbcc3f4fcc97cd09a03ab.remove();
+            tile_layer_14b3254f82b2ca3fe25afa2d29137c9c.remove();
+            tile_layer_d16292bacaa3f9bdd225392eb13a27d4.remove();
+        
+</script>
+</html>

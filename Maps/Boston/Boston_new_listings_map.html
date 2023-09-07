@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_168a22267bf05febd122fe130c388013 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_168a22267bf05febd122fe130c388013" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_168a22267bf05febd122fe130c388013 = L.map(
+                "map_168a22267bf05febd122fe130c388013",
+                {
+                    center: [42.32480960991736, -71.08296493305785],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_55646c044de05b19eaf05467f6d3f706 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var heat_map_4f88db10c0c99c1566587b2ed1030fac = L.heatLayer(
+                [[42.35841, -71.12856, 29.0], [42.34986, -71.08053, 123.0], [42.3491, -71.06903, 4.0], [42.35705, -71.06826, 26.0], [42.34836, -71.15494, 119.0], [42.37905, -71.06367, 74.0], [42.34903, -71.06166, 25.0], [42.29846, -71.06346, 164.0], [42.37268, -71.0157, 121.0], [42.34477, -71.09611, 314.0], [42.34477, -71.09611, 37.0], [42.25504, -71.1263, 53.0], [42.30777, -71.1151, 97.0], [42.35099, -71.05783, 7.0], [42.33174, -71.10261, 14.0], [42.36546, -71.05386, 57.0], [42.28252, -71.12666, 77.0], [42.31852, -71.08664, 55.0], [42.33492, -71.04219, 189.0], [42.34135, -71.07137, 114.0], [42.36455, -71.06543, 12.0], [42.28064, -71.16003, 111.0], [42.2830311, -71.063148, 16.0], [42.2871045, -71.0591684, 4.0], [42.3521337, -71.0780044, 42.0], [42.3494093, -71.0898892, 29.0], [42.329418, -71.1108436, 11.0], [42.2786744, -71.1493077, 17.0], [42.3059584, -71.0720619, 14.0], [42.289274, -71.1626756, 48.0], [42.3749729, -71.063971, 60.0], [42.2750987, -71.07032819999999, 10.0], [42.3742486, -71.037148, 163.0], [42.3742486, -71.037148, 15.0], [42.3771315, -71.04011950000002, 9.0], [42.2904259, -71.1344539, 9.0], [42.3339959, -71.02749039999999, 36.0], [42.3000278, -71.0512625, 1.0], [42.2794561, -71.0727084, 21.0], [42.3130539, -71.03321509999999, 36.0], [42.3442847, -71.0772616, 36.0], [42.3319481, -71.05720529999999, 25.0], [42.3437558, -71.1428971, 42.0], [42.340677, -71.04859309999999, 83.0], [42.35552750000001, -71.0565313, 62.0], [42.3247063, -71.1376104, 8.0], [42.3159763, -71.0750332, 17.0], [42.3806511, -71.0364051, 26.0], [42.3402946, -71.0951539, 16.0], [42.3134039, -71.1017736, 6.0], [42.249313, -71.1166286, 6.0], [42.3532818, -71.1593198, 5.0], [42.3005356, -71.0542339, 4.0], [42.2978096, -71.0661193, 5.0], [42.3559219, -71.05497679999999, 23.0], [42.357513, -71.070331, 5.0], [42.2925811, -71.1121722, 18.0], [42.3261495, -71.0928603, 8.0], [42.3005222, -71.08278779999999, 7.0], [42.2885305, -71.08840359999999, 13.0], [42.2500374, -71.1418809, 7.0], [42.2689791, -71.0940002, 43.0], [42.3883645, -71.00520279999999, 30.0], [42.3368621, -71.0720619, 20.0], [42.3261495, -71.0928603, 8.0], [42.3234206, -71.1047446, 5.0], [42.3132414, -71.1141118, 32.0], [42.3126689, -71.1226633, 23.0], [42.3666974, -71.03382189999999, 41.0], [42.346832, -71.0923139, 10.0], [42.3600825, -71.0588801, 2.0], [42.36557519999999, -71.0097645, 45.0], [42.3389262, -71.1071588, 5.0], [42.3632146, -71.1297735, 10.0], [42.2800344, -71.0589066, 9.0], [42.3317603, -71.0839469, 2.0], [42.2830649, -71.1121722, 18.0], [42.2685953, -71.093474, 1.0], [42.3814894, -71.0690907, 14.0], [42.3376832, -71.1047446, 1.0], [42.3044363, -71.063148, 10.0], [42.2949548, -71.0656522, 1.0], [42.2784217, -71.1371602, 32.0], [42.3130282, -71.1165096, 1.0], [42.3241513, -71.07962719999999, 7.0], [42.3258282, -71.07861609999999, 2.0], [42.2909424, -71.0468053, 13.0], [42.3648007, -71.0537232, 53.0], [42.3600825, -71.0588801, 11.0], [42.3529759, -71.159705, 34.0], [42.3892532, -71.0000022, 6.0], [42.2909424, -71.0468053, 1.0], [42.3471679, -71.0802329, 48.0], [42.2384918, -71.1299976, 5.0], [42.3241223, -71.0809757, 12.0], [42.3152582, -71.0349678, 40.0], [42.309863, -71.0499572, 4.0], [42.309863, -71.0499572, 5.0], [42.3462519, -71.04214429999999, 21.0], [42.3432703, -71.0713191, 39.0], [42.3600825, -71.0588801, 10.0], [42.2705097, -71.0943459, 14.0], [42.3508151, -71.1493418, 0.0], [42.3434687, -71.159705, 43.0], [42.2925456, -71.063148, 10.0], [42.2565289, -71.1240559, 11.0], [42.28809, -71.0769361, 1.0], [42.3336533, -71.0393766, 45.0], [42.3755627, -71.06447349999999, 60.0], [42.3600825, -71.0588801, 1.0], [42.313947, -71.063148, 16.0], [42.270235, -71.1626756, 45.0], [42.3170687, -71.08840359999999, 17.0], [42.3600825, -71.0588801, 10.0], [42.3573021, -71.0508911, 15.0], [42.2800275, -71.0943459, 8.0], [42.2808092, -71.0780044, 9.0], [42.3402946, -71.0951539, 11.0], [42.287104, -71.1480657, 2.0], [42.269799, -71.1181141, 24.0], [42.3600825, -71.0588801, 7.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var feature_group_ac557826a80427ea5b3acb011519340f = L.featureGroup(
+                {}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var circle_marker_06331b4fb97d4cd21eafaebf9fb27e23 = L.circleMarker(
+                [42.35841, -71.12856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_06331b4fb97d4cd21eafaebf9fb27e23.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Allston<br>New Listings: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c015735fe95bca8d2b6b2524bf6efacd = L.circleMarker(
+                [42.34986, -71.08053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_c015735fe95bca8d2b6b2524bf6efacd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay<br>New Listings: 123.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4a72ef5ff879c7cdb0eb94622ec3a7b8 = L.circleMarker(
+                [42.3491, -71.06903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_4a72ef5ff879c7cdb0eb94622ec3a7b8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bay Village<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_507a4050515c91e93298cc5cf172a5ce = L.circleMarker(
+                [42.35705, -71.06826],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_507a4050515c91e93298cc5cf172a5ce.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Beacon Hill<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d561a2d68a97a084e70fe2f6b28402b = L.circleMarker(
+                [42.34836, -71.15494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_2d561a2d68a97a084e70fe2f6b28402b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Brighton<br>New Listings: 119.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4647e7228298a54a451d42db650e0612 = L.circleMarker(
+                [42.37905, -71.06367],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_4647e7228298a54a451d42db650e0612.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Charlestown<br>New Listings: 74.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3b7749ce00c18cb1b3db956185c38dd = L.circleMarker(
+                [42.34903, -71.06166],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_b3b7749ce00c18cb1b3db956185c38dd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Chinatown-Leather District<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5984959b4162dbf6f269d9f846919610 = L.circleMarker(
+                [42.29846, -71.06346],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_5984959b4162dbf6f269d9f846919610.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dorchester<br>New Listings: 164.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b07a96ee73bd7cffd3031287ce7899b7 = L.circleMarker(
+                [42.37268, -71.0157],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_b07a96ee73bd7cffd3031287ce7899b7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - East Boston<br>New Listings: 121.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0f8d22435a3feec614275f2335f6a14 = L.circleMarker(
+                [42.34477, -71.09611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_d0f8d22435a3feec614275f2335f6a14.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fenway-Kenmore<br>New Listings: 314.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c80cd7b4d08635b60b12891baf3fb41c = L.circleMarker(
+                [42.34477, -71.09611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_c80cd7b4d08635b60b12891baf3fb41c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fenway-Kenmore-Audubon Circle-Longwood<br>New Listings: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c3509c414e2f5c5433485b57e38a21d = L.circleMarker(
+                [42.25504, -71.1263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_9c3509c414e2f5c5433485b57e38a21d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Hyde Park<br>New Listings: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ccd327ab26442dc8f6b2a3de5d5b70c7 = L.circleMarker(
+                [42.30777, -71.1151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_ccd327ab26442dc8f6b2a3de5d5b70c7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Plain<br>New Listings: 97.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ebe9a14012b8bc68a633be4f0edc79db = L.circleMarker(
+                [42.35099, -71.05783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_ebe9a14012b8bc68a633be4f0edc79db.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Leather District<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2b147450dbb7234f5e5f0e20782f6f41 = L.circleMarker(
+                [42.33174, -71.10261],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_2b147450dbb7234f5e5f0e20782f6f41.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mission Hill<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f491a8d18f1f35808d5cd1efd06607d = L.circleMarker(
+                [42.36546, -71.05386],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_2f491a8d18f1f35808d5cd1efd06607d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North End<br>New Listings: 57.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_03857bb5d86cafe1b2a1e3c1bd8fb08d = L.circleMarker(
+                [42.28252, -71.12666],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_03857bb5d86cafe1b2a1e3c1bd8fb08d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Roslindale<br>New Listings: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e3e73b029e65095aa8bdeacde4fcae9b = L.circleMarker(
+                [42.31852, -71.08664],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_e3e73b029e65095aa8bdeacde4fcae9b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Roxbury<br>New Listings: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a6f3f1a0ea6b942f84b7809fbfda435e = L.circleMarker(
+                [42.33492, -71.04219],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a6f3f1a0ea6b942f84b7809fbfda435e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South Boston<br>New Listings: 189.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93abd880adbe732c8b126cc7ac739ff3 = L.circleMarker(
+                [42.34135, -71.07137],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_93abd880adbe732c8b126cc7ac739ff3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South End<br>New Listings: 114.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_81f48ca63a2d7ee7349e05335c887fd5 = L.circleMarker(
+                [42.36455, -71.06543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_81f48ca63a2d7ee7349e05335c887fd5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West End<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4a4d2fc4ad522150af765354e6773d50 = L.circleMarker(
+                [42.28064, -71.16003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_4a4d2fc4ad522150af765354e6773d50.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Roxbury<br>New Listings: 111.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b4ee86c600e2a5860f4d0ef0cd2d0b6 = L.circleMarker(
+                [42.2830311, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_6b4ee86c600e2a5860f4d0ef0cd2d0b6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Ashmont<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c619267d4dd005d55d78487597c7adaa = L.circleMarker(
+                [42.2871045, -71.0591684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_c619267d4dd005d55d78487597c7adaa.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Ashmont Hill<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb4f8266a6dd4ffeb722269112bb1664 = L.circleMarker(
+                [42.3521337, -71.0780044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_bb4f8266a6dd4ffeb722269112bb1664.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay East<br>New Listings: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db0dbb2d089da7c95e38fca53a3fa961 = L.circleMarker(
+                [42.3494093, -71.0898892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_db0dbb2d089da7c95e38fca53a3fa961.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay West<br>New Listings: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e0f88ec54bd6e57ee409dd762fcf972 = L.circleMarker(
+                [42.329418, -71.1108436],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_0e0f88ec54bd6e57ee409dd762fcf972.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back of the Hill / Rth<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a8f167f14b96592f2bc5582c308ef7e6 = L.circleMarker(
+                [42.2786744, -71.1493077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a8f167f14b96592f2bc5582c308ef7e6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bellevue Hill<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1995a0eaee85775794785541db78e88b = L.circleMarker(
+                [42.3059584, -71.0720619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1995a0eaee85775794785541db78e88b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bowdoin North-Mount Bowdoin<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_671d66b4261e80a3aecfb2303bbfc63e = L.circleMarker(
+                [42.289274, -71.1626756],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_671d66b4261e80a3aecfb2303bbfc63e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Brook Farm<br>New Listings: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b3bc54c8444389d8c8e197dd2d49758 = L.circleMarker(
+                [42.3749729, -71.063971],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_6b3bc54c8444389d8c8e197dd2d49758.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bunker Hill / Thompson Square<br>New Listings: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7b3ef1dedafc1485d093a6713380c0f4 = L.circleMarker(
+                [42.2750987, -71.07032819999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_7b3ef1dedafc1485d093a6713380c0f4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Cedar Grove / East Lower Mills<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a11ea887752ac16527c6f749efa4baf = L.circleMarker(
+                [42.3742486, -71.037148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_0a11ea887752ac16527c6f749efa4baf.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central<br>New Listings: 163.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_299bf0c99f67f08ca0ecfcc38f294815 = L.circleMarker(
+                [42.3742486, -71.037148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_299bf0c99f67f08ca0ecfcc38f294815.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central Maverick Square-Paris Street<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f62f7a85ea75205895cd55099368a14 = L.circleMarker(
+                [42.3771315, -71.04011950000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_2f62f7a85ea75205895cd55099368a14.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central Square<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c7467e5535bb6ac477c1bebac0c6f117 = L.circleMarker(
+                [42.2904259, -71.1344539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_c7467e5535bb6ac477c1bebac0c6f117.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Centre-South<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2af8fafa9dc907000fb152f67a5b472a = L.circleMarker(
+                [42.3339959, -71.02749039999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_2af8fafa9dc907000fb152f67a5b472a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - City Point<br>New Listings: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6adbdd597e58b4d991a6bedad4921b30 = L.circleMarker(
+                [42.3000278, -71.0512625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_6adbdd597e58b4d991a6bedad4921b30.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Clam Point<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b25c93e109c9d1eabd4b3a9d93df73fb = L.circleMarker(
+                [42.2794561, -71.0727084],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_b25c93e109c9d1eabd4b3a9d93df73fb.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Codman Square-East Codman Hill<br>New Listings: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a14e4bf50eb7b56b217c1115a6f7f3bf = L.circleMarker(
+                [42.3130539, -71.03321509999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a14e4bf50eb7b56b217c1115a6f7f3bf.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbia Point<br>New Listings: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_342df04188b20bc747bacec5b43c9399 = L.circleMarker(
+                [42.3442847, -71.0772616],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_342df04188b20bc747bacec5b43c9399.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbus<br>New Listings: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0f4d3255db30c5a4a6ba2819d46ab992 = L.circleMarker(
+                [42.3319481, -71.05720529999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_0f4d3255db30c5a4a6ba2819d46ab992.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbus Park-Andrew Square<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb8386efc3dc28aae8d70fb6b9b90787 = L.circleMarker(
+                [42.3437558, -71.1428971],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_bb8386efc3dc28aae8d70fb6b9b90787.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Commonwealth<br>New Listings: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_568121a1cbff2b0f5551fa6f47dda3c8 = L.circleMarker(
+                [42.340677, -71.04859309999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_568121a1cbff2b0f5551fa6f47dda3c8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - D Street-West Broadway<br>New Listings: 83.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_766620418803f111a80f7fc855b270df = L.circleMarker(
+                [42.35552750000001, -71.0565313],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_766620418803f111a80f7fc855b270df.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Downtown Boston<br>New Listings: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9d5ec3c87a751ad6c104fbc5cb2e308d = L.circleMarker(
+                [42.3247063, -71.1376104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_9d5ec3c87a751ad6c104fbc5cb2e308d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dudley Triangle<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ece382d1285691097dccdbe627a4881 = L.circleMarker(
+                [42.3159763, -71.0750332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1ece382d1285691097dccdbe627a4881.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dudley-Brunswick King<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ba222fb5fa9260a01e433421184aebd = L.circleMarker(
+                [42.3806511, -71.0364051],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1ba222fb5fa9260a01e433421184aebd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Eagle Hill<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61290e83d4d64eedcba52206e5cbaf23 = L.circleMarker(
+                [42.3402946, -71.0951539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_61290e83d4d64eedcba52206e5cbaf23.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - East Fenway<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a848850a7097309ea1206b7cd52c4020 = L.circleMarker(
+                [42.3134039, -71.1017736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a848850a7097309ea1206b7cd52c4020.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Egleston Square<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e866f88aed23137f3cfc846a081fc37e = L.circleMarker(
+                [42.249313, -71.1166286],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_e866f88aed23137f3cfc846a081fc37e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fairmount Hills<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dc2dd61924c070dcb6224e9e08dcc0d4 = L.circleMarker(
+                [42.3532818, -71.1593198],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_dc2dd61924c070dcb6224e9e08dcc0d4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Faneuil West<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b716e531837195795bde549845212529 = L.circleMarker(
+                [42.3005356, -71.0542339],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_b716e531837195795bde549845212529.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fields Corner East<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aaa382f1fb96aad4888943c771127155 = L.circleMarker(
+                [42.2978096, -71.0661193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_aaa382f1fb96aad4888943c771127155.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fields Corner West<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad664c14f42912904909316931e24342 = L.circleMarker(
+                [42.3559219, -71.05497679999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_ad664c14f42912904909316931e24342.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Financial District<br>New Listings: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4a6decc7f4f08711115a4dacf4b8d85a = L.circleMarker(
+                [42.357513, -71.070331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_4a6decc7f4f08711115a4dacf4b8d85a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Flat of the Hill<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c20a43d0f04daad8c9e2e699c32bc1b8 = L.circleMarker(
+                [42.2925811, -71.1121722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_c20a43d0f04daad8c9e2e699c32bc1b8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Forest Hills-Woodbourne<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_768f344c279e02ab87e41e845dd06d3d = L.circleMarker(
+                [42.3261495, -71.0928603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_768f344c279e02ab87e41e845dd06d3d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fort Hill<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b6ed80a2a8980ccf3aa865c1bdac4574 = L.circleMarker(
+                [42.3005222, -71.08278779999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_b6ed80a2a8980ccf3aa865c1bdac4574.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Franklin Field North<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ea60ebcdd841d88480ccac921cb8074 = L.circleMarker(
+                [42.2885305, -71.08840359999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_7ea60ebcdd841d88480ccac921cb8074.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Franklin Field South<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_920616399e73df8356a1d568d425eb18 = L.circleMarker(
+                [42.2500374, -71.1418809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_920616399e73df8356a1d568d425eb18.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Georgetown<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_64c7715f454bfede417e63641a78d7e0 = L.circleMarker(
+                [42.2689791, -71.0940002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_64c7715f454bfede417e63641a78d7e0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Greater Mattapan<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c643b0d5404c1a3c66bc127f78c8f17 = L.circleMarker(
+                [42.3883645, -71.00520279999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_8c643b0d5404c1a3c66bc127f78c8f17.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Harbor View-Orient Heights<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1832203377061028f61c0f3c9a4aa96f = L.circleMarker(
+                [42.3368621, -71.0720619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1832203377061028f61c0f3c9a4aa96f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Harrison Lenox<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9b53449fe1850b7c96ea4e8461affa76 = L.circleMarker(
+                [42.3261495, -71.0928603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_9b53449fe1850b7c96ea4e8461affa76.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Highland Park<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0db892c329bd2fc07551c4ab67a165ac = L.circleMarker(
+                [42.3234206, -71.1047446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_0db892c329bd2fc07551c4ab67a165ac.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Hyde Square<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_42afc6545e75cbb4409e323739865855 = L.circleMarker(
+                [42.3132414, -71.1141118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_42afc6545e75cbb4409e323739865855.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Central-South Sumner<br>New Listings: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d53f9e004b8e2caea6851888109bf437 = L.circleMarker(
+                [42.3126689, -71.1226633],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_d53f9e004b8e2caea6851888109bf437.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Hills-Pond<br>New Listings: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6bf39f1c58fcdd39e31dc2cd65033bcd = L.circleMarker(
+                [42.3666974, -71.03382189999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_6bf39f1c58fcdd39e31dc2cd65033bcd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jeffries Point<br>New Listings: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_31370ee2b03ecbd58ee218216017c66b = L.circleMarker(
+                [42.346832, -71.0923139],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_31370ee2b03ecbd58ee218216017c66b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Kenmore<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a613e0122fa766c9570f030c4a51bbdb = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a613e0122fa766c9570f030c4a51bbdb.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - King Square<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e1002b35dee1b84ebd4e26332ea5fb90 = L.circleMarker(
+                [42.36557519999999, -71.0097645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_e1002b35dee1b84ebd4e26332ea5fb90.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Logan Airport / Jeffries Point<br>New Listings: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_710cd13d4cdce7c1fa6055d522c7045c = L.circleMarker(
+                [42.3389262, -71.1071588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_710cd13d4cdce7c1fa6055d522c7045c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Longwood / Lma<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a58a26d13b4a113601f6cb3279bdb87 = L.circleMarker(
+                [42.3632146, -71.1297735],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_5a58a26d13b4a113601f6cb3279bdb87.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Allston<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a11700d5dbaaa8d18dfd4af4c35da23 = L.circleMarker(
+                [42.2800344, -71.0589066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_0a11700d5dbaaa8d18dfd4af4c35da23.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower East Mills-Cedar Grove<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e046c946e2c1b31a1e40ea702ed2305 = L.circleMarker(
+                [42.3317603, -71.0839469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_8e046c946e2c1b31a1e40ea702ed2305.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Roxbury<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbb393056ccd131178ed65e72cd80d98 = L.circleMarker(
+                [42.2830649, -71.1121722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_dbb393056ccd131178ed65e72cd80d98.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Washington-Mount Hope<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_43515e352ce5fb7a1c8a1d2b5a1c4e1a = L.circleMarker(
+                [42.2685953, -71.093474],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_43515e352ce5fb7a1c8a1d2b5a1c4e1a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mattapan Square<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_899fc6e3bcb361ef00b2cf84e9b9b655 = L.circleMarker(
+                [42.3814894, -71.0690907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_899fc6e3bcb361ef00b2cf84e9b9b655.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Medford Street-the Neck<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_189ffd20e4083ab29c35490f9c9f3b62 = L.circleMarker(
+                [42.3376832, -71.1047446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_189ffd20e4083ab29c35490f9c9f3b62.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Medical Center Area<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_649b0a95e992bb883d8634ff8477deab = L.circleMarker(
+                [42.3044363, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_649b0a95e992bb883d8634ff8477deab.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Meeting House Hill<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_131c21a7ccd44bbc47e89671e347949f = L.circleMarker(
+                [42.2949548, -71.0656522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_131c21a7ccd44bbc47e89671e347949f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Melville-Wellesley Parks<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_36ebe5e6f5d3d171d3b682ab41017d8a = L.circleMarker(
+                [42.2784217, -71.1371602],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_36ebe5e6f5d3d171d3b682ab41017d8a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Metropolitan Hill-Beach Street<br>New Listings: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_afc830b5e2ff8a5d773b9c1acb376fc6 = L.circleMarker(
+                [42.3130282, -71.1165096],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_afc830b5e2ff8a5d773b9c1acb376fc6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Monument Square Historic District<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae2fec6749b9635fde3a6014e3aa011e = L.circleMarker(
+                [42.3241513, -71.07962719999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_ae2fec6749b9635fde3a6014e3aa011e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Moreland Street Historic District<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89e5ef14043f2d3b09f82fb17d24c1c9 = L.circleMarker(
+                [42.3258282, -71.07861609999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_89e5ef14043f2d3b09f82fb17d24c1c9.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mount Pleasant Historic District<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c7c7ad307a12dd6101dc536a71157b1 = L.circleMarker(
+                [42.2909424, -71.0468053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_3c7c7ad307a12dd6101dc536a71157b1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Neponset<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5cda113b864abd55ce29c5692f8a3db1 = L.circleMarker(
+                [42.3648007, -71.0537232],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_5cda113b864abd55ce29c5692f8a3db1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North End / Waterfront<br>New Listings: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e95770339963b652153492dcd662e81 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1e95770339963b652153492dcd662e81.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North Slope<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_382e85f8c5c29797a9e1d4d7284004b1 = L.circleMarker(
+                [42.3529759, -71.159705],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_382e85f8c5c29797a9e1d4d7284004b1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Oak Square<br>New Listings: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c85c5f7cad4c9347d4f523268db5a97 = L.circleMarker(
+                [42.3892532, -71.0000022],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_9c85c5f7cad4c9347d4f523268db5a97.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Orient Heights<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_173281f64be92fc4704c8cb70e4507b1 = L.circleMarker(
+                [42.2909424, -71.0468053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_173281f64be92fc4704c8cb70e4507b1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Port Norfolk<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ab060741c96f4cc12a548e819c49d67 = L.circleMarker(
+                [42.3471679, -71.0802329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_7ab060741c96f4cc12a548e819c49d67.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Prudential-St. Botolph<br>New Listings: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_45f67edb0366bc46229a0ddeab87ba31 = L.circleMarker(
+                [42.2384918, -71.1299976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_45f67edb0366bc46229a0ddeab87ba31.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Readville<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a158a7b024134de93a798ee59346b02 = L.circleMarker(
+                [42.3241223, -71.0809757],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_8a158a7b024134de93a798ee59346b02.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Sav-Mor<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_859e7cca1462911e2c391da03783bf59 = L.circleMarker(
+                [42.3152582, -71.0349678],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_859e7cca1462911e2c391da03783bf59.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill / Columbia Point<br>New Listings: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2deac4e792adb7163c3e5fa0efdd1a5f = L.circleMarker(
+                [42.309863, -71.0499572],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_2deac4e792adb7163c3e5fa0efdd1a5f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill Flats<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8990bfcf9dfda493b2c65b025bcd6335 = L.circleMarker(
+                [42.309863, -71.0499572],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_8990bfcf9dfda493b2c65b025bcd6335.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill Historic District<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a233ba8054b116ff7ef099f0fb6e85c2 = L.circleMarker(
+                [42.3462519, -71.04214429999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a233ba8054b116ff7ef099f0fb6e85c2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Seaport District<br>New Listings: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9737cfaf85322f6733be3fe8931a0c54 = L.circleMarker(
+                [42.3432703, -71.0713191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_9737cfaf85322f6733be3fe8931a0c54.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Shawmut<br>New Listings: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad96a0513c01f0cd01dabf4fb41d86e0 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_ad96a0513c01f0cd01dabf4fb41d86e0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South Slope<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_265240d512bf8d44819d546e99fccb99 = L.circleMarker(
+                [42.2705097, -71.0943459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_265240d512bf8d44819d546e99fccb99.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Southern Mattapan<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_26b201b26a6cf7670eee4da43c6f0490 = L.circleMarker(
+                [42.3508151, -71.1493418],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_26b201b26a6cf7670eee4da43c6f0490.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Sparhawk Street Historic District<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f50c4bbdac8a96e90aaed9f85ffa773 = L.circleMarker(
+                [42.3434687, -71.159705],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1f50c4bbdac8a96e90aaed9f85ffa773.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - St. Elizabeth's<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_959a57107cb7b870d473dae30c19da98 = L.circleMarker(
+                [42.2925456, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_959a57107cb7b870d473dae30c19da98.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - St. Marks<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4b749f0855ba519094a80e683cf57196 = L.circleMarker(
+                [42.2565289, -71.1240559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_4b749f0855ba519094a80e683cf57196.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Stony Brook-Cleary Square<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5344079885c6380a19f3746586b8ca40 = L.circleMarker(
+                [42.28809, -71.0769361],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_5344079885c6380a19f3746586b8ca40.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Talbot-Norfolk Triangle<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_00e43138c82fd3f8603987d7d0aca233 = L.circleMarker(
+                [42.3336533, -71.0393766],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_00e43138c82fd3f8603987d7d0aca233.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Telegraph Hill<br>New Listings: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_37325381366306a37c5b36b47a09513f = L.circleMarker(
+                [42.3755627, -71.06447349999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_37325381366306a37c5b36b47a09513f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Thompson Square-Bunker Hill<br>New Listings: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_689648033c1ad488301dd34902b800e7 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_689648033c1ad488301dd34902b800e7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Town Hill Landmark Historic District<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_46814036c1c1cb0a393a18380ffae7a2 = L.circleMarker(
+                [42.313947, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_46814036c1c1cb0a393a18380ffae7a2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Uphams Corner-Jones Hill<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9033aea318184d46a2ed2cbd2bdb231c = L.circleMarker(
+                [42.270235, -71.1626756],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_9033aea318184d46a2ed2cbd2bdb231c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Upper Washington-Spring Street<br>New Listings: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eec7ee7705c538875dbeac8c1fa123a7 = L.circleMarker(
+                [42.3170687, -71.08840359999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_eec7ee7705c538875dbeac8c1fa123a7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Washington Park<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b9b91b30bc9ebc1312dc6b20fb94fdf7 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_b9b91b30bc9ebc1312dc6b20fb94fdf7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Washington Street Theater District<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1fa576499d58897749ee6b883a761d1e = L.circleMarker(
+                [42.3573021, -71.0508911],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_1fa576499d58897749ee6b883a761d1e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Waterfront<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dfc97e0144b36f64df0c415daaf11374 = L.circleMarker(
+                [42.2800275, -71.0943459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_dfc97e0144b36f64df0c415daaf11374.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Wellington Hill<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d1603ec2b77028b88de855cf39e70de = L.circleMarker(
+                [42.2808092, -71.0780044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_6d1603ec2b77028b88de855cf39e70de.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Codman Hill-West Lower Mills<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6eb8027be26af083c999c17b9564fbc4 = L.circleMarker(
+                [42.3402946, -71.0951539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_6eb8027be26af083c999c17b9564fbc4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Fenway<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_458f77981d423f43baf6ef30da70b615 = L.circleMarker(
+                [42.287104, -71.1480657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_458f77981d423f43baf6ef30da70b615.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Roxbury Center<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dc80656732d56294d9371c78cdd3a9f1 = L.circleMarker(
+                [42.269799, -71.1181141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_dc80656732d56294d9371c78cdd3a9f1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Street-River Street<br>New Listings: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a15ea9a4687b7d49c528e84389b2ab69 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ac557826a80427ea5b3acb011519340f);
+        
+    
+            circle_marker_a15ea9a4687b7d49c528e84389b2ab69.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Woodbourne Historic District<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_b6908acaa5ffe2c245f6de335f98bbdc = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var tile_layer_4875fdaa30f9ab7cadf040bcd4f1f698 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var tile_layer_aad25a17a77dd68d7429800d0e82ef00 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var tile_layer_b85127a7414b6dc5601e00749922c710 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var tile_layer_159f69b028020b86ca325b26235f642d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var tile_layer_8fcabbda9bc6752b7a2d3037ebe05025 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+        
+    
+            var layer_control_3c99abd6a1450c206537cc0f99fd7d1e = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_aad25a17a77dd68d7429800d0e82ef00,
+                    "stamenwatercolor" : tile_layer_b6908acaa5ffe2c245f6de335f98bbdc,
+                    "openstreetmap" : tile_layer_4875fdaa30f9ab7cadf040bcd4f1f698,
+                    "stamentoner" : tile_layer_b85127a7414b6dc5601e00749922c710,
+                    "cartodbpositron" : tile_layer_159f69b028020b86ca325b26235f642d,
+                    "cartodbdark_matter" : tile_layer_8fcabbda9bc6752b7a2d3037ebe05025,
+                },
+                overlays :  {
+                    "Boston - new_listings" : heat_map_4f88db10c0c99c1566587b2ed1030fac,
+                    "New Listings Centers" : feature_group_ac557826a80427ea5b3acb011519340f,
+                },
+            };
+            L.control.layers(
+                layer_control_3c99abd6a1450c206537cc0f99fd7d1e.base_layers,
+                layer_control_3c99abd6a1450c206537cc0f99fd7d1e.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_168a22267bf05febd122fe130c388013);
+            tile_layer_b6908acaa5ffe2c245f6de335f98bbdc.remove();
+            tile_layer_4875fdaa30f9ab7cadf040bcd4f1f698.remove();
+            tile_layer_aad25a17a77dd68d7429800d0e82ef00.remove();
+            tile_layer_b85127a7414b6dc5601e00749922c710.remove();
+            tile_layer_159f69b028020b86ca325b26235f642d.remove();
+            tile_layer_8fcabbda9bc6752b7a2d3037ebe05025.remove();
+        
+</script>
+</html>

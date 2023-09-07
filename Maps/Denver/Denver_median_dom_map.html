@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_13028a7ffdb0a863f4ff4ec7947df7a1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_13028a7ffdb0a863f4ff4ec7947df7a1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_13028a7ffdb0a863f4ff4ec7947df7a1 = L.map(
+                "map_13028a7ffdb0a863f4ff4ec7947df7a1",
+                {
+                    center: [39.73048961538462, -104.96975692923075],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c575d17eb11ee755117d5a152cfb8f47 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var heat_map_f828a0d692d58075633476b6d6a54540 = L.heatLayer(
+                [[39.70357, -105.0104, 6.5], [39.74582, -105.00827, 168.5], [39.71522, -104.99621, 7.5], [39.71839, -105.03239, 4.5], [39.6611, -105.06554, 10.0], [39.70504, -104.95048, 41.0], [39.77671, -105.03938, 19.0], [39.73365, -104.9802, 19.0], [39.78762, -105.01205, 27.0], [39.73458, -104.96643, 12.0], [39.7194, -104.94928, 22.5], [39.74536, -104.96657, 21.0], [39.76741, -104.95014, 31.5], [39.76719, -104.9662, 22.0], [39.66304, -105.02165, 25.5], [39.73285, -104.95031, 14.5], [39.74068, -104.89446, 9.0], [39.75913, -104.98336, 32.0], [39.64155, -105.04798, 7.0], [39.78055, -104.98683, 6.5], [39.67379, -104.91469, 23.0], [39.73291, -104.93156, 13.0], [39.66097, -104.8908, 7.0], [39.64074, -104.89694, 12.5], [39.67531, -105.04107, 6.0], [39.76326, -105.01231, 12.0], [39.71869, -104.92434, 24.0], [39.75217, -105.01922, 19.0], [39.73254, -105.00485, 16.0], [39.68951, -105.03913, 6.0], [39.62747, -105.07892, 7.0], [39.78602, -104.83727, 9.0], [39.73286, -104.91295, 17.0], [39.75652, -104.92201, 10.0], [39.77445, -104.92331, 17.5], [39.68141, -104.9931, 20.5], [39.68661, -104.98106, 5.5], [39.78761, -105.04399, 9.0], [39.67312, -104.98052, 28.0], [39.68999, -105.01119, 5.0], [39.75163, -105.03982, 10.0], [39.7456, -104.92206, 16.5], [39.64029, -104.91668, 7.0], [39.77645, -105.01189, 9.0], [39.66447, -104.93255, 5.0], [39.71717, -105.01522, 5.0], [39.68679, -104.92416, 11.0], [39.70124, -104.96627, 11.5], [39.70258, -104.9799, 9.5], [39.70149, -104.91518, 9.0], [39.66064, -104.94955, 4.0], [39.74004, -105.03859, 23.0], [39.76395, -105.03924, 7.0], [39.70402, -105.03921, 12.5], [39.75636, -104.96656, 6.0], [39.70331, -104.88583, 14.0], [39.7184466, -104.9773107, 28.5], [39.7300652, -104.9984212, 4.0], [39.7592936, -104.9937538, 34.0], [39.7392358, -104.990251, 5.0], [39.7392358, -104.990251, 11.5], [39.7392358, -104.990251, 12.0], [39.7392324, -104.9874129, 55.5], [39.7336946, -104.982297, 20.0], [39.7392358, -104.990251, 11.5], [39.7824095, -104.8804893, 29.5], [39.7824095, -104.8804893, 10.0], [39.7392358, -104.990251, 50.0], [39.7392358, -104.990251, 17.0], [39.7196594, -104.957856, 41.5], [39.740088, -104.96909, 6.0], [39.7403376, -105.0469221, 15.0], [39.7909108, -104.8904173, 4.5], [39.6893366, -104.9500499, 10.0], [39.7577469, -104.9794943, 29.5], [39.7256237, -104.9658472, 16.0], [39.7451998, -104.9921849, 32.0], [39.7583765, -104.9217031, 6.0], [39.7698274, -104.9041377, 18.0], [39.7392358, -104.990251, 13.5], [39.7392358, -104.990251, 17.0], [39.7608751, -104.8717317, 4.0], [39.7161481, -105.0586639, 10.0], [39.7336946, -104.982297, 27.0], [39.7392358, -104.990251, 25.0], [39.7392358, -104.990251, 10.5], [39.7854582, -104.8571368, 11.0], [39.7693376, -105.0299822, 10.0], [39.6531038, -104.8987661, 9.0], [39.7392358, -104.990251, 7.0], [39.7837575, -104.7945972, 8.0], [39.7832359, -104.7579278, 11.0], [39.7608333, -105.0180556, 25.0], [39.6758185, -104.9604243, 6.0], [39.7392358, -104.990251, 4.0], [39.7320488, -104.9861214, 4.5], [39.7392358, -104.990251, 9.0], [39.7197837, -104.8910078, 19.5], [39.7392358, -104.990251, 3.0], [39.7392358, -104.990251, 17.0], [39.7854582, -104.8571368, 15.0], [39.7693376, -105.0299822, 16.0], [39.6531038, -104.8987661, 10.0], [39.7855996, -104.9912739, 23.0], [39.7392358, -104.990251, 12.5], [39.7644926, -104.9659559, 9.5], [39.7693376, -105.0299822, 12.0], [39.6875735, -104.9804379, 2.0], [39.7745645, -104.9223102, 15.0], [39.7320363, -104.9810371, 7.5], [39.6875523, -104.9803741, 5.5], [39.76554000000001, -105.0205793, 18.5], [39.7392358, -104.990251, 12.0], [39.7392358, -104.990251, 21.5], [39.7512018, -105.0345899, 10.0], [39.66461, -104.9876645, 20.5], [39.7824095, -104.8804893, 7.0], [39.6785031, -104.9875969, 13.0], [39.7824095, -104.8804893, 6.5], [39.6531038, -104.8987661, 19.0], [39.6531038, -104.8987661, 13.5], [39.7392358, -104.990251, 9.5], [39.7392358, -104.990251, 7.0], [39.7392358, -104.990251, 50.0], [39.7392358, -104.990251, 6.0], [39.7420787, -104.9773482, 22.0], [39.7931456, -105.0439213, 24.0], [39.7392358, -104.990251, 4.0], [39.7392358, -104.990251, 15.0], [39.7392358, -104.990251, 4.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var feature_group_88fe8717353a84e719ab18786c796b3c = L.featureGroup(
+                {}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var circle_marker_ac636fba2ab83001495eda6b6063732c = L.circleMarker(
+                [39.70357, -105.0104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_ac636fba2ab83001495eda6b6063732c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Athmar Park<br>Median Days on Market: 6.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_92c84f9d350a5f0ac112ababbf9dc580 = L.circleMarker(
+                [39.74582, -105.00827],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_92c84f9d350a5f0ac112ababbf9dc580.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Auraria<br>Median Days on Market: 168.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e0daad444b4be8aaaafab71605072a3 = L.circleMarker(
+                [39.71522, -104.99621],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_7e0daad444b4be8aaaafab71605072a3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Baker<br>Median Days on Market: 7.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5be99228b745174a87a5ebd29084664d = L.circleMarker(
+                [39.71839, -105.03239],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_5be99228b745174a87a5ebd29084664d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Barnum<br>Median Days on Market: 4.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7f9d5640a523d7f67a97247b53a7edf3 = L.circleMarker(
+                [39.6611, -105.06554],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_7f9d5640a523d7f67a97247b53a7edf3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bear Valley<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4cf1ae31f1ed04daa1f9d006a1368160 = L.circleMarker(
+                [39.70504, -104.95048],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4cf1ae31f1ed04daa1f9d006a1368160.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belcaro<br>Median Days on Market: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1a334603acb241944d7a5e2e41398d71 = L.circleMarker(
+                [39.77671, -105.03938],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_1a334603acb241944d7a5e2e41398d71.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Berkeley<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a79248d873ea9046815da571c369c2b9 = L.circleMarker(
+                [39.73365, -104.9802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_a79248d873ea9046815da571c369c2b9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capitol Hill<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4d280c81dddac55c2cb296a698b60d26 = L.circleMarker(
+                [39.78762, -105.01205],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4d280c81dddac55c2cb296a698b60d26.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chaffee Park<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_26179cbdc3cf487e27a3fa7385ca2a98 = L.circleMarker(
+                [39.73458, -104.96643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_26179cbdc3cf487e27a3fa7385ca2a98.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheesman Park<br>Median Days on Market: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_592ac9cc10a7f1429ea64c325933c8a7 = L.circleMarker(
+                [39.7194, -104.94928],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_592ac9cc10a7f1429ea64c325933c8a7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek<br>Median Days on Market: 22.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29d8dc60874768fffb614fe1c31a8b32 = L.circleMarker(
+                [39.74536, -104.96657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_29d8dc60874768fffb614fe1c31a8b32.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - City Park West<br>Median Days on Market: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f86e0e34b600d018bb03021534676b19 = L.circleMarker(
+                [39.76741, -104.95014],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_f86e0e34b600d018bb03021534676b19.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Clayton<br>Median Days on Market: 31.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c193f4f2e610f5b6ca00f70918bee8a = L.circleMarker(
+                [39.76719, -104.9662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_9c193f4f2e610f5b6ca00f70918bee8a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cole<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3e020dd6390f6094e42bd31c42a3147 = L.circleMarker(
+                [39.66304, -105.02165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c3e020dd6390f6094e42bd31c42a3147.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - College View<br>Median Days on Market: 25.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8cd8dfac5021244340aec96d0e7835ad = L.circleMarker(
+                [39.73285, -104.95031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_8cd8dfac5021244340aec96d0e7835ad.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Congress Park<br>Median Days on Market: 14.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3e6048dd58e0ea6bf07f5ce39e53f561 = L.circleMarker(
+                [39.74068, -104.89446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_3e6048dd58e0ea6bf07f5ce39e53f561.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Colfax<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_247a760908edb7f002d15be19a2e047e = L.circleMarker(
+                [39.75913, -104.98336],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_247a760908edb7f002d15be19a2e047e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Five Points<br>Median Days on Market: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_884e2dd4bbb515ec26cf02a7b6d7af64 = L.circleMarker(
+                [39.64155, -105.04798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_884e2dd4bbb515ec26cf02a7b6d7af64.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Fort Logan<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d229de796c7fa3ce7c33ca3fe07ca85 = L.circleMarker(
+                [39.78055, -104.98683],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_3d229de796c7fa3ce7c33ca3fe07ca85.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Globeville<br>Median Days on Market: 6.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a1561a9c4aafcf93c587e250516d551d = L.circleMarker(
+                [39.67379, -104.91469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_a1561a9c4aafcf93c587e250516d551d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Goldsmith<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3848c266cd49f84da6e5b4f839fd9a63 = L.circleMarker(
+                [39.73291, -104.93156],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_3848c266cd49f84da6e5b4f839fd9a63.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hale<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_582ea23332393c5aebe9589b5f334bfc = L.circleMarker(
+                [39.66097, -104.8908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_582ea23332393c5aebe9589b5f334bfc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d5cc5574a9dc3339d30a3c096a507314 = L.circleMarker(
+                [39.64074, -104.89694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d5cc5574a9dc3339d30a3c096a507314.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden South<br>Median Days on Market: 12.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_05c461ad3496a5d5685d008e9a357adb = L.circleMarker(
+                [39.67531, -105.04107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_05c461ad3496a5d5685d008e9a357adb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Harvey Park<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4792a7b5f61a08a7b2f59faf397ade45 = L.circleMarker(
+                [39.76326, -105.01231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4792a7b5f61a08a7b2f59faf397ade45.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland<br>Median Days on Market: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b6fc39af3aba3573e448355cb4db780f = L.circleMarker(
+                [39.71869, -104.92434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_b6fc39af3aba3573e448355cb4db780f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hilltop<br>Median Days on Market: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb4e8e971f3eabd998338febf8dcb77b = L.circleMarker(
+                [39.75217, -105.01922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_cb4e8e971f3eabd998338febf8dcb77b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Jefferson Park<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08d2c57c9099c0c93c20fd676b5a224b = L.circleMarker(
+                [39.73254, -105.00485],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_08d2c57c9099c0c93c20fd676b5a224b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln Park<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2fb9c22fa77a872b95563b2191b89ba = L.circleMarker(
+                [39.68951, -105.03913],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d2fb9c22fa77a872b95563b2191b89ba.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Mar Lee<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_99d90148706bf3d62b8b385ab7fd64c0 = L.circleMarker(
+                [39.62747, -105.07892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_99d90148706bf3d62b8b385ab7fd64c0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Marston<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e02ca09cb14e34b5e7201edb2553cdf9 = L.circleMarker(
+                [39.78602, -104.83727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e02ca09cb14e34b5e7201edb2553cdf9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montbello<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4cdb9757fe2e57ab3f64d77090ad154a = L.circleMarker(
+                [39.73286, -104.91295],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4cdb9757fe2e57ab3f64d77090ad154a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montclair<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5b8dec925693da6ac39bb9927b2f0bd = L.circleMarker(
+                [39.75652, -104.92201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_a5b8dec925693da6ac39bb9927b2f0bd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Park Hill<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7bbbc04a91482744d7283b1feb6dcbd = L.circleMarker(
+                [39.77445, -104.92331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_b7bbbc04a91482744d7283b1feb6dcbd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northeast Park Hill<br>Median Days on Market: 17.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cc0abc68ac585ec1c9f7c094a0376764 = L.circleMarker(
+                [39.68141, -104.9931],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_cc0abc68ac585ec1c9f7c094a0376764.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Overland<br>Median Days on Market: 20.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8d341d29f08c3ce4dc88d2cd8e6c4cdb = L.circleMarker(
+                [39.68661, -104.98106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_8d341d29f08c3ce4dc88d2cd8e6c4cdb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platt Park<br>Median Days on Market: 5.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3189ded686a9b3c5a7211918af343ddd = L.circleMarker(
+                [39.78761, -105.04399],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_3189ded686a9b3c5a7211918af343ddd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Regis<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae5e59ee562a63e71329539451ab4213 = L.circleMarker(
+                [39.67312, -104.98052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_ae5e59ee562a63e71329539451ab4213.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Rosedale<br>Median Days on Market: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d53c1de03d7a513f3f9e3bbd73046fdd = L.circleMarker(
+                [39.68999, -105.01119],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d53c1de03d7a513f3f9e3bbd73046fdd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ruby Hill<br>Median Days on Market: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c6e71150decc3fc1ee3e8883dedb209 = L.circleMarker(
+                [39.75163, -105.03982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_0c6e71150decc3fc1ee3e8883dedb209.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan Lake<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a0a1c1ccd86be4edcb0e60db322cd00b = L.circleMarker(
+                [39.7456, -104.92206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_a0a1c1ccd86be4edcb0e60db322cd00b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Park Hill<br>Median Days on Market: 16.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e170d21007fb49f059b5360d33245657 = L.circleMarker(
+                [39.64029, -104.91668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e170d21007fb49f059b5360d33245657.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southmoor Park<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_138b1af34ede9de63936f4e90d58c0ef = L.circleMarker(
+                [39.77645, -105.01189],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_138b1af34ede9de63936f4e90d58c0ef.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sunnyside<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba791331dda55b97d4583e68db3393a7 = L.circleMarker(
+                [39.66447, -104.93255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_ba791331dda55b97d4583e68db3393a7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - University Hills<br>Median Days on Market: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0407adba4aacc0d300487f2c85d5310 = L.circleMarker(
+                [39.71717, -105.01522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d0407adba4aacc0d300487f2c85d5310.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Valverde<br>Median Days on Market: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d227c667f8a874b9a7ca432e796637e4 = L.circleMarker(
+                [39.68679, -104.92416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d227c667f8a874b9a7ca432e796637e4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Virginia Village<br>Median Days on Market: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_af4490b34053349da9bb6d7bf5c1c1f1 = L.circleMarker(
+                [39.70124, -104.96627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_af4490b34053349da9bb6d7bf5c1c1f1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park<br>Median Days on Market: 11.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_291ea34fe9d59b774aa5b88df2018f41 = L.circleMarker(
+                [39.70258, -104.9799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_291ea34fe9d59b774aa5b88df2018f41.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park West<br>Median Days on Market: 9.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_008e3d4fb2c0f6cea94670f028685e61 = L.circleMarker(
+                [39.70149, -104.91518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_008e3d4fb2c0f6cea94670f028685e61.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Virginia Vale<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c65217c8b695130d854e5bb9c97d8ce6 = L.circleMarker(
+                [39.66064, -104.94955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c65217c8b695130d854e5bb9c97d8ce6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Wellshire<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29379a8d47ef40fcde87b42588aa730a = L.circleMarker(
+                [39.74004, -105.03859],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_29379a8d47ef40fcde87b42588aa730a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Colfax<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d86aeff08c3fea0f7c48d7f56c29ce4 = L.circleMarker(
+                [39.76395, -105.03924],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_1d86aeff08c3fea0f7c48d7f56c29ce4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Highland<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff97354451bbc0b2cce39456a42e714e = L.circleMarker(
+                [39.70402, -105.03921],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_ff97354451bbc0b2cce39456a42e714e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Westwood<br>Median Days on Market: 12.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9aed4d519addffd1d22b047927ffce1e = L.circleMarker(
+                [39.75636, -104.96656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_9aed4d519addffd1d22b047927ffce1e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Whittier<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e12c97c3e303b8919cbcdf765453bbf4 = L.circleMarker(
+                [39.70331, -104.88583],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e12c97c3e303b8919cbcdf765453bbf4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Windsor<br>Median Days on Market: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_857f94b47900b1532d899a090b8ff35b = L.circleMarker(
+                [39.7184466, -104.9773107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_857f94b47900b1532d899a090b8ff35b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Arlington Park<br>Median Days on Market: 28.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8cdad0701e6c252bdd96a58c00585280 = L.circleMarker(
+                [39.7300652, -104.9984212],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_8cdad0701e6c252bdd96a58c00585280.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Art District on Santa Fe<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d514d8f83286b0446a1965d5dbf04db2 = L.circleMarker(
+                [39.7592936, -104.9937538],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d514d8f83286b0446a1965d5dbf04db2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ballpark Collective<br>Median Days on Market: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d830dd7ef92755a71371325b03430b5c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d830dd7ef92755a71371325b03430b5c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue<br>Median Days on Market: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db1218f55161186104cb3110a43c8fcb = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_db1218f55161186104cb3110a43c8fcb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue Park<br>Median Days on Market: 11.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a879bada1beb81e8e47025df2f51cdf = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_7a879bada1beb81e8e47025df2f51cdf.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belmont Park<br>Median Days on Market: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1bc0d97309a9826d1bcd12816992d022 = L.circleMarker(
+                [39.7392324, -104.9874129],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_1bc0d97309a9826d1bcd12816992d022.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Broadway<br>Median Days on Market: 55.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_24f7671bc6f1a8ffd35a28778309fc38 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_24f7671bc6f1a8ffd35a28778309fc38.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Burlington Capitol Hill<br>Median Days on Market: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e3037a14c64bfd2e0ec3df99c0ae77ca = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e3037a14c64bfd2e0ec3df99c0ae77ca.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capital Avenue<br>Median Days on Market: 11.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_01c62dd49f00391e0f76b3a78b82d413 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_01c62dd49f00391e0f76b3a78b82d413.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Denver<br>Median Days on Market: 29.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cd8dbaa555c14fc1169c123e639ea4fb = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_cd8dbaa555c14fc1169c123e639ea4fb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Park<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de6ab275e90842f1754988276b23efdc = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_de6ab275e90842f1754988276b23efdc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chamberlins University Terrace East<br>Median Days on Market: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2bbf5653cc0bb7bb25a697db7ff11bd = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d2bbf5653cc0bb7bb25a697db7ff11bd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheltenham Heights<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9907af16d3a1d94b70d50a550c08004 = L.circleMarker(
+                [39.7196594, -104.957856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_f9907af16d3a1d94b70d50a550c08004.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek North<br>Median Days on Market: 41.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c2a639f436241810c0a4121d356b0eab = L.circleMarker(
+                [39.740088, -104.96909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c2a639f436241810c0a4121d356b0eab.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Avenue Park<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac1f984a9e3ddba24e919f487558fbe7 = L.circleMarker(
+                [39.7403376, -105.0469221],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_ac1f984a9e3ddba24e919f487558fbe7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Terrace<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d472c7dbd8ebbd392fdfaef55e00c108 = L.circleMarker(
+                [39.7909108, -104.8904173],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d472c7dbd8ebbd392fdfaef55e00c108.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Conservatory Green at Stapleton<br>Median Days on Market: 4.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7319a6bf6c94e6144e8fb37f0325ded1 = L.circleMarker(
+                [39.6893366, -104.9500499],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_7319a6bf6c94e6144e8fb37f0325ded1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cory-Merrill<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba50ff539ee07cccc65b08d76fafc03a = L.circleMarker(
+                [39.7577469, -104.9794943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_ba50ff539ee07cccc65b08d76fafc03a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Curtis Park<br>Median Days on Market: 29.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b071ce461e3ed402d5ee5531bbbaef21 = L.circleMarker(
+                [39.7256237, -104.9658472],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_b071ce461e3ed402d5ee5531bbbaef21.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Denver Country Club<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e99a8b7ef3e9580d4db67a5ff107710 = L.circleMarker(
+                [39.7451998, -104.9921849],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_1e99a8b7ef3e9580d4db67a5ff107710.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Downtown Denver<br>Median Days on Market: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e8bbb6e52239afdb11c8d1320b258b4f = L.circleMarker(
+                [39.7583765, -104.9217031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e8bbb6e52239afdb11c8d1320b258b4f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East 29th Avenue<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bbabb91185c28b23daa5e2580b9f166 = L.circleMarker(
+                [39.7698274, -104.9041377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_3bbabb91185c28b23daa5e2580b9f166.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Central Denver<br>Median Days on Market: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d7f00da517e11581d508beb28a37284 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_5d7f00da517e11581d508beb28a37284.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Denver<br>Median Days on Market: 13.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_92164c6118fac3b3a7d64c33052f8283 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_92164c6118fac3b3a7d64c33052f8283.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Seventh Avenue Historic District<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a3105ee9d3820fd850023ede75d2ef9 = L.circleMarker(
+                [39.7608751, -104.8717317],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_0a3105ee9d3820fd850023ede75d2ef9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastbridge<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_64ba5e10fecf4b5084a9b600889630ca = L.circleMarker(
+                [39.7161481, -105.0586639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_64ba5e10fecf4b5084a9b600889630ca.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastgate<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4fe93922611dc54d1385c5c28e3ccd2b = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4fe93922611dc54d1385c5c28e3ccd2b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Emerys Capitol Hill<br>Median Days on Market: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_011256b4bcc7bce6b2e633580e267a42 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_011256b4bcc7bce6b2e633580e267a42.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evans Park Estates<br>Median Days on Market: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c60e5a3ff1256fa7ea2e4f5b0c358e3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_8c60e5a3ff1256fa7ea2e4f5b0c358e3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evanston<br>Median Days on Market: 10.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9903691ad7f8510a30c2d85d7760bc07 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_9903691ad7f8510a30c2d85d7760bc07.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northeast Denver<br>Median Days on Market: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c858ed0b7a418fa956c758465482759f = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c858ed0b7a418fa956c758465482759f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northwest Denver<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17e93376a5d942c2c4aa9190412344cf = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_17e93376a5d942c2c4aa9190412344cf.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southeast Denver<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_40031252012aa3f045b5166939cbf384 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_40031252012aa3f045b5166939cbf384.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southwest Denver<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c866759f662691398b5769a6f6d8b0ec = L.circleMarker(
+                [39.7837575, -104.7945972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c866759f662691398b5769a6f6d8b0ec.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Gateway<br>Median Days on Market: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_789c9bdd49249791a779c016809f7f76 = L.circleMarker(
+                [39.7832359, -104.7579278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_789c9bdd49249791a779c016809f7f76.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Green Valley Ranch<br>Median Days on Market: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_19f24d98fdd16fe79781510834f0b7f6 = L.circleMarker(
+                [39.7608333, -105.0180556],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_19f24d98fdd16fe79781510834f0b7f6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland Park<br>Median Days on Market: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b85bc1f24bd4c30dd70326ed9b83c6ae = L.circleMarker(
+                [39.6758185, -104.9604243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_b85bc1f24bd4c30dd70326ed9b83c6ae.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Iliffs University<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55a37c5a2d65367d31d6db9496f5c42e = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_55a37c5a2d65367d31d6db9496f5c42e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Kettles<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5e61fd962a53464f70bef9d88257ec9a = L.circleMarker(
+                [39.7320488, -104.9861214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_5e61fd962a53464f70bef9d88257ec9a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln<br>Median Days on Market: 4.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c53075264bab118343fe1c32eff42252 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c53075264bab118343fe1c32eff42252.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - LoHi<br>Median Days on Market: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4aad29fd4ae83e51bc78210f29eabea = L.circleMarker(
+                [39.7197837, -104.8910078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_d4aad29fd4ae83e51bc78210f29eabea.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lowry<br>Median Days on Market: 19.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f79a84c0fa9cd74c2f493ae6a613b76 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_6f79a84c0fa9cd74c2f493ae6a613b76.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lynwood<br>Median Days on Market: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8385b39824be38ad512a1c6fb24739c3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_8385b39824be38ad512a1c6fb24739c3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Miller Park<br>Median Days on Market: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7504f4762d51458f05f138c0afa78499 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_7504f4762d51458f05f138c0afa78499.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northeast Denver<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7319cda0d6cd770b12161ec8601186f6 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_7319cda0d6cd770b12161ec8601186f6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northwest Denver<br>Median Days on Market: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2051072c5de616b3c82227389c1528d0 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_2051072c5de616b3c82227389c1528d0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Southeast Denver<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6807b8e8bdbeadf40ffab659870aaf08 = L.circleMarker(
+                [39.7855996, -104.9912739],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_6807b8e8bdbeadf40ffab659870aaf08.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Central Denver<br>Median Days on Market: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b270111107c651a7ddf21735142934cb = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_b270111107c651a7ddf21735142934cb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North City Park<br>Median Days on Market: 12.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2aa6ce2da8eb3d86ba352cc860ab8c93 = L.circleMarker(
+                [39.7644926, -104.9659559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_2aa6ce2da8eb3d86ba352cc860ab8c93.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Denver<br>Median Days on Market: 9.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0397393bdff68ee2cfedddeda253d0ca = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_0397393bdff68ee2cfedddeda253d0ca.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northwest Denver<br>Median Days on Market: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e0451b1bfeb58c98d0183f6ecf31f657 = L.circleMarker(
+                [39.6875735, -104.9804379],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e0451b1bfeb58c98d0183f6ecf31f657.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Old South Pearl<br>Median Days on Market: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9c51955536f7a00dc130e868860345e = L.circleMarker(
+                [39.7745645, -104.9223102],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_f9c51955536f7a00dc130e868860345e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Park Hill<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb3cbcd4a559f27cea46ed1de69a2918 = L.circleMarker(
+                [39.7320363, -104.9810371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_cb3cbcd4a559f27cea46ed1de69a2918.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Pennsylvania Street Historic District<br>Median Days on Market: 7.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1072eab966434cbe4cf6ff66b2f26fc9 = L.circleMarker(
+                [39.6875523, -104.9803741],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_1072eab966434cbe4cf6ff66b2f26fc9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platte Park<br>Median Days on Market: 5.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aba570a4765dc285aec3a2e12a7a1712 = L.circleMarker(
+                [39.76554000000001, -105.0205793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_aba570a4765dc285aec3a2e12a7a1712.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Potter Highlands<br>Median Days on Market: 18.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5fc589274d52456a34d4d79d1b65e03 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_a5fc589274d52456a34d4d79d1b65e03.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Shackelton Place<br>Median Days on Market: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2a5aa86a206615a41e0341879ab4e881 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_2a5aa86a206615a41e0341879ab4e881.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sherman-Grant Historic District<br>Median Days on Market: 21.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b33a5283f9708c1d55012b7192366f27 = L.circleMarker(
+                [39.7512018, -105.0345899],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_b33a5283f9708c1d55012b7192366f27.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan's Lake<br>Median Days on Market: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5df75ec67f312772b923922954cef054 = L.circleMarker(
+                [39.66461, -104.9876645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_5df75ec67f312772b923922954cef054.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Broadway<br>Median Days on Market: 20.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_870de7c026654eef81ab4a3b5394f31f = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_870de7c026654eef81ab4a3b5394f31f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Central Denver<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4dad6ecf868d5e3c4896c9657a5ec590 = L.circleMarker(
+                [39.6785031, -104.9875969],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4dad6ecf868d5e3c4896c9657a5ec590.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Denver<br>Median Days on Market: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c82e0520c1a67e0dab0e3ac9c793841 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_9c82e0520c1a67e0dab0e3ac9c793841.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South End at Stapleton<br>Median Days on Market: 6.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8bae9ba0c30dbf4cf49cd5eeae818beb = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_8bae9ba0c30dbf4cf49cd5eeae818beb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Central Denver<br>Median Days on Market: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e41c437e3f0f7d695985a187dd7ca7c7 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_e41c437e3f0f7d695985a187dd7ca7c7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Denver<br>Median Days on Market: 13.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_453ae88d33e21c02500fdf411a77b023 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_453ae88d33e21c02500fdf411a77b023.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southlawn Gardens<br>Median Days on Market: 9.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72a0f3709e5e87a092696a6c2dbcd9b8 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_72a0f3709e5e87a092696a6c2dbcd9b8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southwest Denver<br>Median Days on Market: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_775ada66228591d3405232ed498702a9 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_775ada66228591d3405232ed498702a9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - St. James Heights<br>Median Days on Market: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a0e06bd1c4166637d0b50af581366243 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_a0e06bd1c4166637d0b50af581366243.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sumners<br>Median Days on Market: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4264f664503c1dc8a41809718c090cc1 = L.circleMarker(
+                [39.7420787, -104.9773482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_4264f664503c1dc8a41809718c090cc1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Swallow Hill<br>Median Days on Market: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5930d47d9a51df1478dc1f45ef81cbd6 = L.circleMarker(
+                [39.7931456, -105.0439213],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_5930d47d9a51df1478dc1f45ef81cbd6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Tennyson Street Cultural District<br>Median Days on Market: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87ad16571a5db070d67f9085ad906156 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_87ad16571a5db070d67f9085ad906156.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Town of Highland<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_142bf226ec2dbd2785fe25df67bef7c3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_142bf226ec2dbd2785fe25df67bef7c3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Denver<br>Median Days on Market: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c90c236cf826983a2192e66388dd9837 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_88fe8717353a84e719ab18786c796b3c);
+        
+    
+            circle_marker_c90c236cf826983a2192e66388dd9837.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Witter-Cofield<br>Median Days on Market: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_ca474d14c257fc34e74cbd23652fb288 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var tile_layer_3adafcc543655ff0db7c48546255ba5f = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var tile_layer_a5726cc2054fef33f2c1c9b9f5c4e475 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var tile_layer_a7cda0071637e6b6c73384d717c26d23 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var tile_layer_ce9bd6cd79b709c35890d7387b190e0d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var tile_layer_8c5ae274af5e3f01bc33ac9bd217b232 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+        
+    
+            var layer_control_dd8bc0cdfc9a889c19f43ceb9e4f4c0f = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_a5726cc2054fef33f2c1c9b9f5c4e475,
+                    "stamenwatercolor" : tile_layer_ca474d14c257fc34e74cbd23652fb288,
+                    "openstreetmap" : tile_layer_3adafcc543655ff0db7c48546255ba5f,
+                    "stamentoner" : tile_layer_a7cda0071637e6b6c73384d717c26d23,
+                    "cartodbpositron" : tile_layer_ce9bd6cd79b709c35890d7387b190e0d,
+                    "cartodbdark_matter" : tile_layer_8c5ae274af5e3f01bc33ac9bd217b232,
+                },
+                overlays :  {
+                    "Denver - median_dom" : heat_map_f828a0d692d58075633476b6d6a54540,
+                    "Median Days on Market Centers" : feature_group_88fe8717353a84e719ab18786c796b3c,
+                },
+            };
+            L.control.layers(
+                layer_control_dd8bc0cdfc9a889c19f43ceb9e4f4c0f.base_layers,
+                layer_control_dd8bc0cdfc9a889c19f43ceb9e4f4c0f.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_13028a7ffdb0a863f4ff4ec7947df7a1);
+            tile_layer_ca474d14c257fc34e74cbd23652fb288.remove();
+            tile_layer_3adafcc543655ff0db7c48546255ba5f.remove();
+            tile_layer_a5726cc2054fef33f2c1c9b9f5c4e475.remove();
+            tile_layer_a7cda0071637e6b6c73384d717c26d23.remove();
+            tile_layer_ce9bd6cd79b709c35890d7387b190e0d.remove();
+            tile_layer_8c5ae274af5e3f01bc33ac9bd217b232.remove();
+        
+</script>
+</html>

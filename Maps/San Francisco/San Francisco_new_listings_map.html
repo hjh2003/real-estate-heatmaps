@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_59f86af2597c8e639006a4d186d56ea8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_59f86af2597c8e639006a4d186d56ea8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_59f86af2597c8e639006a4d186d56ea8 = L.map(
+                "map_59f86af2597c8e639006a4d186d56ea8",
+                {
+                    center: [37.7615559496063, -122.4341716952756],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c14df0f8d0dcb35d6a24ecc1fdcfb0f5 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var heat_map_cbcd790d311e895a8cbc4b93e63829ad = L.heatLayer(
+                [[37.77634, -122.43469, 7.0], [37.78096, -122.44323, 2.0], [37.76252, -122.4491, 4.0], [37.73099, -122.4676, 3.0], [37.73311, -122.38988, 17.0], [37.74111, -122.41469, 47.0], [37.72016, -122.39266, 4.0], [37.76789, -122.44158, 23.0], [37.76184, -122.43378, 6.0], [37.78454, -122.42422, 17.0], [37.71962, -122.44309, 11.0], [37.75002, -122.38324, 1.0], [37.79449, -122.40657, 5.0], [37.77861, -122.41908, 8.0], [37.75629, -122.44871, 4.0], [37.76669, -122.45049, 2.0], [37.76441, -122.43857, 5.0], [37.79733, -122.44259, 11.0], [37.71138, -122.43622, 17.0], [37.74399, -122.44031, 12.0], [37.7549, -122.42673, 15.0], [37.76797, -122.43234, 11.0], [37.75824, -122.43912, 10.0], [37.72128, -122.43081, 26.0], [37.73943, -122.42955, 8.0], [37.79262, -122.39733, 1.0], [37.80783, -122.41326, 1.0], [37.74793, -122.46372, 1.0], [37.75489, -122.45979, 4.0], [37.73845, -122.4396, 22.0], [37.75202, -122.47094, 18.0], [37.76988, -122.44829, 6.0], [37.77646, -122.42693, 8.0], [37.73713, -122.42075, 4.0], [37.72539, -122.37207, 20.0], [37.72069, -122.46141, 4.0], [37.72511, -122.46803, 6.0], [37.77938, -122.4685, 33.0], [37.76263, -122.46793, 12.0], [37.78613, -122.43002, 5.0], [37.74565, -122.45798, 6.0], [37.78551, -122.47962, 3.0], [37.72058, -122.49343, 1.0], [37.71095, -122.39955, 6.0], [37.77812, -122.45288, 3.0], [37.77299, -122.43078, 12.0], [37.78828, -122.416, 17.0], [37.78574, -122.43992, 15.0], [37.73277, -122.48004, 3.0], [37.7503, -122.4504, 2.0], [37.77114, -122.42592, 3.0], [37.7389, -122.44905, 9.0], [37.77113, -122.39146, 27.0], [37.76382, -122.42574, 17.0], [37.72806, -122.43515, 12.0], [37.73306, -122.46165, 0.0], [37.79312, -122.41394, 28.0], [37.74778, -122.43125, 40.0], [37.8009, -122.40855, 14.0], [37.80143, -122.40019, 4.0], [37.7159, -122.45559, 12.0], [37.71137, -122.45392, 4.0], [37.7771, -122.49233, 57.0], [37.75378, -122.49547, 83.0], [37.79232, -122.4342, 43.0], [37.77392, -122.44547, 15.0], [37.71962, -122.47942, 1.0], [37.74051, -122.48737, 31.0], [37.76097, -122.45631, 7.0], [37.74622, -122.40742, 5.0], [37.79419, -122.42141, 7.0], [37.72599, -122.4073, 10.0], [37.75783, -122.39954, 43.0], [37.78873, -122.45234, 12.0], [37.79742, -122.46643, 2.0], [37.78701, -122.46425, 4.0], [37.78733, -122.39115, 69.0], [37.8004, -122.41759, 43.0], [37.7868, -122.48885, 2.0], [37.73743, -122.45687, 1.0], [37.7692, -122.40338, 2.0], [37.73383, -122.39833, 9.0], [37.78167, -122.38929, 129.0], [37.77845, -122.40608, 194.0], [37.73627, -122.46606, 4.0], [37.73352, -122.4257, 4.0], [37.71097, -122.42009, 1.0], [37.73002, -122.4465, 15.0], [37.77798, -122.50793, 5.0], [37.80233, -122.40547, 16.0], [37.78409, -122.41482, 12.0], [37.79863, -122.43074, 12.0], [37.72693, -122.41809, 7.0], [37.75135, -122.44304, 11.0], [37.71346, -122.40848, 14.0], [37.73977, -122.47066, 4.0], [37.78006, -122.43494, 12.0], [37.73275, -122.45655, 2.0], [37.72746, -122.45637, 3.0], [37.81095, -122.36588, 3.0], [37.7770771, -122.4365807, 1.0], [37.8048637, -122.42566, 6.0], [37.7646865, -122.4512005, 14.0], [37.7635614, -122.4173724, 4.0], [37.7782864, -122.4653775, 19.0], [37.7127107, -122.3815252, 6.0], [37.7850246, -122.4005003, 18.0], [37.7690189, -122.4019298, 1.0], [37.7936658, -122.3964729, 2.0], [37.76955100000001, -122.433214, 1.0], [37.7861923, -122.4400385, 1.0], [37.7749295, -122.4194155, 2.0], [37.7296178, -122.4935865, 7.0], [37.783278, -122.4566316, 5.0], [37.8043849, -122.4370011, 20.0], [37.7749295, -122.4194155, 6.0], [37.7635614, -122.4173724, 54.0], [37.7282679, -122.4640937, 3.0], [37.7929158, -122.4046905, 156.0], [37.7897312, -122.401906, 343.0], [37.7815501, -122.3940353, 2.0], [37.7749295, -122.4194155, 278.0], [37.7749295, -122.4194155, 444.0], [37.7749295, -122.4194155, 4.0], [37.7395735, -122.470007, 2.0], [37.7850246, -122.4005003, 36.0], [37.7850045, -122.4004816, 19.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077 = L.featureGroup(
+                {}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var circle_marker_f64d7bb7e8ebe39cfb443788378cc458 = L.circleMarker(
+                [37.77634, -122.43469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_f64d7bb7e8ebe39cfb443788378cc458.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3481719ccaffb4a9dd3c4d54676b3b5 = L.circleMarker(
+                [37.78096, -122.44323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_f3481719ccaffb4a9dd3c4d54676b3b5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Anza Vista<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9d2461e1d095070412831cfcae85a66 = L.circleMarker(
+                [37.76252, -122.4491],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_f9d2461e1d095070412831cfcae85a66.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_537067a849316bfa40fda2391e9347c7 = L.circleMarker(
+                [37.73099, -122.4676],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_537067a849316bfa40fda2391e9347c7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Terrace<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_908cc21cf2ef63284e683222e7c62f0f = L.circleMarker(
+                [37.73311, -122.38988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_908cc21cf2ef63284e683222e7c62f0f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bayview<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0419797ceab3eb14c0bfc71f6b79fba7 = L.circleMarker(
+                [37.74111, -122.41469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_0419797ceab3eb14c0bfc71f6b79fba7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bernal Heights<br>New Listings: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bd20b8e7777ae8d92002c6bf399de9b = L.circleMarker(
+                [37.72016, -122.39266],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_3bd20b8e7777ae8d92002c6bf399de9b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bret Harte<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe9e17dc892db16b923b6151a3d2e285 = L.circleMarker(
+                [37.76789, -122.44158],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_fe9e17dc892db16b923b6151a3d2e285.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Buena Vista<br>New Listings: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e9cb1150abaf1ed48bf1ca4c487e1f4 = L.circleMarker(
+                [37.76184, -122.43378],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6e9cb1150abaf1ed48bf1ca4c487e1f4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Castro<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17790c373bea227b6d8c6ce14ac1e40e = L.circleMarker(
+                [37.78454, -122.42422],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_17790c373bea227b6d8c6ce14ac1e40e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cathedral Hill<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e41636255f18c666cd39fd361941a4b8 = L.circleMarker(
+                [37.71962, -122.44309],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_e41636255f18c666cd39fd361941a4b8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cayuga<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7cbbb61d577478cde91d60d765b72220 = L.circleMarker(
+                [37.75002, -122.38324],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_7cbbb61d577478cde91d60d765b72220.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central Waterfront<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c5ad6f4591a07f4fcd466143253fac9 = L.circleMarker(
+                [37.79449, -122.40657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_5c5ad6f4591a07f4fcd466143253fac9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Chinatown<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9af8cd0bd3fdde53a33c16b5fbd8154c = L.circleMarker(
+                [37.77861, -122.41908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_9af8cd0bd3fdde53a33c16b5fbd8154c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Civic Center<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_26c9b70ef87256a15be9015875d14b76 = L.circleMarker(
+                [37.75629, -122.44871],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_26c9b70ef87256a15be9015875d14b76.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Clarendon Heights<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae3f82e1c8d8dcdc9e17495cc4badf40 = L.circleMarker(
+                [37.76669, -122.45049],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_ae3f82e1c8d8dcdc9e17495cc4badf40.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cole Valley<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_000238b170e196cfde4ee7ccf609110a = L.circleMarker(
+                [37.76441, -122.43857],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_000238b170e196cfde4ee7ccf609110a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Corona Heights<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47f438bddcf87c2430730fe24ea5c4db = L.circleMarker(
+                [37.79733, -122.44259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_47f438bddcf87c2430730fe24ea5c4db.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cow Hollow<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94d15c54600f869be7e6b61318915d7b = L.circleMarker(
+                [37.71138, -122.43622],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_94d15c54600f869be7e6b61318915d7b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Crocker Amazon<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3d5ab59c4e222de998fbdfbb59f866d = L.circleMarker(
+                [37.74399, -122.44031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_b3d5ab59c4e222de998fbdfbb59f866d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Diamond Heights<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6446ff0a83eabecb5e142586ae23b65d = L.circleMarker(
+                [37.7549, -122.42673],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6446ff0a83eabecb5e142586ae23b65d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Dolores Heights<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47881ff663d39d53bf054cab61342ddd = L.circleMarker(
+                [37.76797, -122.43234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_47881ff663d39d53bf054cab61342ddd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Triangle<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89fb34b9d42cb67cf294f9740db51c10 = L.circleMarker(
+                [37.75824, -122.43912],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_89fb34b9d42cb67cf294f9740db51c10.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Eureka Valley<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_821cd2ae122878e3f543137cdf026631 = L.circleMarker(
+                [37.72128, -122.43081],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_821cd2ae122878e3f543137cdf026631.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Excelsior<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eed380af8075314f19a47df426ea820d = L.circleMarker(
+                [37.73943, -122.42955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_eed380af8075314f19a47df426ea820d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fairmount<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_86e49375554a916653d164fa33c41a15 = L.circleMarker(
+                [37.79262, -122.39733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_86e49375554a916653d164fa33c41a15.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Financial District<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ab3c5d6c1b0c4f75179822a65bb9cff = L.circleMarker(
+                [37.80783, -122.41326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_3ab3c5d6c1b0c4f75179822a65bb9cff.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fishermans Wharf<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6ad8b94e67c8661a2769b8c0d4a67823 = L.circleMarker(
+                [37.74793, -122.46372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6ad8b94e67c8661a2769b8c0d4a67823.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Hill<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ddec009c3afd28d3d1bffd5e89d97b4a = L.circleMarker(
+                [37.75489, -122.45979],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_ddec009c3afd28d3d1bffd5e89d97b4a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Knolls<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_41e985f15c8d03db9c6d10fc3ba0575b = L.circleMarker(
+                [37.73845, -122.4396],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_41e985f15c8d03db9c6d10fc3ba0575b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Glen Park<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2309f939898183c37b39039cdb1bd747 = L.circleMarker(
+                [37.75202, -122.47094],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_2309f939898183c37b39039cdb1bd747.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Golden Gate Heights<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9cfc0ed46a4729ae6b0fa317f7d20e3e = L.circleMarker(
+                [37.76988, -122.44829],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_9cfc0ed46a4729ae6b0fa317f7d20e3e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Haight Ashbury<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d5c633264c416b979d3db38947b712aa = L.circleMarker(
+                [37.77646, -122.42693],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_d5c633264c416b979d3db38947b712aa.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hayes Valley<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33042b053a13e346d6c7451300549935 = L.circleMarker(
+                [37.73713, -122.42075],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_33042b053a13e346d6c7451300549935.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Holly Park<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c44a9175458a0d81e0cbaceee6df431 = L.circleMarker(
+                [37.72539, -122.37207],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_0c44a9175458a0d81e0cbaceee6df431.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hunters Point<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9f06fa765bd3e4c2c2f2e774d0c02c1f = L.circleMarker(
+                [37.72069, -122.46141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_9f06fa765bd3e4c2c2f2e774d0c02c1f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d1dd696f5d5d3f39cd81dcd4eadde88 = L.circleMarker(
+                [37.72511, -122.46803],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_2d1dd696f5d5d3f39cd81dcd4eadde88.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside Terraces<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f078a203d1b83de9de8787437334512 = L.circleMarker(
+                [37.77938, -122.4685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6f078a203d1b83de9de8787437334512.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Richmond<br>New Listings: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3757095559d5fb274f580e9e7deb8ec = L.circleMarker(
+                [37.76263, -122.46793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_c3757095559d5fb274f580e9e7deb8ec.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Sunset<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae38f722be17d8dd3edb59bba2ccc9ca = L.circleMarker(
+                [37.78613, -122.43002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_ae38f722be17d8dd3edb59bba2ccc9ca.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Japantown<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9f387035488f0fe4a011740e29951ce = L.circleMarker(
+                [37.74565, -122.45798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_f9f387035488f0fe4a011740e29951ce.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laguna Honda<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ed21629d44b9694afd09bb0067368f5 = L.circleMarker(
+                [37.78551, -122.47962],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_4ed21629d44b9694afd09bb0067368f5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lake Street<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bddbe070db5b7dcc09222974060d9c2 = L.circleMarker(
+                [37.72058, -122.49343],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_3bddbe070db5b7dcc09222974060d9c2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f0db4128489960bde6f929bb331a787 = L.circleMarker(
+                [37.71095, -122.39955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6f0db4128489960bde6f929bb331a787.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Little Hollywood<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_00a8826ae66f7d90dc3697c16ec5a4dd = L.circleMarker(
+                [37.77812, -122.45288],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_00a8826ae66f7d90dc3697c16ec5a4dd.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lone Mountain<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_06ad12b6b2ca699adbe4c7691f146a7f = L.circleMarker(
+                [37.77299, -122.43078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_06ad12b6b2ca699adbe4c7691f146a7f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Haight<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5fd8321da2d3eb477dd62dbc10b2d9c9 = L.circleMarker(
+                [37.78828, -122.416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_5fd8321da2d3eb477dd62dbc10b2d9c9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Nob Hill<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7365513a70a789c348d12f6afa1d2968 = L.circleMarker(
+                [37.78574, -122.43992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_7365513a70a789c348d12f6afa1d2968.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Pacific Heights<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c64ee9a59b57f72e5eec5baa53aa66a2 = L.circleMarker(
+                [37.73277, -122.48004],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_c64ee9a59b57f72e5eec5baa53aa66a2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Merced Manor<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18e1bfa649d585ea3711a08f426c48bc = L.circleMarker(
+                [37.7503, -122.4504],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_18e1bfa649d585ea3711a08f426c48bc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Midtown Terrace<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_217c6f64060828740c324babc6f7be70 = L.circleMarker(
+                [37.77114, -122.42592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_217c6f64060828740c324babc6f7be70.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mint Hill<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_856006b7f44e20bfa8316f7ce38bd1a3 = L.circleMarker(
+                [37.7389, -122.44905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_856006b7f44e20bfa8316f7ce38bd1a3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Miraloma Park<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bd378995c745921b2f0612254c34cdd1 = L.circleMarker(
+                [37.77113, -122.39146],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_bd378995c745921b2f0612254c34cdd1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Bay<br>New Listings: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5ed63de47af493ea12c0e333a88bc29a = L.circleMarker(
+                [37.76382, -122.42574],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_5ed63de47af493ea12c0e333a88bc29a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Dolores<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_139425af0ab06b15268bebece50b6a4b = L.circleMarker(
+                [37.72806, -122.43515],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_139425af0ab06b15268bebece50b6a4b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Terrace<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34d48fa4de8eec29f3d652872cb18c91 = L.circleMarker(
+                [37.73306, -122.46165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_34d48fa4de8eec29f3d652872cb18c91.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Monterey Heights<br>New Listings: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a49a371edb0d906dca3806507628779 = L.circleMarker(
+                [37.79312, -122.41394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_5a49a371edb0d906dca3806507628779.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Nob Hill<br>New Listings: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aa4cdddb0f8bf72f022b4131fd311147 = L.circleMarker(
+                [37.74778, -122.43125],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_aa4cdddb0f8bf72f022b4131fd311147.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Noe Valley<br>New Listings: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6144f8b077d4e16d805834c7e6157236 = L.circleMarker(
+                [37.8009, -122.40855],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6144f8b077d4e16d805834c7e6157236.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - North Beach<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e1c1e8c80e895c88744420a60858ef2d = L.circleMarker(
+                [37.80143, -122.40019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_e1c1e8c80e895c88744420a60858ef2d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northern Waterfront<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c1c8800927fc37ba5f74723a0612c09e = L.circleMarker(
+                [37.7159, -122.45559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_c1c8800927fc37ba5f74723a0612c09e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Oceanview<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_efdbf63a6c045ddc60b7c0841901b484 = L.circleMarker(
+                [37.71137, -122.45392],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_efdbf63a6c045ddc60b7c0841901b484.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Mission<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_16e6d3bceed670c3e86c15b0f8f052e4 = L.circleMarker(
+                [37.7771, -122.49233],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_16e6d3bceed670c3e86c15b0f8f052e4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Richmond<br>New Listings: 57.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eba9dd84412512e443920e74a7c4bf22 = L.circleMarker(
+                [37.75378, -122.49547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_eba9dd84412512e443920e74a7c4bf22.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Sunset<br>New Listings: 83.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b11ed8499464df354aa6bf9c5b57975b = L.circleMarker(
+                [37.79232, -122.4342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_b11ed8499464df354aa6bf9c5b57975b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Pacific Heights<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93bee26e95b4a94fe0f47507edcd3f34 = L.circleMarker(
+                [37.77392, -122.44547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_93bee26e95b4a94fe0f47507edcd3f34.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Panhandle<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c484bb1bd43c9b29a075f608cc83eeac = L.circleMarker(
+                [37.71962, -122.47942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_c484bb1bd43c9b29a075f608cc83eeac.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkmerced<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c09112cb428941dece54486f8dcfab5d = L.circleMarker(
+                [37.74051, -122.48737],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_c09112cb428941dece54486f8dcfab5d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkside<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_00c9c42463622d05dab98a50324ae941 = L.circleMarker(
+                [37.76097, -122.45631],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_00c9c42463622d05dab98a50324ae941.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parnassus Heights<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e4745d02e77c0e7b6bd2afb126d07e1 = L.circleMarker(
+                [37.74622, -122.40742],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6e4745d02e77c0e7b6bd2afb126d07e1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Peralta Heights<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87605e49bd2987271435e91037bb2140 = L.circleMarker(
+                [37.79419, -122.42141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_87605e49bd2987271435e91037bb2140.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Polk Gulch<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2bea6627952253e62028d95ade5ec697 = L.circleMarker(
+                [37.72599, -122.4073],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_2bea6627952253e62028d95ade5ec697.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Portola<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a412230455ffe98f6655e477ab934e5 = L.circleMarker(
+                [37.75783, -122.39954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_9a412230455ffe98f6655e477ab934e5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Potrero Hill<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_abc25d5fbdf6c3aa0f04a1ad1ff243de = L.circleMarker(
+                [37.78873, -122.45234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_abc25d5fbdf6c3aa0f04a1ad1ff243de.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Heights<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_75248fff45dad72eb43870104777a16e = L.circleMarker(
+                [37.79742, -122.46643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_75248fff45dad72eb43870104777a16e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio National Park<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a4576d0231cfbdf98f5bf395b66e27c4 = L.circleMarker(
+                [37.78701, -122.46425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_a4576d0231cfbdf98f5bf395b66e27c4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Terrace<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5914f801e51b956cb2f3ca8f69a6d96e = L.circleMarker(
+                [37.78733, -122.39115],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_5914f801e51b956cb2f3ca8f69a6d96e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Rincon Hill<br>New Listings: 69.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_950d4c7c2c5605de466333fe787a66a9 = L.circleMarker(
+                [37.8004, -122.41759],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_950d4c7c2c5605de466333fe787a66a9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Russian Hill<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87c0d897c3cea9f444ffcdc385966bec = L.circleMarker(
+                [37.7868, -122.48885],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_87c0d897c3cea9f444ffcdc385966bec.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Seacliff<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_931606cb5aa9cd296d81c81fb5b6fcb2 = L.circleMarker(
+                [37.73743, -122.45687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_931606cb5aa9cd296d81c81fb5b6fcb2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sherwood Forest<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c8a8d69f2d2faf93b24fbc5f66e5f283 = L.circleMarker(
+                [37.7692, -122.40338],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_c8a8d69f2d2faf93b24fbc5f66e5f283.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Showplace Square<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6df599701cea3105f122382a3174df9f = L.circleMarker(
+                [37.73383, -122.39833],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6df599701cea3105f122382a3174df9f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Silver Terrace<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3e9acc5b58bc83d672606d0002fa6d1 = L.circleMarker(
+                [37.78167, -122.38929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_f3e9acc5b58bc83d672606d0002fa6d1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Beach<br>New Listings: 129.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e838272e1d86df4c7ad770859e39dcbe = L.circleMarker(
+                [37.77845, -122.40608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_e838272e1d86df4c7ad770859e39dcbe.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South of Market<br>New Listings: 194.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c405673abe39f9ed910a6c7a1e529f3 = L.circleMarker(
+                [37.73627, -122.46606],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_7c405673abe39f9ed910a6c7a1e529f3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Francis Wood<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_537b7d70c09da92b3980256608443005 = L.circleMarker(
+                [37.73352, -122.4257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_537b7d70c09da92b3980256608443005.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Marys Park<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dfcc0e2ce771de7fddf5749a968a4197 = L.circleMarker(
+                [37.71097, -122.42009],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_dfcc0e2ce771de7fddf5749a968a4197.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnydale<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07b7254230b551059c86b61e9ffaa062 = L.circleMarker(
+                [37.73002, -122.4465],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_07b7254230b551059c86b61e9ffaa062.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnyside<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aad69a8757f906ecbd393cf7d8be2d81 = L.circleMarker(
+                [37.77798, -122.50793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_aad69a8757f906ecbd393cf7d8be2d81.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sutro Heights<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3b9f3ce0988ea41bbf4a99130987efce = L.circleMarker(
+                [37.80233, -122.40547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_3b9f3ce0988ea41bbf4a99130987efce.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Telegraph Hill<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6f717c7941eb6627fb96d83a6a4a8417 = L.circleMarker(
+                [37.78409, -122.41482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6f717c7941eb6627fb96d83a6a4a8417.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Tenderloin<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ab2f88e4485697c4b1965c59e550ca46 = L.circleMarker(
+                [37.79863, -122.43074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_ab2f88e4485697c4b1965c59e550ca46.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Union Street<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_41696c72c3c9b5925d94811f56f9c27e = L.circleMarker(
+                [37.72693, -122.41809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_41696c72c3c9b5925d94811f56f9c27e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - University Mound<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ade5333932840fcab71787e7c277031 = L.circleMarker(
+                [37.75135, -122.44304],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_0ade5333932840fcab71787e7c277031.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Upper Market<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_50e50ac5f4c2f9ae8ed0c2566779288e = L.circleMarker(
+                [37.71346, -122.40848],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_50e50ac5f4c2f9ae8ed0c2566779288e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Visitacion Valley<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5426bdf173366c44170f596eb2401d97 = L.circleMarker(
+                [37.73977, -122.47066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_5426bdf173366c44170f596eb2401d97.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a7651f2de2d027141c36abc759bf318a = L.circleMarker(
+                [37.78006, -122.43494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_a7651f2de2d027141c36abc759bf318a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western Addition<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d21468cca1d560ecbab93bd4cd251c6 = L.circleMarker(
+                [37.73275, -122.45655],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_3d21468cca1d560ecbab93bd4cd251c6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Highlands<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0f864e8b3959579ea9d4cb2ab2953a00 = L.circleMarker(
+                [37.72746, -122.45637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_0f864e8b3959579ea9d4cb2ab2953a00.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Park<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4fa38cf9cd6a93437f9e2b73d5603deb = L.circleMarker(
+                [37.81095, -122.36588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_4fa38cf9cd6a93437f9e2b73d5603deb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena Island<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a73b11cbb66824df93704cd9f9a55d1 = L.circleMarker(
+                [37.7770771, -122.4365807],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_9a73b11cbb66824df93704cd9f9a55d1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square Historic District<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7fdb013b0be7b780e8f9fda8cb97332e = L.circleMarker(
+                [37.8048637, -122.42566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_7fdb013b0be7b780e8f9fda8cb97332e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Aquatic Park-Fort Mason<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b2c975d9d03705eb6c6ba5ce4c2bad50 = L.circleMarker(
+                [37.7646865, -122.4512005],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_b2c975d9d03705eb6c6ba5ce4c2bad50.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights / Parnassus<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_59a45baacd67b0bb80e6da1af761b146 = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_59a45baacd67b0bb80e6da1af761b146.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Baja Noe / Mission Deluxe<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14b090b7545ba9f8627847e02858d6f7 = L.circleMarker(
+                [37.7782864, -122.4653775],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_14b090b7545ba9f8627847e02858d6f7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Hollow<br>New Listings: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f7853bc20c41016c34be1b4c5237c54c = L.circleMarker(
+                [37.7127107, -122.3815252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_f7853bc20c41016c34be1b4c5237c54c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Candlestick Point State Recreation Area<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b4eb5d07b76ad12ce4c704cfcf00b6eb = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_b4eb5d07b76ad12ce4c704cfcf00b6eb.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central South of Market<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d39d82788d262ab2d26bc71776710234 = L.circleMarker(
+                [37.7690189, -122.4019298],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_d39d82788d262ab2d26bc71776710234.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Design District<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_13c84a612f9991105aa663ecc71938e5 = L.circleMarker(
+                [37.7936658, -122.3964729],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_13c84a612f9991105aa663ecc71938e5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Downtown San Francisco-Union Square<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_966e5fb177cf1ee34439b9e5fde12bdf = L.circleMarker(
+                [37.76955100000001, -122.433214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_966e5fb177cf1ee34439b9e5fde12bdf.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Park<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d03e022215fe0ae5cea3725503392134 = L.circleMarker(
+                [37.7861923, -122.4400385],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_d03e022215fe0ae5cea3725503392134.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fillmore District<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d68e75703d9d0cbd2856790bc9b8cb5 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_6d68e75703d9d0cbd2856790bc9b8cb5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Intermission<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_16e7f874ed1e5752f2d8eca3b4080a9a = L.circleMarker(
+                [37.7296178, -122.4935865],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_16e7f874ed1e5752f2d8eca3b4080a9a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore Acres<br>New Listings: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f2f75a728176998ea8b8bd1a2d2ee0c = L.circleMarker(
+                [37.783278, -122.4566316],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_2f2f75a728176998ea8b8bd1a2d2ee0c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laurel Heights-Jordan Park<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ae5ebf5b43d2e41be736ca30d59f17e = L.circleMarker(
+                [37.8043849, -122.4370011],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_0ae5ebf5b43d2e41be736ca30d59f17e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina District<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_105584d0965b5390ea5d9f8059f4de7f = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_105584d0965b5390ea5d9f8059f4de7f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina Gardens<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d51f5d0a694ba284b95f480d2a07d9c = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_3d51f5d0a694ba284b95f480d2a07d9c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission District<br>New Listings: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25f82eab48c99a91dee4f5748c6d2302 = L.circleMarker(
+                [37.7282679, -122.4640937],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_25f82eab48c99a91dee4f5748c6d2302.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mount Davidson Manor<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf20a07a4cbd08918755d34153ed2983 = L.circleMarker(
+                [37.7929158, -122.4046905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_cf20a07a4cbd08918755d34153ed2983.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northeast San Francisco<br>New Listings: 156.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9fe96b55f4abce1736101476c076df3 = L.circleMarker(
+                [37.7897312, -122.401906],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_e9fe96b55f4abce1736101476c076df3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northwest San Francisco<br>New Listings: 343.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb6e0c8194cd5d837bda654d81e043d0 = L.circleMarker(
+                [37.7815501, -122.3940353],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_cb6e0c8194cd5d837bda654d81e043d0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Park<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fca9a109510a141d45d28f8851b3f775 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_fca9a109510a141d45d28f8851b3f775.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southeast San Francisco<br>New Listings: 278.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_be38930eca7889f93caa6ea8fdff7bf6 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_be38930eca7889f93caa6ea8fdff7bf6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southwest San Francisco<br>New Listings: 444.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70d5d4d44ad9b7ceffbc5bb8145febb3 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_70d5d4d44ad9b7ceffbc5bb8145febb3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Transmission<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c6d02012fbe21d7ae860f9a4aeb3aa7 = L.circleMarker(
+                [37.7395735, -122.470007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_7c6d02012fbe21d7ae860f9a4aeb3aa7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal Park<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfff2b872287fa902b5f450004d120f5 = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_cfff2b872287fa902b5f450004d120f5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western South of Market<br>New Listings: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_63cebdb57b62501f933490ea11d64faa = L.circleMarker(
+                [37.7850045, -122.4004816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077);
+        
+    
+            circle_marker_63cebdb57b62501f933490ea11d64faa.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena<br>New Listings: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_7150a3098acc0df348c1a8b6f73f1274 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var tile_layer_cfaa135d046c8a03cd299a26d60d5677 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var tile_layer_7694ca18c2c21e054d49350a24782ad9 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var tile_layer_d20e06b271e0455ab81e5f7b7f90e269 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var tile_layer_9ff7e6d823f34427bfdca73a6d58d0b0 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var tile_layer_f197cedcfe54e1921ee832597e8cc900 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+        
+    
+            var layer_control_f250243bd355ece5a666fb873108ac31 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_7694ca18c2c21e054d49350a24782ad9,
+                    "stamenwatercolor" : tile_layer_7150a3098acc0df348c1a8b6f73f1274,
+                    "openstreetmap" : tile_layer_cfaa135d046c8a03cd299a26d60d5677,
+                    "stamentoner" : tile_layer_d20e06b271e0455ab81e5f7b7f90e269,
+                    "cartodbpositron" : tile_layer_9ff7e6d823f34427bfdca73a6d58d0b0,
+                    "cartodbdark_matter" : tile_layer_f197cedcfe54e1921ee832597e8cc900,
+                },
+                overlays :  {
+                    "San Francisco - new_listings" : heat_map_cbcd790d311e895a8cbc4b93e63829ad,
+                    "New Listings Centers" : feature_group_c97a96ff3f8acdd8d7dd9ae6c7ed3077,
+                },
+            };
+            L.control.layers(
+                layer_control_f250243bd355ece5a666fb873108ac31.base_layers,
+                layer_control_f250243bd355ece5a666fb873108ac31.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_59f86af2597c8e639006a4d186d56ea8);
+            tile_layer_7150a3098acc0df348c1a8b6f73f1274.remove();
+            tile_layer_cfaa135d046c8a03cd299a26d60d5677.remove();
+            tile_layer_7694ca18c2c21e054d49350a24782ad9.remove();
+            tile_layer_d20e06b271e0455ab81e5f7b7f90e269.remove();
+            tile_layer_9ff7e6d823f34427bfdca73a6d58d0b0.remove();
+            tile_layer_f197cedcfe54e1921ee832597e8cc900.remove();
+        
+</script>
+</html>

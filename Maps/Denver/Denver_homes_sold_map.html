@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bea07e618f34693f29bb4c0fe70c5992 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bea07e618f34693f29bb4c0fe70c5992" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bea07e618f34693f29bb4c0fe70c5992 = L.map(
+                "map_bea07e618f34693f29bb4c0fe70c5992",
+                {
+                    center: [39.73048961538462, -104.96975692923075],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8caaca8d2c3ee448a627875e013f874d = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var heat_map_9ab6b28576bb8e2c0efb99e044604ef1 = L.heatLayer(
+                [[39.70357, -105.0104, 20.0], [39.74582, -105.00827, 2.0], [39.71522, -104.99621, 28.0], [39.71839, -105.03239, 14.0], [39.6611, -105.06554, 60.0], [39.70504, -104.95048, 31.0], [39.77671, -105.03938, 60.0], [39.73365, -104.9802, 77.0], [39.78762, -105.01205, 28.0], [39.73458, -104.96643, 45.0], [39.7194, -104.94928, 45.0], [39.74536, -104.96657, 39.0], [39.76741, -104.95014, 26.0], [39.76719, -104.9662, 18.0], [39.66304, -105.02165, 14.0], [39.73285, -104.95031, 42.0], [39.74068, -104.89446, 25.0], [39.75913, -104.98336, 54.0], [39.64155, -105.04798, 45.0], [39.78055, -104.98683, 6.0], [39.67379, -104.91469, 26.0], [39.73291, -104.93156, 56.0], [39.66097, -104.8908, 105.0], [39.64074, -104.89694, 86.0], [39.67531, -105.04107, 47.0], [39.76326, -105.01231, 67.0], [39.71869, -104.92434, 39.0], [39.75217, -105.01922, 17.0], [39.73254, -105.00485, 29.0], [39.68951, -105.03913, 36.0], [39.62747, -105.07892, 55.0], [39.78602, -104.83727, 66.0], [39.73286, -104.91295, 31.0], [39.75652, -104.92201, 42.0], [39.77445, -104.92331, 34.0], [39.68141, -104.9931, 7.0], [39.68661, -104.98106, 44.0], [39.78761, -105.04399, 27.0], [39.67312, -104.98052, 18.0], [39.68999, -105.01119, 27.0], [39.75163, -105.03982, 33.0], [39.7456, -104.92206, 51.0], [39.64029, -104.91668, 21.0], [39.77645, -105.01189, 45.0], [39.66447, -104.93255, 33.0], [39.71717, -105.01522, 7.0], [39.68679, -104.92416, 62.0], [39.70124, -104.96627, 55.0], [39.70258, -104.9799, 42.0], [39.70149, -104.91518, 41.0], [39.66064, -104.94955, 18.0], [39.74004, -105.03859, 70.0], [39.76395, -105.03924, 60.0], [39.70402, -105.03921, 24.0], [39.75636, -104.96656, 23.0], [39.70331, -104.88583, 94.0], [39.7184466, -104.9773107, 6.0], [39.7300652, -104.9984212, 3.0], [39.7592936, -104.9937538, 12.0], [39.7392358, -104.990251, 11.0], [39.7392358, -104.990251, 6.0], [39.7392358, -104.990251, 5.0], [39.7392324, -104.9874129, 3.0], [39.7336946, -104.982297, 9.0], [39.7392358, -104.990251, 22.0], [39.7824095, -104.8804893, 102.0], [39.7824095, -104.8804893, 155.0], [39.7392358, -104.990251, 4.0], [39.7392358, -104.990251, 14.0], [39.7196594, -104.957856, 5.0], [39.740088, -104.96909, 11.0], [39.7403376, -105.0469221, 9.0], [39.7909108, -104.8904173, 11.0], [39.6893366, -104.9500499, 21.0], [39.7577469, -104.9794943, 21.0], [39.7256237, -104.9658472, 16.0], [39.7451998, -104.9921849, 71.0], [39.7583765, -104.9217031, 10.0], [39.7698274, -104.9041377, 233.0], [39.7392358, -104.990251, 163.0], [39.7392358, -104.990251, 30.0], [39.7608751, -104.8717317, 11.0], [39.7161481, -105.0586639, 2.0], [39.7336946, -104.982297, 5.0], [39.7392358, -104.990251, 3.0], [39.7392358, -104.990251, 31.0], [39.7854582, -104.8571368, 242.0], [39.7693376, -105.0299822, 180.0], [39.6531038, -104.8987661, 217.0], [39.7392358, -104.990251, 240.0], [39.7837575, -104.7945972, 50.0], [39.7832359, -104.7579278, 93.0], [39.7608333, -105.0180556, 7.0], [39.6758185, -104.9604243, 6.0], [39.7392358, -104.990251, 10.0], [39.7320488, -104.9861214, 12.0], [39.7392358, -104.990251, 49.0], [39.7197837, -104.8910078, 49.0], [39.7392358, -104.990251, 3.0], [39.7392358, -104.990251, 7.0], [39.7854582, -104.8571368, 124.0], [39.7693376, -105.0299822, 157.0], [39.6531038, -104.8987661, 169.0], [39.7855996, -104.9912739, 95.0], [39.7392358, -104.990251, 22.0], [39.7644926, -104.9659559, 22.0], [39.7693376, -105.0299822, 339.0], [39.6875735, -104.9804379, 3.0], [39.7745645, -104.9223102, 127.0], [39.7320363, -104.9810371, 6.0], [39.6875523, -104.9803741, 44.0], [39.76554000000001, -105.0205793, 8.0], [39.7392358, -104.990251, 9.0], [39.7392358, -104.990251, 5.0], [39.7512018, -105.0345899, 33.0], [39.66461, -104.9876645, 4.0], [39.7824095, -104.8804893, 161.0], [39.6785031, -104.9875969, 318.0], [39.7824095, -104.8804893, 12.0], [39.6531038, -104.8987661, 207.0], [39.6531038, -104.8987661, 128.0], [39.7392358, -104.990251, 6.0], [39.7392358, -104.990251, 248.0], [39.7392358, -104.990251, 1.0], [39.7392358, -104.990251, 4.0], [39.7420787, -104.9773482, 5.0], [39.7931456, -105.0439213, 4.0], [39.7392358, -104.990251, 5.0], [39.7392358, -104.990251, 132.0], [39.7392358, -104.990251, 2.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var feature_group_55f0fd7e024c05d6dcdba064044da6f5 = L.featureGroup(
+                {}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var circle_marker_6b06009db5cc85641e6b6f14539e6796 = L.circleMarker(
+                [39.70357, -105.0104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_6b06009db5cc85641e6b6f14539e6796.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Athmar Park<br>Homes Sold: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7fa58e2474dc18d3c23a48b6541571db = L.circleMarker(
+                [39.74582, -105.00827],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7fa58e2474dc18d3c23a48b6541571db.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Auraria<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_59aad60371dc319985678f4945ee9b61 = L.circleMarker(
+                [39.71522, -104.99621],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_59aad60371dc319985678f4945ee9b61.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Baker<br>Homes Sold: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ee2dcc915255cd3ecb40c58e69588fb = L.circleMarker(
+                [39.71839, -105.03239],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_3ee2dcc915255cd3ecb40c58e69588fb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Barnum<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c2f3eb946496c5a45d749ad73ee6617 = L.circleMarker(
+                [39.6611, -105.06554],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_8c2f3eb946496c5a45d749ad73ee6617.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bear Valley<br>Homes Sold: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8ab783b27b41dcc45a91d274239a12b0 = L.circleMarker(
+                [39.70504, -104.95048],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_8ab783b27b41dcc45a91d274239a12b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belcaro<br>Homes Sold: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18a9d49ea208fcc6526a04cf6087aa7d = L.circleMarker(
+                [39.77671, -105.03938],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_18a9d49ea208fcc6526a04cf6087aa7d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Berkeley<br>Homes Sold: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_92711137b208e9d7b81b3a6630d3828f = L.circleMarker(
+                [39.73365, -104.9802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_92711137b208e9d7b81b3a6630d3828f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capitol Hill<br>Homes Sold: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad670ff1d6808b1b7a230fea526de8ad = L.circleMarker(
+                [39.78762, -105.01205],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_ad670ff1d6808b1b7a230fea526de8ad.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chaffee Park<br>Homes Sold: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d1d20c4d8b2b2e240ce0ef071b94783 = L.circleMarker(
+                [39.73458, -104.96643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2d1d20c4d8b2b2e240ce0ef071b94783.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheesman Park<br>Homes Sold: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_835c7d60851ba328220eb6f14a11e804 = L.circleMarker(
+                [39.7194, -104.94928],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_835c7d60851ba328220eb6f14a11e804.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek<br>Homes Sold: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70e1ec73dfaff73de690197dbcb8aa10 = L.circleMarker(
+                [39.74536, -104.96657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_70e1ec73dfaff73de690197dbcb8aa10.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - City Park West<br>Homes Sold: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6a0764622858b41603803c10843e4ab6 = L.circleMarker(
+                [39.76741, -104.95014],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_6a0764622858b41603803c10843e4ab6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Clayton<br>Homes Sold: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1df5d18745224990c58e112b6dcbb82e = L.circleMarker(
+                [39.76719, -104.9662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1df5d18745224990c58e112b6dcbb82e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cole<br>Homes Sold: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b4a6d98276d705cf47d4293cff20920 = L.circleMarker(
+                [39.66304, -105.02165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_6b4a6d98276d705cf47d4293cff20920.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - College View<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_179074757e3f15b354f2e79273dd3583 = L.circleMarker(
+                [39.73285, -104.95031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_179074757e3f15b354f2e79273dd3583.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Congress Park<br>Homes Sold: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_084febfeb8506f7b6166d44d368acc91 = L.circleMarker(
+                [39.74068, -104.89446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_084febfeb8506f7b6166d44d368acc91.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Colfax<br>Homes Sold: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a8ace5c8051a5ab172060485da87c94e = L.circleMarker(
+                [39.75913, -104.98336],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_a8ace5c8051a5ab172060485da87c94e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Five Points<br>Homes Sold: 54.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ffd5a365a23c9fa829ae06da0f0a33a = L.circleMarker(
+                [39.64155, -105.04798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0ffd5a365a23c9fa829ae06da0f0a33a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Fort Logan<br>Homes Sold: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_135f8904a72a50636d72eeffc5c90bde = L.circleMarker(
+                [39.78055, -104.98683],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_135f8904a72a50636d72eeffc5c90bde.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Globeville<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_724438b5e971b15647a8ea21309e7ef0 = L.circleMarker(
+                [39.67379, -104.91469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_724438b5e971b15647a8ea21309e7ef0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Goldsmith<br>Homes Sold: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_351d2b0edc3ef9d60dc8b93b0909f243 = L.circleMarker(
+                [39.73291, -104.93156],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_351d2b0edc3ef9d60dc8b93b0909f243.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hale<br>Homes Sold: 56.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7b9a31d45bec68eb9193c51e229466b3 = L.circleMarker(
+                [39.66097, -104.8908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7b9a31d45bec68eb9193c51e229466b3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden<br>Homes Sold: 105.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a71fb8e0050e04ad33596fe9cd88461 = L.circleMarker(
+                [39.64074, -104.89694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_5a71fb8e0050e04ad33596fe9cd88461.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden South<br>Homes Sold: 86.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_533362f78e948d45ef55aa302bf0ee92 = L.circleMarker(
+                [39.67531, -105.04107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_533362f78e948d45ef55aa302bf0ee92.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Harvey Park<br>Homes Sold: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0fa0dfb18e64ac0538272163d1ccb9c6 = L.circleMarker(
+                [39.76326, -105.01231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0fa0dfb18e64ac0538272163d1ccb9c6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland<br>Homes Sold: 67.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7dd15163b9616f8a729a2a9f428425d5 = L.circleMarker(
+                [39.71869, -104.92434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7dd15163b9616f8a729a2a9f428425d5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hilltop<br>Homes Sold: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae90e0795d65f17951f0fcc021f33e44 = L.circleMarker(
+                [39.75217, -105.01922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_ae90e0795d65f17951f0fcc021f33e44.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Jefferson Park<br>Homes Sold: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb8d50f46af69a985d69146a64837ad3 = L.circleMarker(
+                [39.73254, -105.00485],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_eb8d50f46af69a985d69146a64837ad3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln Park<br>Homes Sold: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca2ea3d6ecee5aa79a5e3146ef0f0292 = L.circleMarker(
+                [39.68951, -105.03913],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_ca2ea3d6ecee5aa79a5e3146ef0f0292.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Mar Lee<br>Homes Sold: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_05e0e59fdf44c3545176338f8bd0a6b9 = L.circleMarker(
+                [39.62747, -105.07892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_05e0e59fdf44c3545176338f8bd0a6b9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Marston<br>Homes Sold: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d87cc96ea5691321fb42fb0adb66881e = L.circleMarker(
+                [39.78602, -104.83727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_d87cc96ea5691321fb42fb0adb66881e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montbello<br>Homes Sold: 66.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d314a16654d76645829280e2f229d5b = L.circleMarker(
+                [39.73286, -104.91295],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2d314a16654d76645829280e2f229d5b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montclair<br>Homes Sold: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c8ccff4dcb844216a7ef103f04a73e7e = L.circleMarker(
+                [39.75652, -104.92201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_c8ccff4dcb844216a7ef103f04a73e7e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Park Hill<br>Homes Sold: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1fc0c72278ffefd517aa3365145305f0 = L.circleMarker(
+                [39.77445, -104.92331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1fc0c72278ffefd517aa3365145305f0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northeast Park Hill<br>Homes Sold: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f5b990b0444f3e5b3cb95937aa67923 = L.circleMarker(
+                [39.68141, -104.9931],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2f5b990b0444f3e5b3cb95937aa67923.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Overland<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c29e943f85929cc82524eab5b62bdd3 = L.circleMarker(
+                [39.68661, -104.98106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_5c29e943f85929cc82524eab5b62bdd3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platt Park<br>Homes Sold: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c8a3ae2749724d35c7a2902412abb5c = L.circleMarker(
+                [39.78761, -105.04399],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0c8a3ae2749724d35c7a2902412abb5c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Regis<br>Homes Sold: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2d6b45adc68131c741ded79e946e0dd = L.circleMarker(
+                [39.67312, -104.98052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_d2d6b45adc68131c741ded79e946e0dd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Rosedale<br>Homes Sold: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_77decbde1bffec10e639ba19f486e306 = L.circleMarker(
+                [39.68999, -105.01119],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_77decbde1bffec10e639ba19f486e306.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ruby Hill<br>Homes Sold: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a57e4eae4f81d79914efe82059fd4f73 = L.circleMarker(
+                [39.75163, -105.03982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_a57e4eae4f81d79914efe82059fd4f73.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan Lake<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_624a59632eb2c44a3dd3e45913995306 = L.circleMarker(
+                [39.7456, -104.92206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_624a59632eb2c44a3dd3e45913995306.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Park Hill<br>Homes Sold: 51.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aa5681f6c83894c605341812acd4871a = L.circleMarker(
+                [39.64029, -104.91668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_aa5681f6c83894c605341812acd4871a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southmoor Park<br>Homes Sold: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_741d40bbd12410e1548ececc13e228b5 = L.circleMarker(
+                [39.77645, -105.01189],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_741d40bbd12410e1548ececc13e228b5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sunnyside<br>Homes Sold: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1790605a42878bc250ea0afc65ce2227 = L.circleMarker(
+                [39.66447, -104.93255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1790605a42878bc250ea0afc65ce2227.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - University Hills<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_629b98f2585ce30e868b2922a36cde90 = L.circleMarker(
+                [39.71717, -105.01522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_629b98f2585ce30e868b2922a36cde90.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Valverde<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c9e58b108e524c7bb807f7f74a95fe6 = L.circleMarker(
+                [39.68679, -104.92416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2c9e58b108e524c7bb807f7f74a95fe6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Virginia Village<br>Homes Sold: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_98c51f28c7aa951e8dacc1eab109b47b = L.circleMarker(
+                [39.70124, -104.96627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_98c51f28c7aa951e8dacc1eab109b47b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park<br>Homes Sold: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1826935e7e8a66dd2bfbd2076f0e1d0e = L.circleMarker(
+                [39.70258, -104.9799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1826935e7e8a66dd2bfbd2076f0e1d0e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park West<br>Homes Sold: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2a2f569b6a5f0af3ffb0abd40a5e76ae = L.circleMarker(
+                [39.70149, -104.91518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2a2f569b6a5f0af3ffb0abd40a5e76ae.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Virginia Vale<br>Homes Sold: 41.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_81c31591cdb0246812522048c3d4236b = L.circleMarker(
+                [39.66064, -104.94955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_81c31591cdb0246812522048c3d4236b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Wellshire<br>Homes Sold: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cc637ee8c47e3b79f38cd72a2dc3af68 = L.circleMarker(
+                [39.74004, -105.03859],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_cc637ee8c47e3b79f38cd72a2dc3af68.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Colfax<br>Homes Sold: 70.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1c0eb9f1df04aae79c9a63414c1c16c6 = L.circleMarker(
+                [39.76395, -105.03924],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1c0eb9f1df04aae79c9a63414c1c16c6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Highland<br>Homes Sold: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2f1d3eed58af302d7dca3c1cfdf1b7b = L.circleMarker(
+                [39.70402, -105.03921],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f2f1d3eed58af302d7dca3c1cfdf1b7b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Westwood<br>Homes Sold: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e00706edc2e0bb1ff2a7d713b656feb5 = L.circleMarker(
+                [39.75636, -104.96656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_e00706edc2e0bb1ff2a7d713b656feb5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Whittier<br>Homes Sold: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c0ad69ad6f36b9b43ef95aca2465081 = L.circleMarker(
+                [39.70331, -104.88583],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_3c0ad69ad6f36b9b43ef95aca2465081.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Windsor<br>Homes Sold: 94.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_80f233c3987c05ea17af027ac9860c3a = L.circleMarker(
+                [39.7184466, -104.9773107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_80f233c3987c05ea17af027ac9860c3a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Arlington Park<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a4fde65e097e23cf79284ed0896dd5e0 = L.circleMarker(
+                [39.7300652, -104.9984212],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_a4fde65e097e23cf79284ed0896dd5e0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Art District on Santa Fe<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d7b68b6f6c3079127dd210c3f8c332c = L.circleMarker(
+                [39.7592936, -104.9937538],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2d7b68b6f6c3079127dd210c3f8c332c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ballpark Collective<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c699727cb362f3c38cfc1b4c14e2ef0 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_3c699727cb362f3c38cfc1b4c14e2ef0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3d3694b3d3235cd09afdd0de6930fcf = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_d3d3694b3d3235cd09afdd0de6930fcf.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue Park<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2656dd760b509f9d4d94cbdc79de0b61 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2656dd760b509f9d4d94cbdc79de0b61.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belmont Park<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a6b0a20bbee3522f448e633de83f18de = L.circleMarker(
+                [39.7392324, -104.9874129],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_a6b0a20bbee3522f448e633de83f18de.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Broadway<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3b3bbb77ce08a45f7971b89ba97f9048 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_3b3bbb77ce08a45f7971b89ba97f9048.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Burlington Capitol Hill<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f983df20932ca48294df5d3060f83633 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f983df20932ca48294df5d3060f83633.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capital Avenue<br>Homes Sold: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_64beba3107656666d83ad1cd3c4abcbc = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_64beba3107656666d83ad1cd3c4abcbc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Denver<br>Homes Sold: 102.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5875adb4f71822ed9f4a2adb1f5dabe7 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_5875adb4f71822ed9f4a2adb1f5dabe7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Park<br>Homes Sold: 155.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a1d371bf3a9e0ec509ec69f9ec44064 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7a1d371bf3a9e0ec509ec69f9ec44064.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chamberlins University Terrace East<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4b1079db21b5bc9f4da0348b114243f2 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_4b1079db21b5bc9f4da0348b114243f2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheltenham Heights<br>Homes Sold: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53e8d9991dae5bad1567a5758a3af04c = L.circleMarker(
+                [39.7196594, -104.957856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_53e8d9991dae5bad1567a5758a3af04c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek North<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_afe25cf315387fb62eebbda6a8bb582b = L.circleMarker(
+                [39.740088, -104.96909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_afe25cf315387fb62eebbda6a8bb582b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Avenue Park<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_04ed60eb51a896721fa86e06415c699e = L.circleMarker(
+                [39.7403376, -105.0469221],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_04ed60eb51a896721fa86e06415c699e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Terrace<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_790c981cff093fee6f335ad529d32097 = L.circleMarker(
+                [39.7909108, -104.8904173],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_790c981cff093fee6f335ad529d32097.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Conservatory Green at Stapleton<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_778eedbc2e2937709f4fdd1d796b1c85 = L.circleMarker(
+                [39.6893366, -104.9500499],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_778eedbc2e2937709f4fdd1d796b1c85.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cory-Merrill<br>Homes Sold: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_552d9e1eb0e53157e1514543c5ed3ebc = L.circleMarker(
+                [39.7577469, -104.9794943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_552d9e1eb0e53157e1514543c5ed3ebc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Curtis Park<br>Homes Sold: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f965c917ff5b5c6f74983ab822548eb9 = L.circleMarker(
+                [39.7256237, -104.9658472],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f965c917ff5b5c6f74983ab822548eb9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Denver Country Club<br>Homes Sold: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0f0f5ce41e57962de2bfcf9bf28a8096 = L.circleMarker(
+                [39.7451998, -104.9921849],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0f0f5ce41e57962de2bfcf9bf28a8096.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Downtown Denver<br>Homes Sold: 71.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a871ff1a2b948e6d98a9dcd98b7c9df5 = L.circleMarker(
+                [39.7583765, -104.9217031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_a871ff1a2b948e6d98a9dcd98b7c9df5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East 29th Avenue<br>Homes Sold: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a3fd1b22479eb4f2bfa352da56d7cc2e = L.circleMarker(
+                [39.7698274, -104.9041377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_a3fd1b22479eb4f2bfa352da56d7cc2e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Central Denver<br>Homes Sold: 233.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_100c3e02a5680c5a891eee66509b6de1 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_100c3e02a5680c5a891eee66509b6de1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Denver<br>Homes Sold: 163.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d70651b41d5bd0041063c036e7b8eb5 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1d70651b41d5bd0041063c036e7b8eb5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Seventh Avenue Historic District<br>Homes Sold: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0edfc7bd706c084b6bfd8601a9be2bf6 = L.circleMarker(
+                [39.7608751, -104.8717317],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0edfc7bd706c084b6bfd8601a9be2bf6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastbridge<br>Homes Sold: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_27ccd76a07dcf582e60619137c8e5ecf = L.circleMarker(
+                [39.7161481, -105.0586639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_27ccd76a07dcf582e60619137c8e5ecf.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastgate<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_68bb1c0aeeb37a7a6a1a8ef4f9d48ad9 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_68bb1c0aeeb37a7a6a1a8ef4f9d48ad9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Emerys Capitol Hill<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_149b3d4e27bab9570409386247d05f03 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_149b3d4e27bab9570409386247d05f03.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evans Park Estates<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3df262d7736238f2acffe98763b1d96 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f3df262d7736238f2acffe98763b1d96.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evanston<br>Homes Sold: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f69cc9ad57ccad3c76cde30d38a4bdc1 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f69cc9ad57ccad3c76cde30d38a4bdc1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northeast Denver<br>Homes Sold: 242.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9e029fa42ff77b88892ea3874e6ab552 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_9e029fa42ff77b88892ea3874e6ab552.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northwest Denver<br>Homes Sold: 180.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2ffefc6b6c6d31a5ff3a9a76f24f6ac = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_d2ffefc6b6c6d31a5ff3a9a76f24f6ac.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southeast Denver<br>Homes Sold: 217.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_517901e4d38156ea313c27f1860d5372 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_517901e4d38156ea313c27f1860d5372.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southwest Denver<br>Homes Sold: 240.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0ba87e98596bbdb41b5e43690e1e5d77 = L.circleMarker(
+                [39.7837575, -104.7945972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0ba87e98596bbdb41b5e43690e1e5d77.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Gateway<br>Homes Sold: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb9edc3d79789d3d1b52e341370d67b2 = L.circleMarker(
+                [39.7832359, -104.7579278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_fb9edc3d79789d3d1b52e341370d67b2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Green Valley Ranch<br>Homes Sold: 93.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4934f73f09b13d5db13345ba608f7602 = L.circleMarker(
+                [39.7608333, -105.0180556],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_4934f73f09b13d5db13345ba608f7602.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland Park<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0541c30840aa126c18285e5594d8127a = L.circleMarker(
+                [39.6758185, -104.9604243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0541c30840aa126c18285e5594d8127a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Iliffs University<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf2ad2849b1e582ef478b75f60caca00 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_cf2ad2849b1e582ef478b75f60caca00.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Kettles<br>Homes Sold: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89b649190795ded38e4bb75eb15b88de = L.circleMarker(
+                [39.7320488, -104.9861214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_89b649190795ded38e4bb75eb15b88de.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a0dd7b53186def66526f11685cda2f2 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_0a0dd7b53186def66526f11685cda2f2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - LoHi<br>Homes Sold: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_13f0a6f4271f888bf04f7bf17b5831dc = L.circleMarker(
+                [39.7197837, -104.8910078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_13f0a6f4271f888bf04f7bf17b5831dc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lowry<br>Homes Sold: 49.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dfd9f2b0a5b5851502ab15df2595ed1e = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_dfd9f2b0a5b5851502ab15df2595ed1e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lynwood<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e69bdee8a303e879276fe6a7214438a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_6e69bdee8a303e879276fe6a7214438a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Miller Park<br>Homes Sold: 7.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bceef03cb73c98dae11453c6a553b28f = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_bceef03cb73c98dae11453c6a553b28f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northeast Denver<br>Homes Sold: 124.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7db97d7f0c41a9c0b8b94ee771d53528 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7db97d7f0c41a9c0b8b94ee771d53528.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northwest Denver<br>Homes Sold: 157.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4cea5fb2dfe609941aa39121e8a3e25e = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_4cea5fb2dfe609941aa39121e8a3e25e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Southeast Denver<br>Homes Sold: 169.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd2fbcb2b8820a94360068e2db76589d = L.circleMarker(
+                [39.7855996, -104.9912739],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_fd2fbcb2b8820a94360068e2db76589d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Central Denver<br>Homes Sold: 95.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2e352d19cfe8efe90b15ee75716bf3f0 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_2e352d19cfe8efe90b15ee75716bf3f0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North City Park<br>Homes Sold: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_695a119f1b05bd71c2f64c5cdfb964e8 = L.circleMarker(
+                [39.7644926, -104.9659559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_695a119f1b05bd71c2f64c5cdfb964e8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Denver<br>Homes Sold: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ab1a42c3247021c606f73c9773b7fb08 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_ab1a42c3247021c606f73c9773b7fb08.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northwest Denver<br>Homes Sold: 339.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f711088f0f5eb88116cfb0be7669707 = L.circleMarker(
+                [39.6875735, -104.9804379],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_1f711088f0f5eb88116cfb0be7669707.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Old South Pearl<br>Homes Sold: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1b386fd2ed8068979f33532880f0982 = L.circleMarker(
+                [39.7745645, -104.9223102],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_d1b386fd2ed8068979f33532880f0982.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Park Hill<br>Homes Sold: 127.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ecb9cd44fcbf314131bf96ba13e426e1 = L.circleMarker(
+                [39.7320363, -104.9810371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_ecb9cd44fcbf314131bf96ba13e426e1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Pennsylvania Street Historic District<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f7b93fde643170bc1969a2518bd04cf8 = L.circleMarker(
+                [39.6875523, -104.9803741],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f7b93fde643170bc1969a2518bd04cf8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platte Park<br>Homes Sold: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_79abc3d5039aed412d682219d6290c9d = L.circleMarker(
+                [39.76554000000001, -105.0205793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_79abc3d5039aed412d682219d6290c9d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Potter Highlands<br>Homes Sold: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_edc59fb2a392578a5cd7ee0d1d8fa914 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_edc59fb2a392578a5cd7ee0d1d8fa914.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Shackelton Place<br>Homes Sold: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df95df111c445580a745f7a14e358db3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_df95df111c445580a745f7a14e358db3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sherman-Grant Historic District<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6ce4bb757c9a154dd9de5694444a8aa0 = L.circleMarker(
+                [39.7512018, -105.0345899],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_6ce4bb757c9a154dd9de5694444a8aa0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan's Lake<br>Homes Sold: 33.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe729c075d17fe6bd084da655181141a = L.circleMarker(
+                [39.66461, -104.9876645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_fe729c075d17fe6bd084da655181141a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Broadway<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a3fbb3826e473c4e47e11ef6b8428d8 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_5a3fbb3826e473c4e47e11ef6b8428d8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Central Denver<br>Homes Sold: 161.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_572e28120f5d54843af7bac85e2153b0 = L.circleMarker(
+                [39.6785031, -104.9875969],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_572e28120f5d54843af7bac85e2153b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Denver<br>Homes Sold: 318.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfb51b8aa2c593fe033e96fdd97a3af5 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_cfb51b8aa2c593fe033e96fdd97a3af5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South End at Stapleton<br>Homes Sold: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_072376743180eda72ce16d789bf27a68 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_072376743180eda72ce16d789bf27a68.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Central Denver<br>Homes Sold: 207.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bf45ac73416228acb8a90f0ced181619 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_bf45ac73416228acb8a90f0ced181619.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Denver<br>Homes Sold: 128.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34cff59210548b601b236abf2ef6ae08 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_34cff59210548b601b236abf2ef6ae08.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southlawn Gardens<br>Homes Sold: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f902acf48b5b63f0c2d771279ea11356 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_f902acf48b5b63f0c2d771279ea11356.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southwest Denver<br>Homes Sold: 248.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30518ba8f5f6d77b3bbc0bf1a4e57dc6 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_30518ba8f5f6d77b3bbc0bf1a4e57dc6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - St. James Heights<br>Homes Sold: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e8a6894a97de79a005dc086aa3371474 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_e8a6894a97de79a005dc086aa3371474.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sumners<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7bc89b72de99754fd9c301370d651376 = L.circleMarker(
+                [39.7420787, -104.9773482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7bc89b72de99754fd9c301370d651376.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Swallow Hill<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e313393d14f3f183509fba6c10efc53 = L.circleMarker(
+                [39.7931456, -105.0439213],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_7e313393d14f3f183509fba6c10efc53.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Tennyson Street Cultural District<br>Homes Sold: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07379eb72a34dc6d380bc09917a53691 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_07379eb72a34dc6d380bc09917a53691.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Town of Highland<br>Homes Sold: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb9c46f4cdef1e2400ec55fc6c2e6d13 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_fb9c46f4cdef1e2400ec55fc6c2e6d13.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Denver<br>Homes Sold: 132.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_73b329f7ba401ee0f7d9e67dee1f5ee7 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_55f0fd7e024c05d6dcdba064044da6f5);
+        
+    
+            circle_marker_73b329f7ba401ee0f7d9e67dee1f5ee7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Witter-Cofield<br>Homes Sold: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_0b0229aad792ab7b6b15354645d4d9ae = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var tile_layer_afa58abac06c5508fe8c0b9b4881e612 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var tile_layer_bae97a4c559d3d3daec4d914af8c0a14 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var tile_layer_264b9e6dcf086a228bc9ef5fd2057b8c = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var tile_layer_c4da99a943a1d56d40f5d8f35889e7e5 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var tile_layer_b52899fb25adaa5651e4bd76cb12d332 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+        
+    
+            var layer_control_f27cffac0edb331c100f24d5498b7bd5 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_bae97a4c559d3d3daec4d914af8c0a14,
+                    "stamenwatercolor" : tile_layer_0b0229aad792ab7b6b15354645d4d9ae,
+                    "openstreetmap" : tile_layer_afa58abac06c5508fe8c0b9b4881e612,
+                    "stamentoner" : tile_layer_264b9e6dcf086a228bc9ef5fd2057b8c,
+                    "cartodbpositron" : tile_layer_c4da99a943a1d56d40f5d8f35889e7e5,
+                    "cartodbdark_matter" : tile_layer_b52899fb25adaa5651e4bd76cb12d332,
+                },
+                overlays :  {
+                    "Denver - homes_sold" : heat_map_9ab6b28576bb8e2c0efb99e044604ef1,
+                    "Homes Sold Centers" : feature_group_55f0fd7e024c05d6dcdba064044da6f5,
+                },
+            };
+            L.control.layers(
+                layer_control_f27cffac0edb331c100f24d5498b7bd5.base_layers,
+                layer_control_f27cffac0edb331c100f24d5498b7bd5.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_bea07e618f34693f29bb4c0fe70c5992);
+            tile_layer_0b0229aad792ab7b6b15354645d4d9ae.remove();
+            tile_layer_afa58abac06c5508fe8c0b9b4881e612.remove();
+            tile_layer_bae97a4c559d3d3daec4d914af8c0a14.remove();
+            tile_layer_264b9e6dcf086a228bc9ef5fd2057b8c.remove();
+            tile_layer_c4da99a943a1d56d40f5d8f35889e7e5.remove();
+            tile_layer_b52899fb25adaa5651e4bd76cb12d332.remove();
+        
+</script>
+</html>

@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_540062d4ef2ecca678e9e1e03c0b8879 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_540062d4ef2ecca678e9e1e03c0b8879" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_540062d4ef2ecca678e9e1e03c0b8879 = L.map(
+                "map_540062d4ef2ecca678e9e1e03c0b8879",
+                {
+                    center: [37.7615559496063, -122.4341716952756],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1da8a2cb52eef91864a8431410c27f63 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var heat_map_5c2fc8407ae8881520cb547412f568e2 = L.heatLayer(
+                [[37.77634, -122.43469, 0.0], [37.78096, -122.44323, 0.0], [37.76252, -122.4491, 0.5], [37.73099, -122.4676, 0.0], [37.73311, -122.38988, 0.0], [37.74111, -122.41469, 0.3333333333333333], [37.72016, -122.39266, 0.0], [37.76789, -122.44158, 1.0], [37.76184, -122.43378, 0.0], [37.78454, -122.42422, 0.0], [37.71962, -122.44309, 1.0], [37.75002, -122.38324, 0.5], [37.79449, -122.40657, 0.0], [37.77861, -122.41908, 0.0], [37.75629, -122.44871, 0.0], [37.76669, -122.45049, 0.0], [37.76441, -122.43857, 0.5], [37.79733, -122.44259, 0.5], [37.71138, -122.43622, 0.25], [37.74399, -122.44031, 0.0], [37.7549, -122.42673, 0.3333333333333333], [37.76797, -122.43234, 1.0], [37.75824, -122.43912, 0.25], [37.72128, -122.43081, 0.2857142857142857], [37.73943, -122.42955, 0.0], [37.79262, -122.39733, 0.0], [37.74793, -122.46372, 0.5], [37.75489, -122.45979, 1.0], [37.73845, -122.4396, 0.5], [37.75202, -122.47094, 0.6666666666666666], [37.76988, -122.44829, 0.3333333333333333], [37.77646, -122.42693, 0.0], [37.73713, -122.42075, 1.0], [37.72539, -122.37207, 0.0], [37.72069, -122.46141, 1.0], [37.72511, -122.46803, 0.5], [37.77938, -122.4685, 0.375], [37.76263, -122.46793, 0.25], [37.78613, -122.43002, 0.0], [37.74565, -122.45798, 0.3333333333333333], [37.78551, -122.47962, 0.5], [37.72058, -122.49343, 0.0], [37.71095, -122.39955, 0.0], [37.77812, -122.45288, 0.0], [37.77299, -122.43078, 0.1666666666666666], [37.78828, -122.416, 0.0], [37.78574, -122.43992, 0.1428571428571428], [37.73277, -122.48004, 1.0], [37.7503, -122.4504, 1.0], [37.77114, -122.42592, 0.0], [37.7389, -122.44905, 0.1666666666666666], [37.77113, -122.39146, 0.3333333333333333], [37.76382, -122.42574, 0.4], [37.72806, -122.43515, 0.0], [37.79312, -122.41394, 0.0], [37.74778, -122.43125, 0.0], [37.8009, -122.40855, 0.4], [37.80143, -122.40019, 0.0], [37.7159, -122.45559, 0.0], [37.71137, -122.45392, 0.5], [37.7771, -122.49233, 0.4666666666666666], [37.75378, -122.49547, 0.3333333333333333], [37.79232, -122.4342, 0.1333333333333333], [37.77392, -122.44547, 0.6666666666666666], [37.71962, -122.47942, 0.0], [37.74051, -122.48737, 0.25], [37.76097, -122.45631, 0.5], [37.74622, -122.40742, 0.5], [37.79419, -122.42141, 0.0], [37.72599, -122.4073, 0.2], [37.75783, -122.39954, 0.1], [37.78873, -122.45234, 0.0], [37.79742, -122.46643, 1.0], [37.78701, -122.46425, 0.5], [37.78733, -122.39115, 0.0769230769230769], [37.8004, -122.41759, 0.1818181818181818], [37.7868, -122.48885, 1.0], [37.73743, -122.45687, 0.0], [37.73383, -122.39833, 0.0], [37.78167, -122.38929, 0.1785714285714285], [37.77845, -122.40608, 0.1951219512195122], [37.73627, -122.46606, 0.25], [37.73352, -122.4257, 0.0], [37.71097, -122.42009, 0.0], [37.73002, -122.4465, 0.5], [37.77798, -122.50793, 0.5], [37.80233, -122.40547, 0.0], [37.78409, -122.41482, 0.0], [37.79863, -122.43074, 0.5999999999999999], [37.72693, -122.41809, 0.25], [37.75135, -122.44304, 0.0], [37.71346, -122.40848, 0.3333333333333333], [37.73977, -122.47066, 0.5], [37.78006, -122.43494, 1.0], [37.73275, -122.45655, 0.5], [37.72746, -122.45637, 0.3333333333333333], [37.81095, -122.36588, 1.0], [37.7770771, -122.4365807, 0.0], [37.8048637, -122.42566, 0.0], [37.7646865, -122.4512005, 0.4], [37.7635614, -122.4173724, 0.0], [37.7782864, -122.4653775, 0.4], [37.7127107, -122.3815252, 0.0], [37.7850246, -122.4005003, 0.5], [37.7690189, -122.4019298, 0.0], [37.7936658, -122.3964729, 0.0], [37.76955100000001, -122.433214, 0.0], [37.7861923, -122.4400385, 0.0], [37.7749295, -122.4194155, 0.0], [37.7296178, -122.4935865, 0.25], [37.783278, -122.4566316, 1.0], [37.8043849, -122.4370011, 0.375], [37.7749295, -122.4194155, 0.0], [37.7635614, -122.4173724, 0.1875], [37.7282679, -122.4640937, 0.5], [37.7929158, -122.4046905, 0.1282051282051281], [37.7897312, -122.401906, 0.3225806451612903], [37.7815501, -122.3940353, 0.0], [37.7749295, -122.4194155, 0.1842105263157894], [37.7749295, -122.4194155, 0.3278688524590163], [37.7749295, -122.4194155, 0.0], [37.7395735, -122.470007, 1.0], [37.7850246, -122.4005003, 0.1428571428571428], [37.7850045, -122.4004816, 0.3333333333333333]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var feature_group_d88161885d5bb6d6411d800df7646fb8 = L.featureGroup(
+                {}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var circle_marker_d83f3c01078dd1ae0b8d400ace303e36 = L.circleMarker(
+                [37.77634, -122.43469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_d83f3c01078dd1ae0b8d400ace303e36.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c65dbecb90a61d30fa7a5cdf8d4655a4 = L.circleMarker(
+                [37.78096, -122.44323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_c65dbecb90a61d30fa7a5cdf8d4655a4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Anza Vista<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ead0e209dbaba6e6291e42613b33d987 = L.circleMarker(
+                [37.76252, -122.4491],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_ead0e209dbaba6e6291e42613b33d987.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5e782500d683fcf9297bd8b65e4918f = L.circleMarker(
+                [37.73099, -122.4676],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_a5e782500d683fcf9297bd8b65e4918f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Terrace<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_59dcb865616cc044f399ea5074aa0c08 = L.circleMarker(
+                [37.73311, -122.38988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_59dcb865616cc044f399ea5074aa0c08.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bayview<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5eb8f3bc48445b84a8cec37da03815d = L.circleMarker(
+                [37.74111, -122.41469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_a5eb8f3bc48445b84a8cec37da03815d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bernal Heights<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_042bd5c019aef697bd318c9e4ad6a0d0 = L.circleMarker(
+                [37.72016, -122.39266],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_042bd5c019aef697bd318c9e4ad6a0d0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Bret Harte<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_97b39b945fbe1d523b720d4bf2c32c6a = L.circleMarker(
+                [37.76789, -122.44158],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_97b39b945fbe1d523b720d4bf2c32c6a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Buena Vista<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_66bcf0a06bac443fa375655fb829589f = L.circleMarker(
+                [37.76184, -122.43378],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_66bcf0a06bac443fa375655fb829589f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Castro<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_024e656278892d07500b508e63fa26ab = L.circleMarker(
+                [37.78454, -122.42422],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_024e656278892d07500b508e63fa26ab.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cathedral Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f1bad4e1e1a82fced4c1e68826c5f9db = L.circleMarker(
+                [37.71962, -122.44309],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f1bad4e1e1a82fced4c1e68826c5f9db.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cayuga<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f698792ea8194a80a9b5908ca1f0e0af = L.circleMarker(
+                [37.75002, -122.38324],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f698792ea8194a80a9b5908ca1f0e0af.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central Waterfront<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_13c8c0286850e072838ab79160955095 = L.circleMarker(
+                [37.79449, -122.40657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_13c8c0286850e072838ab79160955095.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Chinatown<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55ddcc7c287e5c585fcfb5c7cfdf9a9a = L.circleMarker(
+                [37.77861, -122.41908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_55ddcc7c287e5c585fcfb5c7cfdf9a9a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Civic Center<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2dcc034eee9775e263e5fee62ccc5016 = L.circleMarker(
+                [37.75629, -122.44871],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_2dcc034eee9775e263e5fee62ccc5016.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Clarendon Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1a204fd7716455a0473bf590a55e64c0 = L.circleMarker(
+                [37.76669, -122.45049],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_1a204fd7716455a0473bf590a55e64c0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cole Valley<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d2b8e4b71fa1637ad9d5c5b8dd756bc = L.circleMarker(
+                [37.76441, -122.43857],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_2d2b8e4b71fa1637ad9d5c5b8dd756bc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Corona Heights<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f31dae927dcbbcb0da62b86bfac1425a = L.circleMarker(
+                [37.79733, -122.44259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f31dae927dcbbcb0da62b86bfac1425a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Cow Hollow<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7938aed124bf8455663f8988a5e050f1 = L.circleMarker(
+                [37.71138, -122.43622],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_7938aed124bf8455663f8988a5e050f1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Crocker Amazon<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3657b3e83fccdc6a62170ba6c45a9ad8 = L.circleMarker(
+                [37.74399, -122.44031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_3657b3e83fccdc6a62170ba6c45a9ad8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Diamond Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0fe5c054de3e98e8c07ca13823f3a6e = L.circleMarker(
+                [37.7549, -122.42673],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f0fe5c054de3e98e8c07ca13823f3a6e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Dolores Heights<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e15837464fa621d9756e296bb059779b = L.circleMarker(
+                [37.76797, -122.43234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_e15837464fa621d9756e296bb059779b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Triangle<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea407be203c71e4df0ca27d219260b2f = L.circleMarker(
+                [37.75824, -122.43912],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_ea407be203c71e4df0ca27d219260b2f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Eureka Valley<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b206371da4f45c5d4daf4ee962f2381d = L.circleMarker(
+                [37.72128, -122.43081],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_b206371da4f45c5d4daf4ee962f2381d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Excelsior<br>Off Market in Two Weeks: 0.2857142857142857<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a579c3ef83c52d96ca7e101c49c41188 = L.circleMarker(
+                [37.73943, -122.42955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_a579c3ef83c52d96ca7e101c49c41188.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fairmount<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4492aa9b0e307adf975d0969786ace30 = L.circleMarker(
+                [37.79262, -122.39733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_4492aa9b0e307adf975d0969786ace30.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Financial District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08c44723f2bfbf37f4dcc4cb2737f217 = L.circleMarker(
+                [37.80783, -122.41326],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_08c44723f2bfbf37f4dcc4cb2737f217.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fishermans Wharf<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_19b374817bcb207d20ebcc869e176b9e = L.circleMarker(
+                [37.74793, -122.46372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_19b374817bcb207d20ebcc869e176b9e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Hill<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_044eeef5ae1f9ffcd28c4ca3b6376fad = L.circleMarker(
+                [37.75489, -122.45979],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_044eeef5ae1f9ffcd28c4ca3b6376fad.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Forest Knolls<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b6313a17bfe50e9d9a0646a997fc595a = L.circleMarker(
+                [37.73845, -122.4396],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_b6313a17bfe50e9d9a0646a997fc595a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Glen Park<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ba507d41c3d4ac0a506d7c354401d33 = L.circleMarker(
+                [37.75202, -122.47094],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_3ba507d41c3d4ac0a506d7c354401d33.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Golden Gate Heights<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e46056308f4b1a4ecec971e818d62151 = L.circleMarker(
+                [37.76988, -122.44829],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_e46056308f4b1a4ecec971e818d62151.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Haight Ashbury<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_23d016253d851531d127bd0e846bc2cc = L.circleMarker(
+                [37.77646, -122.42693],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_23d016253d851531d127bd0e846bc2cc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hayes Valley<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b696c77caf2c15405fcd04c0b7496103 = L.circleMarker(
+                [37.73713, -122.42075],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_b696c77caf2c15405fcd04c0b7496103.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Holly Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b1ccf8e7e021641de0954c6cd5c39b54 = L.circleMarker(
+                [37.72539, -122.37207],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_b1ccf8e7e021641de0954c6cd5c39b54.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Hunters Point<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49ffc1e8de51c8dbb9c867d8d4428f4a = L.circleMarker(
+                [37.72069, -122.46141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_49ffc1e8de51c8dbb9c867d8d4428f4a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f96563953ac32c99822b58bb0086039b = L.circleMarker(
+                [37.72511, -122.46803],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f96563953ac32c99822b58bb0086039b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ingleside Terraces<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1d71c21ffedcd19a455fe71e4c03292 = L.circleMarker(
+                [37.77938, -122.4685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_d1d71c21ffedcd19a455fe71e4c03292.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Richmond<br>Off Market in Two Weeks: 0.375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_488b28fc6598c534751e3ee463387d9d = L.circleMarker(
+                [37.76263, -122.46793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_488b28fc6598c534751e3ee463387d9d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Inner Sunset<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_237f021fc9bf3e61af55b007043601b3 = L.circleMarker(
+                [37.78613, -122.43002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_237f021fc9bf3e61af55b007043601b3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Japantown<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_decdd4983a5daa6e2766e472cbd889b4 = L.circleMarker(
+                [37.74565, -122.45798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_decdd4983a5daa6e2766e472cbd889b4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laguna Honda<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_373f8f51f0b5bce4e90bd1f050b74e95 = L.circleMarker(
+                [37.78551, -122.47962],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_373f8f51f0b5bce4e90bd1f050b74e95.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lake Street<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d5faf083685a5ead3c476190b235fd0 = L.circleMarker(
+                [37.72058, -122.49343],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_6d5faf083685a5ead3c476190b235fd0.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_21c605dbdf28166bfb49aeb2aa680ed8 = L.circleMarker(
+                [37.71095, -122.39955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_21c605dbdf28166bfb49aeb2aa680ed8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Little Hollywood<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93eaed43d6aa66fb8da0470136cbdc82 = L.circleMarker(
+                [37.77812, -122.45288],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_93eaed43d6aa66fb8da0470136cbdc82.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lone Mountain<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_21032a86a120cd07820e5885faa61d18 = L.circleMarker(
+                [37.77299, -122.43078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_21032a86a120cd07820e5885faa61d18.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Haight<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fa5cd366eeeac03671038acbc4c070c1 = L.circleMarker(
+                [37.78828, -122.416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_fa5cd366eeeac03671038acbc4c070c1.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Nob Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a187429fdafa3ea130e3b9f4d669596c = L.circleMarker(
+                [37.78574, -122.43992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_a187429fdafa3ea130e3b9f4d669596c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lower Pacific Heights<br>Off Market in Two Weeks: 0.1428571428571428<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a87c449b10f24dd015d67b9df9d3de34 = L.circleMarker(
+                [37.73277, -122.48004],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_a87c449b10f24dd015d67b9df9d3de34.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Merced Manor<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0989e5bdd7a7b705f0dd72732babe492 = L.circleMarker(
+                [37.7503, -122.4504],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_0989e5bdd7a7b705f0dd72732babe492.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Midtown Terrace<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b8f7ad7604b4a33ad5c1c2b4cd5869ed = L.circleMarker(
+                [37.77114, -122.42592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_b8f7ad7604b4a33ad5c1c2b4cd5869ed.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mint Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_779500a0954de8ee279e8ccc509d079a = L.circleMarker(
+                [37.7389, -122.44905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_779500a0954de8ee279e8ccc509d079a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Miraloma Park<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_342bccb4d7d2f5c841b56342a5032bb5 = L.circleMarker(
+                [37.77113, -122.39146],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_342bccb4d7d2f5c841b56342a5032bb5.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Bay<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90af40cb6c8262371c165d8fd96d8223 = L.circleMarker(
+                [37.76382, -122.42574],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_90af40cb6c8262371c165d8fd96d8223.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Dolores<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_199720fde731a1f732551027ce2b9d7c = L.circleMarker(
+                [37.72806, -122.43515],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_199720fde731a1f732551027ce2b9d7c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission Terrace<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c4cd653c1986ab6cb776db90062ef8f6 = L.circleMarker(
+                [37.73306, -122.46165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_c4cd653c1986ab6cb776db90062ef8f6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Monterey Heights<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e762157138d193493adb9ff31de41fe8 = L.circleMarker(
+                [37.79312, -122.41394],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_e762157138d193493adb9ff31de41fe8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Nob Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2fa81068d027ace97dd5d0682a1cd2e8 = L.circleMarker(
+                [37.74778, -122.43125],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_2fa81068d027ace97dd5d0682a1cd2e8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Noe Valley<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_03aeb91054670075a8aa6f77a1b7dee8 = L.circleMarker(
+                [37.8009, -122.40855],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_03aeb91054670075a8aa6f77a1b7dee8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - North Beach<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f8168e8b6e0231820bcc3bbd74e8d8b = L.circleMarker(
+                [37.80143, -122.40019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_2f8168e8b6e0231820bcc3bbd74e8d8b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northern Waterfront<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2b9a303104cb0ab9d11dacb21c5f9486 = L.circleMarker(
+                [37.7159, -122.45559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_2b9a303104cb0ab9d11dacb21c5f9486.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Oceanview<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_037310b3a1a5b62a91dfc64dac4e7adf = L.circleMarker(
+                [37.71137, -122.45392],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_037310b3a1a5b62a91dfc64dac4e7adf.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Mission<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_607351289bf103c2358f29f92c7e9f14 = L.circleMarker(
+                [37.7771, -122.49233],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_607351289bf103c2358f29f92c7e9f14.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Richmond<br>Off Market in Two Weeks: 0.4666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f4779d9b14399b85b3a383393c3ee54f = L.circleMarker(
+                [37.75378, -122.49547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f4779d9b14399b85b3a383393c3ee54f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Outer Sunset<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67d5da6e0b5274e1bdcf728742e9859c = L.circleMarker(
+                [37.79232, -122.4342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_67d5da6e0b5274e1bdcf728742e9859c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Pacific Heights<br>Off Market in Two Weeks: 0.1333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8871d77f63a3247dd6270fcfd556185a = L.circleMarker(
+                [37.77392, -122.44547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_8871d77f63a3247dd6270fcfd556185a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Panhandle<br>Off Market in Two Weeks: 0.6666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6dcc9e30807a1316d4b4acba6a0ef45f = L.circleMarker(
+                [37.71962, -122.47942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_6dcc9e30807a1316d4b4acba6a0ef45f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkmerced<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7858344e6c8bbf6378a0cc837b53c0f4 = L.circleMarker(
+                [37.74051, -122.48737],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_7858344e6c8bbf6378a0cc837b53c0f4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parkside<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8ae7c01e5753c6a0bb4ca7332c70773e = L.circleMarker(
+                [37.76097, -122.45631],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_8ae7c01e5753c6a0bb4ca7332c70773e.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Parnassus Heights<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1930a41b2e61a26c950ffc6bbb192c91 = L.circleMarker(
+                [37.74622, -122.40742],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_1930a41b2e61a26c950ffc6bbb192c91.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Peralta Heights<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7ff9a826401de526f9ba98d5c9b5c05 = L.circleMarker(
+                [37.79419, -122.42141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_d7ff9a826401de526f9ba98d5c9b5c05.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Polk Gulch<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5bda7f885298463ce90004cf2e5e6bc = L.circleMarker(
+                [37.72599, -122.4073],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_e5bda7f885298463ce90004cf2e5e6bc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Portola<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52c764f385facf7d945ad7b1c1e3c511 = L.circleMarker(
+                [37.75783, -122.39954],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_52c764f385facf7d945ad7b1c1e3c511.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Potrero Hill<br>Off Market in Two Weeks: 0.1<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6aae9a59a839a33c600295f6a9c339a4 = L.circleMarker(
+                [37.78873, -122.45234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_6aae9a59a839a33c600295f6a9c339a4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Heights<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34fe43d1cd6f2d486554ca63b74a486b = L.circleMarker(
+                [37.79742, -122.46643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_34fe43d1cd6f2d486554ca63b74a486b.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio National Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_711f63254d88d3c49b0b4d0aef820686 = L.circleMarker(
+                [37.78701, -122.46425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_711f63254d88d3c49b0b4d0aef820686.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Presidio Terrace<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbdf874d02602818cfad668c6b6a1756 = L.circleMarker(
+                [37.78733, -122.39115],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_dbdf874d02602818cfad668c6b6a1756.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Rincon Hill<br>Off Market in Two Weeks: 0.0769230769230769<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4f7087513de0fad449ffeba75a2f05c3 = L.circleMarker(
+                [37.8004, -122.41759],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_4f7087513de0fad449ffeba75a2f05c3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Russian Hill<br>Off Market in Two Weeks: 0.1818181818181818<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f3da7b793b2f1d90195a262c80ab456 = L.circleMarker(
+                [37.7868, -122.48885],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_1f3da7b793b2f1d90195a262c80ab456.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Seacliff<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7f787338113eee736be1d7c02e424bab = L.circleMarker(
+                [37.73743, -122.45687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_7f787338113eee736be1d7c02e424bab.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sherwood Forest<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9426836de383654323232fbb7279ebe6 = L.circleMarker(
+                [37.7692, -122.40338],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_9426836de383654323232fbb7279ebe6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Showplace Square<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25a4da48031e562e5a0e05f04bcc10d2 = L.circleMarker(
+                [37.73383, -122.39833],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_25a4da48031e562e5a0e05f04bcc10d2.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Silver Terrace<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3be9c8f4ef77fec26db6045eb8e84fad = L.circleMarker(
+                [37.78167, -122.38929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_3be9c8f4ef77fec26db6045eb8e84fad.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Beach<br>Off Market in Two Weeks: 0.1785714285714285<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53d97a09e9fd40955ef898a318a8d88d = L.circleMarker(
+                [37.77845, -122.40608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_53d97a09e9fd40955ef898a318a8d88d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South of Market<br>Off Market in Two Weeks: 0.1951219512195122<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8eba4c089c7223505661e681114c6815 = L.circleMarker(
+                [37.73627, -122.46606],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_8eba4c089c7223505661e681114c6815.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Francis Wood<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_801d41405b13024746cab871acfeddf6 = L.circleMarker(
+                [37.73352, -122.4257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_801d41405b13024746cab871acfeddf6.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - St. Marys Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5b729d0b73d00b6c15c89f55e989cee7 = L.circleMarker(
+                [37.71097, -122.42009],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_5b729d0b73d00b6c15c89f55e989cee7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnydale<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d129a854e9eb584ab736c25a1b077363 = L.circleMarker(
+                [37.73002, -122.4465],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_d129a854e9eb584ab736c25a1b077363.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sunnyside<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67f9c61572aa76f683b18bbcddb4f246 = L.circleMarker(
+                [37.77798, -122.50793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_67f9c61572aa76f683b18bbcddb4f246.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Sutro Heights<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3e361d28f87c253cf2dcac4221f5f40 = L.circleMarker(
+                [37.80233, -122.40547],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_c3e361d28f87c253cf2dcac4221f5f40.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Telegraph Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e5927bd2343a7a5597d692ddf5e5185 = L.circleMarker(
+                [37.78409, -122.41482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_1e5927bd2343a7a5597d692ddf5e5185.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Tenderloin<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9a777f196af10af2845946c19ace17a = L.circleMarker(
+                [37.79863, -122.43074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_f9a777f196af10af2845946c19ace17a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Union Street<br>Off Market in Two Weeks: 0.5999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34836f129f682396a74a21ccc15f5879 = L.circleMarker(
+                [37.72693, -122.41809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_34836f129f682396a74a21ccc15f5879.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - University Mound<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94cf3d7c19e60c51011a6a6090af4c74 = L.circleMarker(
+                [37.75135, -122.44304],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_94cf3d7c19e60c51011a6a6090af4c74.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Upper Market<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_147d2f3a1c848265aac0e7e1215ef21d = L.circleMarker(
+                [37.71346, -122.40848],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_147d2f3a1c848265aac0e7e1215ef21d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Visitacion Valley<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5a9d07dc7c87be1f518994acc4cffeae = L.circleMarker(
+                [37.73977, -122.47066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_5a9d07dc7c87be1f518994acc4cffeae.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0d0273a6cc2c81c887a0176c85c6c3ee = L.circleMarker(
+                [37.78006, -122.43494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_0d0273a6cc2c81c887a0176c85c6c3ee.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western Addition<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_74169439d6dd1c7a70393036ac7ff63a = L.circleMarker(
+                [37.73275, -122.45655],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_74169439d6dd1c7a70393036ac7ff63a.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Highlands<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2509296f5882c498859d4142c851aa3 = L.circleMarker(
+                [37.72746, -122.45637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_e2509296f5882c498859d4142c851aa3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Westwood Park<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_abda06675629f4026ebfdaff29f1a8d8 = L.circleMarker(
+                [37.81095, -122.36588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_abda06675629f4026ebfdaff29f1a8d8.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena Island<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_43d1c37aeb603d8eceb032b82c592233 = L.circleMarker(
+                [37.7770771, -122.4365807],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_43d1c37aeb603d8eceb032b82c592233.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Alamo Square Historic District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8a161f4cb2687c8c2bea3e8998ea3231 = L.circleMarker(
+                [37.8048637, -122.42566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_8a161f4cb2687c8c2bea3e8998ea3231.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Aquatic Park-Fort Mason<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9b741ab978dec41077e34bcb04d70a03 = L.circleMarker(
+                [37.7646865, -122.4512005],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_9b741ab978dec41077e34bcb04d70a03.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Ashbury Heights / Parnassus<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_16675b4e52845ebbe6965eab57e74dde = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_16675b4e52845ebbe6965eab57e74dde.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Baja Noe / Mission Deluxe<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a494660dd9c2e0011b27182d57d56b3 = L.circleMarker(
+                [37.7782864, -122.4653775],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_7a494660dd9c2e0011b27182d57d56b3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Balboa Hollow<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad47309009c4d903447427d60b8ae062 = L.circleMarker(
+                [37.7127107, -122.3815252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_ad47309009c4d903447427d60b8ae062.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Candlestick Point State Recreation Area<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9ceaf46b836547d276cf05ab9ea37766 = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_9ceaf46b836547d276cf05ab9ea37766.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Central South of Market<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c9320ee43bd397290392789f3385771 = L.circleMarker(
+                [37.7690189, -122.4019298],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_3c9320ee43bd397290392789f3385771.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Design District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55b162df187615e3f00491a7b0cc0c33 = L.circleMarker(
+                [37.7936658, -122.3964729],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_55b162df187615e3f00491a7b0cc0c33.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Downtown San Francisco-Union Square<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ffa22cc72aaa1e7f39373a4958cdf0b3 = L.circleMarker(
+                [37.76955100000001, -122.433214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_ffa22cc72aaa1e7f39373a4958cdf0b3.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Duboce Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c01b52f7a463c9cbd730caecdd2fb377 = L.circleMarker(
+                [37.7861923, -122.4400385],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_c01b52f7a463c9cbd730caecdd2fb377.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Fillmore District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7de1cd580bcfbd71efc70505518e3d7 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_b7de1cd580bcfbd71efc70505518e3d7.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Intermission<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ab9c5fd33144e9a837656b4a1250064c = L.circleMarker(
+                [37.7296178, -122.4935865],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_ab9c5fd33144e9a837656b4a1250064c.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Lakeshore Acres<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b234e640fc133e56320111d2ba0c17f = L.circleMarker(
+                [37.783278, -122.4566316],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_8b234e640fc133e56320111d2ba0c17f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Laurel Heights-Jordan Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bf655c8d0af3f7f44f5f87bfbd28e53 = L.circleMarker(
+                [37.8043849, -122.4370011],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_5bf655c8d0af3f7f44f5f87bfbd28e53.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina District<br>Off Market in Two Weeks: 0.375<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07f30cb14074760fb867925c7c3e4954 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_07f30cb14074760fb867925c7c3e4954.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Marina Gardens<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_efc73a7ed5e2db321f474300c6f70773 = L.circleMarker(
+                [37.7635614, -122.4173724],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_efc73a7ed5e2db321f474300c6f70773.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mission District<br>Off Market in Two Weeks: 0.1875<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ceb4a4d527b8b481c662d43349322605 = L.circleMarker(
+                [37.7282679, -122.4640937],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_ceb4a4d527b8b481c662d43349322605.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Mount Davidson Manor<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49e1f4bd4ffcfccfd07b4c862927184d = L.circleMarker(
+                [37.7929158, -122.4046905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_49e1f4bd4ffcfccfd07b4c862927184d.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northeast San Francisco<br>Off Market in Two Weeks: 0.1282051282051281<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_129f98e3a938e346dc1dae7614bf7420 = L.circleMarker(
+                [37.7897312, -122.401906],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_129f98e3a938e346dc1dae7614bf7420.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Northwest San Francisco<br>Off Market in Two Weeks: 0.3225806451612903<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_46bc94a04126707f5acb53dc12b5f262 = L.circleMarker(
+                [37.7815501, -122.3940353],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_46bc94a04126707f5acb53dc12b5f262.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - South Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eafab0bf52a122444a51414e507fb24f = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_eafab0bf52a122444a51414e507fb24f.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southeast San Francisco<br>Off Market in Two Weeks: 0.1842105263157894<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e3adcbaf2f998c7f915f2d90362a3063 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_e3adcbaf2f998c7f915f2d90362a3063.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Southwest San Francisco<br>Off Market in Two Weeks: 0.3278688524590163<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c1b372d32ce852ea36f52ff2dd47ced4 = L.circleMarker(
+                [37.7749295, -122.4194155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_c1b372d32ce852ea36f52ff2dd47ced4.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Transmission<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_243bc5ffe5116e606fba2ca4252224fc = L.circleMarker(
+                [37.7395735, -122.470007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_243bc5ffe5116e606fba2ca4252224fc.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - West Portal Park<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a83fb2a716c7eaee6b4ba9df67097429 = L.circleMarker(
+                [37.7850246, -122.4005003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_a83fb2a716c7eaee6b4ba9df67097429.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Western South of Market<br>Off Market in Two Weeks: 0.1428571428571428<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2e0a0b5579a036109f5800dfca3d2cd9 = L.circleMarker(
+                [37.7850045, -122.4004816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d88161885d5bb6d6411d800df7646fb8);
+        
+    
+            circle_marker_2e0a0b5579a036109f5800dfca3d2cd9.bindTooltip(
+                `<div>
+                     City: San Francisco<br>Region: San Francisco, CA - Yerba Buena<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_be1338028c0db964e5a55b1c2e6f9599 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var tile_layer_c8dde21b216934b9e6bd30183dd558ce = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var tile_layer_c67395ca40fe7a3bccfe0cc5c00d3186 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var tile_layer_78875a3fc4d0f2ed57425bb0a60f8ab8 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var tile_layer_7e90c48061c5944ec0c3075c46e84e5c = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var tile_layer_07c0b6fec9d9b730e26dc6c01f1a563e = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+        
+    
+            var layer_control_d81dc4b317aba8da88f2cd4fa49e3435 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_c67395ca40fe7a3bccfe0cc5c00d3186,
+                    "stamenwatercolor" : tile_layer_be1338028c0db964e5a55b1c2e6f9599,
+                    "openstreetmap" : tile_layer_c8dde21b216934b9e6bd30183dd558ce,
+                    "stamentoner" : tile_layer_78875a3fc4d0f2ed57425bb0a60f8ab8,
+                    "cartodbpositron" : tile_layer_7e90c48061c5944ec0c3075c46e84e5c,
+                    "cartodbdark_matter" : tile_layer_07c0b6fec9d9b730e26dc6c01f1a563e,
+                },
+                overlays :  {
+                    "San Francisco - off_market_in_two_weeks" : heat_map_5c2fc8407ae8881520cb547412f568e2,
+                    "Off Market in Two Weeks Centers" : feature_group_d88161885d5bb6d6411d800df7646fb8,
+                },
+            };
+            L.control.layers(
+                layer_control_d81dc4b317aba8da88f2cd4fa49e3435.base_layers,
+                layer_control_d81dc4b317aba8da88f2cd4fa49e3435.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_540062d4ef2ecca678e9e1e03c0b8879);
+            tile_layer_be1338028c0db964e5a55b1c2e6f9599.remove();
+            tile_layer_c8dde21b216934b9e6bd30183dd558ce.remove();
+            tile_layer_c67395ca40fe7a3bccfe0cc5c00d3186.remove();
+            tile_layer_78875a3fc4d0f2ed57425bb0a60f8ab8.remove();
+            tile_layer_7e90c48061c5944ec0c3075c46e84e5c.remove();
+            tile_layer_07c0b6fec9d9b730e26dc6c01f1a563e.remove();
+        
+</script>
+</html>

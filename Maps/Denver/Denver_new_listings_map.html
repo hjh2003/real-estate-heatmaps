@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8a7ec74191e63d5d8df2c1d1d6a53ee4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8a7ec74191e63d5d8df2c1d1d6a53ee4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8a7ec74191e63d5d8df2c1d1d6a53ee4 = L.map(
+                "map_8a7ec74191e63d5d8df2c1d1d6a53ee4",
+                {
+                    center: [39.73048961538462, -104.96975692923075],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d1cd6dc4b66a58fa2f217aae46322c5f = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var heat_map_dd509bea9d5fec6702b12d7d367b1e17 = L.heatLayer(
+                [[39.70357, -105.0104, 30.0], [39.74582, -105.00827, 1.0], [39.71522, -104.99621, 50.0], [39.71839, -105.03239, 21.0], [39.6611, -105.06554, 51.0], [39.70504, -104.95048, 31.0], [39.77671, -105.03938, 71.0], [39.73365, -104.9802, 97.0], [39.78762, -105.01205, 25.0], [39.73458, -104.96643, 43.0], [39.7194, -104.94928, 68.0], [39.74536, -104.96657, 42.0], [39.76741, -104.95014, 27.0], [39.76719, -104.9662, 22.0], [39.66304, -105.02165, 17.0], [39.73285, -104.95031, 58.0], [39.74068, -104.89446, 32.0], [39.75913, -104.98336, 78.0], [39.64155, -105.04798, 58.0], [39.78055, -104.98683, 13.0], [39.67379, -104.91469, 30.0], [39.73291, -104.93156, 71.0], [39.66097, -104.8908, 121.0], [39.64074, -104.89694, 101.0], [39.67531, -105.04107, 56.0], [39.76326, -105.01231, 75.0], [39.71869, -104.92434, 44.0], [39.75217, -105.01922, 18.0], [39.73254, -105.00485, 43.0], [39.68951, -105.03913, 30.0], [39.62747, -105.07892, 73.0], [39.78602, -104.83727, 76.0], [39.73286, -104.91295, 31.0], [39.75652, -104.92201, 42.0], [39.77445, -104.92331, 37.0], [39.68141, -104.9931, 12.0], [39.68661, -104.98106, 53.0], [39.78761, -105.04399, 31.0], [39.67312, -104.98052, 14.0], [39.68999, -105.01119, 28.0], [39.75163, -105.03982, 55.0], [39.7456, -104.92206, 60.0], [39.64029, -104.91668, 17.0], [39.77645, -105.01189, 82.0], [39.66447, -104.93255, 50.0], [39.71717, -105.01522, 14.0], [39.68679, -104.92416, 77.0], [39.70124, -104.96627, 63.0], [39.70258, -104.9799, 52.0], [39.70149, -104.91518, 69.0], [39.66064, -104.94955, 17.0], [39.74004, -105.03859, 79.0], [39.76395, -105.03924, 81.0], [39.70402, -105.03921, 34.0], [39.75636, -104.96656, 22.0], [39.70331, -104.88583, 103.0], [39.7184466, -104.9773107, 5.0], [39.7300652, -104.9984212, 4.0], [39.7592936, -104.9937538, 22.0], [39.7392358, -104.990251, 11.0], [39.7392358, -104.990251, 5.0], [39.7392358, -104.990251, 5.0], [39.7392324, -104.9874129, 3.0], [39.7336946, -104.982297, 13.0], [39.7392358, -104.990251, 26.0], [39.7824095, -104.8804893, 180.0], [39.7824095, -104.8804893, 153.0], [39.7392358, -104.990251, 2.0], [39.7392358, -104.990251, 12.0], [39.7196594, -104.957856, 5.0], [39.740088, -104.96909, 15.0], [39.7403376, -105.0469221, 9.0], [39.7909108, -104.8904173, 13.0], [39.6893366, -104.9500499, 36.0], [39.7577469, -104.9794943, 23.0], [39.7256237, -104.9658472, 18.0], [39.7451998, -104.9921849, 136.0], [39.7583765, -104.9217031, 12.0], [39.7698274, -104.9041377, 279.0], [39.7392358, -104.990251, 194.0], [39.7392358, -104.990251, 30.0], [39.7608751, -104.8717317, 11.0], [39.7161481, -105.0586639, 3.0], [39.7336946, -104.982297, 9.0], [39.7392358, -104.990251, 2.0], [39.7392358, -104.990251, 29.0], [39.7854582, -104.8571368, 268.0], [39.7693376, -105.0299822, 238.0], [39.6531038, -104.8987661, 248.0], [39.7392358, -104.990251, 280.0], [39.7837575, -104.7945972, 57.0], [39.7832359, -104.7579278, 103.0], [39.7608333, -105.0180556, 4.0], [39.6758185, -104.9604243, 14.0], [39.7392358, -104.990251, 15.0], [39.7320488, -104.9861214, 11.0], [39.7392358, -104.990251, 57.0], [39.7197837, -104.8910078, 50.0], [39.7392358, -104.990251, 3.0], [39.7392358, -104.990251, 6.0], [39.7854582, -104.8571368, 128.0], [39.7693376, -105.0299822, 200.0], [39.6531038, -104.8987661, 227.0], [39.7855996, -104.9912739, 122.0], [39.7392358, -104.990251, 22.0], [39.7644926, -104.9659559, 34.0], [39.7693376, -105.0299822, 439.0], [39.6875735, -104.9804379, 8.0], [39.7745645, -104.9223102, 139.0], [39.7320363, -104.9810371, 5.0], [39.6875523, -104.9803741, 53.0], [39.76554000000001, -105.0205793, 8.0], [39.7392358, -104.990251, 11.0], [39.7392358, -104.990251, 6.0], [39.7512018, -105.0345899, 55.0], [39.66461, -104.9876645, 6.0], [39.7824095, -104.8804893, 225.0], [39.6785031, -104.9875969, 374.0], [39.7824095, -104.8804893, 13.0], [39.6531038, -104.8987661, 260.0], [39.6531038, -104.8987661, 134.0], [39.7392358, -104.990251, 8.0], [39.7392358, -104.990251, 280.0], [39.7392358, -104.990251, 1.0], [39.7392358, -104.990251, 8.0], [39.7420787, -104.9773482, 4.0], [39.7931456, -105.0439213, 4.0], [39.7392358, -104.990251, 5.0], [39.7392358, -104.990251, 158.0], [39.7392358, -104.990251, 4.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var feature_group_4e43925b329fa5f4bf7f29bff19b204b = L.featureGroup(
+                {}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var circle_marker_426707a7e054f90292218c33dc27e2b4 = L.circleMarker(
+                [39.70357, -105.0104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_426707a7e054f90292218c33dc27e2b4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Athmar Park<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca7f10bd4754c39299db8853eabfdb26 = L.circleMarker(
+                [39.74582, -105.00827],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_ca7f10bd4754c39299db8853eabfdb26.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Auraria<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c4cea0e5b7d381e5b8b35315a830da91 = L.circleMarker(
+                [39.71522, -104.99621],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_c4cea0e5b7d381e5b8b35315a830da91.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Baker<br>New Listings: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_01d9c4c2b9c3010b6b0466c8b1ca0e79 = L.circleMarker(
+                [39.71839, -105.03239],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_01d9c4c2b9c3010b6b0466c8b1ca0e79.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Barnum<br>New Listings: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e344dae21d9475c97adc9d59b4c2f235 = L.circleMarker(
+                [39.6611, -105.06554],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e344dae21d9475c97adc9d59b4c2f235.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bear Valley<br>New Listings: 51.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2ac780f5e38b7962588a469e0b8f9024 = L.circleMarker(
+                [39.70504, -104.95048],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_2ac780f5e38b7962588a469e0b8f9024.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belcaro<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c8ff245494b15a3cacc6a068c52dcef0 = L.circleMarker(
+                [39.77671, -105.03938],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_c8ff245494b15a3cacc6a068c52dcef0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Berkeley<br>New Listings: 71.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2efd0bb750abacf00322c079c3e3faa = L.circleMarker(
+                [39.73365, -104.9802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e2efd0bb750abacf00322c079c3e3faa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capitol Hill<br>New Listings: 97.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b93dbf21a1cddd08c6e1e35f18e2e4dd = L.circleMarker(
+                [39.78762, -105.01205],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b93dbf21a1cddd08c6e1e35f18e2e4dd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chaffee Park<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_334fcd7be05bc1fcf71e1a9e7e9828ce = L.circleMarker(
+                [39.73458, -104.96643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_334fcd7be05bc1fcf71e1a9e7e9828ce.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheesman Park<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c41855f8826e3ebb831415a630ca8a83 = L.circleMarker(
+                [39.7194, -104.94928],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_c41855f8826e3ebb831415a630ca8a83.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek<br>New Listings: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4cd0f51ca5870f4ba708be9f8999b5c5 = L.circleMarker(
+                [39.74536, -104.96657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_4cd0f51ca5870f4ba708be9f8999b5c5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - City Park West<br>New Listings: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10a5a21d42bf3083e73b0b0babb33cf2 = L.circleMarker(
+                [39.76741, -104.95014],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_10a5a21d42bf3083e73b0b0babb33cf2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Clayton<br>New Listings: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_94dbc528c61e87f1ebb71ad529430ddd = L.circleMarker(
+                [39.76719, -104.9662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_94dbc528c61e87f1ebb71ad529430ddd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cole<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29177b15b286380d9cf2f336871dbd09 = L.circleMarker(
+                [39.66304, -105.02165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_29177b15b286380d9cf2f336871dbd09.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - College View<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_442597db1b8d7d042a5e2ae58b820b6a = L.circleMarker(
+                [39.73285, -104.95031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_442597db1b8d7d042a5e2ae58b820b6a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Congress Park<br>New Listings: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e35be50b6d4aabd4967a45aededb3a59 = L.circleMarker(
+                [39.74068, -104.89446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e35be50b6d4aabd4967a45aededb3a59.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Colfax<br>New Listings: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4424dc17fd2a3fa392df31a5c33ed95b = L.circleMarker(
+                [39.75913, -104.98336],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_4424dc17fd2a3fa392df31a5c33ed95b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Five Points<br>New Listings: 78.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e2c62ecff1adad2a5bae93a80fdbd608 = L.circleMarker(
+                [39.64155, -105.04798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e2c62ecff1adad2a5bae93a80fdbd608.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Fort Logan<br>New Listings: 58.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4e635dc16e27cfae9ddaf7e5f2d764d = L.circleMarker(
+                [39.78055, -104.98683],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d4e635dc16e27cfae9ddaf7e5f2d764d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Globeville<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_509c051aa875baa3029d1b65f797d2c8 = L.circleMarker(
+                [39.67379, -104.91469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_509c051aa875baa3029d1b65f797d2c8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Goldsmith<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_84d8a719604407162dd3e8b1a0e9c9f6 = L.circleMarker(
+                [39.73291, -104.93156],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_84d8a719604407162dd3e8b1a0e9c9f6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hale<br>New Listings: 71.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_224f4f36dfbb3eb15f5f03844d266eb0 = L.circleMarker(
+                [39.66097, -104.8908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_224f4f36dfbb3eb15f5f03844d266eb0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden<br>New Listings: 121.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_271d22fd406ddc3ee49fec576dfc376e = L.circleMarker(
+                [39.64074, -104.89694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_271d22fd406ddc3ee49fec576dfc376e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden South<br>New Listings: 101.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_def114a983b61f506e797b7d0d00ffb2 = L.circleMarker(
+                [39.67531, -105.04107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_def114a983b61f506e797b7d0d00ffb2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Harvey Park<br>New Listings: 56.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17c28a4ea2fb519245b5d96e1d402ef3 = L.circleMarker(
+                [39.76326, -105.01231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_17c28a4ea2fb519245b5d96e1d402ef3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland<br>New Listings: 75.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b86c562327dd52513dba0e3c05f1ffeb = L.circleMarker(
+                [39.71869, -104.92434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b86c562327dd52513dba0e3c05f1ffeb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hilltop<br>New Listings: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_acc63ce298f8d2eadacc0ba1dd1d5220 = L.circleMarker(
+                [39.75217, -105.01922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_acc63ce298f8d2eadacc0ba1dd1d5220.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Jefferson Park<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a98d6467019f0e53fb51f81432f428dd = L.circleMarker(
+                [39.73254, -105.00485],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a98d6467019f0e53fb51f81432f428dd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln Park<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87cde1bd4b62aaaad15f5a447aeeecdd = L.circleMarker(
+                [39.68951, -105.03913],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_87cde1bd4b62aaaad15f5a447aeeecdd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Mar Lee<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72150690bd5eda55a9217bdcab99e3c6 = L.circleMarker(
+                [39.62747, -105.07892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_72150690bd5eda55a9217bdcab99e3c6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Marston<br>New Listings: 73.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b9c6d9968ecef9cd3bc349602a47c84 = L.circleMarker(
+                [39.78602, -104.83727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_6b9c6d9968ecef9cd3bc349602a47c84.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montbello<br>New Listings: 76.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f1f37af185ff6baa90c2af66a713f34f = L.circleMarker(
+                [39.73286, -104.91295],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_f1f37af185ff6baa90c2af66a713f34f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montclair<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90467395c9a69003ea76ae337b36aa06 = L.circleMarker(
+                [39.75652, -104.92201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_90467395c9a69003ea76ae337b36aa06.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Park Hill<br>New Listings: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_22fb0c0b8be37b8eac81f23bff2c20a2 = L.circleMarker(
+                [39.77445, -104.92331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_22fb0c0b8be37b8eac81f23bff2c20a2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northeast Park Hill<br>New Listings: 37.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90b89b7a9120af5b3fdcf55c94cf18ce = L.circleMarker(
+                [39.68141, -104.9931],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_90b89b7a9120af5b3fdcf55c94cf18ce.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Overland<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ecbbffea43a2d3579cee0106e2044530 = L.circleMarker(
+                [39.68661, -104.98106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_ecbbffea43a2d3579cee0106e2044530.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platt Park<br>New Listings: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c33419acfde087c5e7c7891b24a067a = L.circleMarker(
+                [39.78761, -105.04399],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_7c33419acfde087c5e7c7891b24a067a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Regis<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db54cef40ffea7c77e551d4e76aa4f97 = L.circleMarker(
+                [39.67312, -104.98052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_db54cef40ffea7c77e551d4e76aa4f97.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Rosedale<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a184c2850d4359a3c2e6995ccc3ce359 = L.circleMarker(
+                [39.68999, -105.01119],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a184c2850d4359a3c2e6995ccc3ce359.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ruby Hill<br>New Listings: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bda016a0e90c3c5e70c720ba94ccdaef = L.circleMarker(
+                [39.75163, -105.03982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_bda016a0e90c3c5e70c720ba94ccdaef.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan Lake<br>New Listings: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cdc601f5794adee670bb327c08d267ae = L.circleMarker(
+                [39.7456, -104.92206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_cdc601f5794adee670bb327c08d267ae.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Park Hill<br>New Listings: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cb216a167dd70f336fd496828d3cc1c2 = L.circleMarker(
+                [39.64029, -104.91668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_cb216a167dd70f336fd496828d3cc1c2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southmoor Park<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_afc5870b7d56d0d1095353caf1be23e1 = L.circleMarker(
+                [39.77645, -105.01189],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_afc5870b7d56d0d1095353caf1be23e1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sunnyside<br>New Listings: 82.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_366a33d6177703eedf71b7e87dbffc24 = L.circleMarker(
+                [39.66447, -104.93255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_366a33d6177703eedf71b7e87dbffc24.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - University Hills<br>New Listings: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c3b3386c12af86091a7f2d2cc460603 = L.circleMarker(
+                [39.71717, -105.01522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_9c3b3386c12af86091a7f2d2cc460603.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Valverde<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e20122fa65f9f9b12c88e5d1afb4e36b = L.circleMarker(
+                [39.68679, -104.92416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e20122fa65f9f9b12c88e5d1afb4e36b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Virginia Village<br>New Listings: 77.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_59e507b2fdb01a65a697ae1784f5424d = L.circleMarker(
+                [39.70124, -104.96627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_59e507b2fdb01a65a697ae1784f5424d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park<br>New Listings: 63.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7cd17bc44687aea94e5d689b5eac0e10 = L.circleMarker(
+                [39.70258, -104.9799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_7cd17bc44687aea94e5d689b5eac0e10.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park West<br>New Listings: 52.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6266e6fa8417a07eece7e66e0990a12d = L.circleMarker(
+                [39.70149, -104.91518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_6266e6fa8417a07eece7e66e0990a12d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Virginia Vale<br>New Listings: 69.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_76c8cded681878bfbb5f67ecdec87d7b = L.circleMarker(
+                [39.66064, -104.94955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_76c8cded681878bfbb5f67ecdec87d7b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Wellshire<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f9a1d835d973fb66979149f30ebf8ee9 = L.circleMarker(
+                [39.74004, -105.03859],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_f9a1d835d973fb66979149f30ebf8ee9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Colfax<br>New Listings: 79.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_62a9d97015e06ae31cddd0288cb34914 = L.circleMarker(
+                [39.76395, -105.03924],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_62a9d97015e06ae31cddd0288cb34914.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Highland<br>New Listings: 81.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d1f42dee61e9985d669239ee79228b0 = L.circleMarker(
+                [39.70402, -105.03921],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_6d1f42dee61e9985d669239ee79228b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Westwood<br>New Listings: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9f7eda8175462463cfadca121663ee74 = L.circleMarker(
+                [39.75636, -104.96656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_9f7eda8175462463cfadca121663ee74.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Whittier<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61b46e2af624b9a15e5467fe637d4032 = L.circleMarker(
+                [39.70331, -104.88583],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_61b46e2af624b9a15e5467fe637d4032.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Windsor<br>New Listings: 103.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6ac357455fe28e9264471dd7300fc3a8 = L.circleMarker(
+                [39.7184466, -104.9773107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_6ac357455fe28e9264471dd7300fc3a8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Arlington Park<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9bc6930a2c52b7393683977dba37ef82 = L.circleMarker(
+                [39.7300652, -104.9984212],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_9bc6930a2c52b7393683977dba37ef82.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Art District on Santa Fe<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2bb8c623cc4da7a22cc06def30963579 = L.circleMarker(
+                [39.7592936, -104.9937538],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_2bb8c623cc4da7a22cc06def30963579.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ballpark Collective<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9a5c4bb0bebfbc05ea01cb52bb473e5 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e9a5c4bb0bebfbc05ea01cb52bb473e5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d4e799e1112830aa038d61b0a8799d7 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_3d4e799e1112830aa038d61b0a8799d7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue Park<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5d8d01b81459aa41a2e05dcd11677ae = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b5d8d01b81459aa41a2e05dcd11677ae.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belmont Park<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_338d9aa8a79d1f521498bcd9ad434c6b = L.circleMarker(
+                [39.7392324, -104.9874129],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_338d9aa8a79d1f521498bcd9ad434c6b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Broadway<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7023bfe90ef549cc641937a9365e1c7 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b7023bfe90ef549cc641937a9365e1c7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Burlington Capitol Hill<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5cdc3a7e9d34ef832c1c2110dcdb7315 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_5cdc3a7e9d34ef832c1c2110dcdb7315.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capital Avenue<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38344cc074ec739a7eaee8817c98df87 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_38344cc074ec739a7eaee8817c98df87.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Denver<br>New Listings: 180.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08d4ff8592831bc6b4083ef24d22e0b0 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_08d4ff8592831bc6b4083ef24d22e0b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Park<br>New Listings: 153.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b33b9a99e13e929c37764d7061527f7a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b33b9a99e13e929c37764d7061527f7a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chamberlins University Terrace East<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c30e1fc140a707dcdaf1b14ba46f1ba7 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_c30e1fc140a707dcdaf1b14ba46f1ba7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheltenham Heights<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ee85cbfb5daeb3902ede70a40d22c60c = L.circleMarker(
+                [39.7196594, -104.957856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_ee85cbfb5daeb3902ede70a40d22c60c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek North<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b62fe8d04410d6bd1a21aa267287b6a1 = L.circleMarker(
+                [39.740088, -104.96909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b62fe8d04410d6bd1a21aa267287b6a1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Avenue Park<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_74d844cc911ce784d41a48e611265f6a = L.circleMarker(
+                [39.7403376, -105.0469221],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_74d844cc911ce784d41a48e611265f6a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Terrace<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4f2c60090a1012aaaac9c0b748c94ff = L.circleMarker(
+                [39.7909108, -104.8904173],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d4f2c60090a1012aaaac9c0b748c94ff.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Conservatory Green at Stapleton<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8742ac9be4eab1ce28673a8ac390d8e6 = L.circleMarker(
+                [39.6893366, -104.9500499],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_8742ac9be4eab1ce28673a8ac390d8e6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cory-Merrill<br>New Listings: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b7f64b1c0639f33a6678b31aadc15b2 = L.circleMarker(
+                [39.7577469, -104.9794943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_0b7f64b1c0639f33a6678b31aadc15b2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Curtis Park<br>New Listings: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_502c8b7c2873dde4c48f330ca180749a = L.circleMarker(
+                [39.7256237, -104.9658472],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_502c8b7c2873dde4c48f330ca180749a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Denver Country Club<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d67123676c2016e3b0a603054af9eff0 = L.circleMarker(
+                [39.7451998, -104.9921849],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d67123676c2016e3b0a603054af9eff0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Downtown Denver<br>New Listings: 136.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b38fccb5b4d573801428334f952600e1 = L.circleMarker(
+                [39.7583765, -104.9217031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b38fccb5b4d573801428334f952600e1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East 29th Avenue<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d19fcf72f926e6871bc1fe7750630044 = L.circleMarker(
+                [39.7698274, -104.9041377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d19fcf72f926e6871bc1fe7750630044.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Central Denver<br>New Listings: 279.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_99c15eeb3e0d2e11565798d6476db7c3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_99c15eeb3e0d2e11565798d6476db7c3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Denver<br>New Listings: 194.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9dc02f60e180e4150642578f82842a39 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_9dc02f60e180e4150642578f82842a39.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Seventh Avenue Historic District<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7be10181ab4c003a772fa1eb7a1117c1 = L.circleMarker(
+                [39.7608751, -104.8717317],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_7be10181ab4c003a772fa1eb7a1117c1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastbridge<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_06ce91deff3810b437a6224f2af018b3 = L.circleMarker(
+                [39.7161481, -105.0586639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_06ce91deff3810b437a6224f2af018b3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastgate<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b8828952717d076253f75fcdad2a1c21 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b8828952717d076253f75fcdad2a1c21.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Emerys Capitol Hill<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b549c6943431ec586e28fe4c5f0f196a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b549c6943431ec586e28fe4c5f0f196a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evans Park Estates<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9afaedbcd738cea49bc83a5c75c13127 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_9afaedbcd738cea49bc83a5c75c13127.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evanston<br>New Listings: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_06cdcfb2d117a7d39e29a9f9a5d64709 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_06cdcfb2d117a7d39e29a9f9a5d64709.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northeast Denver<br>New Listings: 268.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a6dea0db24bca93dc2d15b80ef11f7c6 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a6dea0db24bca93dc2d15b80ef11f7c6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northwest Denver<br>New Listings: 238.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac38f7b2e8fc98c6d30b69e37dfb0c0e = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_ac38f7b2e8fc98c6d30b69e37dfb0c0e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southeast Denver<br>New Listings: 248.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2600d4f10ad24fe230577f4a97747f1 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a2600d4f10ad24fe230577f4a97747f1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southwest Denver<br>New Listings: 280.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8c766aee821a51198d78e35cfa49186 = L.circleMarker(
+                [39.7837575, -104.7945972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_f8c766aee821a51198d78e35cfa49186.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Gateway<br>New Listings: 57.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18efb1dd1ce42a996b937d8b96bf12fa = L.circleMarker(
+                [39.7832359, -104.7579278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_18efb1dd1ce42a996b937d8b96bf12fa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Green Valley Ranch<br>New Listings: 103.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5037c9720cf36612db8dae63b1a6f3aa = L.circleMarker(
+                [39.7608333, -105.0180556],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_5037c9720cf36612db8dae63b1a6f3aa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland Park<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5c4c55d50c19bfcf6d96a513f566909 = L.circleMarker(
+                [39.6758185, -104.9604243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_b5c4c55d50c19bfcf6d96a513f566909.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Iliffs University<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d729488a4af2a491ca43b3454c576ff2 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d729488a4af2a491ca43b3454c576ff2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Kettles<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2aba365fa73b1a92eb9a9496cd2e896 = L.circleMarker(
+                [39.7320488, -104.9861214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d2aba365fa73b1a92eb9a9496cd2e896.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d2a0096124de2e8ecaa636e204c6bcc = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_2d2a0096124de2e8ecaa636e204c6bcc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - LoHi<br>New Listings: 57.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_580cdf412942782dd3eed0bc10eb933b = L.circleMarker(
+                [39.7197837, -104.8910078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_580cdf412942782dd3eed0bc10eb933b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lowry<br>New Listings: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_be3089939c6883720d7b875f52db4aac = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_be3089939c6883720d7b875f52db4aac.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lynwood<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dce0d280bd729a80c2432e41dfd2c861 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_dce0d280bd729a80c2432e41dfd2c861.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Miller Park<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_db26e094cb8f0a9a61f7765360f4c7ae = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_db26e094cb8f0a9a61f7765360f4c7ae.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northeast Denver<br>New Listings: 128.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_478baa248cdd8a07f55559d1c7aaa121 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_478baa248cdd8a07f55559d1c7aaa121.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northwest Denver<br>New Listings: 200.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0cb02fbc4177692b1c7de0e82e5ea42a = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_0cb02fbc4177692b1c7de0e82e5ea42a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Southeast Denver<br>New Listings: 227.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bd1a2c89f29460528c9d2ada0bb811a6 = L.circleMarker(
+                [39.7855996, -104.9912739],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_bd1a2c89f29460528c9d2ada0bb811a6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Central Denver<br>New Listings: 122.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc04e08771e6592a3d66c7656eb3654c = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_fc04e08771e6592a3d66c7656eb3654c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North City Park<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb8d0f982455ba6939591b08eabe8cea = L.circleMarker(
+                [39.7644926, -104.9659559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_fb8d0f982455ba6939591b08eabe8cea.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Denver<br>New Listings: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d6601d8d20cfd9f4450b554a3ba30c9e = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d6601d8d20cfd9f4450b554a3ba30c9e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northwest Denver<br>New Listings: 439.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_03886b179e8771a1aab61ab81893cffe = L.circleMarker(
+                [39.6875735, -104.9804379],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_03886b179e8771a1aab61ab81893cffe.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Old South Pearl<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a569ec3f69d694e33d16e667afa57473 = L.circleMarker(
+                [39.7745645, -104.9223102],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a569ec3f69d694e33d16e667afa57473.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Park Hill<br>New Listings: 139.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_20b74686bb10a3b9ad01cf40e87fdba6 = L.circleMarker(
+                [39.7320363, -104.9810371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_20b74686bb10a3b9ad01cf40e87fdba6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Pennsylvania Street Historic District<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1cb72e75cccd5cb75c2c2dbfa61f24f = L.circleMarker(
+                [39.6875523, -104.9803741],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d1cb72e75cccd5cb75c2c2dbfa61f24f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platte Park<br>New Listings: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_95d6c71b73d06a5d0eec4ada4f80d823 = L.circleMarker(
+                [39.76554000000001, -105.0205793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_95d6c71b73d06a5d0eec4ada4f80d823.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Potter Highlands<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8d612235bd6b2a2a74b59b91272397e3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_8d612235bd6b2a2a74b59b91272397e3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Shackelton Place<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ef6650b916b7ed6c4dc36128adcf484a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_ef6650b916b7ed6c4dc36128adcf484a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sherman-Grant Historic District<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8704c5758bbc88afc28977f6b960e7e9 = L.circleMarker(
+                [39.7512018, -105.0345899],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_8704c5758bbc88afc28977f6b960e7e9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan's Lake<br>New Listings: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_408f6c6257f9e2f44d4e807429255d33 = L.circleMarker(
+                [39.66461, -104.9876645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_408f6c6257f9e2f44d4e807429255d33.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Broadway<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e0a0eec8ce06ef33b13f800e32162750 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_e0a0eec8ce06ef33b13f800e32162750.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Central Denver<br>New Listings: 225.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_559a9206fa7add4e43f4be4ff477a4e7 = L.circleMarker(
+                [39.6785031, -104.9875969],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_559a9206fa7add4e43f4be4ff477a4e7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Denver<br>New Listings: 374.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_994b545cc34455618ea5808b868d8a01 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_994b545cc34455618ea5808b868d8a01.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South End at Stapleton<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_266b870ff5e8d1387fd24158a75528e1 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_266b870ff5e8d1387fd24158a75528e1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Central Denver<br>New Listings: 260.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5e9a0d5d5992109a82db1926d4ad9c0 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a5e9a0d5d5992109a82db1926d4ad9c0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Denver<br>New Listings: 134.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e00c499cce3cb0f050ad54da14b204e = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_6e00c499cce3cb0f050ad54da14b204e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southlawn Gardens<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7a4ffa103382a71bf8e26c62124f7c0 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_d7a4ffa103382a71bf8e26c62124f7c0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southwest Denver<br>New Listings: 280.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c253e4665a075ba38791165f6eeafb95 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_c253e4665a075ba38791165f6eeafb95.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - St. James Heights<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bfe64bec74c2b317371d7d327e9d17b0 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_bfe64bec74c2b317371d7d327e9d17b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sumners<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08194f4ec5caa8eaad1abea7f5375acb = L.circleMarker(
+                [39.7420787, -104.9773482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_08194f4ec5caa8eaad1abea7f5375acb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Swallow Hill<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f5add119f338196838ce1bc4845f1951 = L.circleMarker(
+                [39.7931456, -105.0439213],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_f5add119f338196838ce1bc4845f1951.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Tennyson Street Cultural District<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f9bfb1b2fb8ec65e4ef9427378820d0 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_1f9bfb1b2fb8ec65e4ef9427378820d0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Town of Highland<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eacfff026438fcb1ec0dfe4fa15ab460 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_eacfff026438fcb1ec0dfe4fa15ab460.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Denver<br>New Listings: 158.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a12286a4525d97710a0ab5d10d2f8384 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e43925b329fa5f4bf7f29bff19b204b);
+        
+    
+            circle_marker_a12286a4525d97710a0ab5d10d2f8384.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Witter-Cofield<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_5e373106931ad1c43115c0157b516da5 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var tile_layer_16a1405dc7f18062d7f5ee09ed0b6c3d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var tile_layer_ccde90502604f0d013af7242a3841d5d = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var tile_layer_df77ea6784ce2ce9def2350ef190de93 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var tile_layer_4cc4a6fd32d625de95a0e08a861967ac = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var tile_layer_e47e5d6ec91bb7c21624170135b0248d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+        
+    
+            var layer_control_458635d77082e6a2241baded828fab7b = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_ccde90502604f0d013af7242a3841d5d,
+                    "stamenwatercolor" : tile_layer_5e373106931ad1c43115c0157b516da5,
+                    "openstreetmap" : tile_layer_16a1405dc7f18062d7f5ee09ed0b6c3d,
+                    "stamentoner" : tile_layer_df77ea6784ce2ce9def2350ef190de93,
+                    "cartodbpositron" : tile_layer_4cc4a6fd32d625de95a0e08a861967ac,
+                    "cartodbdark_matter" : tile_layer_e47e5d6ec91bb7c21624170135b0248d,
+                },
+                overlays :  {
+                    "Denver - new_listings" : heat_map_dd509bea9d5fec6702b12d7d367b1e17,
+                    "New Listings Centers" : feature_group_4e43925b329fa5f4bf7f29bff19b204b,
+                },
+            };
+            L.control.layers(
+                layer_control_458635d77082e6a2241baded828fab7b.base_layers,
+                layer_control_458635d77082e6a2241baded828fab7b.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_8a7ec74191e63d5d8df2c1d1d6a53ee4);
+            tile_layer_5e373106931ad1c43115c0157b516da5.remove();
+            tile_layer_16a1405dc7f18062d7f5ee09ed0b6c3d.remove();
+            tile_layer_ccde90502604f0d013af7242a3841d5d.remove();
+            tile_layer_df77ea6784ce2ce9def2350ef190de93.remove();
+            tile_layer_4cc4a6fd32d625de95a0e08a861967ac.remove();
+            tile_layer_e47e5d6ec91bb7c21624170135b0248d.remove();
+        
+</script>
+</html>

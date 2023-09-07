@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ab2b7703a74e219a9128141f7d1e925f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ab2b7703a74e219a9128141f7d1e925f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ab2b7703a74e219a9128141f7d1e925f = L.map(
+                "map_ab2b7703a74e219a9128141f7d1e925f",
+                {
+                    center: [30.293640803781646, -97.7465385200173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_16111bce40488eda91301d70d344f1b1 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var heat_map_e977162c03e4ff4d70985ae81b34b7d1 = L.heatLayer(
+                [[30.2649178, -97.7464235, 5.0], [30.3393252, -97.746952, 45.0], [30.4611355, -97.8299965, 8.0], [30.4237172, -97.7375963, 13.0], [30.267153, -97.7430608, 11.0], [30.4689145, -97.799452, 76.0], [30.2533686, -97.7835429, 40.0], [30.280638, -97.7224315, 2.0], [30.1725823, -97.768618, 141.0], [30.2515465, -97.7543062, 36.0], [30.2515465, -97.7543062, 2.0], [30.330898, -97.7316065, 48.0], [30.3364313, -97.7264415, 73.0], [30.1902458, -97.8454709, 53.0], [30.30244979999999, -97.7538935, 9.0], [30.3251308, -97.7506508, 38.0], [30.3134263, -97.7666194, 3.0], [30.2938151, -97.7329, 104.0], [30.27162349999999, -97.7248647, 27.0], [30.2954625, -97.7551352, 35.0], [30.1979137, -97.8245578, 119.0], [30.2917457, -97.7136007, 22.0], [30.2790657, -97.7131577, 18.0], [30.2802042, -97.7591251, 2.0], [30.2680667, -97.7428151, 9.0], [30.38827179999999, -97.6588801, 34.0], [30.32699239999999, -97.6877987, 3.0], [30.348322, -97.727536, 38.0], [30.3534821, -97.7233389, 55.0], [30.3280279, -97.8055259, 5.0], [30.2329651, -97.7613825, 15.0], [30.2091069, -97.6472349, 5.0], [30.18505, -97.8020854, 93.0], [30.2729209, -97.74438630000002, 124.0], [30.2658909, -97.7350274, 2.0], [30.2654547, -97.7090635, 575.0], [30.2585193, -97.7286604, 23.0], [30.20856089999999, -97.7661188, 31.0], [30.2825656, -97.6766639, 142.0], [30.240054, -97.8303149, 38.0], [30.2275044, -97.7277824, 44.0], [30.2818771, -97.6669884, 1.0], [30.4038127, -97.8536211, 22.0], [30.1939634, -97.7446677, 21.0], [30.2355462, -97.7685704, 19.0], [30.2088183, -97.8047019, 65.0], [30.3499918, -97.7009416, 14.0], [30.2560413, -97.7016981, 38.0], [30.2660111, -97.7021915, 43.0], [30.389061, -97.6941558, 120.0], [30.2367289, -97.7488105, 55.0], [30.2964691, -97.7232153, 28.0], [30.30110269999999, -97.741329, 6.0], [30.3435785, -97.6888656, 25.0], [30.3339959, -97.7169771, 25.0], [30.3235367, -97.760685, 22.0], [30.2573267, -97.7172302, 29.0], [30.30816969999999, -97.7274412, 19.0], [30.2256434, -97.7853145, 26.0], [30.2558365, -97.6849958, 5.0], [30.4065779, -97.7478949, 60.0], [30.2820349, -97.7477816, 2.0], [30.4357579, -97.6894508, 1.0], [30.3007579, -97.7878318, 1.0], [30.4207209, -97.6914416, 22.0], [30.267153, -97.7430608, 29.0], [30.2837453, -97.6961546, 30.0], [30.2760264, -97.66791, 69.0], [30.3739474, -97.8517552, 39.0], [30.2050512, -97.849035, 31.0], [30.26889559999999, -97.7518561, 28.0], [30.2124078, -97.7369381, 12.0], [30.4456938, -97.7363508, 105.0], [30.2295806, -97.6970651, 44.0], [30.2986834, -97.700371, 46.0], [30.3923316, -97.708224, 68.0], [30.3911419, -97.7218332, 3.0], [30.3911535, -97.7218322, 3.0], [30.370122, -97.6884248, 27.0], [30.3176931, -97.7211877, 32.0], [30.3646906, -97.7351113, 20.0], [30.2976841, -97.7375963, 20.0], [30.3903487, -97.7487151, 294.0], [30.3903487, -97.7487151, 936.0], [30.353213, -97.7674773, 47.0], [30.3591778, -97.7655987, 27.0], [30.2339613, -97.8648067, 120.0], [30.273648, -97.6976539, 3.0], [30.2877953, -97.7673314, 1.0], [30.2954625, -97.7551352, 20.0], [30.3000111, -97.6738023, 40.0], [30.2952051, -97.7552517, 1.0], [30.23471079999999, -97.7118003, 3.0], [30.4504785, -97.785287, 68.0], [30.3688641, -97.7046722, 30.0], [30.3914446, -97.7022988, 25.0], [30.4179412, -97.8984558, 11.0], [30.2359434, -97.7284907, 16.0], [30.267153, -97.7430608, 42.0], [30.267346, -97.7234586, 3.0], [30.3143949, -97.7457444, 52.0], [30.2706266, -97.7104428, 24.0], [30.4212008, -97.6832998, 17.0], [30.2660292, -97.7518561, 5.0], [30.20632253321186, -97.90891762243965, 59.0], [30.1935594, -97.842056, 56.0], [30.2049701, -97.7748074, 83.0], [30.2372278, -97.7837533, 60.0], [30.267153, -97.7430608, 169.0], [30.2195294, -97.7839041, 68.0], [30.2055702, -97.7166372, 43.0], [30.2009698, -97.8333958, 4.0], [30.1624125, -97.7946527, 9.0], [30.267153, -97.7430608, 485.0], [30.4359772, -97.8000975, 4.0], [30.1568662, -97.7430283, 16.0], [30.2264094, -97.7552517, 10.0], [30.3328019, -97.7009416, 28.0], [30.3260919, -97.6922889, 31.0], [30.1970686, -97.7771702, 14.0], [30.4078412, -97.6670191, 62.0], [30.2523971, -97.8338263, 13.0], [30.317206, -97.6738023, 20.0], [30.317206, -97.6738023, 76.0], [30.1858848, -97.7705653, 30.0], [30.2086396, -97.8728403, 47.0], [30.2954625, -97.7551352, 35.0], [30.21315749999999, -97.7743522, 14.0], [30.2385146, -97.8884881, 82.0], [30.29147, -97.7457444, 56.0], [30.2881825, -97.7769875, 9.0], [30.2230485, -97.7986926, 15.0], [30.292674, -97.553824, 19.0], [30.2963458, -97.7136976, 2.0], [30.3627291, -97.6792293, 20.0], [30.3105177, -97.6900846, 56.0], [30.2936434, -97.7650044, 17.0], [30.357046, -97.751177, 1.0], [30.2062976, -97.840195, 10.0], [30.3610582, -97.7232992, 17.0], [30.25426879999999, -97.7669536, 50.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var feature_group_6668c4662c5dfed1299056b165a09568 = L.featureGroup(
+                {}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var circle_marker_ef30acf680137fd6cac36d5bd8c2ee35 = L.circleMarker(
+                [30.2649178, -97.7464235],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_ef30acf680137fd6cac36d5bd8c2ee35.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - 2nd Street District<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_45b8633627ba4652495d9deaa44547ed = L.circleMarker(
+                [30.3393252, -97.746952],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_45b8633627ba4652495d9deaa44547ed.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Allandale<br>New Listings: 45.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f506b09cdeb473707d87e52267219cd2 = L.circleMarker(
+                [30.4611355, -97.8299965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f506b09cdeb473707d87e52267219cd2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Anderson Mill West<br>New Listings: 8.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a13e3feaab776af62da1676375c53717 = L.circleMarker(
+                [30.4237172, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a13e3feaab776af62da1676375c53717.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Angus Valley<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_40c7d3be3a38dd3f0552a7094df4a806 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_40c7d3be3a38dd3f0552a7094df4a806.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Arts District<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_22b09809fc53ad54561dab2ca32bb6f9 = L.circleMarker(
+                [30.4689145, -97.799452],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_22b09809fc53ad54561dab2ca32bb6f9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Avery Ranch-Lakeline<br>New Listings: 76.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e6ffc26bec811d72dae9d342bc51b0a = L.circleMarker(
+                [30.2533686, -97.7835429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_6e6ffc26bec811d72dae9d342bc51b0a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Barton Hills<br>New Listings: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2334b742dbbd7940667631f9e36b4ca4 = L.circleMarker(
+                [30.280638, -97.7224315],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_2334b742dbbd7940667631f9e36b4ca4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Blackland<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e51d5abfcd7341b1195edb3d44680d9b = L.circleMarker(
+                [30.1725823, -97.768618],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e51d5abfcd7341b1195edb3d44680d9b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bluff Springs<br>New Listings: 141.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c532aced5f7c8aaa143c8000afb17209 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_c532aced5f7c8aaa143c8000afb17209.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin Creek<br>New Listings: 36.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_464ba62ea3b441a1af1429722c0f1673 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_464ba62ea3b441a1af1429722c0f1673.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin South<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb62e5b003a99273e881d065509867be = L.circleMarker(
+                [30.330898, -97.7316065],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_fb62e5b003a99273e881d065509867be.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood<br>New Listings: 48.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5bfacd0a1e887b8fa64da29b0b34d26 = L.circleMarker(
+                [30.3364313, -97.7264415],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e5bfacd0a1e887b8fa64da29b0b34d26.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood-Highland<br>New Listings: 73.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_367da942644b7be10eedd877fff131ce = L.circleMarker(
+                [30.1902458, -97.8454709],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_367da942644b7be10eedd877fff131ce.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brodie Lane<br>New Listings: 53.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5df34386becb4df341bee9496398e0e9 = L.circleMarker(
+                [30.30244979999999, -97.7538935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_5df34386becb4df341bee9496398e0e9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bryker Woods<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a656b33e592dd67324ef4cf0a98378ac = L.circleMarker(
+                [30.3251308, -97.7506508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a656b33e592dd67324ef4cf0a98378ac.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bull Creek<br>New Listings: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_23a380f997fd2445a42bfdfdf4da720f = L.circleMarker(
+                [30.3134263, -97.7666194],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_23a380f997fd2445a42bfdfdf4da720f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Camp Mabry<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d7174b50e2b1be88648b1554c2707871 = L.circleMarker(
+                [30.2938151, -97.7329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_d7174b50e2b1be88648b1554c2707871.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central Austin<br>New Listings: 104.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8acab5f94f0d34aea16fbad0c30eff51 = L.circleMarker(
+                [30.27162349999999, -97.7248647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_8acab5f94f0d34aea16fbad0c30eff51.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central East Austin<br>New Listings: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_da058763ddae6b0528578e325472a151 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_da058763ddae6b0528578e325472a151.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central West Austin<br>New Listings: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bda5d7310246057042683c1de3cd4bc = L.circleMarker(
+                [30.1979137, -97.8245578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_3bda5d7310246057042683c1de3cd4bc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherry Creek<br>New Listings: 119.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7e7b9a8211e84decd1f04a93060ed1af = L.circleMarker(
+                [30.2917457, -97.7136007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_7e7b9a8211e84decd1f04a93060ed1af.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherrywood<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a1d1371e944a14c3a0eeccc6fed0c53e = L.circleMarker(
+                [30.2790657, -97.7131577],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a1d1371e944a14c3a0eeccc6fed0c53e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Chestnut<br>New Listings: 18.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3edaf0fbb208422e0f2d562f7568f93b = L.circleMarker(
+                [30.2802042, -97.7591251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_3edaf0fbb208422e0f2d562f7568f93b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Clarksville<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_170b1f826681ce2b79f93406dea508d7 = L.circleMarker(
+                [30.2680667, -97.7428151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_170b1f826681ce2b79f93406dea508d7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Congress Avenue District<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3615e91df9a6defb68c72191b5a8284 = L.circleMarker(
+                [30.38827179999999, -97.6588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f3615e91df9a6defb68c72191b5a8284.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Copperfield<br>New Listings: 34.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49878a49da03bf00acb7e88bae6cc7de = L.circleMarker(
+                [30.32699239999999, -97.6877987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_49878a49da03bf00acb7e88bae6cc7de.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Coronado Hills<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29f6df135bc8a59ba0bc8e37cd65c9a0 = L.circleMarker(
+                [30.348322, -97.727536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_29f6df135bc8a59ba0bc8e37cd65c9a0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview<br>New Listings: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc067d5cec144301fa866881db6964aa = L.circleMarker(
+                [30.3534821, -97.7233389],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_fc067d5cec144301fa866881db6964aa.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview-Wooten<br>New Listings: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_071cf4ebac07415d318f195c21236435 = L.circleMarker(
+                [30.3280279, -97.8055259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_071cf4ebac07415d318f195c21236435.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Davenport Ranch<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1c8a48789754301843b06258987ce322 = L.circleMarker(
+                [30.2329651, -97.7613825],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_1c8a48789754301843b06258987ce322.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dawson<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8c5da7404de45f9c755c79e6247c0edd = L.circleMarker(
+                [30.2091069, -97.6472349],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_8c5da7404de45f9c755c79e6247c0edd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Del Valle<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2668003065145d9604c8c54e9ccc3e6d = L.circleMarker(
+                [30.18505, -97.8020854],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_2668003065145d9604c8c54e9ccc3e6d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dittmar-Slaughter<br>New Listings: 93.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dcbbaab3ea88d910f599faf9c9957911 = L.circleMarker(
+                [30.2729209, -97.74438630000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_dcbbaab3ea88d910f599faf9c9957911.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Downtown Austin<br>New Listings: 124.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2cf976a18a125702845bc6d7debaab28 = L.circleMarker(
+                [30.2658909, -97.7350274],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_2cf976a18a125702845bc6d7debaab28.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East 6th Street District<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3371464e635fbb8fd659b115fac52422 = L.circleMarker(
+                [30.2654547, -97.7090635],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_3371464e635fbb8fd659b115fac52422.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Austin<br>New Listings: 575.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5df4a2082b6588a8da7b4a4e675e78b0 = L.circleMarker(
+                [30.2585193, -97.7286604],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_5df4a2082b6588a8da7b4a4e675e78b0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Cesar Chavez<br>New Listings: 23.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a31f6d4f363266f48e83c3e6ce082a89 = L.circleMarker(
+                [30.20856089999999, -97.7661188],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a31f6d4f363266f48e83c3e6ce082a89.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Congress<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_03d2bf26159d873df70dc2ea095f444f = L.circleMarker(
+                [30.2825656, -97.6766639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_03d2bf26159d873df70dc2ea095f444f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East MLK<br>New Listings: 142.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f07b8ad686652279d53bacf029363795 = L.circleMarker(
+                [30.240054, -97.8303149],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f07b8ad686652279d53bacf029363795.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Oak Hill<br>New Listings: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e959bfc425fc5e5b1df7a68caa4be2be = L.circleMarker(
+                [30.2275044, -97.7277824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e959bfc425fc5e5b1df7a68caa4be2be.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Riverside-Oltorf<br>New Listings: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4de91e1948fcf2a381a5adc70f060f4a = L.circleMarker(
+                [30.2818771, -97.6669884],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_4de91e1948fcf2a381a5adc70f060f4a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ed Bluestein<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_36b5a46888ea4b8d49c0bf71557ebc66 = L.circleMarker(
+                [30.4038127, -97.8536211],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_36b5a46888ea4b8d49c0bf71557ebc66.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Four Points<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10dc1171837162600ea0ededce5e5cfb = L.circleMarker(
+                [30.1939634, -97.7446677],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_10dc1171837162600ea0ededce5e5cfb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Franklin Park<br>New Listings: 21.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_155d8c71b07cb36d34d4d73bc27a7f10 = L.circleMarker(
+                [30.2355462, -97.7685704],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_155d8c71b07cb36d34d4d73bc27a7f10.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Galindo<br>New Listings: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2fd5af2726f58e0aeef0ef364997ec9 = L.circleMarker(
+                [30.2088183, -97.8047019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f2fd5af2726f58e0aeef0ef364997ec9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Garrison Park<br>New Listings: 65.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_67c15c29f1f25db387cbb3e5f68a20e9 = L.circleMarker(
+                [30.3499918, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_67c15c29f1f25db387cbb3e5f68a20e9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Georgian Acres<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0fcad2b7248e180905a5e955e6ada534 = L.circleMarker(
+                [30.2560413, -97.7016981],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_0fcad2b7248e180905a5e955e6ada534.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle<br>New Listings: 38.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e941049e6b57d0fd5e58212dccd8fcab = L.circleMarker(
+                [30.2660111, -97.7021915],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e941049e6b57d0fd5e58212dccd8fcab.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle-Johnston Terrace<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_96a07034b065b1f97bbd20891b8be4dd = L.circleMarker(
+                [30.389061, -97.6941558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_96a07034b065b1f97bbd20891b8be4dd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Gracy Woods<br>New Listings: 120.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca136e728769d05e0ac815f0d470b86b = L.circleMarker(
+                [30.2367289, -97.7488105],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_ca136e728769d05e0ac815f0d470b86b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Greater South River City<br>New Listings: 55.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1fffaf68869bcfc9e02749c8f44776ab = L.circleMarker(
+                [30.2964691, -97.7232153],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_1fffaf68869bcfc9e02749c8f44776ab.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hancock<br>New Listings: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b22b656be29dce1af0451b5da8b1a0d9 = L.circleMarker(
+                [30.30110269999999, -97.741329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_b22b656be29dce1af0451b5da8b1a0d9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage<br>New Listings: 6.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_44993fcb0baacf3325587c01039324b7 = L.circleMarker(
+                [30.3435785, -97.6888656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_44993fcb0baacf3325587c01039324b7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage Hills-Windsor Hills<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fc6c4b4a59ec0859cc7916753ccb2ff2 = L.circleMarker(
+                [30.3339959, -97.7169771],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_fc6c4b4a59ec0859cc7916753ccb2ff2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_820f8581b1eab8d4bf799f7485d74ad5 = L.circleMarker(
+                [30.3235367, -97.760685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_820f8581b1eab8d4bf799f7485d74ad5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland Park West<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18899686ecba060f0a7b12d90cf9d24c = L.circleMarker(
+                [30.2573267, -97.7172302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_18899686ecba060f0a7b12d90cf9d24c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Holly<br>New Listings: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bde66226f106b02b0059d1f79bb8234 = L.circleMarker(
+                [30.30816969999999, -97.7274412],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_5bde66226f106b02b0059d1f79bb8234.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hyde Park<br>New Listings: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53661bdbb47a620b529a5f82b08e9bfc = L.circleMarker(
+                [30.2256434, -97.7853145],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_53661bdbb47a620b529a5f82b08e9bfc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jester<br>New Listings: 26.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5af5c6908bcb29ae4fd5c1cab3799b6b = L.circleMarker(
+                [30.2558365, -97.6849958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_5af5c6908bcb29ae4fd5c1cab3799b6b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Johnston Terrace<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_09726a6d6de71304855b9562b0b5152b = L.circleMarker(
+                [30.4065779, -97.7478949],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_09726a6d6de71304855b9562b0b5152b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jollyville<br>New Listings: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bd00162284659ebc26fd547b12e1b953 = L.circleMarker(
+                [30.2820349, -97.7477816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_bd00162284659ebc26fd547b12e1b953.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Judges Hill<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b8a337438121eab53684c721cb9359df = L.circleMarker(
+                [30.4357579, -97.6894508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_b8a337438121eab53684c721cb9359df.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Kings Village<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfcbf825cac2a61c8c842f25c000d5a4 = L.circleMarker(
+                [30.3007579, -97.7878318],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_cfcbf825cac2a61c8c842f25c000d5a4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lakeshore<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6620ef8bf69f3b31311fc0b97d594d5 = L.circleMarker(
+                [30.4207209, -97.6914416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f6620ef8bf69f3b31311fc0b97d594d5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lamplight Village<br>New Listings: 22.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_782b1862da87943c6e9230ea25a63647 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_782b1862da87943c6e9230ea25a63647.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Laurel Oaks<br>New Listings: 29.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_610f09d5ec4bbf360f4b47a667b5c896 = L.circleMarker(
+                [30.2837453, -97.6961546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_610f09d5ec4bbf360f4b47a667b5c896.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac4ce512786c5c1d5058a044ea6db55f = L.circleMarker(
+                [30.2760264, -97.66791],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_ac4ce512786c5c1d5058a044ea6db55f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK-183<br>New Listings: 69.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07cbdf7c857da528840b20f3f251532b = L.circleMarker(
+                [30.3739474, -97.8517552],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_07cbdf7c857da528840b20f3f251532b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mansfield-River Place<br>New Listings: 39.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d12e0b26433aca6128d55eb4d34d8783 = L.circleMarker(
+                [30.2050512, -97.849035],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_d12e0b26433aca6128d55eb4d34d8783.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Maple Run<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f332c1245131e04cd483fd3acdaeb2c = L.circleMarker(
+                [30.26889559999999, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_1f332c1245131e04cd483fd3acdaeb2c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Market District<br>New Listings: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_09ca87a4abe6fcd053f750a795ea6d2b = L.circleMarker(
+                [30.2124078, -97.7369381],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_09ca87a4abe6fcd053f750a795ea6d2b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McKinney<br>New Listings: 12.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c498876a17458d41c0dcbb48e0bf1bab = L.circleMarker(
+                [30.4456938, -97.7363508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_c498876a17458d41c0dcbb48e0bf1bab.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McNeil<br>New Listings: 105.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d76e50505b49f51a2cf7008ad4381ecb = L.circleMarker(
+                [30.2295806, -97.6970651],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_d76e50505b49f51a2cf7008ad4381ecb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Montopolis<br>New Listings: 44.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb66fd4df6e4d67238604d626d24eb73 = L.circleMarker(
+                [30.2986834, -97.700371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_bb66fd4df6e4d67238604d626d24eb73.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mueller<br>New Listings: 46.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0756be590343a8e309fa21df1b5fa4c2 = L.circleMarker(
+                [30.3923316, -97.708224],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_0756be590343a8e309fa21df1b5fa4c2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Austin<br>New Listings: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_110f95027dd668c0bfab8a12bf895334 = L.circleMarker(
+                [30.3911419, -97.7218332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_110f95027dd668c0bfab8a12bf895334.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ac16749500bf3430ebb6258e34c69f3 = L.circleMarker(
+                [30.3911535, -97.7218322],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_7ac16749500bf3430ebb6258e34c69f3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet-Gateway<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3199d34920d49ee8517ea4aaa659e82 = L.circleMarker(
+                [30.370122, -97.6884248],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_b3199d34920d49ee8517ea4aaa659e82.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Lamar<br>New Listings: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dbdb5371e8833ef838e8c4370b4468a3 = L.circleMarker(
+                [30.3176931, -97.7211877],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_dbdb5371e8833ef838e8c4370b4468a3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Loop<br>New Listings: 32.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2875b20a530a373795e1d6362a958d27 = L.circleMarker(
+                [30.3646906, -97.7351113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_2875b20a530a373795e1d6362a958d27.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Shoal Creek<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5441a3a2f17f31848654cd82d2572e39 = L.circleMarker(
+                [30.2976841, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_5441a3a2f17f31848654cd82d2572e39.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North University<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7ba1ea025e08c1d3412471364051572 = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_b7ba1ea025e08c1d3412471364051572.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northeast Austin<br>New Listings: 294.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e32e1275c504ca585e67a2c3567a4fb = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_6e32e1275c504ca585e67a2c3567a4fb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Austin<br>New Listings: 936.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b472208aaa40411c61f7a143a55baba7 = L.circleMarker(
+                [30.353213, -97.7674773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_b472208aaa40411c61f7a143a55baba7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills<br>New Listings: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a87a4c9a8a3233ca7c8f3af5f0becd8d = L.circleMarker(
+                [30.3591778, -97.7655987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a87a4c9a8a3233ca7c8f3af5f0becd8d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills-Far West<br>New Listings: 27.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7de80551e71316088b4b4c1ed750d187 = L.circleMarker(
+                [30.2339613, -97.8648067],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_7de80551e71316088b4b4c1ed750d187.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Hill<br>New Listings: 120.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b0145bab76bea44ba66c6e067847530 = L.circleMarker(
+                [30.273648, -97.6976539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_6b0145bab76bea44ba66c6e067847530.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Springs<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47769f32afd67aad465cf85d97767034 = L.circleMarker(
+                [30.2877953, -97.7673314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_47769f32afd67aad465cf85d97767034.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old Enfield<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25d702811201c002e161474feeb8c475 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_25d702811201c002e161474feeb8c475.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old West Austin<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bc007fa7ddbe2bbbd460461660687684 = L.circleMarker(
+                [30.3000111, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_bc007fa7ddbe2bbbd460461660687684.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pecan Springs Springdale<br>New Listings: 40.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_deba0d314462f9845fa9bbef88b8c329 = L.circleMarker(
+                [30.2952051, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_deba0d314462f9845fa9bbef88b8c329.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pemberton Heights<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e67c6a26c8dbd24a03a74023f609e470 = L.circleMarker(
+                [30.23471079999999, -97.7118003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e67c6a26c8dbd24a03a74023f609e470.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pleasant Valley<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3fba28d9c60932c742d600dc669399a2 = L.circleMarker(
+                [30.4504785, -97.785287],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_3fba28d9c60932c742d600dc669399a2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pond Springs<br>New Listings: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c68659b13b407cb311f080f31fa807c7 = L.circleMarker(
+                [30.3688641, -97.7046722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_c68659b13b407cb311f080f31fa807c7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Creek<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18c793534bd7101f2671267d933031a7 = L.circleMarker(
+                [30.3914446, -97.7022988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_18c793534bd7101f2671267d933031a7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Hollow<br>New Listings: 25.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_28529b08efa30254a7994eceda3a5555 = L.circleMarker(
+                [30.4179412, -97.8984558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_28529b08efa30254a7994eceda3a5555.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ridgetop<br>New Listings: 11.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bad24b2c519081086cfd3587f8dce279 = L.circleMarker(
+                [30.2359434, -97.7284907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_bad24b2c519081086cfd3587f8dce279.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Riverside<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ea11f84f0fd9ca8b4c3e4639e46203ee = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_ea11f84f0fd9ca8b4c3e4639e46203ee.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers Hill<br>New Listings: 42.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52416c749386fc658ab68101fda659ee = L.circleMarker(
+                [30.267346, -97.7234586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_52416c749386fc658ab68101fda659ee.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers-Washington-Holy Cross<br>New Listings: 3.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8813dcba9309b4c2f457b828736bfa7e = L.circleMarker(
+                [30.3143949, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_8813dcba9309b4c2f457b828736bfa7e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosedale<br>New Listings: 52.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6d30db065f804eab3aae7778412b7c1 = L.circleMarker(
+                [30.2706266, -97.7104428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f6d30db065f804eab3aae7778412b7c1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosewood<br>New Listings: 24.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0297bb1e4efb2f4c70f29ac7ad3204d1 = L.circleMarker(
+                [30.4212008, -97.6832998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_0297bb1e4efb2f4c70f29ac7ad3204d1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Scofield Farms<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e118e79bea13ab22992fec82e8eaccb7 = L.circleMarker(
+                [30.2660292, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e118e79bea13ab22992fec82e8eaccb7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Seaholm District<br>New Listings: 5.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e0dc2f7aa61af769d10c085539e4089 = L.circleMarker(
+                [30.20632253321186, -97.90891762243965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_1e0dc2f7aa61af769d10c085539e4089.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Slaughter Creek<br>New Listings: 59.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c94c84698713eaeeaf8f31db49bae8b = L.circleMarker(
+                [30.1935594, -97.842056],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_7c94c84698713eaeeaf8f31db49bae8b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Brodie<br>New Listings: 56.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2db28590ae33b3f38c6f34e57968388 = L.circleMarker(
+                [30.2049701, -97.7748074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f2db28590ae33b3f38c6f34e57968388.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Congress<br>New Listings: 83.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_036ca1abcc0f7305a94ff214d2979cc6 = L.circleMarker(
+                [30.2372278, -97.7837533],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_036ca1abcc0f7305a94ff214d2979cc6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lamar<br>New Listings: 60.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e703053d7a2abddbd3c5d840bc5232e4 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_e703053d7a2abddbd3c5d840bc5232e4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lawn<br>New Listings: 169.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39a87009ab3f9218345a28dc67372ad1 = L.circleMarker(
+                [30.2195294, -97.7839041],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_39a87009ab3f9218345a28dc67372ad1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Manchaca<br>New Listings: 68.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_48eb605d9248c004d82e349132d3b96d = L.circleMarker(
+                [30.2055702, -97.7166372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_48eb605d9248c004d82e349132d3b96d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southeast Austin<br>New Listings: 43.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0b83f36d30f47ec3474194cc6491483 = L.circleMarker(
+                [30.2009698, -97.8333958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_d0b83f36d30f47ec3474194cc6491483.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southhampton Hills<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_733b13444be723006321bd53ae12d787 = L.circleMarker(
+                [30.1624125, -97.7946527],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_733b13444be723006321bd53ae12d787.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southpark Meadows<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_119b6694f77c5ab4c9002c76ac6b8223 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_119b6694f77c5ab4c9002c76ac6b8223.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southwest Austin<br>New Listings: 485.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93699da2473a26cbc0e8a24e95c07b6d = L.circleMarker(
+                [30.4359772, -97.8000975],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_93699da2473a26cbc0e8a24e95c07b6d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Spicewood<br>New Listings: 4.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0e6e0e78d5e8bf99ba1b91788c72a30 = L.circleMarker(
+                [30.1568662, -97.7430283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_f0e6e0e78d5e8bf99ba1b91788c72a30.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Springfield at Thaxton Road<br>New Listings: 16.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a375db2de1695842593e60ebde698b50 = L.circleMarker(
+                [30.2264094, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a375db2de1695842593e60ebde698b50.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Edwards<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72adb9d4e6445fff01d02a631cea66de = L.circleMarker(
+                [30.3328019, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_72adb9d4e6445fff01d02a631cea66de.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns<br>New Listings: 28.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c90b688fb58252376e750fd226f04efa = L.circleMarker(
+                [30.3260919, -97.6922889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_c90b688fb58252376e750fd226f04efa.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns-Coronado Hills<br>New Listings: 31.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bf7390677eedca6b00a88f2f7350f88 = L.circleMarker(
+                [30.1970686, -97.7771702],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_3bf7390677eedca6b00a88f2f7350f88.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Sweetbriar<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e8e980826ef5d28bbae5122d1cf6f39 = L.circleMarker(
+                [30.4078412, -97.6670191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_1e8e980826ef5d28bbae5122d1cf6f39.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Tech Ridge<br>New Listings: 62.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff79b30120c2507b61d0bf84d7a5367c = L.circleMarker(
+                [30.2523971, -97.8338263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_ff79b30120c2507b61d0bf84d7a5367c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Travis Country<br>New Listings: 13.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c8dbf5183ba6b0eb19b27cd756a6cf2 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_2c8dbf5183ba6b0eb19b27cd756a6cf2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_87fd008bd7bc39651ee1ae9295c5e672 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_87fd008bd7bc39651ee1ae9295c5e672.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills & Windsor Park<br>New Listings: 76.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a81450a6231f89b178e45a61d6247809 = L.circleMarker(
+                [30.1858848, -97.7705653],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_a81450a6231f89b178e45a61d6247809.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Upper Boggy Creek<br>New Listings: 30.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_818831eb512abddcfa33bde737b2d179 = L.circleMarker(
+                [30.2086396, -97.8728403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_818831eb512abddcfa33bde737b2d179.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Village at Western Oaks<br>New Listings: 47.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38026debe539aa0ab4b9542d701b0629 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_38026debe539aa0ab4b9542d701b0629.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Austin<br>New Listings: 35.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c657f139708306cc6e0e3f259e9bf238 = L.circleMarker(
+                [30.21315749999999, -97.7743522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_c657f139708306cc6e0e3f259e9bf238.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Congress<br>New Listings: 14.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_08888bff1aa942204176d1f09ea67e8a = L.circleMarker(
+                [30.2385146, -97.8884881],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_08888bff1aa942204176d1f09ea67e8a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Oak Hill<br>New Listings: 82.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d17bddbe262be0e119a0265bdaddba29 = L.circleMarker(
+                [30.29147, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_d17bddbe262be0e119a0265bdaddba29.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West University<br>New Listings: 56.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ff9c37ccac0cd5aa591301fd1d5243e = L.circleMarker(
+                [30.2881825, -97.7769875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_7ff9c37ccac0cd5aa591301fd1d5243e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westfield<br>New Listings: 9.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_598bbc56f5eb398c55bcb0b8640a648c = L.circleMarker(
+                [30.2230485, -97.7986926],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_598bbc56f5eb398c55bcb0b8640a648c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westgate<br>New Listings: 15.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c43e99f2aa21be87b4d481f39b9ad00 = L.circleMarker(
+                [30.292674, -97.553824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_3c43e99f2aa21be87b4d481f39b9ad00.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Whisper Valley<br>New Listings: 19.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cad2a3a8fbf5bf6e54780b5ef3812023 = L.circleMarker(
+                [30.2963458, -97.7136976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_cad2a3a8fbf5bf6e54780b5ef3812023.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wilshire Wood<br>New Listings: 2.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7f29521b42ecf5032cca4fa9278c0e21 = L.circleMarker(
+                [30.3627291, -97.6792293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_7f29521b42ecf5032cca4fa9278c0e21.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Hills<br>New Listings: 20.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61cfece6dd0b50859ba81db8ce33087a = L.circleMarker(
+                [30.3105177, -97.6900846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_61cfece6dd0b50859ba81db8ce33087a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Park<br>New Listings: 56.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c36771c0de38c26d89565a9f3a58f21 = L.circleMarker(
+                [30.2936434, -97.7650044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_0c36771c0de38c26d89565a9f3a58f21.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Road<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4d1accd3967e17b7df291e72f0d6a52f = L.circleMarker(
+                [30.357046, -97.751177],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_4d1accd3967e17b7df291e72f0d6a52f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wood Creek<br>New Listings: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1acc25e62277bc0c0f21925accafb9a3 = L.circleMarker(
+                [30.2062976, -97.840195],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_1acc25e62277bc0c0f21925accafb9a3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Woodstone Village<br>New Listings: 10.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4d81dcc82e58275d338a5fd5812f2232 = L.circleMarker(
+                [30.3610582, -97.7232992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_4d81dcc82e58275d338a5fd5812f2232.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wooten<br>New Listings: 17.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_541f3883e90079b3d62c7735c04509d6 = L.circleMarker(
+                [30.25426879999999, -97.7669536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6668c4662c5dfed1299056b165a09568);
+        
+    
+            circle_marker_541f3883e90079b3d62c7735c04509d6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Zilker<br>New Listings: 50.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_6dba8304901cc35c777bfe273b641696 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var tile_layer_d31f28cc775b75902ffc83cb450d9baf = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var tile_layer_080ecb22bbbb990250eb7005f39578fe = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var tile_layer_3bb78c3ba9a3d278af20817bbbf08acf = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var tile_layer_afab1b73d1bd66d3258357dd0f3242bc = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var tile_layer_d000c37e8f4144d6f2c1c84505e0dfbb = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+        
+    
+            var layer_control_087f83a944ceaea9cf98348519feeaf7 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_080ecb22bbbb990250eb7005f39578fe,
+                    "stamenwatercolor" : tile_layer_6dba8304901cc35c777bfe273b641696,
+                    "openstreetmap" : tile_layer_d31f28cc775b75902ffc83cb450d9baf,
+                    "stamentoner" : tile_layer_3bb78c3ba9a3d278af20817bbbf08acf,
+                    "cartodbpositron" : tile_layer_afab1b73d1bd66d3258357dd0f3242bc,
+                    "cartodbdark_matter" : tile_layer_d000c37e8f4144d6f2c1c84505e0dfbb,
+                },
+                overlays :  {
+                    "Austin - new_listings" : heat_map_e977162c03e4ff4d70985ae81b34b7d1,
+                    "New Listings Centers" : feature_group_6668c4662c5dfed1299056b165a09568,
+                },
+            };
+            L.control.layers(
+                layer_control_087f83a944ceaea9cf98348519feeaf7.base_layers,
+                layer_control_087f83a944ceaea9cf98348519feeaf7.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_ab2b7703a74e219a9128141f7d1e925f);
+            tile_layer_6dba8304901cc35c777bfe273b641696.remove();
+            tile_layer_d31f28cc775b75902ffc83cb450d9baf.remove();
+            tile_layer_080ecb22bbbb990250eb7005f39578fe.remove();
+            tile_layer_3bb78c3ba9a3d278af20817bbbf08acf.remove();
+            tile_layer_afab1b73d1bd66d3258357dd0f3242bc.remove();
+            tile_layer_d000c37e8f4144d6f2c1c84505e0dfbb.remove();
+        
+</script>
+</html>

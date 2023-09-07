@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_29fd050fbfe66971a99419cc22beb11c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_29fd050fbfe66971a99419cc22beb11c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_29fd050fbfe66971a99419cc22beb11c = L.map(
+                "map_29fd050fbfe66971a99419cc22beb11c",
+                {
+                    center: [42.32480960991736, -71.08296493305785],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c5d2b1f72fc4612bbd367923b4d187cb = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var heat_map_860b0d4ab8d1da1bac4c17889aeba255 = L.heatLayer(
+                [[42.35841, -71.12856, 739500.0], [42.34986, -71.08053, 1375000.0], [42.3491, -71.06903, 690500.0], [42.35705, -71.06826, 1535000.0], [42.34836, -71.15494, 599000.0], [42.37905, -71.06367, 948500.0], [42.34903, -71.06166, 1285000.0], [42.29846, -71.06346, 697450.0], [42.37268, -71.0157, 675000.0], [42.34477, -71.09611, 1160500.0], [42.34477, -71.09611, 739000.0], [42.25504, -71.1263, 600000.0], [42.30777, -71.1151, 740000.0], [42.35099, -71.05783, 1180000.0], [42.33174, -71.10261, 812000.0], [42.36546, -71.05386, 875000.0], [42.28252, -71.12666, 705000.0], [42.31852, -71.08664, 775000.0], [42.33492, -71.04219, 855000.0], [42.34135, -71.07137, 1248750.0], [42.36455, -71.06543, 532500.0], [42.28064, -71.16003, 736125.0], [42.2830311, -71.063148, 620000.0], [42.2871045, -71.0591684, 1175000.0], [42.3521337, -71.0780044, 1375000.0], [42.3494093, -71.0898892, 900000.0], [42.329418, -71.1108436, 741000.0], [42.2786744, -71.1493077, 700000.0], [42.3059584, -71.0720619, 615000.0], [42.289274, -71.1626756, 800000.0], [42.3749729, -71.063971, 890000.0], [42.2750987, -71.07032819999999, 770000.0], [42.3742486, -71.037148, 1050000.0], [42.3742486, -71.037148, 645000.0], [42.3771315, -71.04011950000002, 420000.0], [42.2904259, -71.1344539, 699500.0], [42.3339959, -71.02749039999999, 904800.0], [42.3000278, -71.0512625, 500000.0], [42.2794561, -71.0727084, 650000.0], [42.3130539, -71.03321509999999, 775000.0], [42.3442847, -71.0772616, 1625000.0], [42.3319481, -71.05720529999999, 855000.0], [42.3437558, -71.1428971, 485000.0], [42.340677, -71.04859309999999, 920000.0], [42.35552750000001, -71.0565313, 1340000.0], [42.3247063, -71.1376104, 765000.0], [42.3159763, -71.0750332, 820000.0], [42.3806511, -71.0364051, 679500.0], [42.3402946, -71.0951539, 910000.0], [42.3134039, -71.1017736, 745000.0], [42.249313, -71.1166286, 675000.0], [42.3532818, -71.1593198, 713537.0], [42.3005356, -71.0542339, 521999.0], [42.2978096, -71.0661193, 916250.0], [42.3559219, -71.05497679999999, 2835000.0], [42.357513, -71.070331, 1650000.0], [42.2925811, -71.1121722, 727500.0], [42.3261495, -71.0928603, 736000.0], [42.3005222, -71.08278779999999, 791500.0], [42.2885305, -71.08840359999999, 692500.0], [42.2500374, -71.1418809, 571000.0], [42.2689791, -71.0940002, 716000.0], [42.3883645, -71.00520279999999, 732000.0], [42.3368621, -71.0720619, 940000.0], [42.3261495, -71.0928603, 736000.0], [42.3234206, -71.1047446, 649000.0], [42.3132414, -71.1141118, 775000.0], [42.3126689, -71.1226633, 750000.0], [42.3666974, -71.03382189999999, 662500.0], [42.346832, -71.0923139, 734000.0], [42.3600825, -71.0588801, 619000.0], [42.36557519999999, -71.0097645, 665000.0], [42.3389262, -71.1071588, 626700.0], [42.3632146, -71.1297735, 770000.0], [42.2800344, -71.0589066, 780000.0], [42.3317603, -71.0839469, 449000.0], [42.2830649, -71.1121722, 747500.0], [42.2685953, -71.093474, 670000.0], [42.3814894, -71.0690907, 1276000.0], [42.3376832, -71.1047446, 575000.0], [42.3044363, -71.063148, 850000.0], [42.2949548, -71.0656522, 1231250.0], [42.2784217, -71.1371602, 660000.0], [42.3130282, -71.1165096, 2030000.0], [42.3241513, -71.07962719999999, 620000.0], [42.3258282, -71.07861609999999, 972500.0], [42.2909424, -71.0468053, 660000.0], [42.3648007, -71.0537232, 875000.0], [42.3600825, -71.0588801, 912750.0], [42.3529759, -71.159705, 882500.0], [42.3892532, -71.0000022, 692500.0], [42.2909424, -71.0468053, 800000.0], [42.3471679, -71.0802329, 3137500.0], [42.2384918, -71.1299976, 577500.0], [42.3241223, -71.0809757, 700000.0], [42.3152582, -71.0349678, 775000.0], [42.309863, -71.0499572, 617500.0], [42.309863, -71.0499572, 905000.0], [42.3462519, -71.04214429999999, 2025000.0], [42.3432703, -71.0713191, 1200000.0], [42.3600825, -71.0588801, 2553750.0], [42.2705097, -71.0943459, 612500.0], [42.3508151, -71.1493418, 1127500.0], [42.3434687, -71.159705, 709000.0], [42.2925456, -71.063148, 699900.0], [42.2565289, -71.1240559, 650000.0], [42.28809, -71.0769361, 556000.0], [42.3336533, -71.0393766, 760000.0], [42.3755627, -71.06447349999999, 890000.0], [42.3600825, -71.0588801, 845000.0], [42.313947, -71.063148, 585000.0], [42.270235, -71.1626756, 727500.0], [42.3170687, -71.08840359999999, 820000.0], [42.3600825, -71.0588801, 1517500.0], [42.3573021, -71.0508911, 1010000.0], [42.2800275, -71.0943459, 810000.0], [42.2808092, -71.0780044, 750500.0], [42.3402946, -71.0951539, 539000.0], [42.287104, -71.1480657, 675000.0], [42.269799, -71.1181141, 560000.0], [42.3600825, -71.0588801, 735000.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var feature_group_f947479d525858148e441c2f47a27629 = L.featureGroup(
+                {}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var circle_marker_7d819a95bae6b632589eab5c50af3de3 = L.circleMarker(
+                [42.35841, -71.12856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_7d819a95bae6b632589eab5c50af3de3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Allston<br>Median Sale Price: 739500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a549554558f5676aec3c0491bc0308b8 = L.circleMarker(
+                [42.34986, -71.08053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_a549554558f5676aec3c0491bc0308b8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay<br>Median Sale Price: 1375000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61f3ae943608c387254b0fbd797d4980 = L.circleMarker(
+                [42.3491, -71.06903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_61f3ae943608c387254b0fbd797d4980.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bay Village<br>Median Sale Price: 690500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fbedae608edf4cf8d1fab47b8c8e43a4 = L.circleMarker(
+                [42.35705, -71.06826],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_fbedae608edf4cf8d1fab47b8c8e43a4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Beacon Hill<br>Median Sale Price: 1535000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_76636f5128dd2d086d72ae85bc9ee05c = L.circleMarker(
+                [42.34836, -71.15494],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_76636f5128dd2d086d72ae85bc9ee05c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Brighton<br>Median Sale Price: 599000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e9beadba303d0f696d478c4417882823 = L.circleMarker(
+                [42.37905, -71.06367],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_e9beadba303d0f696d478c4417882823.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Charlestown<br>Median Sale Price: 948500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_de7da94a75c39100263944616ec1ffda = L.circleMarker(
+                [42.34903, -71.06166],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_de7da94a75c39100263944616ec1ffda.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Chinatown-Leather District<br>Median Sale Price: 1285000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7872c0ff267590fed6a7ff5ecf0b34de = L.circleMarker(
+                [42.29846, -71.06346],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_7872c0ff267590fed6a7ff5ecf0b34de.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dorchester<br>Median Sale Price: 697450.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3a64afc2ebb4ba27cbfc8e97e93274f3 = L.circleMarker(
+                [42.37268, -71.0157],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_3a64afc2ebb4ba27cbfc8e97e93274f3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - East Boston<br>Median Sale Price: 675000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2374299e8a1a11869a7297f8beda0948 = L.circleMarker(
+                [42.34477, -71.09611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_2374299e8a1a11869a7297f8beda0948.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fenway-Kenmore<br>Median Sale Price: 1160500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0dc1c775012c84ba9a27c80db66c8c37 = L.circleMarker(
+                [42.34477, -71.09611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0dc1c775012c84ba9a27c80db66c8c37.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fenway-Kenmore-Audubon Circle-Longwood<br>Median Sale Price: 739000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d94db255d4134c2fa3a20cd8a99d1e00 = L.circleMarker(
+                [42.25504, -71.1263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_d94db255d4134c2fa3a20cd8a99d1e00.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Hyde Park<br>Median Sale Price: 600000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0fa672899058f5de4c26eac815f8db68 = L.circleMarker(
+                [42.30777, -71.1151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0fa672899058f5de4c26eac815f8db68.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Plain<br>Median Sale Price: 740000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_36995664e0562c4996631e5bdecd66c3 = L.circleMarker(
+                [42.35099, -71.05783],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_36995664e0562c4996631e5bdecd66c3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Leather District<br>Median Sale Price: 1180000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_76570ca024a5ff66a00ab9609bbdba40 = L.circleMarker(
+                [42.33174, -71.10261],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_76570ca024a5ff66a00ab9609bbdba40.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mission Hill<br>Median Sale Price: 812000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_80afd801eb8e6a8892fb2e822b6937cd = L.circleMarker(
+                [42.36546, -71.05386],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_80afd801eb8e6a8892fb2e822b6937cd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North End<br>Median Sale Price: 875000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5cd433d74ab73456cfa257db70264d68 = L.circleMarker(
+                [42.28252, -71.12666],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_5cd433d74ab73456cfa257db70264d68.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Roslindale<br>Median Sale Price: 705000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4ed451fbd5720535e10e674a614f15e1 = L.circleMarker(
+                [42.31852, -71.08664],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_4ed451fbd5720535e10e674a614f15e1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Roxbury<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e037d4d6ecbdf6a9cce49c592a0ec321 = L.circleMarker(
+                [42.33492, -71.04219],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_e037d4d6ecbdf6a9cce49c592a0ec321.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South Boston<br>Median Sale Price: 855000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_97d6bf66586b40b1491ace6250c79ae4 = L.circleMarker(
+                [42.34135, -71.07137],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_97d6bf66586b40b1491ace6250c79ae4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South End<br>Median Sale Price: 1248750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_27106e641890a1579e783ffa05c67a8d = L.circleMarker(
+                [42.36455, -71.06543],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_27106e641890a1579e783ffa05c67a8d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West End<br>Median Sale Price: 532500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_104ce3aea99b142c7f08abd38342120e = L.circleMarker(
+                [42.28064, -71.16003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_104ce3aea99b142c7f08abd38342120e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Roxbury<br>Median Sale Price: 736125.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_81ec75cb95c9ae0f1c03938b33b0aa92 = L.circleMarker(
+                [42.2830311, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_81ec75cb95c9ae0f1c03938b33b0aa92.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Ashmont<br>Median Sale Price: 620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eba44ea91ca280a867a2ab6f4018e5ae = L.circleMarker(
+                [42.2871045, -71.0591684],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_eba44ea91ca280a867a2ab6f4018e5ae.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Ashmont Hill<br>Median Sale Price: 1175000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1875c3b1e178ca05e7ad89b3dae01583 = L.circleMarker(
+                [42.3521337, -71.0780044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_1875c3b1e178ca05e7ad89b3dae01583.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay East<br>Median Sale Price: 1375000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e2aff2bfddd9518bd1e54b8e325905a = L.circleMarker(
+                [42.3494093, -71.0898892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0e2aff2bfddd9518bd1e54b8e325905a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back Bay West<br>Median Sale Price: 900000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9fe0d8af5d830e246e6b2b5b3eb356ec = L.circleMarker(
+                [42.329418, -71.1108436],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_9fe0d8af5d830e246e6b2b5b3eb356ec.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Back of the Hill / Rth<br>Median Sale Price: 741000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b955c4fe9d3c8e26ca1f2e7a93112ff0 = L.circleMarker(
+                [42.2786744, -71.1493077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_b955c4fe9d3c8e26ca1f2e7a93112ff0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bellevue Hill<br>Median Sale Price: 700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2207744b156853a91e71641b6392eef4 = L.circleMarker(
+                [42.3059584, -71.0720619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_2207744b156853a91e71641b6392eef4.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bowdoin North-Mount Bowdoin<br>Median Sale Price: 615000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4dd2c9ef1a2fba827f923e09f1f30dd9 = L.circleMarker(
+                [42.289274, -71.1626756],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_4dd2c9ef1a2fba827f923e09f1f30dd9.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Brook Farm<br>Median Sale Price: 800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ee37fda8d97361028fd3a695ea76a445 = L.circleMarker(
+                [42.3749729, -71.063971],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_ee37fda8d97361028fd3a695ea76a445.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Bunker Hill / Thompson Square<br>Median Sale Price: 890000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a84e4bd2b8c4b3bdb79661bc778f96f2 = L.circleMarker(
+                [42.2750987, -71.07032819999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_a84e4bd2b8c4b3bdb79661bc778f96f2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Cedar Grove / East Lower Mills<br>Median Sale Price: 770000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5df488b818a47bb5c1652df051400ca2 = L.circleMarker(
+                [42.3742486, -71.037148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_5df488b818a47bb5c1652df051400ca2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central<br>Median Sale Price: 1050000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0cdab8f93a42df9d5486ca1e9d234630 = L.circleMarker(
+                [42.3742486, -71.037148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0cdab8f93a42df9d5486ca1e9d234630.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central Maverick Square-Paris Street<br>Median Sale Price: 645000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a294b99e781803df1cec487d7991c8d = L.circleMarker(
+                [42.3771315, -71.04011950000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_9a294b99e781803df1cec487d7991c8d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Central Square<br>Median Sale Price: 420000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f04fc41006077181444cb0978983f51b = L.circleMarker(
+                [42.2904259, -71.1344539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f04fc41006077181444cb0978983f51b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Centre-South<br>Median Sale Price: 699500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9118ac91fc5907d7a2e2fafeb269856b = L.circleMarker(
+                [42.3339959, -71.02749039999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_9118ac91fc5907d7a2e2fafeb269856b.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - City Point<br>Median Sale Price: 904800.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d43faeff37ccca3183bd0ca26f04c94 = L.circleMarker(
+                [42.3000278, -71.0512625],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_1d43faeff37ccca3183bd0ca26f04c94.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Clam Point<br>Median Sale Price: 500000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_69ee852b293c5bc317369cab7cc776be = L.circleMarker(
+                [42.2794561, -71.0727084],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_69ee852b293c5bc317369cab7cc776be.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Codman Square-East Codman Hill<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fbafd4614d4f5658a316bae3fbcca596 = L.circleMarker(
+                [42.3130539, -71.03321509999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_fbafd4614d4f5658a316bae3fbcca596.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbia Point<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dafcaccec25b5d06507b880930898ec6 = L.circleMarker(
+                [42.3442847, -71.0772616],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_dafcaccec25b5d06507b880930898ec6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbus<br>Median Sale Price: 1625000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_15112a1f3aacd13e23ab7914019746c6 = L.circleMarker(
+                [42.3319481, -71.05720529999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_15112a1f3aacd13e23ab7914019746c6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Columbus Park-Andrew Square<br>Median Sale Price: 855000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a1116eb3f0656ba036084a47b21fbc8 = L.circleMarker(
+                [42.3437558, -71.1428971],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_9a1116eb3f0656ba036084a47b21fbc8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Commonwealth<br>Median Sale Price: 485000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_193d5085f9d15a64e97eb23c86e0afe9 = L.circleMarker(
+                [42.340677, -71.04859309999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_193d5085f9d15a64e97eb23c86e0afe9.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - D Street-West Broadway<br>Median Sale Price: 920000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fbe50bef5e1ad7a8c478f166cabe09ff = L.circleMarker(
+                [42.35552750000001, -71.0565313],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_fbe50bef5e1ad7a8c478f166cabe09ff.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Downtown Boston<br>Median Sale Price: 1340000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_baf805af5dc8b6e0562ce305a87a155d = L.circleMarker(
+                [42.3247063, -71.1376104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_baf805af5dc8b6e0562ce305a87a155d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dudley Triangle<br>Median Sale Price: 765000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_789819153ea2d9fa51a7425361fe94bc = L.circleMarker(
+                [42.3159763, -71.0750332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_789819153ea2d9fa51a7425361fe94bc.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Dudley-Brunswick King<br>Median Sale Price: 820000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c68544f0e366dd035ae9d40944e072e8 = L.circleMarker(
+                [42.3806511, -71.0364051],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_c68544f0e366dd035ae9d40944e072e8.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Eagle Hill<br>Median Sale Price: 679500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_136dd862c790fa5a3bc9b761407bc953 = L.circleMarker(
+                [42.3402946, -71.0951539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_136dd862c790fa5a3bc9b761407bc953.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - East Fenway<br>Median Sale Price: 910000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad22b10915bb3af389875b4525ec4a43 = L.circleMarker(
+                [42.3134039, -71.1017736],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_ad22b10915bb3af389875b4525ec4a43.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Egleston Square<br>Median Sale Price: 745000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c07ab4e6287eb91d3808b1e80382b6c3 = L.circleMarker(
+                [42.249313, -71.1166286],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_c07ab4e6287eb91d3808b1e80382b6c3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fairmount Hills<br>Median Sale Price: 675000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07c11bd290edcfafeb774c5bef9dc974 = L.circleMarker(
+                [42.3532818, -71.1593198],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_07c11bd290edcfafeb774c5bef9dc974.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Faneuil West<br>Median Sale Price: 713537.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_40dac76eb46551c9d2f4fe88e5e1e3a2 = L.circleMarker(
+                [42.3005356, -71.0542339],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_40dac76eb46551c9d2f4fe88e5e1e3a2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fields Corner East<br>Median Sale Price: 521999.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aeb5ff4c70e22918c83f7451f209a5f5 = L.circleMarker(
+                [42.2978096, -71.0661193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_aeb5ff4c70e22918c83f7451f209a5f5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fields Corner West<br>Median Sale Price: 916250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5d995c1e9abf75d9b0eff5606fdb4489 = L.circleMarker(
+                [42.3559219, -71.05497679999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_5d995c1e9abf75d9b0eff5606fdb4489.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Financial District<br>Median Sale Price: 2835000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ca8621362b442904d946bed9c277003f = L.circleMarker(
+                [42.357513, -71.070331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_ca8621362b442904d946bed9c277003f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Flat of the Hill<br>Median Sale Price: 1650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_23300f6110f398593622130d04c53a15 = L.circleMarker(
+                [42.2925811, -71.1121722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_23300f6110f398593622130d04c53a15.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Forest Hills-Woodbourne<br>Median Sale Price: 727500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ab136d555440aadcd8d7756df187a03a = L.circleMarker(
+                [42.3261495, -71.0928603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_ab136d555440aadcd8d7756df187a03a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Fort Hill<br>Median Sale Price: 736000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0098023c552ec1ab7cc3e5157708ac4d = L.circleMarker(
+                [42.3005222, -71.08278779999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0098023c552ec1ab7cc3e5157708ac4d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Franklin Field North<br>Median Sale Price: 791500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8872ce828950bfe1a3373d57fc060ff3 = L.circleMarker(
+                [42.2885305, -71.08840359999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_8872ce828950bfe1a3373d57fc060ff3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Franklin Field South<br>Median Sale Price: 692500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83a7f292b7ac23f2c0485d0e2a522d0f = L.circleMarker(
+                [42.2500374, -71.1418809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_83a7f292b7ac23f2c0485d0e2a522d0f.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Georgetown<br>Median Sale Price: 571000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3515959905ba59d72889c9e54a514a64 = L.circleMarker(
+                [42.2689791, -71.0940002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_3515959905ba59d72889c9e54a514a64.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Greater Mattapan<br>Median Sale Price: 716000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fcf096a6d9debdf536a91bce606d0b9e = L.circleMarker(
+                [42.3883645, -71.00520279999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_fcf096a6d9debdf536a91bce606d0b9e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Harbor View-Orient Heights<br>Median Sale Price: 732000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_561274293080607aa207599c66a5dd64 = L.circleMarker(
+                [42.3368621, -71.0720619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_561274293080607aa207599c66a5dd64.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Harrison Lenox<br>Median Sale Price: 940000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_068901e043f6bfbb238823b4d81ffc77 = L.circleMarker(
+                [42.3261495, -71.0928603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_068901e043f6bfbb238823b4d81ffc77.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Highland Park<br>Median Sale Price: 736000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a0d49ad06c937b1a0df349571dad69c1 = L.circleMarker(
+                [42.3234206, -71.1047446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_a0d49ad06c937b1a0df349571dad69c1.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Hyde Square<br>Median Sale Price: 649000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bff7c90d4238d3f0a16f890d7948aa40 = L.circleMarker(
+                [42.3132414, -71.1141118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_bff7c90d4238d3f0a16f890d7948aa40.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Central-South Sumner<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14d9d95d962534f3df59823c87564d31 = L.circleMarker(
+                [42.3126689, -71.1226633],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_14d9d95d962534f3df59823c87564d31.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jamaica Hills-Pond<br>Median Sale Price: 750000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_36a4c2dc4ac4abb4e2dadc18d23d69ee = L.circleMarker(
+                [42.3666974, -71.03382189999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_36a4c2dc4ac4abb4e2dadc18d23d69ee.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Jeffries Point<br>Median Sale Price: 662500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_356c5efbad818938a4995e1137f34329 = L.circleMarker(
+                [42.346832, -71.0923139],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_356c5efbad818938a4995e1137f34329.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Kenmore<br>Median Sale Price: 734000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4468cadb52b859883359b08ae93ba9b2 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_4468cadb52b859883359b08ae93ba9b2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - King Square<br>Median Sale Price: 619000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39072ed1fe0ecc1d20a049d5ecfc3e82 = L.circleMarker(
+                [42.36557519999999, -71.0097645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_39072ed1fe0ecc1d20a049d5ecfc3e82.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Logan Airport / Jeffries Point<br>Median Sale Price: 665000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3e758a5646db7e382f5145ed2c30cae0 = L.circleMarker(
+                [42.3389262, -71.1071588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_3e758a5646db7e382f5145ed2c30cae0.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Longwood / Lma<br>Median Sale Price: 626700.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_af86a63c71ce2137b92d2c43c551f6aa = L.circleMarker(
+                [42.3632146, -71.1297735],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_af86a63c71ce2137b92d2c43c551f6aa.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Allston<br>Median Sale Price: 770000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ebe1db6303d6d6490e2a7a89f52d37d2 = L.circleMarker(
+                [42.2800344, -71.0589066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_ebe1db6303d6d6490e2a7a89f52d37d2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower East Mills-Cedar Grove<br>Median Sale Price: 780000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14481eed1bde8907a01842684d645eb7 = L.circleMarker(
+                [42.3317603, -71.0839469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_14481eed1bde8907a01842684d645eb7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Roxbury<br>Median Sale Price: 449000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_62d357cc7d825e18106d9636879f25be = L.circleMarker(
+                [42.2830649, -71.1121722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_62d357cc7d825e18106d9636879f25be.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Lower Washington-Mount Hope<br>Median Sale Price: 747500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10bb0955f0edf7016512700f0202340c = L.circleMarker(
+                [42.2685953, -71.093474],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_10bb0955f0edf7016512700f0202340c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mattapan Square<br>Median Sale Price: 670000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f089aa353a3cbdbcab3e951aef31f081 = L.circleMarker(
+                [42.3814894, -71.0690907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f089aa353a3cbdbcab3e951aef31f081.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Medford Street-the Neck<br>Median Sale Price: 1276000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5329aa943294d9df78fbec255a846e6 = L.circleMarker(
+                [42.3376832, -71.1047446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_e5329aa943294d9df78fbec255a846e6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Medical Center Area<br>Median Sale Price: 575000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_523257761e6647e46211d7352a3deaf5 = L.circleMarker(
+                [42.3044363, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_523257761e6647e46211d7352a3deaf5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Meeting House Hill<br>Median Sale Price: 850000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f253e30773c502c80f68e2cf5816eda7 = L.circleMarker(
+                [42.2949548, -71.0656522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f253e30773c502c80f68e2cf5816eda7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Melville-Wellesley Parks<br>Median Sale Price: 1231250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ffb135a6fb3f8239321a36f2e9627262 = L.circleMarker(
+                [42.2784217, -71.1371602],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_ffb135a6fb3f8239321a36f2e9627262.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Metropolitan Hill-Beach Street<br>Median Sale Price: 660000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_73587cbeebee7f20a8224d0e809d5a9d = L.circleMarker(
+                [42.3130282, -71.1165096],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_73587cbeebee7f20a8224d0e809d5a9d.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Monument Square Historic District<br>Median Sale Price: 2030000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8feeba945565c2e6172f6057078146e7 = L.circleMarker(
+                [42.3241513, -71.07962719999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_8feeba945565c2e6172f6057078146e7.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Moreland Street Historic District<br>Median Sale Price: 620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1322ca14df799ad392e397597bc9ad3 = L.circleMarker(
+                [42.3258282, -71.07861609999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_d1322ca14df799ad392e397597bc9ad3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Mount Pleasant Historic District<br>Median Sale Price: 972500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f430a6a603add5f5cb329b80e25e77d2 = L.circleMarker(
+                [42.2909424, -71.0468053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f430a6a603add5f5cb329b80e25e77d2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Neponset<br>Median Sale Price: 660000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_212468d97efe181c4ab51414420e1f75 = L.circleMarker(
+                [42.3648007, -71.0537232],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_212468d97efe181c4ab51414420e1f75.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North End / Waterfront<br>Median Sale Price: 875000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e96b381ce6b323769e1fad59229669dd = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_e96b381ce6b323769e1fad59229669dd.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - North Slope<br>Median Sale Price: 912750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f5077c045ede19c1047e9f1aa35bf052 = L.circleMarker(
+                [42.3529759, -71.159705],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f5077c045ede19c1047e9f1aa35bf052.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Oak Square<br>Median Sale Price: 882500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3e817a27e23261cdd712a064a1ec93ca = L.circleMarker(
+                [42.3892532, -71.0000022],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_3e817a27e23261cdd712a064a1ec93ca.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Orient Heights<br>Median Sale Price: 692500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a32de723d75b93f25c78321a7670152 = L.circleMarker(
+                [42.2909424, -71.0468053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0a32de723d75b93f25c78321a7670152.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Port Norfolk<br>Median Sale Price: 800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_13b8d2bbdba3c3b24b9923a60f6e2f20 = L.circleMarker(
+                [42.3471679, -71.0802329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_13b8d2bbdba3c3b24b9923a60f6e2f20.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Prudential-St. Botolph<br>Median Sale Price: 3137500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4b64aa4528def6bad9b025c3af6a73de = L.circleMarker(
+                [42.2384918, -71.1299976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_4b64aa4528def6bad9b025c3af6a73de.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Readville<br>Median Sale Price: 577500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5918ee0479b9d44866c15c5275e7664 = L.circleMarker(
+                [42.3241223, -71.0809757],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_b5918ee0479b9d44866c15c5275e7664.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Sav-Mor<br>Median Sale Price: 700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4eba241f3899ec1ef148033aa196f793 = L.circleMarker(
+                [42.3152582, -71.0349678],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_4eba241f3899ec1ef148033aa196f793.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill / Columbia Point<br>Median Sale Price: 775000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4a8f113a4dac9ccbed8565d6430b7a2 = L.circleMarker(
+                [42.309863, -71.0499572],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_d4a8f113a4dac9ccbed8565d6430b7a2.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill Flats<br>Median Sale Price: 617500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a1e93e2d4c57321da32f6571670f638 = L.circleMarker(
+                [42.309863, -71.0499572],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_7a1e93e2d4c57321da32f6571670f638.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Savin Hill Historic District<br>Median Sale Price: 905000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53208ff877c8dd299e334eb3a75465d6 = L.circleMarker(
+                [42.3462519, -71.04214429999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_53208ff877c8dd299e334eb3a75465d6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Seaport District<br>Median Sale Price: 2025000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d29ccb381dcd60b8249b9210d6de4118 = L.circleMarker(
+                [42.3432703, -71.0713191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_d29ccb381dcd60b8249b9210d6de4118.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Shawmut<br>Median Sale Price: 1200000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9d9ae62f049709c9d0dbf9d0573d9674 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_9d9ae62f049709c9d0dbf9d0573d9674.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - South Slope<br>Median Sale Price: 2553750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b14078120fddd9c14f4e1fba87739952 = L.circleMarker(
+                [42.2705097, -71.0943459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_b14078120fddd9c14f4e1fba87739952.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Southern Mattapan<br>Median Sale Price: 612500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_483c4ec4f4bd6ab51284fdb5cf133976 = L.circleMarker(
+                [42.3508151, -71.1493418],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_483c4ec4f4bd6ab51284fdb5cf133976.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Sparhawk Street Historic District<br>Median Sale Price: 1127500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38e7e1a2b29d7c8d1ce17a0f7d259442 = L.circleMarker(
+                [42.3434687, -71.159705],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_38e7e1a2b29d7c8d1ce17a0f7d259442.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - St. Elizabeth's<br>Median Sale Price: 709000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c04e923ce10d02db0714c825e5ea79c5 = L.circleMarker(
+                [42.2925456, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_c04e923ce10d02db0714c825e5ea79c5.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - St. Marks<br>Median Sale Price: 699900.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9134ddeaba84cdb5167173cd9e398dd3 = L.circleMarker(
+                [42.2565289, -71.1240559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_9134ddeaba84cdb5167173cd9e398dd3.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Stony Brook-Cleary Square<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_32ced5ee30ff057cfba571b8c6533c04 = L.circleMarker(
+                [42.28809, -71.0769361],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_32ced5ee30ff057cfba571b8c6533c04.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Talbot-Norfolk Triangle<br>Median Sale Price: 556000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0265c0a80ee2a2bee46f0e386b1c3879 = L.circleMarker(
+                [42.3336533, -71.0393766],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0265c0a80ee2a2bee46f0e386b1c3879.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Telegraph Hill<br>Median Sale Price: 760000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b33323227ae8add0facf2e1debe8445 = L.circleMarker(
+                [42.3755627, -71.06447349999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_8b33323227ae8add0facf2e1debe8445.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Thompson Square-Bunker Hill<br>Median Sale Price: 890000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_31fbcd4f2013d138b8fcae108140e008 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_31fbcd4f2013d138b8fcae108140e008.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Town Hill Landmark Historic District<br>Median Sale Price: 845000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_38a5a27e57a7379fa6044bc23c650414 = L.circleMarker(
+                [42.313947, -71.063148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_38a5a27e57a7379fa6044bc23c650414.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Uphams Corner-Jones Hill<br>Median Sale Price: 585000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aa2b33566cb63a4b31fc0b5e242b0103 = L.circleMarker(
+                [42.270235, -71.1626756],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_aa2b33566cb63a4b31fc0b5e242b0103.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Upper Washington-Spring Street<br>Median Sale Price: 727500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_06a0b1704221f5ccedf8c11f181e3c87 = L.circleMarker(
+                [42.3170687, -71.08840359999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_06a0b1704221f5ccedf8c11f181e3c87.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Washington Park<br>Median Sale Price: 820000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52cd5e00315598fe3f16c38fb0497111 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_52cd5e00315598fe3f16c38fb0497111.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Washington Street Theater District<br>Median Sale Price: 1517500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2fb3ed900274cc19f170ea259412c1da = L.circleMarker(
+                [42.3573021, -71.0508911],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_2fb3ed900274cc19f170ea259412c1da.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Waterfront<br>Median Sale Price: 1010000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2e7ade3c1ee560b80b1577270475030e = L.circleMarker(
+                [42.2800275, -71.0943459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_2e7ade3c1ee560b80b1577270475030e.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Wellington Hill<br>Median Sale Price: 810000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8d9904a8d9f86d8ab4f8e59c0ef160a = L.circleMarker(
+                [42.2808092, -71.0780044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f8d9904a8d9f86d8ab4f8e59c0ef160a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Codman Hill-West Lower Mills<br>Median Sale Price: 750500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c3e5f021b8d9b5198e9a972cf525131a = L.circleMarker(
+                [42.3402946, -71.0951539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_c3e5f021b8d9b5198e9a972cf525131a.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Fenway<br>Median Sale Price: 539000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6174cdd7165dcbeedb0b5918732eae6 = L.circleMarker(
+                [42.287104, -71.1480657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_f6174cdd7165dcbeedb0b5918732eae6.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Roxbury Center<br>Median Sale Price: 675000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e5c52dc306f00d1a0a3d829f900423c = L.circleMarker(
+                [42.269799, -71.1181141],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_0e5c52dc306f00d1a0a3d829f900423c.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - West Street-River Street<br>Median Sale Price: 560000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2d0a27130cc978dc3ad28243ec96a94 = L.circleMarker(
+                [42.3600825, -71.0588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f947479d525858148e441c2f47a27629);
+        
+    
+            circle_marker_a2d0a27130cc978dc3ad28243ec96a94.bindTooltip(
+                `<div>
+                     City: Boston<br>Region: Boston, MA - Woodbourne Historic District<br>Median Sale Price: 735000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_7719634fa9e7d7283797ce6200a0fe5c = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var tile_layer_7a3f2469b29358b76d8ed7c3df6bcde8 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var tile_layer_0e99c41e8a048f80af4a4fce25980b82 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var tile_layer_70439ec33022a86d4fec14043cd2b9a1 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var tile_layer_2e54f0d6ab2cad7e51ae21e117ebacfa = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var tile_layer_b316bbeb1ce2c6fb1281a62c387d76d7 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+        
+    
+            var layer_control_d59e82f465199ffe753157476c4ba7e4 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_0e99c41e8a048f80af4a4fce25980b82,
+                    "stamenwatercolor" : tile_layer_7719634fa9e7d7283797ce6200a0fe5c,
+                    "openstreetmap" : tile_layer_7a3f2469b29358b76d8ed7c3df6bcde8,
+                    "stamentoner" : tile_layer_70439ec33022a86d4fec14043cd2b9a1,
+                    "cartodbpositron" : tile_layer_2e54f0d6ab2cad7e51ae21e117ebacfa,
+                    "cartodbdark_matter" : tile_layer_b316bbeb1ce2c6fb1281a62c387d76d7,
+                },
+                overlays :  {
+                    "Boston - median_sale_price" : heat_map_860b0d4ab8d1da1bac4c17889aeba255,
+                    "Median Sale Price Centers" : feature_group_f947479d525858148e441c2f47a27629,
+                },
+            };
+            L.control.layers(
+                layer_control_d59e82f465199ffe753157476c4ba7e4.base_layers,
+                layer_control_d59e82f465199ffe753157476c4ba7e4.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_29fd050fbfe66971a99419cc22beb11c);
+            tile_layer_7719634fa9e7d7283797ce6200a0fe5c.remove();
+            tile_layer_7a3f2469b29358b76d8ed7c3df6bcde8.remove();
+            tile_layer_0e99c41e8a048f80af4a4fce25980b82.remove();
+            tile_layer_70439ec33022a86d4fec14043cd2b9a1.remove();
+            tile_layer_2e54f0d6ab2cad7e51ae21e117ebacfa.remove();
+            tile_layer_b316bbeb1ce2c6fb1281a62c387d76d7.remove();
+        
+</script>
+</html>

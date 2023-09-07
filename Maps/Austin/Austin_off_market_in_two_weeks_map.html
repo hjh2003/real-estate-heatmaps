@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8db2e0fdf01a7aea2dd2b100a70ba7a1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8db2e0fdf01a7aea2dd2b100a70ba7a1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8db2e0fdf01a7aea2dd2b100a70ba7a1 = L.map(
+                "map_8db2e0fdf01a7aea2dd2b100a70ba7a1",
+                {
+                    center: [30.293640803781646, -97.7465385200173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f883e95b8ec1b0a45d8f3a7fe22003de = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var heat_map_20cfe0a08737549ef965c5ee547f6ad8 = L.heatLayer(
+                [[30.2649178, -97.7464235, 0.0], [30.3393252, -97.746952, 0.2999999999999999], [30.4611355, -97.8299965, 0.0], [30.4237172, -97.7375963, 0.3333333333333333], [30.267153, -97.7430608, 0.0], [30.4689145, -97.799452, 0.1904761904761904], [30.2533686, -97.7835429, 0.25], [30.280638, -97.7224315, 1.0], [30.1725823, -97.768618, 0.25], [30.2515465, -97.7543062, 0.125], [30.2515465, -97.7543062, 0.0], [30.330898, -97.7316065, 0.0], [30.3364313, -97.7264415, 0.0], [30.1902458, -97.8454709, 0.25], [30.30244979999999, -97.7538935, 0.0], [30.3251308, -97.7506508, 0.1818181818181818], [30.3134263, -97.7666194, 0.0], [30.2938151, -97.7329, 0.096774193548387], [30.27162349999999, -97.7248647, 0.0], [30.2954625, -97.7551352, 0.3333333333333333], [30.1979137, -97.8245578, 0.3214285714285714], [30.2917457, -97.7136007, 0.0], [30.2790657, -97.7131577, 0.125], [30.2802042, -97.7591251, 0.0], [30.2680667, -97.7428151, 1.0], [30.38827179999999, -97.6588801, 0.0], [30.32699239999999, -97.6877987, 0.0], [30.348322, -97.727536, 0.2222222222222222], [30.3534821, -97.7233389, 0.2142857142857142], [30.3280279, -97.8055259, 0.3333333333333333], [30.2329651, -97.7613825, 0.0], [30.18505, -97.8020854, 0.1304347826086956], [30.2729209, -97.74438630000002, 0.1904761904761904], [30.2654547, -97.7090635, 0.1481481481481481], [30.2585193, -97.7286604, 0.0], [30.20856089999999, -97.7661188, 0.1111111111111111], [30.2825656, -97.6766639, 0.0769230769230769], [30.240054, -97.8303149, 0.2], [30.2275044, -97.7277824, 0.0], [30.4038127, -97.8536211, 0.1666666666666666], [30.1939634, -97.7446677, 0.3333333333333333], [30.2355462, -97.7685704, 0.0], [30.2088183, -97.8047019, 0.0], [30.3499918, -97.7009416, 0.0], [30.2560413, -97.7016981, 0.0], [30.2660111, -97.7021915, 0.0], [30.389061, -97.6941558, 0.2], [30.2367289, -97.7488105, 0.1666666666666666], [30.2964691, -97.7232153, 0.1111111111111111], [30.30110269999999, -97.741329, 0.25], [30.3435785, -97.6888656, 0.0], [30.3339959, -97.7169771, 0.0], [30.3235367, -97.760685, 0.0], [30.2573267, -97.7172302, 0.3333333333333333], [30.30816969999999, -97.7274412, 0.4], [30.2256434, -97.7853145, 0.0909090909090909], [30.2558365, -97.6849958, 0.0], [30.4065779, -97.7478949, 0.0769230769230769], [30.2820349, -97.7477816, 0.0], [30.4357579, -97.6894508, 0.0], [30.4207209, -97.6914416, 0.0], [30.267153, -97.7430608, 0.1666666666666666], [30.2837453, -97.6961546, 0.0], [30.2760264, -97.66791, 0.0833333333333333], [30.3739474, -97.8517552, 0.1], [30.2050512, -97.849035, 0.0], [30.26889559999999, -97.7518561, 0.4], [30.2124078, -97.7369381, 0.0], [30.4456938, -97.7363508, 0.1481481481481481], [30.2295806, -97.6970651, 0.2], [30.2986834, -97.700371, 0.2], [30.3923316, -97.708224, 0.0476190476190476], [30.3911419, -97.7218332, 0.0], [30.3911535, -97.7218322, 0.0], [30.370122, -97.6884248, 0.0], [30.3176931, -97.7211877, 0.0], [30.3646906, -97.7351113, 0.2], [30.2976841, -97.7375963, 0.0], [30.3903487, -97.7487151, 0.1454545454545454], [30.3903487, -97.7487151, 0.125], [30.353213, -97.7674773, 0.2], [30.3591778, -97.7655987, 0.2857142857142857], [30.2339613, -97.8648067, 0.1428571428571428], [30.273648, -97.6976539, 0.3333333333333333], [30.2877953, -97.7673314, 0.0], [30.2954625, -97.7551352, 0.0], [30.3000111, -97.6738023, 0.1428571428571428], [30.23471079999999, -97.7118003, 0.0], [30.4504785, -97.785287, 0.0666666666666666], [30.3688641, -97.7046722, 0.0833333333333333], [30.3914446, -97.7022988, 0.0], [30.4179412, -97.8984558, 0.0], [30.2359434, -97.7284907, 0.0], [30.267153, -97.7430608, 0.2], [30.267346, -97.7234586, 0.0], [30.3143949, -97.7457444, 0.2], [30.2706266, -97.7104428, 0.3333333333333333], [30.4212008, -97.6832998, 0.0], [30.2660292, -97.7518561, 0.0], [30.20632253321186, -97.90891762243965, 0.0], [30.1935594, -97.842056, 0.0], [30.2049701, -97.7748074, 0.1578947368421052], [30.2372278, -97.7837533, 0.0714285714285714], [30.267153, -97.7430608, 0.1212121212121212], [30.2195294, -97.7839041, 0.1764705882352941], [30.2055702, -97.7166372, 0.25], [30.2009698, -97.8333958, 1.0], [30.1624125, -97.7946527, 0.0], [30.267153, -97.7430608, 0.1367521367521367], [30.4359772, -97.8000975, 0.0], [30.1568662, -97.7430283, 0.5], [30.2264094, -97.7552517, 0.25], [30.3328019, -97.7009416, 0.3333333333333333], [30.3260919, -97.6922889, 0.2857142857142857], [30.1970686, -97.7771702, 0.5], [30.4078412, -97.6670191, 0.1176470588235294], [30.2523971, -97.8338263, 0.0], [30.317206, -97.6738023, 0.5], [30.317206, -97.6738023, 0.25], [30.1858848, -97.7705653, 0.1428571428571428], [30.2086396, -97.8728403, 0.1428571428571428], [30.2954625, -97.7551352, 0.3333333333333333], [30.21315749999999, -97.7743522, 0.3333333333333333], [30.2385146, -97.8884881, 0.125], [30.29147, -97.7457444, 0.125], [30.2881825, -97.7769875, 0.3333333333333333], [30.2230485, -97.7986926, 0.3333333333333333], [30.292674, -97.553824, 0.5], [30.2963458, -97.7136976, 0.0], [30.3627291, -97.6792293, 0.0], [30.3105177, -97.6900846, 0.1666666666666666], [30.2936434, -97.7650044, 0.0], [30.357046, -97.751177, 0.0], [30.2062976, -97.840195, 0.0], [30.3610582, -97.7232992, 0.2], [30.25426879999999, -97.7669536, 0.125]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var feature_group_ccb0a6607d2c92d0cae16464fdd2695c = L.featureGroup(
+                {}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var circle_marker_f48d0f40ce095328755c99049568ca75 = L.circleMarker(
+                [30.2649178, -97.7464235],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_f48d0f40ce095328755c99049568ca75.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - 2nd Street District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e99ebde122b42ffb1343c4bc3e99121 = L.circleMarker(
+                [30.3393252, -97.746952],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_1e99ebde122b42ffb1343c4bc3e99121.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Allandale<br>Off Market in Two Weeks: 0.2999999999999999<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91a97df20b30ad6bf87ac8cb242c1cdc = L.circleMarker(
+                [30.4611355, -97.8299965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_91a97df20b30ad6bf87ac8cb242c1cdc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Anderson Mill West<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2d41d3030e50226aa65a65e176cbaef5 = L.circleMarker(
+                [30.4237172, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_2d41d3030e50226aa65a65e176cbaef5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Angus Valley<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_79e44e0de261869a102812b31aad6ed0 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_79e44e0de261869a102812b31aad6ed0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Arts District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_714d70612334d5465d533adfef0850a1 = L.circleMarker(
+                [30.4689145, -97.799452],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_714d70612334d5465d533adfef0850a1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Avery Ranch-Lakeline<br>Off Market in Two Weeks: 0.1904761904761904<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0f6977f6c726f1c55c56392db774aeb2 = L.circleMarker(
+                [30.2533686, -97.7835429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_0f6977f6c726f1c55c56392db774aeb2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Barton Hills<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_498417b31ed86b553a1fffa53131a5b6 = L.circleMarker(
+                [30.280638, -97.7224315],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_498417b31ed86b553a1fffa53131a5b6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Blackland<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fb010d411f0a0a1876d78f90c3140ec3 = L.circleMarker(
+                [30.1725823, -97.768618],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_fb010d411f0a0a1876d78f90c3140ec3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bluff Springs<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ed98bf21252286198523c8a4d7ce4707 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ed98bf21252286198523c8a4d7ce4707.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin Creek<br>Off Market in Two Weeks: 0.125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4a207b81b5cbbb493ab8d05078a72c94 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_4a207b81b5cbbb493ab8d05078a72c94.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin South<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33711ac713a9ee00e2f0822c0cd8bc7f = L.circleMarker(
+                [30.330898, -97.7316065],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_33711ac713a9ee00e2f0822c0cd8bc7f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_02c4ede911bf8161dced1743d2755657 = L.circleMarker(
+                [30.3364313, -97.7264415],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_02c4ede911bf8161dced1743d2755657.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood-Highland<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0daf08a4cd21a3507d6e5fe29a550535 = L.circleMarker(
+                [30.1902458, -97.8454709],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_0daf08a4cd21a3507d6e5fe29a550535.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brodie Lane<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b8712c4147d9829830f95c4a84e0976 = L.circleMarker(
+                [30.30244979999999, -97.7538935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_8b8712c4147d9829830f95c4a84e0976.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bryker Woods<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_694ec1578cbb83c8af517b4cef272524 = L.circleMarker(
+                [30.3251308, -97.7506508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_694ec1578cbb83c8af517b4cef272524.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bull Creek<br>Off Market in Two Weeks: 0.1818181818181818<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d868ca5559cb933a8d2e813a7fc6d806 = L.circleMarker(
+                [30.3134263, -97.7666194],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d868ca5559cb933a8d2e813a7fc6d806.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Camp Mabry<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4aacf9e5bee81e3ee3d4159b14e56124 = L.circleMarker(
+                [30.2938151, -97.7329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_4aacf9e5bee81e3ee3d4159b14e56124.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central Austin<br>Off Market in Two Weeks: 0.096774193548387<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6a790dc6d06b2258c8650fc853c11e47 = L.circleMarker(
+                [30.27162349999999, -97.7248647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_6a790dc6d06b2258c8650fc853c11e47.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central East Austin<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df5fef2e7c587ff70ee1a5a382074de7 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_df5fef2e7c587ff70ee1a5a382074de7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central West Austin<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_48ee843a2d0ba301fc2b8d3f85b2eaac = L.circleMarker(
+                [30.1979137, -97.8245578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_48ee843a2d0ba301fc2b8d3f85b2eaac.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherry Creek<br>Off Market in Two Weeks: 0.3214285714285714<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_19076d1b5b3cbb298f963af1d5333005 = L.circleMarker(
+                [30.2917457, -97.7136007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_19076d1b5b3cbb298f963af1d5333005.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherrywood<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7e7c82340f7273b5b223c9004bef5d7 = L.circleMarker(
+                [30.2790657, -97.7131577],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_b7e7c82340f7273b5b223c9004bef5d7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Chestnut<br>Off Market in Two Weeks: 0.125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8408453eb4ad929e3d74c158e23068e5 = L.circleMarker(
+                [30.2802042, -97.7591251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_8408453eb4ad929e3d74c158e23068e5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Clarksville<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3b4fd80a86d278e39bfee8d6281304e6 = L.circleMarker(
+                [30.2680667, -97.7428151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3b4fd80a86d278e39bfee8d6281304e6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Congress Avenue District<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_421d199062b469a333a41d6f18d09dd7 = L.circleMarker(
+                [30.38827179999999, -97.6588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_421d199062b469a333a41d6f18d09dd7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Copperfield<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfd777b067753fa9c7b13fc691f6203e = L.circleMarker(
+                [30.32699239999999, -97.6877987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_cfd777b067753fa9c7b13fc691f6203e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Coronado Hills<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e04f24d2ab28218ffcad453fcffc0d92 = L.circleMarker(
+                [30.348322, -97.727536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e04f24d2ab28218ffcad453fcffc0d92.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview<br>Off Market in Two Weeks: 0.2222222222222222<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c432276e820d7df6eb495cb056b0385 = L.circleMarker(
+                [30.3534821, -97.7233389],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_5c432276e820d7df6eb495cb056b0385.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview-Wooten<br>Off Market in Two Weeks: 0.2142857142857142<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb37376a6f7c0e99dd0ed7cf46a7fb39 = L.circleMarker(
+                [30.3280279, -97.8055259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_eb37376a6f7c0e99dd0ed7cf46a7fb39.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Davenport Ranch<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c8b66f6593c9740a889dc96b2b65076d = L.circleMarker(
+                [30.2329651, -97.7613825],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_c8b66f6593c9740a889dc96b2b65076d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dawson<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c42f0204ec0f51f43a0e1d395983a06e = L.circleMarker(
+                [30.2091069, -97.6472349],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_c42f0204ec0f51f43a0e1d395983a06e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Del Valle<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ddbc8b3f84868ebc759e4a146558bbe0 = L.circleMarker(
+                [30.18505, -97.8020854],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ddbc8b3f84868ebc759e4a146558bbe0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dittmar-Slaughter<br>Off Market in Two Weeks: 0.1304347826086956<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ebd26297505740e38db3cb63574d1866 = L.circleMarker(
+                [30.2729209, -97.74438630000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ebd26297505740e38db3cb63574d1866.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Downtown Austin<br>Off Market in Two Weeks: 0.1904761904761904<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47ba6a46f058d63939de84d890bb47fa = L.circleMarker(
+                [30.2658909, -97.7350274],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_47ba6a46f058d63939de84d890bb47fa.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East 6th Street District<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2fe0ffe7101888caf701ca9990ebdbf0 = L.circleMarker(
+                [30.2654547, -97.7090635],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_2fe0ffe7101888caf701ca9990ebdbf0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Austin<br>Off Market in Two Weeks: 0.1481481481481481<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_00c46f86a336140abe14222d17e63011 = L.circleMarker(
+                [30.2585193, -97.7286604],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_00c46f86a336140abe14222d17e63011.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Cesar Chavez<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e985c461050879682da97596e279623 = L.circleMarker(
+                [30.20856089999999, -97.7661188],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_0e985c461050879682da97596e279623.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Congress<br>Off Market in Two Weeks: 0.1111111111111111<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9b9f41a858d878a43ebb88a3e45b502f = L.circleMarker(
+                [30.2825656, -97.6766639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_9b9f41a858d878a43ebb88a3e45b502f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East MLK<br>Off Market in Two Weeks: 0.0769230769230769<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2647c48faf7b12e30e787681bebbd7e = L.circleMarker(
+                [30.240054, -97.8303149],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d2647c48faf7b12e30e787681bebbd7e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Oak Hill<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7673026c28a0b2cfcc935444fa67d0e = L.circleMarker(
+                [30.2275044, -97.7277824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e7673026c28a0b2cfcc935444fa67d0e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Riverside-Oltorf<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f323891aa48e85fcfd71f2aba48498e = L.circleMarker(
+                [30.2818771, -97.6669884],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_5f323891aa48e85fcfd71f2aba48498e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ed Bluestein<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d5f31645c29f4d4fd92e174b97a41afe = L.circleMarker(
+                [30.4038127, -97.8536211],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d5f31645c29f4d4fd92e174b97a41afe.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Four Points<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_023e75f1de882cc187d74f077d538c6a = L.circleMarker(
+                [30.1939634, -97.7446677],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_023e75f1de882cc187d74f077d538c6a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Franklin Park<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52a922ef3f4e570e57f7e36b4d675696 = L.circleMarker(
+                [30.2355462, -97.7685704],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_52a922ef3f4e570e57f7e36b4d675696.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Galindo<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_792617e903981ec33c8f2d40810db962 = L.circleMarker(
+                [30.2088183, -97.8047019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_792617e903981ec33c8f2d40810db962.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Garrison Park<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e8366c1dd808567614740307349e552c = L.circleMarker(
+                [30.3499918, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e8366c1dd808567614740307349e552c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Georgian Acres<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6fbc882600a717aa2df51c51dd8d409f = L.circleMarker(
+                [30.2560413, -97.7016981],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_6fbc882600a717aa2df51c51dd8d409f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8d5a942a053eb0ab11ab451a2d78e232 = L.circleMarker(
+                [30.2660111, -97.7021915],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_8d5a942a053eb0ab11ab451a2d78e232.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle-Johnston Terrace<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3641e8a100ffc764d96811631eb8c99b = L.circleMarker(
+                [30.389061, -97.6941558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3641e8a100ffc764d96811631eb8c99b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Gracy Woods<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3a08e5ae5b41a4719fc95e262df9189f = L.circleMarker(
+                [30.2367289, -97.7488105],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3a08e5ae5b41a4719fc95e262df9189f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Greater South River City<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dece77e790bf426bf0b37d9c8a172bfc = L.circleMarker(
+                [30.2964691, -97.7232153],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_dece77e790bf426bf0b37d9c8a172bfc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hancock<br>Off Market in Two Weeks: 0.1111111111111111<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e27ebf1c627b37377c98e22030d52af5 = L.circleMarker(
+                [30.30110269999999, -97.741329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e27ebf1c627b37377c98e22030d52af5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_80949aea966eddf6bfb8f23ddca85a48 = L.circleMarker(
+                [30.3435785, -97.6888656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_80949aea966eddf6bfb8f23ddca85a48.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage Hills-Windsor Hills<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d46cec5c7e22939010ece4b99771ff72 = L.circleMarker(
+                [30.3339959, -97.7169771],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d46cec5c7e22939010ece4b99771ff72.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_704cf00c7344c24cd8a973bd19225969 = L.circleMarker(
+                [30.3235367, -97.760685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_704cf00c7344c24cd8a973bd19225969.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland Park West<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ffce9ce58fab23c6e8935578b4b29e73 = L.circleMarker(
+                [30.2573267, -97.7172302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ffce9ce58fab23c6e8935578b4b29e73.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Holly<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3fd431ecf1ec28a90d39818c9ee37793 = L.circleMarker(
+                [30.30816969999999, -97.7274412],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3fd431ecf1ec28a90d39818c9ee37793.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hyde Park<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b6369946569604c921c9a7c280103dd1 = L.circleMarker(
+                [30.2256434, -97.7853145],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_b6369946569604c921c9a7c280103dd1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jester<br>Off Market in Two Weeks: 0.0909090909090909<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_69f1426ebefa078c218a5f0d1a87fc3a = L.circleMarker(
+                [30.2558365, -97.6849958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_69f1426ebefa078c218a5f0d1a87fc3a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Johnston Terrace<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_11c494343ef30d72f5a116c5cd8dc3f9 = L.circleMarker(
+                [30.4065779, -97.7478949],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_11c494343ef30d72f5a116c5cd8dc3f9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jollyville<br>Off Market in Two Weeks: 0.0769230769230769<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_12814082fcf7ddb10a2a273daf6ad861 = L.circleMarker(
+                [30.2820349, -97.7477816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_12814082fcf7ddb10a2a273daf6ad861.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Judges Hill<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1e4fbc1c4f5b7b8e4bce1b694c2e9373 = L.circleMarker(
+                [30.4357579, -97.6894508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_1e4fbc1c4f5b7b8e4bce1b694c2e9373.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Kings Village<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4fb39adc074cd4c5b60139c532a9c7f5 = L.circleMarker(
+                [30.3007579, -97.7878318],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_4fb39adc074cd4c5b60139c532a9c7f5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lakeshore<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_798663cca8ec383c34103ebd0d2962d9 = L.circleMarker(
+                [30.4207209, -97.6914416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_798663cca8ec383c34103ebd0d2962d9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lamplight Village<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3a8bb45240e6841c31e2ce5082260a76 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3a8bb45240e6841c31e2ce5082260a76.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Laurel Oaks<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5916af5380c8291bf965fb5af21bbb62 = L.circleMarker(
+                [30.2837453, -97.6961546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_5916af5380c8291bf965fb5af21bbb62.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_37ef3ce6e1d995d86aa3907327edf7c5 = L.circleMarker(
+                [30.2760264, -97.66791],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_37ef3ce6e1d995d86aa3907327edf7c5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK-183<br>Off Market in Two Weeks: 0.0833333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba2b881dfca91b9b32d32b4e595979d8 = L.circleMarker(
+                [30.3739474, -97.8517552],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ba2b881dfca91b9b32d32b4e595979d8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mansfield-River Place<br>Off Market in Two Weeks: 0.1<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0cb8858f221584bfaa90ee7ba32b277 = L.circleMarker(
+                [30.2050512, -97.849035],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d0cb8858f221584bfaa90ee7ba32b277.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Maple Run<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53f50ac2d459ea1712d491b70d0ae282 = L.circleMarker(
+                [30.26889559999999, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_53f50ac2d459ea1712d491b70d0ae282.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Market District<br>Off Market in Two Weeks: 0.4<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b66ce46ff623afc545caf244c3bedd41 = L.circleMarker(
+                [30.2124078, -97.7369381],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_b66ce46ff623afc545caf244c3bedd41.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McKinney<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ee91e1082be143ab5b1e517aa69aa16e = L.circleMarker(
+                [30.4456938, -97.7363508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ee91e1082be143ab5b1e517aa69aa16e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McNeil<br>Off Market in Two Weeks: 0.1481481481481481<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49275333b5a851c8c7a4d23b81af7df7 = L.circleMarker(
+                [30.2295806, -97.6970651],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_49275333b5a851c8c7a4d23b81af7df7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Montopolis<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d9941c2c415cbded528b36e084a34137 = L.circleMarker(
+                [30.2986834, -97.700371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d9941c2c415cbded528b36e084a34137.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mueller<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_55e099a71955fc2d01ec3f1bf509da0b = L.circleMarker(
+                [30.3923316, -97.708224],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_55e099a71955fc2d01ec3f1bf509da0b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Austin<br>Off Market in Two Weeks: 0.0476190476190476<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0d54346637258add3708aac145e98dc = L.circleMarker(
+                [30.3911419, -97.7218332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_f0d54346637258add3708aac145e98dc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb2bc1633e1df61e167db67c1ddf27e3 = L.circleMarker(
+                [30.3911535, -97.7218322],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_eb2bc1633e1df61e167db67c1ddf27e3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet-Gateway<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6390f00cc5ee5d721f5b104ba7b825b9 = L.circleMarker(
+                [30.370122, -97.6884248],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_6390f00cc5ee5d721f5b104ba7b825b9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Lamar<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_992807c2a6d2a8d60438d69e517b5168 = L.circleMarker(
+                [30.3176931, -97.7211877],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_992807c2a6d2a8d60438d69e517b5168.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Loop<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_784805ea81fc1b765c37bbb9e0da3312 = L.circleMarker(
+                [30.3646906, -97.7351113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_784805ea81fc1b765c37bbb9e0da3312.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Shoal Creek<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d696938cecd9c4d83264b007b6a47f43 = L.circleMarker(
+                [30.2976841, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d696938cecd9c4d83264b007b6a47f43.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North University<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_436c06155c00cb0ebdac3133718fe8bd = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_436c06155c00cb0ebdac3133718fe8bd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northeast Austin<br>Off Market in Two Weeks: 0.1454545454545454<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c78e3186028932ce485762e61a6e8c1b = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_c78e3186028932ce485762e61a6e8c1b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Austin<br>Off Market in Two Weeks: 0.125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e6d32dd3d97679ee63896c0e95bc285 = L.circleMarker(
+                [30.353213, -97.7674773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_0e6d32dd3d97679ee63896c0e95bc285.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_273aea4711bd079f28bcfe1ef1329b76 = L.circleMarker(
+                [30.3591778, -97.7655987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_273aea4711bd079f28bcfe1ef1329b76.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills-Far West<br>Off Market in Two Weeks: 0.2857142857142857<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1192d705351260efd14df7ae4c15ec8a = L.circleMarker(
+                [30.2339613, -97.8648067],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_1192d705351260efd14df7ae4c15ec8a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Hill<br>Off Market in Two Weeks: 0.1428571428571428<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6030430af03cd324c4c83c4d3218db99 = L.circleMarker(
+                [30.273648, -97.6976539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_6030430af03cd324c4c83c4d3218db99.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Springs<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f3ecc0005453741f894d9cc4fc14e13f = L.circleMarker(
+                [30.2877953, -97.7673314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_f3ecc0005453741f894d9cc4fc14e13f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old Enfield<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_75a29302685d8f9577b32d89516482cd = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_75a29302685d8f9577b32d89516482cd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old West Austin<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a62a113aeccce62c0093504f07363e9 = L.circleMarker(
+                [30.3000111, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_7a62a113aeccce62c0093504f07363e9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pecan Springs Springdale<br>Off Market in Two Weeks: 0.1428571428571428<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_812f0db7c5149c8593ce3bef6a92ba13 = L.circleMarker(
+                [30.2952051, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_812f0db7c5149c8593ce3bef6a92ba13.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pemberton Heights<br>Off Market in Two Weeks: nan<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6995f3a1d0361f648701d9e8ad17304c = L.circleMarker(
+                [30.23471079999999, -97.7118003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_6995f3a1d0361f648701d9e8ad17304c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pleasant Valley<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f2ca37f6827368d755ec98ddfc9a9e3b = L.circleMarker(
+                [30.4504785, -97.785287],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_f2ca37f6827368d755ec98ddfc9a9e3b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pond Springs<br>Off Market in Two Weeks: 0.0666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b47b9f3f1a23bc9813f32db211130aa6 = L.circleMarker(
+                [30.3688641, -97.7046722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_b47b9f3f1a23bc9813f32db211130aa6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Creek<br>Off Market in Two Weeks: 0.0833333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61955a54f246199b722feca43fdc70db = L.circleMarker(
+                [30.3914446, -97.7022988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_61955a54f246199b722feca43fdc70db.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Hollow<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0f86f8efd16dfd3f86705145bb364620 = L.circleMarker(
+                [30.4179412, -97.8984558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_0f86f8efd16dfd3f86705145bb364620.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ridgetop<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9121d995458b1e0bda201a7239f80d13 = L.circleMarker(
+                [30.2359434, -97.7284907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_9121d995458b1e0bda201a7239f80d13.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Riverside<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3d392b79601100ddbb83d753c2b409d3 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3d392b79601100ddbb83d753c2b409d3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers Hill<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2916243d8109de36c7fe8ab231e8935 = L.circleMarker(
+                [30.267346, -97.7234586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d2916243d8109de36c7fe8ab231e8935.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers-Washington-Holy Cross<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_58ad00f1ac20274106a5279e2cf95e15 = L.circleMarker(
+                [30.3143949, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_58ad00f1ac20274106a5279e2cf95e15.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosedale<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f70eaff28e6420e4ebc14cf1723fb357 = L.circleMarker(
+                [30.2706266, -97.7104428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_f70eaff28e6420e4ebc14cf1723fb357.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosewood<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5b029e391454cab055918afbc55b3f29 = L.circleMarker(
+                [30.4212008, -97.6832998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_5b029e391454cab055918afbc55b3f29.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Scofield Farms<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_93bbf9875b5716765ef9ad29128b5db5 = L.circleMarker(
+                [30.2660292, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_93bbf9875b5716765ef9ad29128b5db5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Seaholm District<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7308e8a5050db0a46ddd1b27d3105744 = L.circleMarker(
+                [30.20632253321186, -97.90891762243965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_7308e8a5050db0a46ddd1b27d3105744.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Slaughter Creek<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3e6e4fa79f7e610cf0b9ff9935a963f0 = L.circleMarker(
+                [30.1935594, -97.842056],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3e6e4fa79f7e610cf0b9ff9935a963f0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Brodie<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e05a04c87a041b54627a8a4059900f48 = L.circleMarker(
+                [30.2049701, -97.7748074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e05a04c87a041b54627a8a4059900f48.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Congress<br>Off Market in Two Weeks: 0.1578947368421052<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ed448f754756285a1f939d1902836481 = L.circleMarker(
+                [30.2372278, -97.7837533],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ed448f754756285a1f939d1902836481.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lamar<br>Off Market in Two Weeks: 0.0714285714285714<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d8e1df292a632c71a4a2c9cf60fc11a8 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d8e1df292a632c71a4a2c9cf60fc11a8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lawn<br>Off Market in Two Weeks: 0.1212121212121212<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_999242ffed61a582252bcedf1bac0b96 = L.circleMarker(
+                [30.2195294, -97.7839041],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_999242ffed61a582252bcedf1bac0b96.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Manchaca<br>Off Market in Two Weeks: 0.1764705882352941<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a68e230f5e6b8ddffe71ee12e85492a4 = L.circleMarker(
+                [30.2055702, -97.7166372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_a68e230f5e6b8ddffe71ee12e85492a4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southeast Austin<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18ec65491001803d46e9667829857e93 = L.circleMarker(
+                [30.2009698, -97.8333958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_18ec65491001803d46e9667829857e93.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southhampton Hills<br>Off Market in Two Weeks: 1.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b856dd67d0047bfbebc0cfdeda2aa101 = L.circleMarker(
+                [30.1624125, -97.7946527],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_b856dd67d0047bfbebc0cfdeda2aa101.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southpark Meadows<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_541434aecab23272a6db174a764b780e = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_541434aecab23272a6db174a764b780e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southwest Austin<br>Off Market in Two Weeks: 0.1367521367521367<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_252ea532d83e09c92eb47a5f7a7a3c38 = L.circleMarker(
+                [30.4359772, -97.8000975],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_252ea532d83e09c92eb47a5f7a7a3c38.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Spicewood<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9f7b54980f52ca62928bb71521afc951 = L.circleMarker(
+                [30.1568662, -97.7430283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_9f7b54980f52ca62928bb71521afc951.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Springfield at Thaxton Road<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ad1e001d204e170a15e31cf759cb7a6e = L.circleMarker(
+                [30.2264094, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_ad1e001d204e170a15e31cf759cb7a6e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Edwards<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8647bd1f3585c80ef4cec2e6e36c6fea = L.circleMarker(
+                [30.3328019, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_8647bd1f3585c80ef4cec2e6e36c6fea.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7beb0cdad1f8f364c834746a04a6fdf0 = L.circleMarker(
+                [30.3260919, -97.6922889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_7beb0cdad1f8f364c834746a04a6fdf0.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns-Coronado Hills<br>Off Market in Two Weeks: 0.2857142857142857<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0a580bbf8fb8c46dba8ea0699b2ed0ed = L.circleMarker(
+                [30.1970686, -97.7771702],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_0a580bbf8fb8c46dba8ea0699b2ed0ed.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Sweetbriar<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7a8231d79c5c47fd92c884152eb01d1 = L.circleMarker(
+                [30.4078412, -97.6670191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e7a8231d79c5c47fd92c884152eb01d1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Tech Ridge<br>Off Market in Two Weeks: 0.1176470588235294<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_47c1cd0c5d33ef07bcd69e6f11b80f88 = L.circleMarker(
+                [30.2523971, -97.8338263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_47c1cd0c5d33ef07bcd69e6f11b80f88.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Travis Country<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a92910b4a8001dda65f9cc6258492428 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_a92910b4a8001dda65f9cc6258492428.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_63976bace5a49b7a802053266cbeea79 = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_63976bace5a49b7a802053266cbeea79.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills & Windsor Park<br>Off Market in Two Weeks: 0.25<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d2ebcb2c8fbf97a84ed5171eb42ec604 = L.circleMarker(
+                [30.1858848, -97.7705653],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_d2ebcb2c8fbf97a84ed5171eb42ec604.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Upper Boggy Creek<br>Off Market in Two Weeks: 0.1428571428571428<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fa197e011d36c29b20977c8266369833 = L.circleMarker(
+                [30.2086396, -97.8728403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_fa197e011d36c29b20977c8266369833.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Village at Western Oaks<br>Off Market in Two Weeks: 0.1428571428571428<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e1f4c7fa6703d82d7dd64df831cf7a6f = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e1f4c7fa6703d82d7dd64df831cf7a6f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Austin<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_40127c6966f349824a3975cd533e292d = L.circleMarker(
+                [30.21315749999999, -97.7743522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_40127c6966f349824a3975cd533e292d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Congress<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_74fea4cfe59e1b96d1f00faf9a14b83a = L.circleMarker(
+                [30.2385146, -97.8884881],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_74fea4cfe59e1b96d1f00faf9a14b83a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Oak Hill<br>Off Market in Two Weeks: 0.125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e64864dc78b03cbf746bd382b4ec56eb = L.circleMarker(
+                [30.29147, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e64864dc78b03cbf746bd382b4ec56eb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West University<br>Off Market in Two Weeks: 0.125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_70d192457e9001fe0d55223a991875c4 = L.circleMarker(
+                [30.2881825, -97.7769875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_70d192457e9001fe0d55223a991875c4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westfield<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7aee6987f35235439ea2305cbbe764d = L.circleMarker(
+                [30.2230485, -97.7986926],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e7aee6987f35235439ea2305cbbe764d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westgate<br>Off Market in Two Weeks: 0.3333333333333333<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_62fc3f640d18d99231d7fca008465433 = L.circleMarker(
+                [30.292674, -97.553824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_62fc3f640d18d99231d7fca008465433.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Whisper Valley<br>Off Market in Two Weeks: 0.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_197b97cb8693750037f013607d67c9ae = L.circleMarker(
+                [30.2963458, -97.7136976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_197b97cb8693750037f013607d67c9ae.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wilshire Wood<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b144bee97e605f923c58189bcfe4c727 = L.circleMarker(
+                [30.3627291, -97.6792293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_b144bee97e605f923c58189bcfe4c727.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Hills<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8351a31c89b600a8b4d207c300fdcd1a = L.circleMarker(
+                [30.3105177, -97.6900846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_8351a31c89b600a8b4d207c300fdcd1a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Park<br>Off Market in Two Weeks: 0.1666666666666666<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9d372764e73424a4ec83c8addf3613ba = L.circleMarker(
+                [30.2936434, -97.7650044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_9d372764e73424a4ec83c8addf3613ba.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Road<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ec9a30a2dff2aa46eb65ce7137c4c66 = L.circleMarker(
+                [30.357046, -97.751177],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_3ec9a30a2dff2aa46eb65ce7137c4c66.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wood Creek<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_29bf0960a7812ad2b8956f9fe960ed17 = L.circleMarker(
+                [30.2062976, -97.840195],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_29bf0960a7812ad2b8956f9fe960ed17.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Woodstone Village<br>Off Market in Two Weeks: 0.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e7f1c6f940d8ee2bc8664bfaccb43c33 = L.circleMarker(
+                [30.3610582, -97.7232992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_e7f1c6f940d8ee2bc8664bfaccb43c33.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wooten<br>Off Market in Two Weeks: 0.2<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_337840dbfe2c31d634d13be94a3faa6f = L.circleMarker(
+                [30.25426879999999, -97.7669536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ccb0a6607d2c92d0cae16464fdd2695c);
+        
+    
+            circle_marker_337840dbfe2c31d634d13be94a3faa6f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Zilker<br>Off Market in Two Weeks: 0.125<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_e82ae66b7f645e68b041098f6d4ede57 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var tile_layer_e48f0bdc1f4955e8d84912eab3a09241 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var tile_layer_7bf7bdd305d3652a892c66b9695f305d = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var tile_layer_66d18c7886795a75e44c269a35006e47 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var tile_layer_4a796c299ca33f4c148ae280bf6058ed = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var tile_layer_befecc1b6fb5d032e11cca7112e63e5d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+        
+    
+            var layer_control_06831c183af77d03a0ab515f64a7f3f6 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_7bf7bdd305d3652a892c66b9695f305d,
+                    "stamenwatercolor" : tile_layer_e82ae66b7f645e68b041098f6d4ede57,
+                    "openstreetmap" : tile_layer_e48f0bdc1f4955e8d84912eab3a09241,
+                    "stamentoner" : tile_layer_66d18c7886795a75e44c269a35006e47,
+                    "cartodbpositron" : tile_layer_4a796c299ca33f4c148ae280bf6058ed,
+                    "cartodbdark_matter" : tile_layer_befecc1b6fb5d032e11cca7112e63e5d,
+                },
+                overlays :  {
+                    "Austin - off_market_in_two_weeks" : heat_map_20cfe0a08737549ef965c5ee547f6ad8,
+                    "Off Market in Two Weeks Centers" : feature_group_ccb0a6607d2c92d0cae16464fdd2695c,
+                },
+            };
+            L.control.layers(
+                layer_control_06831c183af77d03a0ab515f64a7f3f6.base_layers,
+                layer_control_06831c183af77d03a0ab515f64a7f3f6.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_8db2e0fdf01a7aea2dd2b100a70ba7a1);
+            tile_layer_e82ae66b7f645e68b041098f6d4ede57.remove();
+            tile_layer_e48f0bdc1f4955e8d84912eab3a09241.remove();
+            tile_layer_7bf7bdd305d3652a892c66b9695f305d.remove();
+            tile_layer_66d18c7886795a75e44c269a35006e47.remove();
+            tile_layer_4a796c299ca33f4c148ae280bf6058ed.remove();
+            tile_layer_befecc1b6fb5d032e11cca7112e63e5d.remove();
+        
+</script>
+</html>

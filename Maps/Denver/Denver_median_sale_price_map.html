@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a9fc0a9ffd4a5e626b1059d8c7e428cf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a9fc0a9ffd4a5e626b1059d8c7e428cf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a9fc0a9ffd4a5e626b1059d8c7e428cf = L.map(
+                "map_a9fc0a9ffd4a5e626b1059d8c7e428cf",
+                {
+                    center: [39.73048961538462, -104.96975692923075],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9589601ab77dca422fdc833446a675a3 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var heat_map_e1fbc654a6ab4ea050eb66c1064d3ce8 = L.heatLayer(
+                [[39.70357, -105.0104, 488500.0], [39.74582, -105.00827, 1542500.0], [39.71522, -104.99621, 557000.0], [39.71839, -105.03239, 450750.0], [39.6611, -105.06554, 533500.0], [39.70504, -104.95048, 1100000.0], [39.77671, -105.03938, 759750.0], [39.73365, -104.9802, 330000.0], [39.78762, -105.01205, 487500.0], [39.73458, -104.96643, 425000.0], [39.7194, -104.94928, 1550000.0], [39.74536, -104.96657, 655000.0], [39.76741, -104.95014, 617500.0], [39.76719, -104.9662, 612500.0], [39.66304, -105.02165, 431350.0], [39.73285, -104.95031, 714750.0], [39.74068, -104.89446, 495800.0], [39.75913, -104.98336, 635000.0], [39.64155, -105.04798, 570000.0], [39.78055, -104.98683, 441000.0], [39.67379, -104.91469, 456000.0], [39.73291, -104.93156, 694340.0], [39.66097, -104.8908, 508000.0], [39.64074, -104.89694, 432500.0], [39.67531, -105.04107, 485000.0], [39.76326, -105.01231, 900000.0], [39.71869, -104.92434, 1550000.0], [39.75217, -105.01922, 730000.0], [39.73254, -105.00485, 415000.0], [39.68951, -105.03913, 475000.0], [39.62747, -105.07892, 550000.0], [39.78602, -104.83727, 467000.0], [39.73286, -104.91295, 777000.0], [39.75652, -104.92201, 698500.0], [39.77445, -104.92331, 512500.0], [39.68141, -104.9931, 612500.0], [39.68661, -104.98106, 887500.0], [39.78761, -105.04399, 587000.0], [39.67312, -104.98052, 744750.0], [39.68999, -105.01119, 465000.0], [39.75163, -105.03982, 882500.0], [39.7456, -104.92206, 948000.0], [39.64029, -104.91668, 910000.0], [39.77645, -105.01189, 825000.0], [39.66447, -104.93255, 680000.0], [39.71717, -105.01522, 400000.0], [39.68679, -104.92416, 592500.0], [39.70124, -104.96627, 1825000.0], [39.70258, -104.9799, 1012500.0], [39.70149, -104.91518, 390000.0], [39.66064, -104.94955, 939500.0], [39.74004, -105.03859, 759950.0], [39.76395, -105.03924, 878750.0], [39.70402, -105.03921, 452500.0], [39.75636, -104.96656, 705625.0], [39.70331, -104.88583, 267500.0], [39.7184466, -104.9773107, 847500.0], [39.7300652, -104.9984212, 450000.0], [39.7592936, -104.9937538, 593380.0], [39.7392358, -104.990251, 785000.0], [39.7392358, -104.990251, 285000.0], [39.7392358, -104.990251, 395000.0], [39.7392324, -104.9874129, 1185000.0], [39.7336946, -104.982297, 875000.0], [39.7392358, -104.990251, 885000.0], [39.7824095, -104.8804893, 495250.0], [39.7824095, -104.8804893, 712000.0], [39.7392358, -104.990251, 544500.0], [39.7392358, -104.990251, 872500.0], [39.7196594, -104.957856, 1950000.0], [39.740088, -104.96909, 585000.0], [39.7403376, -105.0469221, 561500.0], [39.7909108, -104.8904173, 675000.0], [39.6893366, -104.9500499, 1110000.0], [39.7577469, -104.9794943, 635000.0], [39.7256237, -104.9658472, 2024000.0], [39.7451998, -104.9921849, 550000.0], [39.7583765, -104.9217031, 682500.0], [39.7698274, -104.9041377, 449900.0], [39.7392358, -104.990251, 718000.0], [39.7392358, -104.990251, 403000.0], [39.7608751, -104.8717317, 670000.0], [39.7161481, -105.0586639, 656025.0], [39.7336946, -104.982297, 357000.0], [39.7392358, -104.990251, 432700.0], [39.7392358, -104.990251, 765000.0], [39.7854582, -104.8571368, 470000.0], [39.7693376, -105.0299822, 812750.0], [39.6531038, -104.8987661, 510000.0], [39.7392358, -104.990251, 527500.0], [39.7837575, -104.7945972, 432500.0], [39.7832359, -104.7579278, 495000.0], [39.7608333, -105.0180556, 923000.0], [39.6758185, -104.9604243, 1487100.0], [39.7392358, -104.990251, 351500.0], [39.7320488, -104.9861214, 815000.0], [39.7392358, -104.990251, 950000.0], [39.7197837, -104.8910078, 890000.0], [39.7392358, -104.990251, 585000.0], [39.7392358, -104.990251, 650000.0], [39.7854582, -104.8571368, 622500.0], [39.7693376, -105.0299822, 735000.0], [39.6531038, -104.8987661, 524560.0], [39.7855996, -104.9912739, 635000.0], [39.7392358, -104.990251, 645000.0], [39.7644926, -104.9659559, 402500.0], [39.7693376, -105.0299822, 769000.0], [39.6875735, -104.9804379, 960000.0], [39.7745645, -104.9223102, 705000.0], [39.7320363, -104.9810371, 297500.0], [39.6875523, -104.9803741, 887500.0], [39.76554000000001, -105.0205793, 783317.5], [39.7392358, -104.990251, 927100.0], [39.7392358, -104.990251, 277500.0], [39.7512018, -105.0345899, 882500.0], [39.66461, -104.9876645, 564000.0], [39.7824095, -104.8804893, 722000.0], [39.6785031, -104.9875969, 875000.0], [39.7824095, -104.8804893, 520000.0], [39.6531038, -104.8987661, 1625000.0], [39.6531038, -104.8987661, 314500.0], [39.7392358, -104.990251, 452000.0], [39.7392358, -104.990251, 545000.0], [39.7392358, -104.990251, 802000.0], [39.7392358, -104.990251, 438500.0], [39.7420787, -104.9773482, 620000.0], [39.7931456, -105.0439213, 850000.0], [39.7392358, -104.990251, 749900.0], [39.7392358, -104.990251, 582500.0], [39.7392358, -104.990251, 701000.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var feature_group_a85a60ce33bae2ed4b1b474bc6603b47 = L.featureGroup(
+                {}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var circle_marker_8240880d4c62bfd8bd831ad8ac9db5a3 = L.circleMarker(
+                [39.70357, -105.0104],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_8240880d4c62bfd8bd831ad8ac9db5a3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Athmar Park<br>Median Sale Price: 488500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5896bc21581b354355a262597ab3e5e6 = L.circleMarker(
+                [39.74582, -105.00827],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_5896bc21581b354355a262597ab3e5e6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Auraria<br>Median Sale Price: 1542500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0defb6c27894242e25fdce5cb4119c47 = L.circleMarker(
+                [39.71522, -104.99621],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0defb6c27894242e25fdce5cb4119c47.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Baker<br>Median Sale Price: 557000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1ca4fd968baacd0ce35ca80d96313a10 = L.circleMarker(
+                [39.71839, -105.03239],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1ca4fd968baacd0ce35ca80d96313a10.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Barnum<br>Median Sale Price: 450750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_89918743069f006f415dbaa3e4860321 = L.circleMarker(
+                [39.6611, -105.06554],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_89918743069f006f415dbaa3e4860321.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bear Valley<br>Median Sale Price: 533500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_434d79413c2f826193af54f7c108c335 = L.circleMarker(
+                [39.70504, -104.95048],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_434d79413c2f826193af54f7c108c335.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belcaro<br>Median Sale Price: 1100000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a2cb405925ee497fcaf78eb6f7e136c = L.circleMarker(
+                [39.77671, -105.03938],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9a2cb405925ee497fcaf78eb6f7e136c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Berkeley<br>Median Sale Price: 759750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba00e063c4d3eb4d6f35bc6816b7ccf4 = L.circleMarker(
+                [39.73365, -104.9802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_ba00e063c4d3eb4d6f35bc6816b7ccf4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capitol Hill<br>Median Sale Price: 330000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_285bacce8f01e0a16f7c03b4c74713b4 = L.circleMarker(
+                [39.78762, -105.01205],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_285bacce8f01e0a16f7c03b4c74713b4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chaffee Park<br>Median Sale Price: 487500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a8429eccbc81099d7fde48b695b97af3 = L.circleMarker(
+                [39.73458, -104.96643],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_a8429eccbc81099d7fde48b695b97af3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheesman Park<br>Median Sale Price: 425000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9dcae717b00d0462307d5ab31e150545 = L.circleMarker(
+                [39.7194, -104.94928],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9dcae717b00d0462307d5ab31e150545.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek<br>Median Sale Price: 1550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c073de969add31f2a531544a4601f5dd = L.circleMarker(
+                [39.74536, -104.96657],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_c073de969add31f2a531544a4601f5dd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - City Park West<br>Median Sale Price: 655000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df0b6fad4a4b966b7b07358a76135f27 = L.circleMarker(
+                [39.76741, -104.95014],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_df0b6fad4a4b966b7b07358a76135f27.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Clayton<br>Median Sale Price: 617500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3f356e487caaac7ed0592504a7b7c131 = L.circleMarker(
+                [39.76719, -104.9662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_3f356e487caaac7ed0592504a7b7c131.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cole<br>Median Sale Price: 612500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6089ed34ba8c3595f5c171b41eb75f5b = L.circleMarker(
+                [39.66304, -105.02165],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_6089ed34ba8c3595f5c171b41eb75f5b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - College View<br>Median Sale Price: 431350.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_570e1e0d353c08c49012b30e0389cc70 = L.circleMarker(
+                [39.73285, -104.95031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_570e1e0d353c08c49012b30e0389cc70.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Congress Park<br>Median Sale Price: 714750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3c98b9823a1458eeb96d4785bfa5fa25 = L.circleMarker(
+                [39.74068, -104.89446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_3c98b9823a1458eeb96d4785bfa5fa25.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Colfax<br>Median Sale Price: 495800.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_996cb0161cedda6cb6bffe16df65761e = L.circleMarker(
+                [39.75913, -104.98336],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_996cb0161cedda6cb6bffe16df65761e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Five Points<br>Median Sale Price: 635000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7af7cd866eb60a9be3db6422ca3d46f9 = L.circleMarker(
+                [39.64155, -105.04798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_7af7cd866eb60a9be3db6422ca3d46f9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Fort Logan<br>Median Sale Price: 570000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_853cadfa53c5415c7deccd6a6ba4801f = L.circleMarker(
+                [39.78055, -104.98683],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_853cadfa53c5415c7deccd6a6ba4801f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Globeville<br>Median Sale Price: 441000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_45284a632bf19a42f61638a2fd9116dd = L.circleMarker(
+                [39.67379, -104.91469],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_45284a632bf19a42f61638a2fd9116dd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Goldsmith<br>Median Sale Price: 456000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0d33b83497587d4c3c2ecb2ea0f51a24 = L.circleMarker(
+                [39.73291, -104.93156],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0d33b83497587d4c3c2ecb2ea0f51a24.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hale<br>Median Sale Price: 694340.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b9ed6206a6b91f462cc2b28a1f318d59 = L.circleMarker(
+                [39.66097, -104.8908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_b9ed6206a6b91f462cc2b28a1f318d59.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden<br>Median Sale Price: 508000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2691537fe7ed763940b93fe1f834bf5d = L.circleMarker(
+                [39.64074, -104.89694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_2691537fe7ed763940b93fe1f834bf5d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hampden South<br>Median Sale Price: 432500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49e41d8b474b8c381a66dda8e9b9d9ac = L.circleMarker(
+                [39.67531, -105.04107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_49e41d8b474b8c381a66dda8e9b9d9ac.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Harvey Park<br>Median Sale Price: 485000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_02d79752ea379b075e88e966cccc7d00 = L.circleMarker(
+                [39.76326, -105.01231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_02d79752ea379b075e88e966cccc7d00.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland<br>Median Sale Price: 900000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f60c0f8469fcc5bec3507b9669a8c40 = L.circleMarker(
+                [39.71869, -104.92434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_2f60c0f8469fcc5bec3507b9669a8c40.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Hilltop<br>Median Sale Price: 1550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a86ccc5b51c01791354e98bb25199abc = L.circleMarker(
+                [39.75217, -105.01922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_a86ccc5b51c01791354e98bb25199abc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Jefferson Park<br>Median Sale Price: 730000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d27c567818aa23f3afccc92f2908fc7 = L.circleMarker(
+                [39.73254, -105.00485],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1d27c567818aa23f3afccc92f2908fc7.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln Park<br>Median Sale Price: 415000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c25a994e8185a6888641707bc160097a = L.circleMarker(
+                [39.68951, -105.03913],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_c25a994e8185a6888641707bc160097a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Mar Lee<br>Median Sale Price: 475000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c5061504c8712de833c075a1e0b86e04 = L.circleMarker(
+                [39.62747, -105.07892],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_c5061504c8712de833c075a1e0b86e04.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Marston<br>Median Sale Price: 550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1bc4f5b60317b3c6f7ea71defeb8a768 = L.circleMarker(
+                [39.78602, -104.83727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1bc4f5b60317b3c6f7ea71defeb8a768.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montbello<br>Median Sale Price: 467000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9a8369a86de94b75ab0620b45368a8a9 = L.circleMarker(
+                [39.73286, -104.91295],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9a8369a86de94b75ab0620b45368a8a9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Montclair<br>Median Sale Price: 777000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ed9cb8e0732aad5808ab619018520056 = L.circleMarker(
+                [39.75652, -104.92201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_ed9cb8e0732aad5808ab619018520056.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Park Hill<br>Median Sale Price: 698500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6237f1ff606ba5466444abfa7e91860e = L.circleMarker(
+                [39.77445, -104.92331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_6237f1ff606ba5466444abfa7e91860e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northeast Park Hill<br>Median Sale Price: 512500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_df3c45c49c753fdf9103819349f5b14e = L.circleMarker(
+                [39.68141, -104.9931],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_df3c45c49c753fdf9103819349f5b14e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Overland<br>Median Sale Price: 612500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b45c124dda309eec48e56cd71ef40b0 = L.circleMarker(
+                [39.68661, -104.98106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_8b45c124dda309eec48e56cd71ef40b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platt Park<br>Median Sale Price: 887500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_acefd3e5ec5b0e4c8dab680387017f53 = L.circleMarker(
+                [39.78761, -105.04399],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_acefd3e5ec5b0e4c8dab680387017f53.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Regis<br>Median Sale Price: 587000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d0ad33095185a1f28ce08ea851fabde = L.circleMarker(
+                [39.67312, -104.98052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1d0ad33095185a1f28ce08ea851fabde.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Rosedale<br>Median Sale Price: 744750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f0b2f1a6e681a6eb4766d3451ff01551 = L.circleMarker(
+                [39.68999, -105.01119],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_f0b2f1a6e681a6eb4766d3451ff01551.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ruby Hill<br>Median Sale Price: 465000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dba4a4362442016372dc14054cc5ecbc = L.circleMarker(
+                [39.75163, -105.03982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_dba4a4362442016372dc14054cc5ecbc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan Lake<br>Median Sale Price: 882500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d4e245e791edb4da738c1f161a5c8832 = L.circleMarker(
+                [39.7456, -104.92206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_d4e245e791edb4da738c1f161a5c8832.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Park Hill<br>Median Sale Price: 948000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac2f3479e75cbae41159e0a33f5c0ab1 = L.circleMarker(
+                [39.64029, -104.91668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_ac2f3479e75cbae41159e0a33f5c0ab1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southmoor Park<br>Median Sale Price: 910000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_78ed5a200bb19bc03367bdf262a4c6be = L.circleMarker(
+                [39.77645, -105.01189],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_78ed5a200bb19bc03367bdf262a4c6be.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sunnyside<br>Median Sale Price: 825000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d300104e1361b3676673645d9762d8b1 = L.circleMarker(
+                [39.66447, -104.93255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_d300104e1361b3676673645d9762d8b1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - University Hills<br>Median Sale Price: 680000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c28f229b3fb4ff3746cf1ad23f956b5 = L.circleMarker(
+                [39.71717, -105.01522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_2c28f229b3fb4ff3746cf1ad23f956b5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Valverde<br>Median Sale Price: 400000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_82aa67d74faaf02ef615ef08525679fa = L.circleMarker(
+                [39.68679, -104.92416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_82aa67d74faaf02ef615ef08525679fa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Virginia Village<br>Median Sale Price: 592500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_61d7cd8276b98d0e4095b1a1a72f4bc5 = L.circleMarker(
+                [39.70124, -104.96627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_61d7cd8276b98d0e4095b1a1a72f4bc5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park<br>Median Sale Price: 1825000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_eb37f75d5cc523f1647c7ae324799bdc = L.circleMarker(
+                [39.70258, -104.9799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_eb37f75d5cc523f1647c7ae324799bdc.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Park West<br>Median Sale Price: 1012500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_58651b3e2168dc6fcf317f8148477c32 = L.circleMarker(
+                [39.70149, -104.91518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_58651b3e2168dc6fcf317f8148477c32.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Washington Virginia Vale<br>Median Sale Price: 390000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ebab98a5af25fa1e671c74b5909a403b = L.circleMarker(
+                [39.66064, -104.94955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_ebab98a5af25fa1e671c74b5909a403b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Wellshire<br>Median Sale Price: 939500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b2c6ca4d86b2a7161255943674cb5b2 = L.circleMarker(
+                [39.74004, -105.03859],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1b2c6ca4d86b2a7161255943674cb5b2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Colfax<br>Median Sale Price: 759950.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_51b1e293441146da3212694bb819a1ca = L.circleMarker(
+                [39.76395, -105.03924],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_51b1e293441146da3212694bb819a1ca.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Highland<br>Median Sale Price: 878750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9818eb5bf804a0dea8d4a4c1f58974d1 = L.circleMarker(
+                [39.70402, -105.03921],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9818eb5bf804a0dea8d4a4c1f58974d1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Westwood<br>Median Sale Price: 452500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8eeb0f9a2ca32d380293226115952afa = L.circleMarker(
+                [39.75636, -104.96656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_8eeb0f9a2ca32d380293226115952afa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Whittier<br>Median Sale Price: 705625.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_994646e7a98167e89fd5b8a464e99c1a = L.circleMarker(
+                [39.70331, -104.88583],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_994646e7a98167e89fd5b8a464e99c1a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Windsor<br>Median Sale Price: 267500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_35fcaffd851c9e0d4deca1057f7a9168 = L.circleMarker(
+                [39.7184466, -104.9773107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_35fcaffd851c9e0d4deca1057f7a9168.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Arlington Park<br>Median Sale Price: 847500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07e8faa5e44bb5b5fc1e93410f18fb97 = L.circleMarker(
+                [39.7300652, -104.9984212],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_07e8faa5e44bb5b5fc1e93410f18fb97.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Art District on Santa Fe<br>Median Sale Price: 450000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_86c892945bd1e9018068956268910ac9 = L.circleMarker(
+                [39.7592936, -104.9937538],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_86c892945bd1e9018068956268910ac9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Ballpark Collective<br>Median Sale Price: 593380.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0040c4e80199619e8d243962083ff083 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0040c4e80199619e8d243962083ff083.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue<br>Median Sale Price: 785000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bb6c83f3feaaef0eaddb95ba1f7c8a37 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_bb6c83f3feaaef0eaddb95ba1f7c8a37.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Bellevue Park<br>Median Sale Price: 285000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_72534310c5062e4783995105a25fdcd9 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_72534310c5062e4783995105a25fdcd9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Belmont Park<br>Median Sale Price: 395000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b5e0ce48ac552ff49b74535f53fa7b7d = L.circleMarker(
+                [39.7392324, -104.9874129],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_b5e0ce48ac552ff49b74535f53fa7b7d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Broadway<br>Median Sale Price: 1185000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6454f7c6ff99b1606417ff068eb63b38 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_6454f7c6ff99b1606417ff068eb63b38.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Burlington Capitol Hill<br>Median Sale Price: 875000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c4669b1c5352f4ef21e7c73eff1658aa = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_c4669b1c5352f4ef21e7c73eff1658aa.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Capital Avenue<br>Median Sale Price: 885000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bd864491c59c66e719a3fa1a348135a4 = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_bd864491c59c66e719a3fa1a348135a4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Denver<br>Median Sale Price: 495250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9989b6f1a1842196ae9a3910c146289a = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9989b6f1a1842196ae9a3910c146289a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Central Park<br>Median Sale Price: 712000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_16ea405f6f6e7f4fea0d663ed2493de1 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_16ea405f6f6e7f4fea0d663ed2493de1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Chamberlins University Terrace East<br>Median Sale Price: 544500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3f18ca9da48869d7c9b6d44b5c397820 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_3f18ca9da48869d7c9b6d44b5c397820.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cheltenham Heights<br>Median Sale Price: 872500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b4f61e5fc9d6b1e93fb485f8f066b7f2 = L.circleMarker(
+                [39.7196594, -104.957856],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_b4f61e5fc9d6b1e93fb485f8f066b7f2.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cherry Creek North<br>Median Sale Price: 1950000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1480a4a8149d77ceac7e458e72d63f2c = L.circleMarker(
+                [39.740088, -104.96909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1480a4a8149d77ceac7e458e72d63f2c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Avenue Park<br>Median Sale Price: 585000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6fb6e1e8e9c87a6b24f67299e4bbed2a = L.circleMarker(
+                [39.7403376, -105.0469221],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_6fb6e1e8e9c87a6b24f67299e4bbed2a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Colfax Terrace<br>Median Sale Price: 561500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18e6b5e381f68796901c6327175d186a = L.circleMarker(
+                [39.7909108, -104.8904173],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_18e6b5e381f68796901c6327175d186a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Conservatory Green at Stapleton<br>Median Sale Price: 675000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_07f63de075b060258cde531af46dd80b = L.circleMarker(
+                [39.6893366, -104.9500499],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_07f63de075b060258cde531af46dd80b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Cory-Merrill<br>Median Sale Price: 1110000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0d83474db8190b4e7e6d84af7542189e = L.circleMarker(
+                [39.7577469, -104.9794943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0d83474db8190b4e7e6d84af7542189e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Curtis Park<br>Median Sale Price: 635000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_75e5d5c69642389dd14b4a2be7903a2f = L.circleMarker(
+                [39.7256237, -104.9658472],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_75e5d5c69642389dd14b4a2be7903a2f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Denver Country Club<br>Median Sale Price: 2024000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_23ec9655445cd9876916d9002a2c2a52 = L.circleMarker(
+                [39.7451998, -104.9921849],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_23ec9655445cd9876916d9002a2c2a52.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Downtown Denver<br>Median Sale Price: 550000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ba386aeece781942f103473dfe7b6f98 = L.circleMarker(
+                [39.7583765, -104.9217031],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_ba386aeece781942f103473dfe7b6f98.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East 29th Avenue<br>Median Sale Price: 682500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_18681fd8d9796208b15c0e7b636e6125 = L.circleMarker(
+                [39.7698274, -104.9041377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_18681fd8d9796208b15c0e7b636e6125.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Central Denver<br>Median Sale Price: 449900.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_62ae042074452cf8dfb29e24ea192b7a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_62ae042074452cf8dfb29e24ea192b7a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Denver<br>Median Sale Price: 718000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f7697bfd713ad392ce8fe44872be136b = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_f7697bfd713ad392ce8fe44872be136b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - East Seventh Avenue Historic District<br>Median Sale Price: 403000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe01e73af62f64ca8e3e7c5a29716479 = L.circleMarker(
+                [39.7608751, -104.8717317],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_fe01e73af62f64ca8e3e7c5a29716479.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastbridge<br>Median Sale Price: 670000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8be829860b9df6bdc40dbdd09a246a6 = L.circleMarker(
+                [39.7161481, -105.0586639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_f8be829860b9df6bdc40dbdd09a246a6.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Eastgate<br>Median Sale Price: 656025.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aff99cc7c46b6e6258e34c491383d549 = L.circleMarker(
+                [39.7336946, -104.982297],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_aff99cc7c46b6e6258e34c491383d549.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Emerys Capitol Hill<br>Median Sale Price: 357000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d9d68fb89014dbb97a39d2ca2f1bf800 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_d9d68fb89014dbb97a39d2ca2f1bf800.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evans Park Estates<br>Median Sale Price: 432700.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3ea5f923397f1882d1ca4673dcd4d243 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_3ea5f923397f1882d1ca4673dcd4d243.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Evanston<br>Median Sale Price: 765000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f6d236cc5bfe146800a9eb8c38fe4631 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_f6d236cc5bfe146800a9eb8c38fe4631.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northeast Denver<br>Median Sale Price: 470000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_49a47431ccda41a801e41ee53d2d40e1 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_49a47431ccda41a801e41ee53d2d40e1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Northwest Denver<br>Median Sale Price: 812750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0927cc8d97f91a4cf66940622e1eb3b0 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0927cc8d97f91a4cf66940622e1eb3b0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southeast Denver<br>Median Sale Price: 510000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ec95a6b29cde9ed729e62101c84897b = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_7ec95a6b29cde9ed729e62101c84897b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Far Southwest Denver<br>Median Sale Price: 527500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3bf7abce7db1fd95b34165e9f82f2585 = L.circleMarker(
+                [39.7837575, -104.7945972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_3bf7abce7db1fd95b34165e9f82f2585.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Gateway<br>Median Sale Price: 432500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_01c4975e1304b0166232ec34994fde3e = L.circleMarker(
+                [39.7832359, -104.7579278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_01c4975e1304b0166232ec34994fde3e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Green Valley Ranch<br>Median Sale Price: 495000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e962f26b5ae64f819dc877f736bc1c50 = L.circleMarker(
+                [39.7608333, -105.0180556],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_e962f26b5ae64f819dc877f736bc1c50.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Highland Park<br>Median Sale Price: 923000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_254dac45f8e25bf324b5eff2edb27abb = L.circleMarker(
+                [39.6758185, -104.9604243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_254dac45f8e25bf324b5eff2edb27abb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Iliffs University<br>Median Sale Price: 1487100.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe845ccc6526ff16940f131748e8d4c3 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_fe845ccc6526ff16940f131748e8d4c3.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Kettles<br>Median Sale Price: 351500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fee81880fbce59ba37f530750c56327c = L.circleMarker(
+                [39.7320488, -104.9861214],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_fee81880fbce59ba37f530750c56327c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lincoln<br>Median Sale Price: 815000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b51654c5006a1c2280240fe96c797d2d = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_b51654c5006a1c2280240fe96c797d2d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - LoHi<br>Median Sale Price: 950000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a39bb9251f24914b9f2c40e6870adb1d = L.circleMarker(
+                [39.7197837, -104.8910078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_a39bb9251f24914b9f2c40e6870adb1d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lowry<br>Median Sale Price: 890000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c405f052dbea1d5771bba769d5db292a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_c405f052dbea1d5771bba769d5db292a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Lynwood<br>Median Sale Price: 585000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_816dd21c1775ec3d32cff596bf11586d = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_816dd21c1775ec3d32cff596bf11586d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Miller Park<br>Median Sale Price: 650000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_09695f145a2a3ca9d475c6e54b4a1ed1 = L.circleMarker(
+                [39.7854582, -104.8571368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_09695f145a2a3ca9d475c6e54b4a1ed1.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northeast Denver<br>Median Sale Price: 622500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_01a62e6a19e5f939597e89fd1fa88e3c = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_01a62e6a19e5f939597e89fd1fa88e3c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Northwest Denver<br>Median Sale Price: 735000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1701654da7215f10ec8bb27a0e8644f0 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1701654da7215f10ec8bb27a0e8644f0.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Near Southeast Denver<br>Median Sale Price: 524560.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0667e347f9730936381e5f08d9e0c0d5 = L.circleMarker(
+                [39.7855996, -104.9912739],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0667e347f9730936381e5f08d9e0c0d5.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Central Denver<br>Median Sale Price: 635000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fe7bc6d934e4a402bec60108fae0fddb = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_fe7bc6d934e4a402bec60108fae0fddb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North City Park<br>Median Sale Price: 645000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fad07a28c579e21652097bd662f15553 = L.circleMarker(
+                [39.7644926, -104.9659559],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_fad07a28c579e21652097bd662f15553.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - North Denver<br>Median Sale Price: 402500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5f775e571b45eff50f54f5b04c3adee9 = L.circleMarker(
+                [39.7693376, -105.0299822],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_5f775e571b45eff50f54f5b04c3adee9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Northwest Denver<br>Median Sale Price: 769000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c9c88cd83a690bc8e8d333f7b6d7ecb = L.circleMarker(
+                [39.6875735, -104.9804379],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_5c9c88cd83a690bc8e8d333f7b6d7ecb.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Old South Pearl<br>Median Sale Price: 960000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9f4b62cb9537a258d7ed949676aa9201 = L.circleMarker(
+                [39.7745645, -104.9223102],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9f4b62cb9537a258d7ed949676aa9201.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Park Hill<br>Median Sale Price: 705000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b3ea6f54f4d05c41fc2be95bea693ddd = L.circleMarker(
+                [39.7320363, -104.9810371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_b3ea6f54f4d05c41fc2be95bea693ddd.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Pennsylvania Street Historic District<br>Median Sale Price: 297500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd366402f7df68b3fa5d2ffce978adaf = L.circleMarker(
+                [39.6875523, -104.9803741],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_fd366402f7df68b3fa5d2ffce978adaf.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Platte Park<br>Median Sale Price: 887500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7d6d22d8e044e34f2dcea11bc56cd5f9 = L.circleMarker(
+                [39.76554000000001, -105.0205793],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_7d6d22d8e044e34f2dcea11bc56cd5f9.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Potter Highlands<br>Median Sale Price: 783317.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2c8159ce73f333bb060fc78a2d0cdf2b = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_2c8159ce73f333bb060fc78a2d0cdf2b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Shackelton Place<br>Median Sale Price: 927100.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_276ef2630592fa7639f656dd58a4657f = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_276ef2630592fa7639f656dd58a4657f.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sherman-Grant Historic District<br>Median Sale Price: 277500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f8992fa99b82e63285b9fdd70410903 = L.circleMarker(
+                [39.7512018, -105.0345899],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1f8992fa99b82e63285b9fdd70410903.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sloan's Lake<br>Median Sale Price: 882500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7d657f9376f2151f882e4737aa7416b8 = L.circleMarker(
+                [39.66461, -104.9876645],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_7d657f9376f2151f882e4737aa7416b8.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Broadway<br>Median Sale Price: 564000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_626831b8420086d043a32277e7b9994e = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_626831b8420086d043a32277e7b9994e.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Central Denver<br>Median Sale Price: 722000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_48b7ce83bbf8ab7d40a09afc7dba82ca = L.circleMarker(
+                [39.6785031, -104.9875969],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_48b7ce83bbf8ab7d40a09afc7dba82ca.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South Denver<br>Median Sale Price: 875000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_b7d87a3a95ef8554935a80ed7d0d406c = L.circleMarker(
+                [39.7824095, -104.8804893],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_b7d87a3a95ef8554935a80ed7d0d406c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - South End at Stapleton<br>Median Sale Price: 520000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f19c5d40c261382606518d9b3abfe5d = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_2f19c5d40c261382606518d9b3abfe5d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Central Denver<br>Median Sale Price: 1625000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d6c6ad1bdb8225615a2ae4d60acbcb81 = L.circleMarker(
+                [39.6531038, -104.8987661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_d6c6ad1bdb8225615a2ae4d60acbcb81.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southeast Denver<br>Median Sale Price: 314500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9c5c745447b44ab97e8db83c9bc9437d = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_9c5c745447b44ab97e8db83c9bc9437d.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southlawn Gardens<br>Median Sale Price: 452000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_dba8058cebca3f2dde97de7ab821dafe = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_dba8058cebca3f2dde97de7ab821dafe.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Southwest Denver<br>Median Sale Price: 545000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0e86bfff0d2734a2f81869a2d2457689 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_0e86bfff0d2734a2f81869a2d2457689.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - St. James Heights<br>Median Sale Price: 802000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5be200d27533eed27830fbd5a2c5796b = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_5be200d27533eed27830fbd5a2c5796b.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Sumners<br>Median Sale Price: 438500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d40a989efb903dfac45ac10d9077043 = L.circleMarker(
+                [39.7420787, -104.9773482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_1d40a989efb903dfac45ac10d9077043.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Swallow Hill<br>Median Sale Price: 620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2f1a3bde5bf9f9a7676532078800b64c = L.circleMarker(
+                [39.7931456, -105.0439213],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_2f1a3bde5bf9f9a7676532078800b64c.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Tennyson Street Cultural District<br>Median Sale Price: 850000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5372edbc515d7a69befce81083868c38 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_5372edbc515d7a69befce81083868c38.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Town of Highland<br>Median Sale Price: 749900.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6b564c9f1eb3c725011ef97a4da836a4 = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_6b564c9f1eb3c725011ef97a4da836a4.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - West Denver<br>Median Sale Price: 582500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e28b81538b3407c14b58928a5b9dd59a = L.circleMarker(
+                [39.7392358, -104.990251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a85a60ce33bae2ed4b1b474bc6603b47);
+        
+    
+            circle_marker_e28b81538b3407c14b58928a5b9dd59a.bindTooltip(
+                `<div>
+                     City: Denver<br>Region: Denver, CO - Witter-Cofield<br>Median Sale Price: 701000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_9a71eb9b4215df70a5ba2c2cd681780c = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var tile_layer_854c02640fad9208c8d1176133044cb5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var tile_layer_d0b6de39611383ba3d73c7af08ef1053 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var tile_layer_e2ef4af497882779b4c1455de1fa63d7 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var tile_layer_32d6e2e4af800b5b809fdab669fde7df = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var tile_layer_02dddd0700d4023881c03ee4cf5bf977 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+        
+    
+            var layer_control_ee4f9be9707e970dbf613dc2e1802828 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_d0b6de39611383ba3d73c7af08ef1053,
+                    "stamenwatercolor" : tile_layer_9a71eb9b4215df70a5ba2c2cd681780c,
+                    "openstreetmap" : tile_layer_854c02640fad9208c8d1176133044cb5,
+                    "stamentoner" : tile_layer_e2ef4af497882779b4c1455de1fa63d7,
+                    "cartodbpositron" : tile_layer_32d6e2e4af800b5b809fdab669fde7df,
+                    "cartodbdark_matter" : tile_layer_02dddd0700d4023881c03ee4cf5bf977,
+                },
+                overlays :  {
+                    "Denver - median_sale_price" : heat_map_e1fbc654a6ab4ea050eb66c1064d3ce8,
+                    "Median Sale Price Centers" : feature_group_a85a60ce33bae2ed4b1b474bc6603b47,
+                },
+            };
+            L.control.layers(
+                layer_control_ee4f9be9707e970dbf613dc2e1802828.base_layers,
+                layer_control_ee4f9be9707e970dbf613dc2e1802828.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_a9fc0a9ffd4a5e626b1059d8c7e428cf);
+            tile_layer_9a71eb9b4215df70a5ba2c2cd681780c.remove();
+            tile_layer_854c02640fad9208c8d1176133044cb5.remove();
+            tile_layer_d0b6de39611383ba3d73c7af08ef1053.remove();
+            tile_layer_e2ef4af497882779b4c1455de1fa63d7.remove();
+            tile_layer_32d6e2e4af800b5b809fdab669fde7df.remove();
+            tile_layer_02dddd0700d4023881c03ee4cf5bf977.remove();
+        
+</script>
+</html>

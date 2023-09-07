@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_64ba1582c2d85e720d1cbe05de7ec9eb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_64ba1582c2d85e720d1cbe05de7ec9eb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_64ba1582c2d85e720d1cbe05de7ec9eb = L.map(
+                "map_64ba1582c2d85e720d1cbe05de7ec9eb",
+                {
+                    center: [30.293640803781646, -97.7465385200173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_12b0f05ee0452ccd77a2036f2f41003c = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var heat_map_1775108cfa43741fef75a928612793d7 = L.heatLayer(
+                [[30.2649178, -97.7464235, 2102500.0], [30.3393252, -97.746952, 784525.0], [30.4611355, -97.8299965, 445000.0], [30.4237172, -97.7375963, 799000.0], [30.267153, -97.7430608, 247500.0], [30.4689145, -97.799452, 630000.0], [30.2533686, -97.7835429, 1022500.0], [30.280638, -97.7224315, 759500.0], [30.1725823, -97.768618, 479000.0], [30.2515465, -97.7543062, 1012000.0], [30.2515465, -97.7543062, 1197340.0], [30.330898, -97.7316065, 810000.0], [30.3364313, -97.7264415, 737500.0], [30.1902458, -97.8454709, 525000.0], [30.30244979999999, -97.7538935, 995000.0], [30.3251308, -97.7506508, 1279600.0], [30.3134263, -97.7666194, 3122500.0], [30.2938151, -97.7329, 349000.0], [30.27162349999999, -97.7248647, 652600.0], [30.2954625, -97.7551352, 1375000.0], [30.1979137, -97.8245578, 520000.0], [30.2917457, -97.7136007, 700000.0], [30.2790657, -97.7131577, 645500.0], [30.2802042, -97.7591251, 1100000.0], [30.2680667, -97.7428151, 359305.0], [30.38827179999999, -97.6588801, 292250.0], [30.32699239999999, -97.6877987, 620000.0], [30.348322, -97.727536, 675000.0], [30.3534821, -97.7233389, 652000.0], [30.3280279, -97.8055259, 1183000.0], [30.2329651, -97.7613825, 699000.0], [30.2091069, -97.6472349, 425000.0], [30.18505, -97.8020854, 450000.0], [30.2729209, -97.74438630000002, 690000.0], [30.2658909, -97.7350274, 690000.0], [30.2654547, -97.7090635, 595000.0], [30.2585193, -97.7286604, 865000.0], [30.20856089999999, -97.7661188, 442500.0], [30.2825656, -97.6766639, 582250.0], [30.240054, -97.8303149, 800000.0], [30.2275044, -97.7277824, 299000.0], [30.2818771, -97.6669884, 497500.0], [30.4038127, -97.8536211, 583750.0], [30.1939634, -97.7446677, 310000.0], [30.2355462, -97.7685704, 770375.0], [30.2088183, -97.8047019, 527000.0], [30.3499918, -97.7009416, 300000.0], [30.2560413, -97.7016981, 699500.0], [30.2660111, -97.7021915, 694500.0], [30.389061, -97.6941558, 475000.0], [30.2367289, -97.7488105, 700000.0], [30.2964691, -97.7232153, 750000.0], [30.30110269999999, -97.741329, 302500.0], [30.3435785, -97.6888656, 424000.0], [30.3339959, -97.7169771, 649000.0], [30.3235367, -97.760685, 1850000.0], [30.2573267, -97.7172302, 800000.0], [30.30816969999999, -97.7274412, 891250.0], [30.2256434, -97.7853145, 602000.0], [30.2558365, -97.6849958, 562500.0], [30.4065779, -97.7478949, 780000.0], [30.2820349, -97.7477816, 588500.0], [30.4357579, -97.6894508, 363000.0], [30.3007579, -97.7878318, 5950000.0], [30.4207209, -97.6914416, 460000.0], [30.267153, -97.7430608, 658000.0], [30.2837453, -97.6961546, 670000.0], [30.2760264, -97.66791, 525000.0], [30.3739474, -97.8517552, 1050000.0], [30.2050512, -97.849035, 485000.0], [30.26889559999999, -97.7518561, 770000.0], [30.2124078, -97.7369381, 371000.0], [30.4456938, -97.7363508, 533000.0], [30.2295806, -97.6970651, 491000.0], [30.2986834, -97.700371, 870000.0], [30.3923316, -97.708224, 417500.0], [30.3911419, -97.7218332, 225000.0], [30.3911535, -97.7218322, 225000.0], [30.370122, -97.6884248, 300000.0], [30.3176931, -97.7211877, 529500.0], [30.3646906, -97.7351113, 490000.0], [30.2976841, -97.7375963, 274990.0], [30.3903487, -97.7487151, 405000.0], [30.3903487, -97.7487151, 600000.0], [30.353213, -97.7674773, 952500.0], [30.3591778, -97.7655987, 1327000.0], [30.2339613, -97.8648067, 720000.0], [30.273648, -97.6976539, 1060000.0], [30.2877953, -97.7673314, 4400000.0], [30.2954625, -97.7551352, 1420000.0], [30.3000111, -97.6738023, 576250.0], [30.2952051, -97.7552517, 3800000.0], [30.23471079999999, -97.7118003, 212000.0], [30.4504785, -97.785287, 510000.0], [30.3688641, -97.7046722, 465000.0], [30.3914446, -97.7022988, 425000.0], [30.4179412, -97.8984558, 492500.0], [30.2359434, -97.7284907, 315000.0], [30.267153, -97.7430608, 410000.0], [30.267346, -97.7234586, 750000.0], [30.3143949, -97.7457444, 962500.0], [30.2706266, -97.7104428, 608300.0], [30.4212008, -97.6832998, 586000.0], [30.2660292, -97.7518561, 1330600.0], [30.20632253321186, -97.90891762243965, 452000.0], [30.1935594, -97.842056, 520000.0], [30.2049701, -97.7748074, 719000.0], [30.2372278, -97.7837533, 775500.0], [30.267153, -97.7430608, 885000.0], [30.2195294, -97.7839041, 652500.0], [30.2055702, -97.7166372, 364750.0], [30.2009698, -97.8333958, 461000.0], [30.1624125, -97.7946527, 522000.0], [30.267153, -97.7430608, 547562.5], [30.4359772, -97.8000975, 1030000.0], [30.1568662, -97.7430283, 380000.0], [30.2264094, -97.7552517, 780000.0], [30.3328019, -97.7009416, 474900.0], [30.3260919, -97.6922889, 524950.0], [30.1970686, -97.7771702, 405000.0], [30.4078412, -97.6670191, 380000.0], [30.2523971, -97.8338263, 910000.0], [30.317206, -97.6738023, 553000.0], [30.317206, -97.6738023, 558000.0], [30.1858848, -97.7705653, 757500.0], [30.2086396, -97.8728403, 635000.0], [30.2954625, -97.7551352, 1375000.0], [30.21315749999999, -97.7743522, 545000.0], [30.2385146, -97.8884881, 675000.0], [30.29147, -97.7457444, 335000.0], [30.2881825, -97.7769875, 1025000.0], [30.2230485, -97.7986926, 825000.0], [30.292674, -97.553824, 431500.0], [30.2963458, -97.7136976, 1052500.0], [30.3627291, -97.6792293, 423000.0], [30.3105177, -97.6900846, 558000.0], [30.2936434, -97.7650044, 995000.0], [30.357046, -97.751177, 267500.0], [30.2062976, -97.840195, 540000.0], [30.3610582, -97.7232992, 515000.0], [30.25426879999999, -97.7669536, 1125000.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var feature_group_a5272a28bddd2b5a99e09d427348fb62 = L.featureGroup(
+                {}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var circle_marker_40684593007d2ac4e59041f7bbb65f66 = L.circleMarker(
+                [30.2649178, -97.7464235],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_40684593007d2ac4e59041f7bbb65f66.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - 2nd Street District<br>Median Sale Price: 2102500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5dc37aae36c6510c255e89f38237b446 = L.circleMarker(
+                [30.3393252, -97.746952],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5dc37aae36c6510c255e89f38237b446.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Allandale<br>Median Sale Price: 784525.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_53507320024b2fa4c9b484dd2456adf4 = L.circleMarker(
+                [30.4611355, -97.8299965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_53507320024b2fa4c9b484dd2456adf4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Anderson Mill West<br>Median Sale Price: 445000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_54d3d4fb0a82521959f63deb043b86c6 = L.circleMarker(
+                [30.4237172, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_54d3d4fb0a82521959f63deb043b86c6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Angus Valley<br>Median Sale Price: 799000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_bcef9c45868f54033822d8b963ac1610 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_bcef9c45868f54033822d8b963ac1610.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Arts District<br>Median Sale Price: 247500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_39eaac98ec1b7221d4c38bf4db0bfd44 = L.circleMarker(
+                [30.4689145, -97.799452],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_39eaac98ec1b7221d4c38bf4db0bfd44.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Avery Ranch-Lakeline<br>Median Sale Price: 630000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30a144832082854087d81fbd1d7d7136 = L.circleMarker(
+                [30.2533686, -97.7835429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_30a144832082854087d81fbd1d7d7136.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Barton Hills<br>Median Sale Price: 1022500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_86dfd5e3b7c98678a3805cef418c9cb5 = L.circleMarker(
+                [30.280638, -97.7224315],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_86dfd5e3b7c98678a3805cef418c9cb5.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Blackland<br>Median Sale Price: 759500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_09cc98f50b67274ae145207819c346df = L.circleMarker(
+                [30.1725823, -97.768618],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_09cc98f50b67274ae145207819c346df.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bluff Springs<br>Median Sale Price: 479000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c42ebf6fc9958917e1ad07fa539eb3e = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5c42ebf6fc9958917e1ad07fa539eb3e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin Creek<br>Median Sale Price: 1012000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e04b6b0e25811dedab1dc33bc0b84746 = L.circleMarker(
+                [30.2515465, -97.7543062],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e04b6b0e25811dedab1dc33bc0b84746.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bouldin South<br>Median Sale Price: 1197340.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6e630f64932709eaac014a0b16df0764 = L.circleMarker(
+                [30.330898, -97.7316065],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_6e630f64932709eaac014a0b16df0764.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood<br>Median Sale Price: 810000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d0e07f7e09c01b25bf83c5078c5ede94 = L.circleMarker(
+                [30.3364313, -97.7264415],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_d0e07f7e09c01b25bf83c5078c5ede94.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brentwood-Highland<br>Median Sale Price: 737500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_45b9a5fb8ae1b301eff09321483bc731 = L.circleMarker(
+                [30.1902458, -97.8454709],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_45b9a5fb8ae1b301eff09321483bc731.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Brodie Lane<br>Median Sale Price: 525000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91f87a8df75700d0e1e8990321ff5f66 = L.circleMarker(
+                [30.30244979999999, -97.7538935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_91f87a8df75700d0e1e8990321ff5f66.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bryker Woods<br>Median Sale Price: 995000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4dd47bb7b6293cbb097577ba1390510b = L.circleMarker(
+                [30.3251308, -97.7506508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_4dd47bb7b6293cbb097577ba1390510b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Bull Creek<br>Median Sale Price: 1279600.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_acb4153eb61e411ab5ae7133781be439 = L.circleMarker(
+                [30.3134263, -97.7666194],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_acb4153eb61e411ab5ae7133781be439.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Camp Mabry<br>Median Sale Price: 3122500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ff6d9cb8ca5e5fb04a68767ec8c1ed69 = L.circleMarker(
+                [30.2938151, -97.7329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_ff6d9cb8ca5e5fb04a68767ec8c1ed69.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central Austin<br>Median Sale Price: 349000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_05b0e18560a1febcc4d06599631a1c4c = L.circleMarker(
+                [30.27162349999999, -97.7248647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_05b0e18560a1febcc4d06599631a1c4c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central East Austin<br>Median Sale Price: 652600.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5651504feb74be21c05167dad6f3691e = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5651504feb74be21c05167dad6f3691e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Central West Austin<br>Median Sale Price: 1375000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_46bd5dd442a89eff8f2d1db57aa04022 = L.circleMarker(
+                [30.1979137, -97.8245578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_46bd5dd442a89eff8f2d1db57aa04022.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherry Creek<br>Median Sale Price: 520000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cfb4f1c68aa04bd80b6b291732f90888 = L.circleMarker(
+                [30.2917457, -97.7136007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_cfb4f1c68aa04bd80b6b291732f90888.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Cherrywood<br>Median Sale Price: 700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e049868a3268836dfc1c97030fb1af5d = L.circleMarker(
+                [30.2790657, -97.7131577],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e049868a3268836dfc1c97030fb1af5d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Chestnut<br>Median Sale Price: 645500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5e5a71c89e443d583c1b04c840ecf05 = L.circleMarker(
+                [30.2802042, -97.7591251],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e5e5a71c89e443d583c1b04c840ecf05.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Clarksville<br>Median Sale Price: 1100000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_10864067f65b1428d3bac5f3e8ac47c1 = L.circleMarker(
+                [30.2680667, -97.7428151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_10864067f65b1428d3bac5f3e8ac47c1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Congress Avenue District<br>Median Sale Price: 359305.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_28973fd32ede4f11ef50471553198933 = L.circleMarker(
+                [30.38827179999999, -97.6588801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_28973fd32ede4f11ef50471553198933.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Copperfield<br>Median Sale Price: 292250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_822bf1d3739c7126143c0dc90c5af9fc = L.circleMarker(
+                [30.32699239999999, -97.6877987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_822bf1d3739c7126143c0dc90c5af9fc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Coronado Hills<br>Median Sale Price: 620000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_50f3dd039c99dbc826f958e4e26d995f = L.circleMarker(
+                [30.348322, -97.727536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_50f3dd039c99dbc826f958e4e26d995f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview<br>Median Sale Price: 675000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0c5445c470e205b49d301ce04809f4f9 = L.circleMarker(
+                [30.3534821, -97.7233389],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_0c5445c470e205b49d301ce04809f4f9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Crestview-Wooten<br>Median Sale Price: 652000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f8ba0c52bc8b4903a75062940f65d9e2 = L.circleMarker(
+                [30.3280279, -97.8055259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_f8ba0c52bc8b4903a75062940f65d9e2.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Davenport Ranch<br>Median Sale Price: 1183000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f4623cc03ed5d2323cab21209b5aff2f = L.circleMarker(
+                [30.2329651, -97.7613825],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_f4623cc03ed5d2323cab21209b5aff2f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dawson<br>Median Sale Price: 699000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2cceb6b1f58d0fa84f740583297b631d = L.circleMarker(
+                [30.2091069, -97.6472349],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_2cceb6b1f58d0fa84f740583297b631d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Del Valle<br>Median Sale Price: 425000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_14e4918bdbb3f02c7f8e67674f823fa9 = L.circleMarker(
+                [30.18505, -97.8020854],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_14e4918bdbb3f02c7f8e67674f823fa9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Dittmar-Slaughter<br>Median Sale Price: 450000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cac36ed746d95a45d980b0d9ffb443c7 = L.circleMarker(
+                [30.2729209, -97.74438630000002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_cac36ed746d95a45d980b0d9ffb443c7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Downtown Austin<br>Median Sale Price: 690000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d417d5781545b2766c1a61428e6215fd = L.circleMarker(
+                [30.2658909, -97.7350274],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_d417d5781545b2766c1a61428e6215fd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East 6th Street District<br>Median Sale Price: 690000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7926d77678e9f5266f48d136b3c15638 = L.circleMarker(
+                [30.2654547, -97.7090635],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7926d77678e9f5266f48d136b3c15638.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Austin<br>Median Sale Price: 595000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_000e34cb1520e2e075f656ab0487c52f = L.circleMarker(
+                [30.2585193, -97.7286604],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_000e34cb1520e2e075f656ab0487c52f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Cesar Chavez<br>Median Sale Price: 865000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_923bffd75b283085ac07a7cbc722fe72 = L.circleMarker(
+                [30.20856089999999, -97.7661188],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_923bffd75b283085ac07a7cbc722fe72.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Congress<br>Median Sale Price: 442500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5c2a168f128d43c4c7889cc0e39e1719 = L.circleMarker(
+                [30.2825656, -97.6766639],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5c2a168f128d43c4c7889cc0e39e1719.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East MLK<br>Median Sale Price: 582250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c92a45f0654f0c91b9a8e5c433018123 = L.circleMarker(
+                [30.240054, -97.8303149],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c92a45f0654f0c91b9a8e5c433018123.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Oak Hill<br>Median Sale Price: 800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5bef51985b5af147ce6b61a6d8302c85 = L.circleMarker(
+                [30.2275044, -97.7277824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5bef51985b5af147ce6b61a6d8302c85.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - East Riverside-Oltorf<br>Median Sale Price: 299000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e896bc4d89d39bbfdae1b16b19e97db3 = L.circleMarker(
+                [30.2818771, -97.6669884],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e896bc4d89d39bbfdae1b16b19e97db3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ed Bluestein<br>Median Sale Price: 497500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5fb1c062ccc60d16412c398ac75fb4f8 = L.circleMarker(
+                [30.4038127, -97.8536211],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5fb1c062ccc60d16412c398ac75fb4f8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Four Points<br>Median Sale Price: 583750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7dee811cafc736c6530c2fee50bfca12 = L.circleMarker(
+                [30.1939634, -97.7446677],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7dee811cafc736c6530c2fee50bfca12.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Franklin Park<br>Median Sale Price: 310000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83ad45b77851d977135041c96aeb8c6b = L.circleMarker(
+                [30.2355462, -97.7685704],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_83ad45b77851d977135041c96aeb8c6b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Galindo<br>Median Sale Price: 770375.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1d9c18f3ace1ad25d33a3b7aef068777 = L.circleMarker(
+                [30.2088183, -97.8047019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1d9c18f3ace1ad25d33a3b7aef068777.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Garrison Park<br>Median Sale Price: 527000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d6c58effb1efbde0eb832728097e69bb = L.circleMarker(
+                [30.3499918, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_d6c58effb1efbde0eb832728097e69bb.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Georgian Acres<br>Median Sale Price: 300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7c15c5802927a06c58fc4d17fd8d094a = L.circleMarker(
+                [30.2560413, -97.7016981],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7c15c5802927a06c58fc4d17fd8d094a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle<br>Median Sale Price: 699500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_cf69e27f728983b68b816ac2e0c21bca = L.circleMarker(
+                [30.2660111, -97.7021915],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_cf69e27f728983b68b816ac2e0c21bca.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Govalle-Johnston Terrace<br>Median Sale Price: 694500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a2a5a0c1c211d188c188cfd6f611b08f = L.circleMarker(
+                [30.389061, -97.6941558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_a2a5a0c1c211d188c188cfd6f611b08f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Gracy Woods<br>Median Sale Price: 475000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_471410c0f753359f7540fc98f15ec178 = L.circleMarker(
+                [30.2367289, -97.7488105],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_471410c0f753359f7540fc98f15ec178.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Greater South River City<br>Median Sale Price: 700000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_71c1a42e6c6f7440b312bec5e2dd4338 = L.circleMarker(
+                [30.2964691, -97.7232153],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_71c1a42e6c6f7440b312bec5e2dd4338.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hancock<br>Median Sale Price: 750000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c92067f8e43fcfb182223ebc10c45f0a = L.circleMarker(
+                [30.30110269999999, -97.741329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c92067f8e43fcfb182223ebc10c45f0a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage<br>Median Sale Price: 302500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_37392ec8abd23da4b4e6a7353c75bc14 = L.circleMarker(
+                [30.3435785, -97.6888656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_37392ec8abd23da4b4e6a7353c75bc14.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Heritage Hills-Windsor Hills<br>Median Sale Price: 424000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fafce09e44d1b7ac247da17648ed19fc = L.circleMarker(
+                [30.3339959, -97.7169771],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_fafce09e44d1b7ac247da17648ed19fc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland<br>Median Sale Price: 649000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7490586da7b3cf72ba8501c4712abfc6 = L.circleMarker(
+                [30.3235367, -97.760685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7490586da7b3cf72ba8501c4712abfc6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Highland Park West<br>Median Sale Price: 1850000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2b6d1f39b519bfcb7077721fc1ccd966 = L.circleMarker(
+                [30.2573267, -97.7172302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_2b6d1f39b519bfcb7077721fc1ccd966.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Holly<br>Median Sale Price: 800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e75c776f89f233f85a4f36d047e570ea = L.circleMarker(
+                [30.30816969999999, -97.7274412],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e75c776f89f233f85a4f36d047e570ea.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Hyde Park<br>Median Sale Price: 891250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a5a2da0b88c3c6175b53b8fb9db8c2c6 = L.circleMarker(
+                [30.2256434, -97.7853145],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_a5a2da0b88c3c6175b53b8fb9db8c2c6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jester<br>Median Sale Price: 602000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5b247a1b20dacb0aa850256ac3f86b6c = L.circleMarker(
+                [30.2558365, -97.6849958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5b247a1b20dacb0aa850256ac3f86b6c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Johnston Terrace<br>Median Sale Price: 562500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_32d82a1ed538499420d376ada3275930 = L.circleMarker(
+                [30.4065779, -97.7478949],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_32d82a1ed538499420d376ada3275930.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Jollyville<br>Median Sale Price: 780000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4c0ebf0b301cde727db3d007b3317f4f = L.circleMarker(
+                [30.2820349, -97.7477816],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_4c0ebf0b301cde727db3d007b3317f4f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Judges Hill<br>Median Sale Price: 588500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4e38e2ffca92e1cf8cc397acf08f0358 = L.circleMarker(
+                [30.4357579, -97.6894508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_4e38e2ffca92e1cf8cc397acf08f0358.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Kings Village<br>Median Sale Price: 363000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_86a6cee50f0bd3a23e4c9590708b9013 = L.circleMarker(
+                [30.3007579, -97.7878318],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_86a6cee50f0bd3a23e4c9590708b9013.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lakeshore<br>Median Sale Price: 5950000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5aa702c2323c718312e1a656b3f4a623 = L.circleMarker(
+                [30.4207209, -97.6914416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5aa702c2323c718312e1a656b3f4a623.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Lamplight Village<br>Median Sale Price: 460000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_116165aa8203ce4b3509380dce48f28c = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_116165aa8203ce4b3509380dce48f28c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Laurel Oaks<br>Median Sale Price: 658000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_876edfc21cd30eb3c40eb8972f976a5f = L.circleMarker(
+                [30.2837453, -97.6961546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_876edfc21cd30eb3c40eb8972f976a5f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK<br>Median Sale Price: 670000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7bb5f13c4b82562a28b787287d27f976 = L.circleMarker(
+                [30.2760264, -97.66791],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7bb5f13c4b82562a28b787287d27f976.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - MLK-183<br>Median Sale Price: 525000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c5afa90a01584ed19b96a53c522ba8f8 = L.circleMarker(
+                [30.3739474, -97.8517552],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c5afa90a01584ed19b96a53c522ba8f8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mansfield-River Place<br>Median Sale Price: 1050000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0810712973a7237cbac05d4fdacec8aa = L.circleMarker(
+                [30.2050512, -97.849035],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_0810712973a7237cbac05d4fdacec8aa.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Maple Run<br>Median Sale Price: 485000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a525fd7af83d0e2f9c137097b7a390a = L.circleMarker(
+                [30.26889559999999, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7a525fd7af83d0e2f9c137097b7a390a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Market District<br>Median Sale Price: 770000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_0b4790486bc2aca607d92037d3a4309f = L.circleMarker(
+                [30.2124078, -97.7369381],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_0b4790486bc2aca607d92037d3a4309f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McKinney<br>Median Sale Price: 371000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_30f6dcb36b2485d1af60c282eac90f3a = L.circleMarker(
+                [30.4456938, -97.7363508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_30f6dcb36b2485d1af60c282eac90f3a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - McNeil<br>Median Sale Price: 533000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7ecf5d6baac83de5f776ba38e6968078 = L.circleMarker(
+                [30.2295806, -97.6970651],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7ecf5d6baac83de5f776ba38e6968078.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Montopolis<br>Median Sale Price: 491000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1892ca85990ae83db4908265f2c5c6b7 = L.circleMarker(
+                [30.2986834, -97.700371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1892ca85990ae83db4908265f2c5c6b7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Mueller<br>Median Sale Price: 870000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_52a538a9e03e51cdbb83ee325bc169ab = L.circleMarker(
+                [30.3923316, -97.708224],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_52a538a9e03e51cdbb83ee325bc169ab.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Austin<br>Median Sale Price: 417500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ac0dff22bd317fa84da30f5db7547d48 = L.circleMarker(
+                [30.3911419, -97.7218332],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_ac0dff22bd317fa84da30f5db7547d48.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet<br>Median Sale Price: 225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_fd0c892b2ba3b5be56971d724fdfc0a6 = L.circleMarker(
+                [30.3911535, -97.7218322],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_fd0c892b2ba3b5be56971d724fdfc0a6.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Burnet-Gateway<br>Median Sale Price: 225000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7a89a313457fcf8ecd4baf39ed65ef9a = L.circleMarker(
+                [30.370122, -97.6884248],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7a89a313457fcf8ecd4baf39ed65ef9a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Lamar<br>Median Sale Price: 300000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_732757a2f6ef53cfb88c07eaca042700 = L.circleMarker(
+                [30.3176931, -97.7211877],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_732757a2f6ef53cfb88c07eaca042700.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Loop<br>Median Sale Price: 529500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6d6dfb9e2f35ee6526a44747f96fe68c = L.circleMarker(
+                [30.3646906, -97.7351113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_6d6dfb9e2f35ee6526a44747f96fe68c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North Shoal Creek<br>Median Sale Price: 490000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_64c55548221f94dbc8f6bf0d075cf94a = L.circleMarker(
+                [30.2976841, -97.7375963],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_64c55548221f94dbc8f6bf0d075cf94a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - North University<br>Median Sale Price: 274990.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_17505b2b5780bebb61a585fff59ddf84 = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_17505b2b5780bebb61a585fff59ddf84.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northeast Austin<br>Median Sale Price: 405000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_6c855cb2efca7cd1b67a159e990f2d43 = L.circleMarker(
+                [30.3903487, -97.7487151],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_6c855cb2efca7cd1b67a159e990f2d43.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Austin<br>Median Sale Price: 600000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c89a164612170133a71a9fc6e450342b = L.circleMarker(
+                [30.353213, -97.7674773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c89a164612170133a71a9fc6e450342b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills<br>Median Sale Price: 952500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_34b83a67c1b0e41ff5218ecf7897213b = L.circleMarker(
+                [30.3591778, -97.7655987],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_34b83a67c1b0e41ff5218ecf7897213b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Northwest Hills-Far West<br>Median Sale Price: 1327000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_973f3e3518649177f9c68271640e4574 = L.circleMarker(
+                [30.2339613, -97.8648067],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_973f3e3518649177f9c68271640e4574.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Hill<br>Median Sale Price: 720000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_91f1203f0b38fe828c15adec5c435101 = L.circleMarker(
+                [30.273648, -97.6976539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_91f1203f0b38fe828c15adec5c435101.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Oak Springs<br>Median Sale Price: 1060000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_41ddaf274ae16467bc9cf9b073beda26 = L.circleMarker(
+                [30.2877953, -97.7673314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_41ddaf274ae16467bc9cf9b073beda26.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old Enfield<br>Median Sale Price: 4400000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d6a9ca07d1f8a104a8494b225df192bd = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_d6a9ca07d1f8a104a8494b225df192bd.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Old West Austin<br>Median Sale Price: 1420000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25481e636dd246da618cdeaa6a5ec8e9 = L.circleMarker(
+                [30.3000111, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_25481e636dd246da618cdeaa6a5ec8e9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pecan Springs Springdale<br>Median Sale Price: 576250.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d3bcc48be5079d6ed766a425fccd215e = L.circleMarker(
+                [30.2952051, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_d3bcc48be5079d6ed766a425fccd215e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pemberton Heights<br>Median Sale Price: 3800000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_354f212db5ea1d5ca75abf74ef92c31f = L.circleMarker(
+                [30.23471079999999, -97.7118003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_354f212db5ea1d5ca75abf74ef92c31f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pleasant Valley<br>Median Sale Price: 212000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_83776d28a0d6fb1325d27e1dcd74b60e = L.circleMarker(
+                [30.4504785, -97.785287],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_83776d28a0d6fb1325d27e1dcd74b60e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Pond Springs<br>Median Sale Price: 510000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e3a8d5df11820ef5d862aea0c710e465 = L.circleMarker(
+                [30.3688641, -97.7046722],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e3a8d5df11820ef5d862aea0c710e465.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Creek<br>Median Sale Price: 465000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae1ccf11de9ff56b30e19f47c90dac5a = L.circleMarker(
+                [30.3914446, -97.7022988],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_ae1ccf11de9ff56b30e19f47c90dac5a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Quail Hollow<br>Median Sale Price: 425000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8b8eeb1ff685367411262b558b987d62 = L.circleMarker(
+                [30.4179412, -97.8984558],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_8b8eeb1ff685367411262b558b987d62.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Ridgetop<br>Median Sale Price: 492500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4b1dc4e9cb637b8f72ffbf3da39b0fd3 = L.circleMarker(
+                [30.2359434, -97.7284907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_4b1dc4e9cb637b8f72ffbf3da39b0fd3.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Riverside<br>Median Sale Price: 315000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e5f98e38bd5c69b206379e11cef509e1 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e5f98e38bd5c69b206379e11cef509e1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers Hill<br>Median Sale Price: 410000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_243fd1a761462085d9add8ac2dbb8918 = L.circleMarker(
+                [30.267346, -97.7234586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_243fd1a761462085d9add8ac2dbb8918.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rogers-Washington-Holy Cross<br>Median Sale Price: 750000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_33752d902cb6c19258abd1e3b97067c9 = L.circleMarker(
+                [30.3143949, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_33752d902cb6c19258abd1e3b97067c9.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosedale<br>Median Sale Price: 962500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_62e35b6f4179d4c829faff0ce6904ccc = L.circleMarker(
+                [30.2706266, -97.7104428],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_62e35b6f4179d4c829faff0ce6904ccc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Rosewood<br>Median Sale Price: 608300.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_65a0c648ef06b96ebb252b599a382a5f = L.circleMarker(
+                [30.4212008, -97.6832998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_65a0c648ef06b96ebb252b599a382a5f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Scofield Farms<br>Median Sale Price: 586000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_58bf6dbd8a8b55ed23651ae8b7d55627 = L.circleMarker(
+                [30.2660292, -97.7518561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_58bf6dbd8a8b55ed23651ae8b7d55627.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Seaholm District<br>Median Sale Price: 1330600.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_967163c413851ff1be9fb7b551f522b8 = L.circleMarker(
+                [30.20632253321186, -97.90891762243965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_967163c413851ff1be9fb7b551f522b8.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Slaughter Creek<br>Median Sale Price: 452000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_90140fee7366607f53e287b86169ff8b = L.circleMarker(
+                [30.1935594, -97.842056],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_90140fee7366607f53e287b86169ff8b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Brodie<br>Median Sale Price: 520000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_24a3cff73d78eb2274c3ea2c4fc29bb1 = L.circleMarker(
+                [30.2049701, -97.7748074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_24a3cff73d78eb2274c3ea2c4fc29bb1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Congress<br>Median Sale Price: 719000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e274ac7fc9552de92486dc2081f8c0be = L.circleMarker(
+                [30.2372278, -97.7837533],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e274ac7fc9552de92486dc2081f8c0be.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lamar<br>Median Sale Price: 775500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_9776e32cad0f013c4f9e6bb55ead6e62 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_9776e32cad0f013c4f9e6bb55ead6e62.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Lawn<br>Median Sale Price: 885000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_d1ba3b16b6e923e42edb6a1556a96a18 = L.circleMarker(
+                [30.2195294, -97.7839041],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_d1ba3b16b6e923e42edb6a1556a96a18.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - South Manchaca<br>Median Sale Price: 652500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1cae37e749b2f85b93c2f99d2c4a6144 = L.circleMarker(
+                [30.2055702, -97.7166372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1cae37e749b2f85b93c2f99d2c4a6144.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southeast Austin<br>Median Sale Price: 364750.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3a689f4c28f9813a10cdc77c43e0e067 = L.circleMarker(
+                [30.2009698, -97.8333958],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_3a689f4c28f9813a10cdc77c43e0e067.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southhampton Hills<br>Median Sale Price: 461000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f8c0a48a3f53aa3dea4d03c9cfbbc74 = L.circleMarker(
+                [30.1624125, -97.7946527],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_8f8c0a48a3f53aa3dea4d03c9cfbbc74.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southpark Meadows<br>Median Sale Price: 522000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_19e0a34a76dee576a91da5f4a19ffef7 = L.circleMarker(
+                [30.267153, -97.7430608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_19e0a34a76dee576a91da5f4a19ffef7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Southwest Austin<br>Median Sale Price: 547562.5<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_96e4869fba4317471ed8e721cc02cd7a = L.circleMarker(
+                [30.4359772, -97.8000975],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_96e4869fba4317471ed8e721cc02cd7a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Spicewood<br>Median Sale Price: 1030000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_25b6af4351be8ae2d72f98ff28b25567 = L.circleMarker(
+                [30.1568662, -97.7430283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_25b6af4351be8ae2d72f98ff28b25567.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Springfield at Thaxton Road<br>Median Sale Price: 380000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_5e5df15d4360716ae0d84bc0817fe85d = L.circleMarker(
+                [30.2264094, -97.7552517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_5e5df15d4360716ae0d84bc0817fe85d.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Edwards<br>Median Sale Price: 780000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1f757c36724b7274e8d141630a1a3920 = L.circleMarker(
+                [30.3328019, -97.7009416],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1f757c36724b7274e8d141630a1a3920.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns<br>Median Sale Price: 474900.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c6d854ddc1682308379beca27c002d9e = L.circleMarker(
+                [30.3260919, -97.6922889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c6d854ddc1682308379beca27c002d9e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - St. Johns-Coronado Hills<br>Median Sale Price: 524950.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_7058e2078277324701b15b0f5606a3e4 = L.circleMarker(
+                [30.1970686, -97.7771702],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_7058e2078277324701b15b0f5606a3e4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Sweetbriar<br>Median Sale Price: 405000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ae8b41c15ec3a948471a7a47ac9edce7 = L.circleMarker(
+                [30.4078412, -97.6670191],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_ae8b41c15ec3a948471a7a47ac9edce7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Tech Ridge<br>Median Sale Price: 380000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8e849013b96ded613fba1deeb71b05e4 = L.circleMarker(
+                [30.2523971, -97.8338263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_8e849013b96ded613fba1deeb71b05e4.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Travis Country<br>Median Sale Price: 910000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_471bdf9d50188d7019a1df7fbbb4925a = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_471bdf9d50188d7019a1df7fbbb4925a.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills<br>Median Sale Price: 553000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c63c41aa0b4605f504dab4c9f77e2abf = L.circleMarker(
+                [30.317206, -97.6738023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c63c41aa0b4605f504dab4c9f77e2abf.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - University Hills & Windsor Park<br>Median Sale Price: 558000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_ee845c76e20622c719d7459a4556e5fa = L.circleMarker(
+                [30.1858848, -97.7705653],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_ee845c76e20622c719d7459a4556e5fa.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Upper Boggy Creek<br>Median Sale Price: 757500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_4dacbf49443275e960280603fa6de531 = L.circleMarker(
+                [30.2086396, -97.8728403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_4dacbf49443275e960280603fa6de531.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Village at Western Oaks<br>Median Sale Price: 635000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1100d128446694f3a07840a7838b7919 = L.circleMarker(
+                [30.2954625, -97.7551352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1100d128446694f3a07840a7838b7919.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Austin<br>Median Sale Price: 1375000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1b9bc012990cef4f3b336acb883e70bc = L.circleMarker(
+                [30.21315749999999, -97.7743522],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1b9bc012990cef4f3b336acb883e70bc.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Congress<br>Median Sale Price: 545000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_1aa9846d6858f69faed3bbcaeff4ff55 = L.circleMarker(
+                [30.2385146, -97.8884881],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_1aa9846d6858f69faed3bbcaeff4ff55.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West Oak Hill<br>Median Sale Price: 675000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_f37fdb93ba491f2126aa86bad5cba57f = L.circleMarker(
+                [30.29147, -97.7457444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_f37fdb93ba491f2126aa86bad5cba57f.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - West University<br>Median Sale Price: 335000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_2ad8fb9a1ee36f9d67ca7e0ba58208f1 = L.circleMarker(
+                [30.2881825, -97.7769875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_2ad8fb9a1ee36f9d67ca7e0ba58208f1.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westfield<br>Median Sale Price: 1025000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_116cef5533451fd45b76d228361df079 = L.circleMarker(
+                [30.2230485, -97.7986926],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_116cef5533451fd45b76d228361df079.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Westgate<br>Median Sale Price: 825000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_3627ee21694defb77d988b4398ec862b = L.circleMarker(
+                [30.292674, -97.553824],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_3627ee21694defb77d988b4398ec862b.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Whisper Valley<br>Median Sale Price: 431500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_e010842129b530ebd1988bb38ad85358 = L.circleMarker(
+                [30.2963458, -97.7136976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_e010842129b530ebd1988bb38ad85358.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wilshire Wood<br>Median Sale Price: 1052500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_8f7956f859f86fc69a71dd4ead640a58 = L.circleMarker(
+                [30.3627291, -97.6792293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_8f7956f859f86fc69a71dd4ead640a58.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Hills<br>Median Sale Price: 423000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_501385ebbd993ece681226d440f01f25 = L.circleMarker(
+                [30.3105177, -97.6900846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_501385ebbd993ece681226d440f01f25.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Park<br>Median Sale Price: 558000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_80914a39b0231d96ea1b00ddf866e495 = L.circleMarker(
+                [30.2936434, -97.7650044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_80914a39b0231d96ea1b00ddf866e495.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Windsor Road<br>Median Sale Price: 995000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_580bf2d687046875e2e6e7deede1068c = L.circleMarker(
+                [30.357046, -97.751177],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_580bf2d687046875e2e6e7deede1068c.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wood Creek<br>Median Sale Price: 267500.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_a110269558a646b9458f44ab951d018e = L.circleMarker(
+                [30.2062976, -97.840195],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_a110269558a646b9458f44ab951d018e.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Woodstone Village<br>Median Sale Price: 540000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_c4f0ca29b1c38d7c300acc50f5adc0ba = L.circleMarker(
+                [30.3610582, -97.7232992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_c4f0ca29b1c38d7c300acc50f5adc0ba.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Wooten<br>Median Sale Price: 515000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var circle_marker_aa8cfe5186c8483b06617bab5fa521f7 = L.circleMarker(
+                [30.25426879999999, -97.7669536],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a5272a28bddd2b5a99e09d427348fb62);
+        
+    
+            circle_marker_aa8cfe5186c8483b06617bab5fa521f7.bindTooltip(
+                `<div>
+                     City: Austin<br>Region: Austin, TX - Zilker<br>Median Sale Price: 1125000.0<br>
+                 </div>`,
+                {"sticky": false}
+            );
+        
+    
+            var tile_layer_8e2dd280e871ca4696293d1197f547f7 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var tile_layer_6194640de2d03f61ee35d5df6dc3aeae = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var tile_layer_063c1a89d5b641dbc3e71c9e806d3971 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var tile_layer_ccb214d3f11247f58f98375b00163cd6 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var tile_layer_c6b88575e2bde4999fa3380e0e1bda72 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var tile_layer_5b4f869aad73cdf44d76c348dcfec710 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+        
+    
+            var layer_control_2f98351c287fc09e19909ecaca9ff915 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_063c1a89d5b641dbc3e71c9e806d3971,
+                    "stamenwatercolor" : tile_layer_8e2dd280e871ca4696293d1197f547f7,
+                    "openstreetmap" : tile_layer_6194640de2d03f61ee35d5df6dc3aeae,
+                    "stamentoner" : tile_layer_ccb214d3f11247f58f98375b00163cd6,
+                    "cartodbpositron" : tile_layer_c6b88575e2bde4999fa3380e0e1bda72,
+                    "cartodbdark_matter" : tile_layer_5b4f869aad73cdf44d76c348dcfec710,
+                },
+                overlays :  {
+                    "Austin - median_sale_price" : heat_map_1775108cfa43741fef75a928612793d7,
+                    "Median Sale Price Centers" : feature_group_a5272a28bddd2b5a99e09d427348fb62,
+                },
+            };
+            L.control.layers(
+                layer_control_2f98351c287fc09e19909ecaca9ff915.base_layers,
+                layer_control_2f98351c287fc09e19909ecaca9ff915.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_64ba1582c2d85e720d1cbe05de7ec9eb);
+            tile_layer_8e2dd280e871ca4696293d1197f547f7.remove();
+            tile_layer_6194640de2d03f61ee35d5df6dc3aeae.remove();
+            tile_layer_063c1a89d5b641dbc3e71c9e806d3971.remove();
+            tile_layer_ccb214d3f11247f58f98375b00163cd6.remove();
+            tile_layer_c6b88575e2bde4999fa3380e0e1bda72.remove();
+            tile_layer_5b4f869aad73cdf44d76c348dcfec710.remove();
+        
+</script>
+</html>
